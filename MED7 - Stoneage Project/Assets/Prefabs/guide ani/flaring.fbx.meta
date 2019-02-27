@@ -173,7 +173,62 @@ ModelImporter:
     13700010: Eyes
     13700012: Hair
     13700014: Moustaches
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beardmat
+    second: {fileID: 2100000, guid: ee821faa76c96fb4fbf0141dc069e094, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat
+    second: {fileID: 2100000, guid: b5b5850eb3d15ee4f85426c6c7fc33bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat1
+    second: {fileID: 2100000, guid: cdea7a082d58fc747bebf115e94d92d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottommat
+    second: {fileID: 2100000, guid: 68039ac66edb5154eaeecef2aa487438, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairmat
+    second: {fileID: 2100000, guid: 6a3d28eac914ee140b2186dd87e106a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moustachemat
+    second: {fileID: 2100000, guid: b7e919353023ac346995f1eb50c34e5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boatmat
+    second: {fileID: 2100000, guid: 8d5879ff9a10bb54dac866ca49ba5b06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eeliron_mat
+    second: {fileID: 2100000, guid: f3d158d44b61f524b809573a559e194a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: b3cb4eb0cb6a0b54dab6d22507d83564, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert3
+    second: {fileID: 2100000, guid: c25ef9a334eed4540bbe91d7f5d7adf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: adcea0f8019d86840a75a3d7a1517341, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -280,7 +335,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: mixamorig:Hips
-    rootMotionBoneRotation: {x: 0.078329444, y: -0.21021691, z: 0.004505424, w: 0.97450143}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

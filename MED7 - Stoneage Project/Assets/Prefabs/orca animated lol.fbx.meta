@@ -42,10 +42,15 @@ ModelImporter:
     13700000: orcamesh
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: orcamat
+    second: {fileID: 2100000, guid: d980cb2ba1b3f134f8a00b7faee18770, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: residentkillerwhale_orcinus_orca
-    second: {fileID: 2800000, guid: c40334946cfa05d40bccd66fa1210655, type: 3}
+    second: {fileID: 2800000, guid: 2dd5bbb4987ca044182ec4b3fc19bc42, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -117,7 +122,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

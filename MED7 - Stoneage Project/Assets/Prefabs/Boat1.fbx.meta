@@ -21,6 +21,16 @@ ModelImporter:
     4300002: skinbagmesh
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boatmat
+    second: {fileID: 2100000, guid: 55d9fb7b6aa8f744f8125af7edcc7d19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skinbagtext
+    second: {fileID: 2100000, guid: d8d256cb16e3ab547b2a6f62fb4b1965, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: TexturesCom_RustedCortenSteel_M
@@ -101,7 +111,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

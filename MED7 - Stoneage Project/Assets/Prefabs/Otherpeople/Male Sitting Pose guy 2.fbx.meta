@@ -181,155 +181,185 @@ ModelImporter:
     13700014: Tops
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Beardmat
+    second: {fileID: 2100000, guid: 61f5553e36b4cad448c15b79f567121f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat
+    second: {fileID: 2100000, guid: 2ad30efa8a0e9314cad938c835a3fb60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottommat
+    second: {fileID: 2100000, guid: 60c35f1178c9aee4fa9141addcfff65e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairmat
+    second: {fileID: 2100000, guid: 84357a7c72c2e694fbc89d248f595c09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moustachemat
+    second: {fileID: 2100000, guid: 0ecf7a68f02fea747a4c937cba470d7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topmat
+    second: {fileID: 2100000, guid: 0ca9f617aed74434f88f130b8d32b7bf, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Beard_Diffuse
-    second: {fileID: 2800000, guid: 727d2f9e0aa55b04a96e7644cfdab6e4, type: 3}
+    second: {fileID: 2800000, guid: 777ff55ad9d596648b93dfc8a9fdff9d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Beard_Gloss
-    second: {fileID: 2800000, guid: c0ee7cc912dbc2848947c85c8c1bf30d, type: 3}
+    second: {fileID: 2800000, guid: 5111134b932994048ae559fb6a730aca, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Beard_Normal
-    second: {fileID: 2800000, guid: e75da320558f9a245b165ea9d3198066, type: 3}
+    second: {fileID: 2800000, guid: 0888e1dd4adbf12468232c8a5ff9aede, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Beard_Opacity
-    second: {fileID: 2800000, guid: 066891c2ac8a2fb4694c357e21bdc866, type: 3}
+    second: {fileID: 2800000, guid: 6d8670c2f1d20f44f8d0b5cf71d46b16, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Beard_Specular
-    second: {fileID: 2800000, guid: bbf7f82059e8eda478387d9671a73ba2, type: 3}
+    second: {fileID: 2800000, guid: 21c4174df3024ce41bc8b103f1b74d72, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Body_Diffuse
-    second: {fileID: 2800000, guid: e452dc7c52314064a8322d34925b052c, type: 3}
+    second: {fileID: 2800000, guid: bf80eb2ab422d9049b1c6ed9ce9ccf62, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Body_Gloss
-    second: {fileID: 2800000, guid: 6c36f9b479be9964bb991667608aaef2, type: 3}
+    second: {fileID: 2800000, guid: daffaf9a089615248ba5645eb8ca3fff, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Body_Normal
-    second: {fileID: 2800000, guid: a2253d042c044134398db8ce9cfa4b7f, type: 3}
+    second: {fileID: 2800000, guid: cf75af186d5987c4a967c0d22bf84427, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Body_Opacity
-    second: {fileID: 2800000, guid: 7b85bd691a3a2904fa93e68a6672bb33, type: 3}
+    second: {fileID: 2800000, guid: e1d43eab77e3cf64cb0e812b29c42018, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Body_Specular
-    second: {fileID: 2800000, guid: c87c93e76f271434380f86bc67994a37, type: 3}
+    second: {fileID: 2800000, guid: cb37268d6d0712448a0282f9587c17dd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Bottom_Diffuse
-    second: {fileID: 2800000, guid: 7bab668ae2c30de4196b52dd3ad09078, type: 3}
+    second: {fileID: 2800000, guid: 8851bf58214a2cc4f81dfdd9ff9424d9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Bottom_Gloss
-    second: {fileID: 2800000, guid: 39673e99eb625f34b96fe560896b02ca, type: 3}
+    second: {fileID: 2800000, guid: f11ed19aa182d074e9742db1e54719e8, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Bottom_Normal
-    second: {fileID: 2800000, guid: 8b80cf281a61f7f4e89b338f325a42f8, type: 3}
+    second: {fileID: 2800000, guid: 4fc8618f6e15dbb4e9259fb68a0f395f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Bottom_Opacity
-    second: {fileID: 2800000, guid: f6f8a153c44fa6c43a5db9d1f362065c, type: 3}
+    second: {fileID: 2800000, guid: 9fec3be65bf82b34d828a13bf067a46f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Bottom_Specular
-    second: {fileID: 2800000, guid: 08fe154fa0cb3c945a3bc90d1554c9f1, type: 3}
+    second: {fileID: 2800000, guid: 435c06c55870607468e378996214ce10, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Hair_Diffuse
-    second: {fileID: 2800000, guid: 784d01fc0ca6f964dbeee876e5ddca7f, type: 3}
+    second: {fileID: 2800000, guid: 2d9319a13c4a3f94d906ae40dc237f77, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Hair_Gloss
-    second: {fileID: 2800000, guid: 05a162c5c81c0bc4f8df77a37a3c8729, type: 3}
+    second: {fileID: 2800000, guid: a24d6de927099e7488e0c8f233009623, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Hair_Normal
-    second: {fileID: 2800000, guid: 0d951f8048f280d4097d50fdfebef89d, type: 3}
+    second: {fileID: 2800000, guid: d2c2b0c51fcdebe46a7ecaeec1ec1aeb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Hair_Opacity
-    second: {fileID: 2800000, guid: 419a423d9a3d2144ebb0a6b515f6ec11, type: 3}
+    second: {fileID: 2800000, guid: e83c0e56829915f4d965254097dc41d8, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Hair_Specular
-    second: {fileID: 2800000, guid: 15fcb7fc1f7e8774abcfc32c3fd3063c, type: 3}
+    second: {fileID: 2800000, guid: 5e323ae0651183f43a3444837e460ef5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Moustache_Diffuse
-    second: {fileID: 2800000, guid: 13dfa25f91be77347a0ad850eb99f455, type: 3}
+    second: {fileID: 2800000, guid: 76711652da2db8642ab27d4ea92762f9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Moustache_Gloss
-    second: {fileID: 2800000, guid: 4dcdbf58c0a75634eae5c588f1c64cab, type: 3}
+    second: {fileID: 2800000, guid: bbaa5f32fdfe0474f9eee5d230110eba, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Moustache_Normal
-    second: {fileID: 2800000, guid: abe1c8b4e4f6d6b49b4f34b8148c2308, type: 3}
+    second: {fileID: 2800000, guid: a7d134467246a9a41b0220edbc929ed5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Moustache_Opacity
-    second: {fileID: 2800000, guid: 2d6d9337879c64848947d255d851476c, type: 3}
+    second: {fileID: 2800000, guid: f4cf783a08d995e4dbd7a65e904682e7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Moustache_Specular
-    second: {fileID: 2800000, guid: 0d49ebed03293934d87d97dd18ccc2ee, type: 3}
+    second: {fileID: 2800000, guid: d4fe33935bf07284f97c6bb186e53233, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Top_Diffuse
-    second: {fileID: 2800000, guid: 4ee5ce4ea68eed14a997162573fc8057, type: 3}
+    second: {fileID: 2800000, guid: 64e1eeb70bfb96842a45a68331da3742, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Top_Gloss
-    second: {fileID: 2800000, guid: ed7325dc026482f41aafd8d83de759cd, type: 3}
+    second: {fileID: 2800000, guid: 4c9b83c7325bf3942a63fe0d74038615, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Top_Normal
-    second: {fileID: 2800000, guid: 985e901ba571a264192171eeb79f80b0, type: 3}
+    second: {fileID: 2800000, guid: cb80678f984ec0541a9d58fca9868305, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Top_Opacity
-    second: {fileID: 2800000, guid: 8e4eb5c146fa9174eb0d4b797c8516cf, type: 3}
+    second: {fileID: 2800000, guid: c2bb26f46e1d85e4780bcda65763aa75, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Guy2_Top_Specular
-    second: {fileID: 2800000, guid: 9902e05e6f47dfe43ab1de45dc902f6e, type: 3}
+    second: {fileID: 2800000, guid: ad58f81550d86eb46ac6c9f752252bb6, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -429,7 +459,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

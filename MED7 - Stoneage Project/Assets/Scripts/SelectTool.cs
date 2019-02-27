@@ -19,15 +19,8 @@ PartnerAnimator PA;
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
 		}
 		catch{}
-
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	}
-
-
-	//
 	public void Select(){
 		//selecting which tool to use 
 		if(tag == "hook")
@@ -91,7 +84,8 @@ PartnerAnimator PA;
 		EC.startFishing(tool);
 	}
 
-	public void EmptyBasket()
+    #region empty basket Linear
+    public void EmptyBasket()
 	{
 		if(tag =="emptyBasket")
 		{
@@ -118,8 +112,8 @@ PartnerAnimator PA;
 			}
 		}
 	}
-
-	void HideTool()
+    #endregion
+    void HideTool()
 	{
 		//disable collider to not select it again and disable mesh renderer to make it invisible
 		GetComponent<Collider>().enabled = false;

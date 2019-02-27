@@ -164,7 +164,97 @@ ModelImporter:
     13700004: Eyelashes
     13700006: Hair
     13700008: Tops
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bodymat
+    second: {fileID: 2100000, guid: fba41ee0d6ae6d647ba492fe9fc4a626, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hairmat
+    second: {fileID: 2100000, guid: e9a491b4e65d6bf4084fec69e8ac7cd4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Topmat
+    second: {fileID: 2100000, guid: 590d0aa5fd032294193e673c3c209e02, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Body_Diffuse
+    second: {fileID: 2800000, guid: c2ab4fe127525ab4f8a2379f552eb07b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Body_Gloss
+    second: {fileID: 2800000, guid: 080ded6f3dbdb6747a52c6759aeafca1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Body_Normal
+    second: {fileID: 2800000, guid: 106ab4d759f24bb4985e6844bc8437f2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Body_Opacity
+    second: {fileID: 2800000, guid: 93a7dffce9c03e0448cbeed2c155b37c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Body_Specular
+    second: {fileID: 2800000, guid: 596bc5d5861c38d419418c4272719440, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Hair_Diffuse
+    second: {fileID: 2800000, guid: ef575bc9198b2154a81a2b9ebc54add0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Hair_Gloss
+    second: {fileID: 2800000, guid: 3f3683b9f2193c54c99127639007e8f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Hair_Normal
+    second: {fileID: 2800000, guid: f97a68600ccac6444adbb5eeb5ae4889, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Hair_Opacity
+    second: {fileID: 2800000, guid: e01cc0f9e399910419155eaf68f8fe5d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Hair_Specular
+    second: {fileID: 2800000, guid: 75137225b316a184da3ed7f65a867d99, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Top_Diffuse
+    second: {fileID: 2800000, guid: 35f686cc14d345e4bb42d636fd6f2512, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Top_Gloss
+    second: {fileID: 2800000, guid: 270e7a50d5d37b248999014d8e4ec69d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Top_Normal
+    second: {fileID: 2800000, guid: 1da864e87ea8e614ba363ee89d4c905f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Top_Opacity
+    second: {fileID: 2800000, guid: 3a8f38f58a203c841935caa5fa5e7a53, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gal2_Top_Specular
+    second: {fileID: 2800000, guid: cd5c2e174cd1b2042b78254fcedd066d, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

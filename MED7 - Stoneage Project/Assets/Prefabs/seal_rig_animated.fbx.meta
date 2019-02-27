@@ -36,6 +36,11 @@ ModelImporter:
     13700000: sealmesh
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sealmat
+    second: {fileID: 2100000, guid: 5cd882ef37e6ef34683289d703a35a32, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: seal-animal-png-1
@@ -111,7 +116,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
