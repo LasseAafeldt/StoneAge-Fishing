@@ -2,30 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatControllerScript : MonoBehaviour {
+public class BoatControllerScript : MonoBehaviour
+{
 
-	public float speed = 15f;
-	public float rotationSpeed = 0.1f;
-	public Collider[] ignoreCollision;
+    public float speed = 15f;
+    public float rotationSpeed = 0.1f;
+    public float rotationDeadzone = 5f;
+    public Collider[] ignoreCollision;
 
-	bool voiceLineReady = true;
+    bool voiceLineReady = true;
 
-	float verticalInput;
-	float horizontalInput;
-	float steerFactor;
+    float verticalInput;
+    float horizontalInput;
+    float steerFactor;
 
-	private bool outOfBounds = false;
+    private bool outOfBounds = false;
 
 
-	
-	// Update is called once per frame
-	void Update () {
-		Movement();
-		TestSteer();
 
-		BoatMovement();
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        //Movement();
+        //TestSteer();
 
+        BoatMovement();
+    }
+    #region Force turn around
+    /*
 	void OnTriggerEnter(Collider other)
     {
 		if(other.tag == "Bounds")
@@ -43,17 +47,25 @@ public class BoatControllerScript : MonoBehaviour {
 			outOfBounds = false;
 			Debug.Log("You're back in bounds!");
 		}
-	}
-	void TestSteer () {
+	} 
+    */
+    #endregion
+
+    #region Obsolete controllers
+    /*
+    void TestSteer () {
 		if(!outOfBounds)
 		{
 			horizontalInput = Input.GetAxis("Horizontal");
+            //Debug.Log("Horizontal = " + horizontalInput);
 			steerFactor = Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime);
+            //steerFactor = Mathf.smo
 			transform.Rotate(0.0f, steerFactor, 0.0f);
 		}
 	}
 	void Movement () {
 		verticalInput = Input.GetAxis("Vertical");
+        //Debug.Log("Vertical = " + verticalInput);
 		if(Input.GetAxis("Vertical") != 0 && !outOfBounds)
 		{
 			float sinusoid = (Mathf.Sin(Time.time * 2) + 1) / 2;
@@ -65,27 +77,33 @@ public class BoatControllerScript : MonoBehaviour {
 			//Debug.Log(sinusoid);
 		}
 	}
+    */
+    #endregion
 
-	public void BoatMovement () {
-		if(Input.GetButtonDown("Fire1") && !outOfBounds && !GameManager.singleton.pointingAtInteractable)
-		{
-			GameManager.singleton.paddle.GetComponent<AudioSource>().Play();
-			GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(true);
-		} else if(Input.GetButtonUp("Fire1") && !outOfBounds)
-		{
-			GameManager.singleton.paddle.GetComponent<AudioSource>().Stop();
-			GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(false);
-		}
-		
-		if(Input.GetButton("Fire1") && !outOfBounds)
-		{
-			float sinusoid = (Mathf.Sin(Time.time) + 1) / 2;
-			if(sinusoid < 0.2f)
-			{
-				sinusoid = 0.2f;
-			}
+    public void BoatMovement()
+    {
+        if (Input.GetButtonDown("Fire1") && !outOfBounds && !GameManager.singleton.pointingAtInteractable)
+        {
+            GameManager.singleton.paddle.GetComponent<AudioSource>().Play();
+            GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(true);
+        }
+        else if (Input.GetButtonUp("Fire1") && !outOfBounds)
+        {
+            GameManager.singleton.paddle.GetComponent<AudioSource>().Stop();
+            GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(false);
+        }
 
-			if (Vector3.Distance(GameManager.singleton.currentPillar.transform.position, transform.position) > 150)
+        if (Input.GetButton("Fire1") && !outOfBounds)
+        {
+            float sinusoid = (Mathf.Sin(Time.time) + 1) / 2;
+            if (sinusoid < 0.2f)
+            {
+                sinusoid = 0.2f;
+            }
+
+            #region Linear stuff
+            /*
+            if (Vector3.Distance(GameManager.singleton.currentPillar.transform.position, transform.position) > 150)
 			{
 				Debug.Log("FORKERT VEJ!");
 				float wrongWayAngle = Vector3.SignedAngle(transform.forward, new Vector3(GameManager.singleton.currentPillar.transform.position.x, 0, GameManager.singleton.currentPillar.transform.position.z) - transform.position, Vector3.up);
@@ -124,35 +142,41 @@ public class BoatControllerScript : MonoBehaviour {
 				}
 			
 			}
+            */
+            #endregion
 
-			if(!GameManager.singleton.pointingAtInteractable)
-			{
+            if (!GameManager.singleton.pointingAtInteractable)
+            {
 
-				if (GameManager.singleton.partner.GetComponent<PartnerAnimator>().anim.GetCurrentAnimatorStateInfo(0).IsTag("default") || GameManager.singleton.partner.GetComponent<PartnerAnimator>().anim.GetCurrentAnimatorStateInfo(0).IsTag("paddling"))
-				{
-					GetComponent<Rigidbody>().AddForce(transform.forward * speed * sinusoid * Time.deltaTime);	
-				}
 
-				float rotationAngle = Vector3.Angle(transform.forward, Camera.main.transform.forward);
+                if (GameManager.singleton.partner.GetComponent<PartnerAnimator>().anim.GetBool("isRowing"))
+                {
+                    //Debug.Log("Im going forwards");
+                    GetComponent<Rigidbody>().AddForce(transform.forward * speed * sinusoid * Time.deltaTime);
+                }
 
-				if (rotationAngle > 5)
-				{
+                float rotationAngle = Vector3.Angle(transform.forward, Camera.main.transform.forward);
 
-					Vector3 newDir = Vector3.RotateTowards(transform.forward, new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), Time.deltaTime * rotationAngle, 0.0f);
-					
-					// calculate the Quaternion for the rotation
-					Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(newDir), rotationSpeed);
-					
-					//Apply the rotation 
-					transform.rotation = rot;
+                if (rotationAngle > rotationDeadzone)
+                {
 
-				}
-			}
-			//Debug.Log(Vector3.Angle(transform.forward, Camera.main.transform.forward));
-		}
-	}
+                    Vector3 newDir = Vector3.RotateTowards(transform.forward, new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), rotationAngle, 0.0f);
 
-		IEnumerator forceRotate()
+                    // calculate the Quaternion for the rotation
+                    Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(newDir), rotationSpeed * Time.deltaTime);
+                    //Quaternion rot = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(newDir), rotationSpeed * Time.deltaTime);
+
+                    //Apply the rotation 
+                    transform.rotation = rot;
+
+                }
+            }
+            //Debug.Log(Vector3.Angle(transform.forward, Camera.main.transform.forward));
+        }
+    }
+    #region More force turn 
+    /*
+    IEnumerator forceRotate()
 		{
 			// The step size is equal to speed times frame time.
 			float rotStep = rotationSpeed * Time.deltaTime;
@@ -206,4 +230,6 @@ public class BoatControllerScript : MonoBehaviour {
 			yield return null;
 		}
     }
+    */
+    #endregion
 }
