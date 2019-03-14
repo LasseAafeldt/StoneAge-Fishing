@@ -77,9 +77,13 @@ public class PartnerSpeech : MonoBehaviour {
 	public AudioClip NotEnoughFishHere;
 	public AudioClip WeNeedFish;
 
+    [Header("Guidance sounds")]
+    public AudioClip Bakke;
+    public AudioClip Fugle;
+    public AudioClip Ruse;
+    public AudioClip Starting;
 
-
-	[Header(" sounds")]
+    [Header(" sounds")]
 
 	public Text speech;
 	List<AudioClip> queuedAudio = new List<AudioClip>();

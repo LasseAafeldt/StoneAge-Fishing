@@ -6,17 +6,6 @@ public class FishContent : MonoBehaviour {
 
 	public List<GameObject> fish = new List<GameObject>();
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public void RemoveFish()
 	{
 		if(fish.Count >0)

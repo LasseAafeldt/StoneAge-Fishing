@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16002843, g: 0.15568465, b: 0.14976591, a: 1}
+  m_IndirectSpecularColor: {r: 0.15951937, g: 0.15521216, b: 0.14935845, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6120,6 +6120,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 407848000}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &410814244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410814245}
+  - component: {fileID: 410814246}
+  m_Layer: 0
+  m_Name: Starting area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &410814245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 410814244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -97.6, y: 0, z: 184.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2001498335}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &410814246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 410814244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &422216374
 Prefab:
   m_ObjectHideFlags: 0
@@ -16550,6 +16591,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1052138931}
   - component: {fileID: 1052138930}
+  - component: {fileID: 1052138933}
+  - component: {fileID: 1052138932}
+  - component: {fileID: 1052138934}
   m_Layer: 0
   m_Name: CamContainer
   m_TagString: Untagged
@@ -16585,6 +16629,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1052138932
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052138929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 200
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1052138933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052138929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f9df1d44754454dbd63f53c2e416b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceLines: {fileID: 1380562104}
+  GuidanceIsOn: 1
+  triggerRadius: 200
+  Torsk: {fileID: 372945722}
+  eel: {fileID: 2047598643}
+  eelTrap: {fileID: 647167070}
+  start: {fileID: 410814246}
+--- !u!54 &1052138934
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052138929}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1058819446
 Prefab:
   m_ObjectHideFlags: 0
@@ -21974,6 +22063,10 @@ MonoBehaviour:
   NoHook4CodTryIron: {fileID: 8300000, guid: 53b159d87a6102b42bff9b1f0e887a0c, type: 3}
   NotEnoughFishHere: {fileID: 8300000, guid: 1cc39e19d26b20f4aabd68f3d88c4078, type: 3}
   WeNeedFish: {fileID: 8300000, guid: 60bd629483cb56b43b8246f0bbfa7147, type: 3}
+  Bakke: {fileID: 8300000, guid: d1420f10735009944857211375d62960, type: 3}
+  Fugle: {fileID: 8300000, guid: ffac6611931bf8b49844a631a7cb4ba2, type: 3}
+  Ruse: {fileID: 8300000, guid: 03ac6bd3cf4095e498e91342edee4a9c, type: 3}
+  Starting: {fileID: 8300000, guid: 8a2cb1a12838be4498c0a46ac37b892e, type: 3}
   speech: {fileID: 350137110}
 --- !u!1 &1385600245
 GameObject:
@@ -22952,6 +23045,10 @@ MonoBehaviour:
   NoHook4CodTryIron: {fileID: 0}
   NotEnoughFishHere: {fileID: 0}
   WeNeedFish: {fileID: 0}
+  Bakke: {fileID: 0}
+  Fugle: {fileID: 0}
+  Ruse: {fileID: 0}
+  Starting: {fileID: 0}
   speech: {fileID: 350137110}
 --- !u!82 &1460966464
 AudioSource:
@@ -31752,6 +31849,7 @@ Transform:
   - {fileID: 534313154}
   - {fileID: 83509194}
   - {fileID: 1036427986}
+  - {fileID: 410814245}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
