@@ -65,22 +65,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__fencemat1
-    second: {fileID: 2100000, guid: c521814920269c74fa07d1cd3c67d1a4, type: 2}
+    second: {fileID: 2100000, guid: 0687e4ea5fd9ae947829167cb3927a01, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__fencemat2
-    second: {fileID: 2100000, guid: 42a842bedabe87443b94a9e30530f371, type: 2}
+    second: {fileID: 2100000, guid: 0687e4ea5fd9ae947829167cb3927a01, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__polemat1
-    second: {fileID: 2100000, guid: be656d0cc5f2db44bb99d7c6678d354c, type: 2}
+    second: {fileID: 2100000, guid: 4635383af567d624a84bf905ddf559cf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: pasted__polemat2
-    second: {fileID: 2100000, guid: b56e47a0a8b3c89409e8f931f4d52cfa, type: 2}
+    second: {fileID: 2100000, guid: 4635383af567d624a84bf905ddf559cf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
