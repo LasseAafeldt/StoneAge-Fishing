@@ -1,6 +1,6 @@
 ﻿Shader "FX/Water(transparent)" {
 	Properties{
-		//_alpha("Transparency", Range(0.0,1.0)) = 0.9
+		_Alpha("Transparency", Range(0.0,1.0)) = 0.9
 		_WaveScale("Wave scale", Range(0.02,0.15)) = 0.063
 		_ReflDistort("Reflection distort", Range(0,1.5)) = 0.44
 		_RefrDistort("Refraction distort", Range(0,1.5)) = 0.40
@@ -20,9 +20,9 @@
 
 
 		Subshader{
-		Tags{ "WaterMode" = "Refractive" "Queue" = "Transparent" "RenderType" = "Transparent" }
+		Tags{ "Queue" = "Transparent" "RenderType" = "Transparent" }
+		Blend SrcAlpha OneMinusSrcAlpha
 		Pass{
-		//Blend SrcAlpha OneMinusScrAlpha
 		CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag
@@ -106,6 +106,7 @@
 #endif
 #if defined (WATER_SIMPLE)
 	uniform float4 _HorizonColor;
+	uniform float _Alpha;
 #endif
 	sampler2D _BumpMap;
 
@@ -149,7 +150,7 @@
 #if defined(WATER_SIMPLE)
 	half4 water = tex2D(_ReflectiveColor, float2(fresnelFac,fresnelFac));
 	color.rgb = lerp(water.rgb, _HorizonColor.rgb, water.a);
-	color.a = _HorizonColor.a;
+	color.a = _Alpha;
 #endif
 
 	UNITY_APPLY_FOG(i.fogCoord, color);
