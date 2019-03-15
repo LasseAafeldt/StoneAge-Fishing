@@ -516,6 +516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4880452615505850}
+  - component: {fileID: 114251961598873530}
   m_Layer: 0
   m_Name: landmark_pelican
   m_TagString: Untagged
@@ -2751,7 +2752,7 @@ Animator:
   m_GameObject: {fileID: 1908783340465766}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cab6c3162f2033f44847b58ce4ad52c5, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 177e724bc5dace947aac0a53a71327d9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2769,7 +2770,7 @@ Animator:
   m_GameObject: {fileID: 1753081447667108}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cab6c3162f2033f44847b58ce4ad52c5, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 177e724bc5dace947aac0a53a71327d9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2787,7 +2788,7 @@ Animator:
   m_GameObject: {fileID: 1119315413975600}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cab6c3162f2033f44847b58ce4ad52c5, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 177e724bc5dace947aac0a53a71327d9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2796,6 +2797,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114251961598873530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410891791703402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22aa67e0d3e9414aae356648fe9210b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objToCircle: {fileID: 0}
+  speed: 15
+  forwardDirection: 0
 --- !u!137 &137504799580660674
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

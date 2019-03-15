@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-m_EditorVersion: 2018.2.10f1
-=======
-m_EditorVersion: 2018.2.14f1
->>>>>>> End_Scene
+m_EditorVersion: 2018.2.21f1
