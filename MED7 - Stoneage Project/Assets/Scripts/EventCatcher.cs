@@ -11,7 +11,10 @@ public class EventCatcher : MonoBehaviour {
 	bool firstTimeInTorskArea = true;
 	bool firstTimeInEelArea = true;
 
-	GameObject fishingAreaObject;
+    private bool tribeTerritory = false;
+
+
+    GameObject fishingAreaObject;
 
 	bool hasFlint=false;
 
@@ -108,7 +111,7 @@ public class EventCatcher : MonoBehaviour {
 
         }
         //when you enter tribe territory
-        if(other.tag == "tribeTerritory")
+        if(other.tag == "tribeTerritory" && tribeTerritory)
         {
             //partner say something
 			GameManager.singleton.
@@ -168,7 +171,7 @@ public class EventCatcher : MonoBehaviour {
 			GameManager.singleton.PelicanEvent.GetComponentInChildren<orcaEvent>().startOrcaEvent();
             //partner says pelican thing
         }
-        if(other.tag == "tribeTerritory")
+        if(other.tag == "tribeTerritory" && tribeTerritory)
         {
             //partner say something
 			if(GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())

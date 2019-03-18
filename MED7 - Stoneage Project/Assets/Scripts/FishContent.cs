@@ -24,7 +24,8 @@ public class FishContent : MonoBehaviour {
 		if(fish.Count == 0)
 		{
 			Debug.Log("destroying the area");
-			Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
 			GameManager.singleton.boat.GetComponent<EventCatcher>().ExitArea();
 		}
 	}
