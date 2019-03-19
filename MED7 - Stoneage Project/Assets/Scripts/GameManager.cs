@@ -162,7 +162,8 @@ public class GameManager : MonoBehaviour {
         {
             //caughtEel.Add(eel);
             caughtTotal.Add(eel);
-            currentEelAmount++; 
+            currentEelAmount++;
+            Debug.Log("I caught an eel");
             AccumulateFish();
             if(isCountingEel)
             {
@@ -188,6 +189,7 @@ public class GameManager : MonoBehaviour {
             //caughtTorsk.Add(torsk);
             caughtTotal.Add(torsk);
             currentTorskAmount++;
+            Debug.Log("I caught a Torsk");
             AccumulateFish();
             if(isCountingTorsk)
             {
@@ -229,7 +231,7 @@ public class GameManager : MonoBehaviour {
         }
 
         //not sure about this one
-        public void RemoveAnyFish(int amount)
+        /*public void RemoveAnyFish(int amount)
         {
             for (int i = 0; i < amount; i++) 
             {
@@ -253,7 +255,7 @@ public class GameManager : MonoBehaviour {
 
             }
             AccumulateFish();
-        }
+        }*/
         public void StartCountingTorsk()
         {
             isCountingTorsk=true;
@@ -271,8 +273,8 @@ public class GameManager : MonoBehaviour {
         }
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            /*Debug.Log("i am in end scene");
-            Debug.Log("OnSceneLoaded: " + scene.name); */
+            //Debug.Log("i am in end scene");
+            //Debug.Log("OnSceneLoaded: " + scene.name); 
             audio.Play();
             for (int i = 1; i < currentFlatfishAmount+1; i++)
             {

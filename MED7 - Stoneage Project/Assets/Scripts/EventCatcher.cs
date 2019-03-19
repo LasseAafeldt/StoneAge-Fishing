@@ -51,7 +51,7 @@ public class EventCatcher : MonoBehaviour {
 			
 			if(other.tag == "TorskArea" && firstTimeInTorskArea)
 			{
-				//firstTimeInTorskArea = false;
+				firstTimeInTorskArea = false;
 				if(GameManager.singleton.Islinear)
 				{
 					GameManager.singleton.
@@ -67,7 +67,7 @@ public class EventCatcher : MonoBehaviour {
 			}
 			if( other.tag == "EelArea" && firstTimeInEelArea)
 			{
-				//firstTimeInEelArea = false;
+				firstTimeInEelArea = false;
 				if(GameManager.singleton.Islinear)
 				{
 					GameManager.singleton.
@@ -141,7 +141,7 @@ public class EventCatcher : MonoBehaviour {
 		}
 
 		//when the tribe is chasing you to get fish back
-		if(other.tag == "tribeTrigger")
+		/*if(other.tag == "tribeTrigger")
 		{
 			//stop following
 			GameManager.singleton.tribeBoat.GetComponent<TribeController>().SetFollowPlayer(false);
@@ -152,7 +152,7 @@ public class EventCatcher : MonoBehaviour {
 			GameManager.singleton.partner.
 				GetComponent<PartnerSpeech>().PartnerSaysSomething(
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().MeetingTribeCaught);
-		}
+		}*/
 
     }
 

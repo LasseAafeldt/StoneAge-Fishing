@@ -51,7 +51,7 @@ public class playTimer : MonoBehaviour {
         RotateSkybox();
 
         //EnableMiddenCollider();
-
+        IfNotLinear();
         RunOutOfTime();		
         //IfLinearScene();
 	}
@@ -117,7 +117,7 @@ public class playTimer : MonoBehaviour {
 		return timeSpent;
 	}
 
-    void IfLinearScene()
+    void IfNotLinear()
     {
         if (!GameManager.singleton.Islinear)
         {
