@@ -8,7 +8,11 @@ public class EventCatcher : MonoBehaviour {
 	bool canFish;
 	public string fishingArea;
 
-	bool firstTimeInTorskArea = true;
+    [Range(0,10)]
+    public int FishToSucceed = 7;
+
+
+    bool firstTimeInTorskArea = true;
 	bool firstTimeInEelArea = true;
 
     private bool tribeTerritory = false;
@@ -30,12 +34,6 @@ public class EventCatcher : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
     {
-		
-		/*if(other.tag == "pillar1" ||other.tag == "pillar2" ||other.tag == "pillar3"||other.tag == "pillar4"||other.tag == "pillar5")
-		{
-			other.gameObject.SetActive(false);
-		}*/
-		//when you enter a fishing area
 		if(other.tag == "turnAround")
 		{
 			GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
@@ -51,32 +49,16 @@ public class EventCatcher : MonoBehaviour {
 			
 			if(other.tag == "TorskArea" && firstTimeInTorskArea)
 			{
+                //Debug.Log("I have entered the torsk area first time");
 				firstTimeInTorskArea = false;
-				if(GameManager.singleton.Islinear)
-				{
-					GameManager.singleton.
+				GameManager.singleton.
 						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-						GameManager.singleton.partner.GetComponent<PartnerSpeech>().CodEnterArea);
-				}
-				else
-				{
-					GameManager.singleton.
-						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-						GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCodAreaEmergent);
-				}	
+						GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCodAreaEmergent);					
 			}
 			if( other.tag == "EelArea" && firstTimeInEelArea)
 			{
 				firstTimeInEelArea = false;
-				if(GameManager.singleton.Islinear)
-				{
-					GameManager.singleton.
-						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-						GameManager.singleton.partner.GetComponent<PartnerSpeech>().FlaringEel);
-				}
-				else
-				{
-					float time =GameManager.singleton.timer.GetComponent<playTimer>().GetTimeSpent();
+				/*float time =GameManager.singleton.timer.GetComponent<playTimer>().GetTimeSpent();
 					if(time > 0.4)
 					{
 						GameManager.singleton.
@@ -90,21 +72,17 @@ public class EventCatcher : MonoBehaviour {
 							partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 							GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCoastAreaNight);
 					}
-				}
-
+				}*/
 			}
 		}
         //when you go back to ertebølle midden to retrieve tool
 		if(other.tag == "ertebølle")
 		{
-			//GameManager.singleton.hook.GetComponent<SelectTool>().ShowTool();
-			//GameManager.singleton.eeliron.GetComponent<SelectTool>().ShowTool();
-		
 			//change scene
 			CheckForEnding();
 
 		}
-		        //when you destroy a basket
+		/*        //when you destroy a basket
         if(other.tag == "destroyBasket")
         {
             other.GetComponent<Basket>().DestroyBasket();
@@ -117,9 +95,9 @@ public class EventCatcher : MonoBehaviour {
 			GameManager.singleton.
 				partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterTribe);
-        }
+        }*/
         //when enter torsk territory orca event happens 
-        if(other.tag == "torskTerritory")
+        /*if(other.tag == "torskTerritory")
         {
             //partner says orca thing
             GameManager.singleton.orca.GetComponent<orcaEvent>().startOrcaEvent();
@@ -141,7 +119,7 @@ public class EventCatcher : MonoBehaviour {
 		}
 
 		//when the tribe is chasing you to get fish back
-		/*if(other.tag == "tribeTrigger")
+		if(other.tag == "tribeTrigger")
 		{
 			//stop following
 			GameManager.singleton.tribeBoat.GetComponent<TribeController>().SetFollowPlayer(false);
@@ -164,7 +142,7 @@ public class EventCatcher : MonoBehaviour {
             ExitArea();
         }
         //when exit torsk territory pelican event happens 
-        if(other.tag == "pelicanTrigger")
+        /*if(other.tag == "pelicanTrigger")
         {
 			GameManager.singleton.PelicanEvent.SetActive(true);
 			GameManager.singleton.PelicanEvent.transform.SetParent(null);
@@ -187,16 +165,12 @@ public class EventCatcher : MonoBehaviour {
 					partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().ExitTribe);	
 			}
-
-
-
-        }
-
+        }*/
     }
 
 	public void CheckForEnding()
 	{
-		if(GameManager.singleton.GetFishCount() >=7)
+		if(GameManager.singleton.GetFishCount() >=FishToSucceed)
 			{
 				if(hasFlint)
 				{
@@ -237,7 +211,7 @@ public class EventCatcher : MonoBehaviour {
 
 	public void startFishing(string tool)
 	{
-		Debug.Log("trying to fish");
+		//Debug.Log("trying to fish");
 		if(canFish)
 		{
 			if(fishingArea == "TorskArea")

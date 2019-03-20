@@ -4,7 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
-        public static GameManager singleton = null;              //Static instance of GameManager which allows it to be accessed by any other script.                            //Current level number, expressed in game as "Day 1".
+
+        public static GameManager singleton = null;              
+    //Static instance of GameManager which allows it to be accessed by any other script.                            
+    //Current level number, expressed in game as "Day 1".
 
         //instances in the scene
         
@@ -61,9 +64,18 @@ public class GameManager : MonoBehaviour {
         public GameObject basket,tribeBasket;
         public GameObject midden;
 
+    //hidden bools for if fish has been caught in their area
+    [HideInInspector]
+    public bool TorskCaught = false;
+    [HideInInspector]
+    public bool eelCaught = false;
+    [HideInInspector]
+    public bool eelTrapEmptied = false;
+    [HideInInspector]
+    public bool flatFishCaught = false;
 
-        //for change to end scene:
-        AudioSource audio;
+    //for change to end scene:
+    AudioSource audio;
         bool hasFlint = false;
 
         //Awake is always called before any Start functions
@@ -111,32 +123,7 @@ public class GameManager : MonoBehaviour {
             currentPillar = boat;
 
             //what should be turned of initially for the linear condition
-            if(Islinear)
-            {
-                //disable the collider on following game objects
-                foreach(GameObject area in torskArea)
-                {
-                    area.SetActive(false);
-                }
-                foreach(GameObject area in eelArea)
-                {
-                    area.SetActive(false);
-                }
-                foreach(GameObject area in flatFishArea)
-                {
-                    area.SetActive(false);
-                }
-                torskTerritory.GetComponent<Collider>().enabled = false;
-                eelTerritory.GetComponent<Collider>().enabled = false;
-                tribeTerritory.GetComponent<Collider>().enabled = false;
-                //basket.GetComponent<Collider>().enabled = false;
-                tribeBasket.GetComponent<Collider>().enabled = false;
-                torskTerritory2.GetComponent<Collider>().enabled = false;
-
-                //totally disable the following game objects
-
-                tribeBasket.SetActive(false);
-            }
+           
             //what should be turned of initially for both condition
                 try{
                 midden.GetComponent<Collider>().enabled = false;
@@ -152,18 +139,14 @@ public class GameManager : MonoBehaviour {
             Physics.IgnoreLayerCollision(0, 11);
                 
         } 
-        
-        //Update is called every frame.
-        void Update()
-        {
-        }
 
         public void AddEel(GameObject eel)
         {
             //caughtEel.Add(eel);
             caughtTotal.Add(eel);
             currentEelAmount++;
-            Debug.Log("I caught an eel");
+        eelCaught = true;
+            //Debug.Log("I caught an eel");
             AccumulateFish();
             if(isCountingEel)
             {
@@ -189,7 +172,8 @@ public class GameManager : MonoBehaviour {
             //caughtTorsk.Add(torsk);
             caughtTotal.Add(torsk);
             currentTorskAmount++;
-            Debug.Log("I caught a Torsk");
+        TorskCaught = true;
+            //Debug.Log("I caught a Torsk");
             AccumulateFish();
             if(isCountingTorsk)
             {
@@ -213,6 +197,7 @@ public class GameManager : MonoBehaviour {
             //caughtFlatfish.Add(flat);
             caughtTotal.Add(flat);
             currentFlatfishAmount++;
+        flatFishCaught = true;
             AccumulateFish();
         }
 

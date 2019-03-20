@@ -96,7 +96,7 @@ public class PartnerSpeech : MonoBehaviour {
 	void Start () {
 		audio = GetComponent<AudioSource>();
 
-		PartnerSaysSomething(StartofGame);
+		/*PartnerSaysSomething(StartofGame);
 		speech.text = "";
 		if(GameManager.singleton.Islinear)
 		{
@@ -105,7 +105,7 @@ public class PartnerSpeech : MonoBehaviour {
 		else
 		{
 			PartnerSaysSomething(StartofGameEmergent, "");
-		}
+		}*/
 
 	}
 	

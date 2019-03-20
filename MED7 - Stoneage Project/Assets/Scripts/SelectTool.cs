@@ -84,15 +84,17 @@ PartnerAnimator PA;
 		EC.startFishing(tool);
 	}
 
-    #region empty basket Linear
+    #region empty basket 
+    //PA.BasketAnimation is apparently what empties the basket and adds fish to the basket, or well it makes it somehow
+        // transition to a function in PartnerAnimator called BasketAniDone() which takes care of adding and instanciating the fish.
     public void EmptyBasket()
 	{
 		if(tag =="emptyBasket")
 		{
 			PA.BasketAnimation();
-			Debug.Log("emptying basket");
+			Debug.Log("emptying basket for test");
 			GetComponent<Collider>().enabled=false;
-			if(GameManager.singleton.Islinear)
+			/*if(GameManager.singleton.Islinear)
 			{
 				Debug.Log("Linear empty basket");
 				GameManager.singleton.
@@ -107,9 +109,8 @@ PartnerAnimator PA;
 					GameManager.singleton.
 						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 						GameManager.singleton.partner.GetComponent<PartnerSpeech>().FishingTribe);
-				}
-				
-			}
+				}				
+			}*/
 		}
 	}
     #endregion

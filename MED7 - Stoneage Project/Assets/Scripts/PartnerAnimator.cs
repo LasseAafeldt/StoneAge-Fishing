@@ -5,7 +5,7 @@ using UnityEngine;
 public class PartnerAnimator : MonoBehaviour {
 
 
-
+    [HideInInspector]
 	public Animator anim;
 
 	GameObject boat;
@@ -190,19 +190,14 @@ public class PartnerAnimator : MonoBehaviour {
 			Debug.Log("putting fish in basket");
 			//PutEelInBasket();
 			PutEelInBasket(4,true);
-			PutEelInBasket(4,false);
-			PutEelInBasket(4,false);
-			PutEelInBasket(4,false);
+			//PutEelInBasket(4,false);
+			//PutEelInBasket(4,false);
+			//PutEelInBasket(4,false);
 			
 			Debug.Log("putting fish in basket");
 			//PutEelInBasket();
 			PutFlatFishInBasket(2,true);
-			PutFlatFishInBasket(2,false);
-			
-			if(GameManager.singleton.Islinear)
-			{
-				GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().AfterEmptyBasket, "FANG 3 TORSK");
-			}
+			//PutFlatFishInBasket(2,false);
 			Debug.Log("Trap Full");
 			basketFull = false;
 		} else {
@@ -214,10 +209,10 @@ public class PartnerAnimator : MonoBehaviour {
 	public void PutFlatFishInBasket(float amount, bool talk)
 	{
 		GameObject currentFish=null;
-		if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
+		/*if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().MeetingTriibeStoleFish);
-		}
+		}*/
 		if(!GameManager.singleton.Islinear && firstTimeFlatfish && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			firstTimeFlatfish = false;
@@ -238,12 +233,10 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
 					Debug.Log(currentFish);
-
+		            GameManager.singleton.AddFlatFish(currentFish);
 				}
-			}
-			
+			}			
 		}
-		GameManager.singleton.AddFlatFish(currentFish);
 		//GameManager.singleton.AddFlatFish(mostRecentFish);
 		//mostRecentFish = Instantiate(GameManager.singleton.flatFish,boat.transform.position+ new Vector3(0,1,0), boat.transform.rotation, boat.transform);
 		
@@ -253,10 +246,10 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		amount = amount + GameManager.singleton.currentTorskAmount;
 		GameObject currentFish=null;
-		if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
+		/*if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().MeetingTriibeStoleFish);
-		}
+		}*/
 		if(!GameManager.singleton.Islinear && firstTimeCod  && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			firstTimeCod = false;
@@ -278,12 +271,11 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish.SetActive(true);
 					Debug.Log(currentFish);
 					Debug.Log("add torsk to basket");
-
+		            GameManager.singleton.AddTorsk(currentFish);
 				}
 			}
 			
 		}
-		GameManager.singleton.AddTorsk(currentFish);
 		//GameManager.singleton.AddTorsk(mostRecentFish);
 		//mostRecentFish = Instantiate(GameManager.singleton.torsk,boat.transform.position+ new Vector3(0,1,0), boat.transform.rotation, boat.transform);
 	}
@@ -291,10 +283,10 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		amount = amount + GameManager.singleton.currentEelAmount;
 		GameObject currentFish=null;
-		if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
+		/*if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().MeetingTriibeStoleFish);
-		}
+		}*/
 		if(!GameManager.singleton.Islinear && firstTimeEel  && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			firstTimeEel = false;
@@ -316,11 +308,10 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish.SetActive(true);
 					Debug.Log(currentFish);
 					Debug.Log("add eel to basket");
-
+		            GameManager.singleton.AddEel(currentFish);
 				}
 			}
 		}
-		GameManager.singleton.AddEel(currentFish);
 		//mostRecentFish = Instantiate(GameManager.singleton.eel,boat.transform.position + new Vector3(0,1,0), boat.transform.rotation, boat.transform);
 		
 	}

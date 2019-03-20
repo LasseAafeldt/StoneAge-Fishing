@@ -122,7 +122,7 @@ public class playTimer : MonoBehaviour {
         if (!GameManager.singleton.Islinear)
         {
 
-            if (timeSpent <= 0.75 && sixMinLeft)
+            /*if (timeSpent <= 0.75 && sixMinLeft)
             {
                 sixMinLeft = false;
                 GameManager.singleton.partner.
@@ -131,7 +131,7 @@ public class playTimer : MonoBehaviour {
                 GameManager.singleton.partner.
                     GetComponent<PartnerSpeech>().PartnerSaysSomething(
                     GameManager.singleton.partner.GetComponent<PartnerSpeech>().StartofGameEmergent);
-            }
+            }*/
             if (timeSpent <= 0.5 && fourMinLeft)
             {
                 fourMinLeft = false;
@@ -143,9 +143,8 @@ public class playTimer : MonoBehaviour {
             if (timeSpent <= 0.4 && twoMinLeft)
             {
                 twoMinLeft = false;
-                GameManager.singleton.partner.
-                    GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time2MinLeft);
+                //GameManager.singleton.partner.
+                    //GetComponent<PartnerSpeech>().PartnerSaysSomething(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time2MinLeft);
                 GameManager.singleton.midden.GetComponent<Collider>().enabled = true;
             }
             //when there is one minutes left

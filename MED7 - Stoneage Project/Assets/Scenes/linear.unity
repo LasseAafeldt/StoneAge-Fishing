@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16140115, g: 0.15698776, b: 0.15100044, a: 1}
+  m_IndirectSpecularColor: {r: 0.15806109, g: 0.15382636, b: 0.14805502, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1610,8 +1610,8 @@ GameObject:
   - component: {fileID: 84974648}
   - component: {fileID: 84974647}
   - component: {fileID: 84974646}
-  - component: {fileID: 84974645}
   - component: {fileID: 84974644}
+  - component: {fileID: 84974645}
   m_Layer: 0
   m_Name: BoatContainer
   m_TagString: boat
@@ -1648,6 +1648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishingArea: 
+  FishToSucceed: 7
 --- !u!65 &84974646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5627,8 +5628,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372945721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: -19.3, z: 478}
-  m_LocalScale: {x: 231.1, y: 22.24, z: 235.6}
+  m_LocalPosition: {x: 16, y: -9.66, z: 478}
+  m_LocalScale: {x: 231.1, y: 6, z: 235.6}
   m_Children: []
   m_Father: {fileID: 2001498335}
   m_RootOrder: 8
@@ -17198,6 +17199,10 @@ MonoBehaviour:
   basket: {fileID: 0}
   tribeBasket: {fileID: 1008707520}
   midden: {fileID: 83509190}
+  TorskCaught: 0
+  eelCaught: 0
+  eelTrapEmptied: 0
+  flatFishCaught: 0
 --- !u!82 &1044151179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17381,6 +17386,10 @@ MonoBehaviour:
   eel: {fileID: 2047598643}
   eelTrap: {fileID: 647167070}
   start: {fileID: 410814246}
+  timeSinceLastGuidance: 0
+  guidanceTimerThreshold: 20
+  areaTimer: 0
+  areaTimerThreshold: 20
 --- !u!54 &1052138934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21048,53 +21057,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
   m_IsPrefabAsset: 0
---- !u!1 &1256992326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100040, guid: 68d1d0c305869ec47858ee33c51f7b2b,
-    type: 3}
-  m_PrefabInternal: {fileID: 112122350}
---- !u!114 &1256992328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256992326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1256992329}
-          m_MethodName: EmptyBasket
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
---- !u!114 &1256992329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256992326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07db35c876a26654a871d3089f68f33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsTribeBasket: 0
 --- !u!1 &1262996723
 GameObject:
   m_ObjectHideFlags: 0
