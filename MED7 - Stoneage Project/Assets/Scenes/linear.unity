@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15210256, g: 0.14814067, b: 0.14271179, a: 1}
+  m_IndirectSpecularColor: {r: 0.16155061, g: 0.15712145, b: 0.15109113, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: d2b3549b91d9e3c45945c1d0fde7dce0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 154.1
+      value: 187.23
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: d2b3549b91d9e3c45945c1d0fde7dce0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -168,9 +168,72 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: dc0dcd726adfd7f40a28c952a7d821fe, type: 2}
+    - target: {fileID: 100008, guid: d2b3549b91d9e3c45945c1d0fde7dce0, type: 3}
+      propertyPath: m_TagString
+      value: EndGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2b3549b91d9e3c45945c1d0fde7dce0, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1690524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: d2b3549b91d9e3c45945c1d0fde7dce0,
+    type: 3}
+  m_PrefabInternal: {fileID: 1690523}
+--- !u!65 &1690525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.87, z: 1}
+  m_Center: {x: 0, y: 0.92, z: 0}
+--- !u!114 &1690526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1690527}
+          m_MethodName: EndGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &1690527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07db35c876a26654a871d3089f68f33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTribeBasket: 0
 --- !u!1 &2010037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,9 +1823,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7049fa0f88a40488ee1d7cbfb7e23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 900
-  rotationSpeed: 0.35
-  rotationDeadzone: 5
+  speed: 1200
+  rotationSpeed: 0.6
+  rotationDeadzone: 8
   ignoreCollision:
   - {fileID: 2054955769}
   - {fileID: 0}
@@ -21711,53 +21774,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
   m_IsPrefabAsset: 0
---- !u!1 &1256992326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100040, guid: 68d1d0c305869ec47858ee33c51f7b2b,
-    type: 3}
-  m_PrefabInternal: {fileID: 112122350}
---- !u!114 &1256992328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256992326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1256992329}
-          m_MethodName: EmptyBasket
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
---- !u!114 &1256992329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1256992326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07db35c876a26654a871d3089f68f33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsTribeBasket: 0
 --- !u!1 &1262996723
 GameObject:
   m_ObjectHideFlags: 0
