@@ -125,7 +125,8 @@ public class PartnerAnimator : MonoBehaviour {
 		{
 			codCaught();
 			PutTorskInBasket(1);
-		} else {
+            GameManager.singleton.TorskCaught = true;
+        } else {
 			noCatch();
 		}
 
@@ -155,10 +156,12 @@ public class PartnerAnimator : MonoBehaviour {
 			{
 				
 				PutEelInBasket(1,true);
+                GameManager.singleton.eelCaught = true;
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().tag == "FlatfishArea")
 			{
 				PutFlatFishInBasket(1,true);
+                GameManager.singleton.flatFishCaught = true;
 			}
 
 		} else {
@@ -189,6 +192,9 @@ public class PartnerAnimator : MonoBehaviour {
 			
 			Debug.Log("Trap Full");
 			basketFull = false;
+
+            GameManager.singleton.eelTrapEmptied = true;
+
             GameManager.singleton.canMove = true;
             Debug.Log("i can move again");
         } else {

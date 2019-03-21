@@ -12,6 +12,7 @@ public class GuidanceSounds : MonoBehaviour {
     public Collider Torsk;
     public Collider eel;
     public Collider eelTrap;
+    public Collider flatFish;
     public Collider start;
 
     public float timeSinceLastGuidance;
@@ -22,9 +23,9 @@ public class GuidanceSounds : MonoBehaviour {
     string inArea = "none";
     string previousArea = "different none";
 
-    bool torskHasPlayed = false;
+    /*bool torskHasPlayed = false;
     bool eelHasPlayed = false;
-    bool eeltrapHasPlayed = false;
+    bool eeltrapHasPlayed = false;*/
     bool startHasPlayed = false;
 
     PartnerSpeech partnerSpeech;
@@ -51,7 +52,7 @@ public class GuidanceSounds : MonoBehaviour {
         {
             playGuidanceSound();
         }
-        timeSinceLastGuidance += Time.deltaTime;
+        //Debug.Log("Previous area: " + previousArea + " = Current area: " + inArea);
         if(previousArea == inArea)
         {
             areaTimer += Time.deltaTime;
@@ -60,6 +61,7 @@ public class GuidanceSounds : MonoBehaviour {
                 detailedAreaSound();
             }
         }
+        timeSinceLastGuidance += Time.deltaTime;
     }
     
     // trigger bakke sound when closest to torsk fishing
@@ -80,26 +82,33 @@ public class GuidanceSounds : MonoBehaviour {
         //reset the timer
         timeSinceLastGuidance = 0f;
         GameObject closestArea = checkDistance();
-        Debug.Log("Closest area: " + closestArea);
 
+        bool lvl1GuidanceSound = true;
         //don't play the first sound again if they are still closest to the same area.
         if (closestArea.tag == inArea)
         {
-            return;
+            Debug.Log("Closest area is unchanged");
+            lvl1GuidanceSound = false;
         }
+        Debug.Log("Closest area: " + closestArea);
         //check which area is the closest
-        if(closestArea.tag == "TorskArea")
+        if(closestArea.tag == "TorskArea" && lvl1GuidanceSound && !GameManager.singleton.TorskCaught)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.Bakke);
         }
-        if (closestArea.tag == "EelArea")
+        if (closestArea.tag == "EelArea" && lvl1GuidanceSound && !GameManager.singleton.eelCaught)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.Fugle);
         }
-        if (closestArea.tag == "emptyBasket")
+        if (closestArea.tag == "emptyBasket" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.Ruse);
         }
+        if (closestArea.tag == "FlatfishArea" && lvl1GuidanceSound && !GameManager.singleton.flatFishCaught)
+        {
+            Debug.Log("the flatfish area is over there... Sound is suppose to play");
+        }
+
         updateArea(closestArea);
     }
 
@@ -123,6 +132,11 @@ public class GuidanceSounds : MonoBehaviour {
             shortestDistance = Vector3.Distance(playerPos.position, eelTrap.transform.position);
             closestArea = eelTrap.gameObject;
         }
+        if (shortestDistance > Vector3.Distance(playerPos.position, flatFish.transform.position))
+        {
+            shortestDistance = Vector3.Distance(playerPos.position, flatFish.transform.position);
+            closestArea = flatFish.gameObject;
+        }
 
         return closestArea;
     }
@@ -130,17 +144,21 @@ public class GuidanceSounds : MonoBehaviour {
     void detailedAreaSound()
     {
         areaTimer = 0f;
-        if(inArea == "TorskArea")
+        if(inArea == "TorskArea" && !GameManager.singleton.TorskCaught)
         {
             Debug.Log("Playing detail area sund Torsk");
         }
-        if (inArea == "EelArea")
+        if (inArea == "EelArea" && !GameManager.singleton.eelCaught)
         {
             Debug.Log("Playing detail area sund Eel");
         }
-        if (inArea == "emptyBasket")
+        if (inArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
         {
             Debug.Log("Playing detail area sund EelTrap");
+        }
+        if (inArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
+        {
+            Debug.Log("Playing detail area sund Flatfish");
         }
     }
 

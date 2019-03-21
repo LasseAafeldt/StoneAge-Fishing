@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16242409, g: 0.1579636, b: 0.15189987, a: 1}
+  m_IndirectSpecularColor: {r: 0.15210256, g: 0.14814067, b: 0.14271179, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17903,11 +17903,12 @@ MonoBehaviour:
   Torsk: {fileID: 372945722}
   eel: {fileID: 2047598643}
   eelTrap: {fileID: 647167070}
+  flatFish: {fileID: 1616307266}
   start: {fileID: 410814246}
   timeSinceLastGuidance: 0
   guidanceTimerThreshold: 20
   areaTimer: 0
-  areaTimerThreshold: 20
+  areaTimerThreshold: 10
 --- !u!54 &1052138934
 Rigidbody:
   m_ObjectHideFlags: 0

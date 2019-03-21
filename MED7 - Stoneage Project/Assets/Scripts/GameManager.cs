@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour {
             //caughtEel.Add(eel);
             caughtTotal.Add(eel);
             currentEelAmount++;
-        eelCaught = true;
+        //eelCaught = true;
             //Debug.Log("I caught an eel");
             AccumulateFish();
             if(isCountingEel)
@@ -165,20 +165,12 @@ public class GameManager : MonoBehaviour {
             //caughtTorsk.Add(torsk);
             caughtTotal.Add(torsk);
             currentTorskAmount++;
-        TorskCaught = true;
+        //TorskCaught = true;
             //Debug.Log("I caught a Torsk");
             AccumulateFish();
             if(isCountingTorsk)
             {
-                if(currentTorskAmount-startTorskAmount==1)
-                {
-                    //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().CodTwoMore, "FANG 2 TORSK");
-                }
-                else if(currentTorskAmount-startTorskAmount==2)
-                {
-                    //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().CodOneMore, "FANG 1 TORSK");
-                }
-                else if(currentTorskAmount-startTorskAmount==3)
+                if(currentTorskAmount-startTorskAmount==3)
                 {
                     //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().AfterCodCatch, " BYT FISK FOR FLINT");
                     isCountingTorsk=false;
@@ -190,7 +182,7 @@ public class GameManager : MonoBehaviour {
             //caughtFlatfish.Add(flat);
             caughtTotal.Add(flat);
             currentFlatfishAmount++;
-        flatFishCaught = true;
+        //flatFishCaught = true;
             AccumulateFish();
         }
 
