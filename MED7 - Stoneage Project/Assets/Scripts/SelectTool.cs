@@ -11,6 +11,7 @@ PartnerAnimator PA;
 
 	string tool ="";
 
+    private bool endGame = false;
 	// Use this for initialization
 	void Start () {
 		EC = GameManager.singleton.boat.GetComponent<EventCatcher>();
@@ -115,6 +116,24 @@ PartnerAnimator PA;
 			}*/
 		}
 	}
+
+    public void EndGame()
+    {
+        if (tag == "EndGame")
+        {
+            if (endGame)
+            {
+                Debug.Log("Play is moving on to end scene");
+                EC.CheckForEnding();
+                return;
+            }
+            Debug.Log("player is attempting to end game");
+            //play voiceline "are you sure you want to end"
+            endGame = true;
+
+        }
+    }
+
     #endregion
     void HideTool()
 	{

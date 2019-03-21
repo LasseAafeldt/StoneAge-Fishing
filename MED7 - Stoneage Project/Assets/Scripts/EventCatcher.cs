@@ -78,8 +78,9 @@ public class EventCatcher : MonoBehaviour {
         //when you go back to ertebølle midden to retrieve tool
 		if(other.tag == "ertebølle")
 		{
-			//change scene
-			CheckForEnding();
+            //change scene
+            //CheckForEnding();
+            Debug.Log("I have sailed into the collider which previously caused the game to load the endscene");
 
 		}
 		/*        //when you destroy a basket
