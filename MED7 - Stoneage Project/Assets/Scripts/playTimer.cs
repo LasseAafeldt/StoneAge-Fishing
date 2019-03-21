@@ -135,9 +135,9 @@ public class playTimer : MonoBehaviour {
             if (timeSpent <= 0.5 && fourMinLeft)
             {
                 fourMinLeft = false;
-                GameManager.singleton.partner.
+                /*GameManager.singleton.partner.
                     GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().DarkSoon);
+                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().DarkSoon);*/
             }
             //when there is two minutes left
             if (timeSpent <= 0.4 && twoMinLeft)

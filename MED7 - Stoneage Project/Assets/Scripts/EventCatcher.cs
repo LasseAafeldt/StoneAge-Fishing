@@ -51,9 +51,9 @@ public class EventCatcher : MonoBehaviour {
 			{
                 //Debug.Log("I have entered the torsk area first time");
 				firstTimeInTorskArea = false;
-				GameManager.singleton.
+				/*GameManager.singleton.
 						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-						GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCodAreaEmergent);					
+						GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCodAreaEmergent);*/					
 			}
 			if( other.tag == "EelArea" && firstTimeInEelArea)
 			{
@@ -171,35 +171,17 @@ public class EventCatcher : MonoBehaviour {
 	public void CheckForEnding()
 	{
 		if(GameManager.singleton.GetFishCount() >=FishToSucceed)
-			{
-				if(hasFlint)
-				{
-					//enought fish 7 and flint
-					GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome4Emergent, hasFlint);
-					SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-				}
-				else
-				{
-					//enough fish 7
-					GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome3Emergent, hasFlint);
-					SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-				}
+			{				
+				//enough fish 7
+				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome3Emergent, hasFlint);
+				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
+				
 			}
 			else 
-			{
-				if(hasFlint)
-				{
-					//not enough fish and has flint
-					GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome5Emergent, hasFlint);
-					SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-				}
-				else
-				{
-					//not enough fish 7
-					GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome1Emergent, hasFlint);
-					SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-
-				}
+			{				
+				//not enough fish 7
+				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome1Emergent, hasFlint);
+				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}
 	}
 
@@ -283,19 +265,6 @@ public class EventCatcher : MonoBehaviour {
 			Instantiate(GameManager.singleton.flint,GameObject.FindGameObjectWithTag("basket").transform.position-1.5f*transform.forward, transform.rotation,GameObject.FindGameObjectWithTag("basket").transform);
 			hasFlint = true;
 			DisableTrading();
-
-			if(GameManager.singleton.Islinear)
-			{
-				GameManager.singleton.partner.
-					GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().AfterTradingFlint, "FANG 3 ÅL");
-			}
-			else
-			{
-				GameManager.singleton.partner.
-					GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().MeeetingTribeTrade);
-			}
 		}
 
 	}

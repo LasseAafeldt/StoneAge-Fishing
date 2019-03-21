@@ -153,15 +153,7 @@ public class GameManager : MonoBehaviour {
                 Debug.Log(startEelAmount + " - " + currentEelAmount);
                 if(currentEelAmount-startEelAmount==1)
                 {
-                    partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().Catch2Eel, "FANG 2 ÅL");
-                }
-                else if(currentEelAmount-startEelAmount==2)
-                {
-                    partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().Catch1Eel, "FANG 1 ÅL");
-                }
-                else if(currentEelAmount-startEelAmount>=3)
-                {
-                    partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().AfterFlaringEel, "TAG TILBAGE TIL MØDDINGEN");
+                 
                     isCountingEel=false;
                 }
             }
@@ -179,15 +171,15 @@ public class GameManager : MonoBehaviour {
             {
                 if(currentTorskAmount-startTorskAmount==1)
                 {
-                    partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().CodTwoMore, "FANG 2 TORSK");
+                    //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().CodTwoMore, "FANG 2 TORSK");
                 }
                 else if(currentTorskAmount-startTorskAmount==2)
                 {
-                    partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().CodOneMore, "FANG 1 TORSK");
+                    //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().CodOneMore, "FANG 1 TORSK");
                 }
                 else if(currentTorskAmount-startTorskAmount==3)
                 {
-                    partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().AfterCodCatch, " BYT FISK FOR FLINT");
+                    //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().AfterCodCatch, " BYT FISK FOR FLINT");
                     isCountingTorsk=false;
                 }
             }

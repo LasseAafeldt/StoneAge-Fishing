@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14711362, g: 0.14333618, b: 0.13817021, a: 1}
+  m_IndirectSpecularColor: {r: 0.14648446, g: 0.14274079, b: 0.13758913, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1778,6 +1778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishingArea: 
+  FishToSucceed: 7
 --- !u!65 &84974646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2773,7 +2774,7 @@ Transform:
   m_LocalScale: {x: 0.89052147, y: 0.82586, z: 0.97930145}
   m_Children: []
   m_Father: {fileID: 322538303}
-  m_RootOrder: 58
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: -83.777, z: 0}
 --- !u!4 &170429123 stripped
 Transform:
@@ -5191,7 +5192,6 @@ Transform:
   - {fileID: 1554480808}
   - {fileID: 1836751666}
   - {fileID: 250766451}
-  - {fileID: 607809108}
   - {fileID: 165348739}
   m_Father: {fileID: 0}
   m_RootOrder: 28
@@ -5835,8 +5835,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372945721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: -19.3, z: 478}
-  m_LocalScale: {x: 231.1, y: 22.24, z: 235.6}
+  m_LocalPosition: {x: 16, y: -9.6, z: 478}
+  m_LocalScale: {x: 231.1, y: 6, z: 235.6}
   m_Children: []
   m_Father: {fileID: 2001498335}
   m_RootOrder: 8
@@ -6512,6 +6512,7 @@ Transform:
   - {fileID: 230579034}
   - {fileID: 500677262}
   - {fileID: 1120808271}
+  - {fileID: 607809108}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17715,6 +17716,10 @@ MonoBehaviour:
   basket: {fileID: 0}
   tribeBasket: {fileID: 1008707520}
   midden: {fileID: 83509190}
+  TorskCaught: 0
+  eelCaught: 0
+  eelTrapEmptied: 0
+  flatFishCaught: 0
 --- !u!82 &1044151179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17898,6 +17903,10 @@ MonoBehaviour:
   eel: {fileID: 2047598643}
   eelTrap: {fileID: 647167070}
   start: {fileID: 410814246}
+  timeSinceLastGuidance: 0
+  guidanceTimerThreshold: 40
+  areaTimer: 0
+  areaTimerThreshold: 20
 --- !u!54 &1052138934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18224,19 +18233,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 322538303}
+    m_TransformParent: {fileID: 400522076}
     m_Modifications:
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 93.5
+      value: -103.1169
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.6800003
+      value: 4.407526
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 407.2
+      value: -161.4888
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalRotation.x
@@ -18244,7 +18253,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.66768193
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalRotation.z
@@ -18252,11 +18261,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7444467
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
       propertyPath: m_RootOrder
-      value: 57
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724825349252830, guid: c788a8937102c794a8715c17c5977655, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c788a8937102c794a8715c17c5977655, type: 2}
@@ -23956,67 +23977,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9579d19d39fc8fd4b9f66f5ab83adac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartofGameLinear: {fileID: 8300000, guid: 372debca0d13cb647b21ddcb2c59d7f3, type: 3}
-  AfterEmptyBasket: {fileID: 8300000, guid: 997728307c2e3a44b8b9e069c85332a8, type: 3}
-  AfterCodCatch: {fileID: 8300000, guid: 3dfd14fa0e59e8745b910ca822551f18, type: 3}
-  AfterTradingFlint: {fileID: 8300000, guid: 590499f61421f1740b16650b0de8eca9, type: 3}
-  AfterFlaringEel: {fileID: 8300000, guid: 62d5d85c3c50fe54abb747064ace974f, type: 3}
-  CodEnterArea: {fileID: 8300000, guid: 2d0a940c6c4fbe4458afdaf8b3b940c2, type: 3}
-  CodOneMore: {fileID: 8300000, guid: daaa0597a27a7844693847fa6e35968d, type: 3}
-  CodTwoMore: {fileID: 8300000, guid: 1c3fcdf6435ca5047a7d22b4da8a933b, type: 3}
-  EmptyBasket: {fileID: 8300000, guid: 46714c57ca46dde478786c90defcb1b2, type: 3}
-  FlaringEel: {fileID: 8300000, guid: d139ab7dbbb498045a6bfdc64eb8a0f2, type: 3}
-  NotThatWay: {fileID: 8300000, guid: f1e01015a347af8418a19c145c8f749e, type: 3}
-  OtherTribeSpotTrade: {fileID: 8300000, guid: 559428f7d3b1aae42981314d6ff83a7b, type: 3}
-  Outcome1Linear: {fileID: 8300000, guid: d00f2dd5cb4890843bb165fb8ef289f5, type: 3}
-  Outcome2Linear: {fileID: 8300000, guid: c832b1605396b794ca22ca4287ec39bd, type: 3}
-  StartofGameEmergent: {fileID: 8300000, guid: fe354cdcd325ab34f89c9ebdaa4c4a3f, type: 3}
-  CheckBasketFish: {fileID: 8300000, guid: baaad88071b1f2b4587d49a3ddb82967, type: 3}
-  CheckBasketNoFish: {fileID: 8300000, guid: c088e1819f0af794d8074d27b21e57de, type: 3}
-  EnterCodAreaEmergent: {fileID: 8300000, guid: b5bfe167d14acb34d80c387dd162f617,
-    type: 3}
-  EnterCoastAreaDay: {fileID: 8300000, guid: b23b84ffe11877c4cb2db6117c803bef, type: 3}
-  EnterCoastAreaNight: {fileID: 8300000, guid: 25f339f2e3557d34490c3e3949d80b7a, type: 3}
-  EnterTribe: {fileID: 8300000, guid: 7247fa11eb375b04a887e360454cf5fb, type: 3}
-  ExitTribe: {fileID: 8300000, guid: 93c00a1e87ddf414c8d16cef22043826, type: 3}
-  FishingTribe: {fileID: 8300000, guid: 46e08aecd67ee6d4abf9858bf6fcbef8, type: 3}
-  MeetingTribeCaught: {fileID: 8300000, guid: 1290c3e20ebe7a14995c097bc6a5a16c, type: 3}
-  MeetingTribeEscaped: {fileID: 8300000, guid: 66bec441aaf158d4b8070c30207dc493, type: 3}
-  MeetingTribeSpotTrade: {fileID: 8300000, guid: e4804072dafb4b04ba42dbfef1a844a3,
-    type: 3}
-  MeetingTriibeStoleFish: {fileID: 8300000, guid: 41f4b44f92731d14eb7aa1eb6c0b87bd,
-    type: 3}
-  MeeetingTribeTrade: {fileID: 8300000, guid: 944d7126682681e4c80cedc21128e2e8, type: 3}
-  FirstTimeEel: {fileID: 8300000, guid: 1f1f9b7fa9a5f6d43bc7eba45ed1be45, type: 3}
-  FirstTimeCod: {fileID: 8300000, guid: a48f13c4d1e334749a203214f633182e, type: 3}
-  FirstTimeFlatFish: {fileID: 8300000, guid: 0764d10e27248a440aef53dd93091067, type: 3}
   SealAppearsEmergent: {fileID: 8300000, guid: 7803ace2abce06e42a1b07f227688fe8, type: 3}
   Time1MinLeft: {fileID: 8300000, guid: 8eacd012c123d4248a3f5c7b0c8b3e6d, type: 3}
-  Time2MinLeft: {fileID: 8300000, guid: a8a2d7eb11ec04c469679a9f7a430e62, type: 3}
   Outcome1Emergent: {fileID: 8300000, guid: 14ffdf6a579c3e842a543f8646759ee6, type: 3}
   Outcome2Emergent: {fileID: 8300000, guid: 237b0c3e6f633f64cb3b3ae46849b3d4, type: 3}
   Outcome3Emergent: {fileID: 8300000, guid: 708cb3071a016cf46a2cb539b5a49611, type: 3}
-  Outcome4Emergent: {fileID: 8300000, guid: 67efe3bea04d13a4496d9ca6e7746efe, type: 3}
-  Outcome5Emergent: {fileID: 8300000, guid: a896bbd9251816949876b7e20c30e48e, type: 3}
   OrcaAppears: {fileID: 8300000, guid: c6dde38a1972ff54a9ee8ff7b350f397, type: 3}
   PelicanAppears: {fileID: 8300000, guid: 986da58ed6190584ba2e33eecd2f19af, type: 3}
-  SealAppears: {fileID: 8300000, guid: 213ea1c1cf855ea4d8885c6c4ff73500, type: 3}
-  StartofGame: {fileID: 8300000, guid: 7e0e4eacf1d79b24ea411eea4dd4c151, type: 3}
-  ThisWay1: {fileID: 8300000, guid: e825cbd3cff66ff439d178d4c3922afd, type: 3}
-  ThisWay2: {fileID: 8300000, guid: 7197501e623c4b84e97c80144b79cc70, type: 3}
-  AnotherCod: {fileID: 8300000, guid: 7b5a13a8d84e6e2418b6d81f38f02495, type: 3}
-  AnotherEel: {fileID: 8300000, guid: 9bb1ef54ac8744c44991284aec90801d, type: 3}
-  AnotherFlatfish: {fileID: 8300000, guid: 32b5b7eb11385a54ba539d9ca4af530f, type: 3}
-  Catch1Eel: {fileID: 8300000, guid: 3b1cfefc33fd0a34f993b2defbc47f10, type: 3}
-  Catch2Eel: {fileID: 8300000, guid: 0ccd913880019494c9afbb82b510b9a2, type: 3}
-  Catch3Eel: {fileID: 8300000, guid: d88ee5a031dcea843ade8a620fa78813, type: 3}
-  DarkSoon: {fileID: 8300000, guid: 70d31af58cd00be488e7171a40990be0, type: 3}
-  GoSomewhereElse: {fileID: 8300000, guid: cb54a043131f84a45bc97bd9eaf5a581, type: 3}
   NoFurther: {fileID: 8300000, guid: 638a4cabfbc36654f811e446f9475023, type: 3}
   NoIron4CodTryHook: {fileID: 8300000, guid: 652156da801b6c64ca77d8be0ba6fbe1, type: 3}
   NoHook4CodTryIron: {fileID: 8300000, guid: 53b159d87a6102b42bff9b1f0e887a0c, type: 3}
   NotEnoughFishHere: {fileID: 8300000, guid: 1cc39e19d26b20f4aabd68f3d88c4078, type: 3}
-  WeNeedFish: {fileID: 8300000, guid: 60bd629483cb56b43b8246f0bbfa7147, type: 3}
   Bakke: {fileID: 8300000, guid: d1420f10735009944857211375d62960, type: 3}
   Fugle: {fileID: 8300000, guid: ffac6611931bf8b49844a631a7cb4ba2, type: 3}
   Ruse: {fileID: 8300000, guid: 03ac6bd3cf4095e498e91342edee4a9c, type: 3}
@@ -25027,64 +24998,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9579d19d39fc8fd4b9f66f5ab83adac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartofGameLinear: {fileID: 0}
-  AfterEmptyBasket: {fileID: 0}
-  AfterCodCatch: {fileID: 0}
-  AfterTradingFlint: {fileID: 0}
-  AfterFlaringEel: {fileID: 0}
-  CodEnterArea: {fileID: 0}
-  CodOneMore: {fileID: 0}
-  CodTwoMore: {fileID: 0}
-  EmptyBasket: {fileID: 0}
-  FlaringEel: {fileID: 0}
-  NotThatWay: {fileID: 0}
-  OtherTribeSpotTrade: {fileID: 0}
-  Outcome1Linear: {fileID: 0}
-  Outcome2Linear: {fileID: 0}
-  StartofGameEmergent: {fileID: 0}
-  CheckBasketFish: {fileID: 0}
-  CheckBasketNoFish: {fileID: 0}
-  EnterCodAreaEmergent: {fileID: 0}
-  EnterCoastAreaDay: {fileID: 0}
-  EnterCoastAreaNight: {fileID: 0}
-  EnterTribe: {fileID: 0}
-  ExitTribe: {fileID: 0}
-  FishingTribe: {fileID: 0}
-  MeetingTribeCaught: {fileID: 0}
-  MeetingTribeEscaped: {fileID: 0}
-  MeetingTribeSpotTrade: {fileID: 0}
-  MeetingTriibeStoleFish: {fileID: 0}
-  MeeetingTribeTrade: {fileID: 0}
-  FirstTimeEel: {fileID: 0}
-  FirstTimeCod: {fileID: 0}
-  FirstTimeFlatFish: {fileID: 0}
   SealAppearsEmergent: {fileID: 0}
   Time1MinLeft: {fileID: 0}
-  Time2MinLeft: {fileID: 0}
   Outcome1Emergent: {fileID: 0}
   Outcome2Emergent: {fileID: 0}
   Outcome3Emergent: {fileID: 0}
-  Outcome4Emergent: {fileID: 0}
-  Outcome5Emergent: {fileID: 0}
   OrcaAppears: {fileID: 0}
   PelicanAppears: {fileID: 0}
-  SealAppears: {fileID: 0}
-  StartofGame: {fileID: 0}
-  ThisWay1: {fileID: 0}
-  ThisWay2: {fileID: 0}
-  AnotherCod: {fileID: 0}
-  AnotherEel: {fileID: 0}
-  AnotherFlatfish: {fileID: 0}
-  Catch1Eel: {fileID: 0}
-  Catch2Eel: {fileID: 0}
-  Catch3Eel: {fileID: 0}
-  DarkSoon: {fileID: 0}
-  GoSomewhereElse: {fileID: 0}
   NoFurther: {fileID: 0}
   NoIron4CodTryHook: {fileID: 0}
   NoHook4CodTryIron: {fileID: 0}
   NotEnoughFishHere: {fileID: 0}
-  WeNeedFish: {fileID: 0}
   Bakke: {fileID: 0}
   Fugle: {fileID: 0}
   Ruse: {fileID: 0}
