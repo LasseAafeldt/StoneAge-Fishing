@@ -91,8 +91,10 @@ PartnerAnimator PA;
 	{
 		if(tag =="emptyBasket")
 		{
+            GameManager.singleton.canMove = false;
+            Debug.Log("I can't move now");
 			PA.BasketAnimation();
-			Debug.Log("emptying basket for test");
+			//Debug.Log("emptying basket for test");
 			GetComponent<Collider>().enabled=false;
 			/*if(GameManager.singleton.Islinear)
 			{

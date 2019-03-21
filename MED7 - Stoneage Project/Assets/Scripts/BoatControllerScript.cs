@@ -18,67 +18,14 @@ public class BoatControllerScript : MonoBehaviour
 
     private bool outOfBounds = false;
 
-
-
     // Update is called once per frame
     void Update()
     {
-        //Movement();
-        //TestSteer();
-
-        BoatMovement();
+        if (GameManager.singleton.canMove)
+        {
+            BoatMovement();
+        }
     }
-    #region Force turn around
-    /*
-	void OnTriggerEnter(Collider other)
-    {
-		if(other.tag == "Bounds")
-		{
-			outOfBounds = true;
-			StartCoroutine(forceMove());
-			Debug.Log("You're out of bounds!!!");
-		}
-    }
-
-	void OnTriggerExit(Collider other)
-	{
-		if(other.tag == "Bounds")
-		{
-			outOfBounds = false;
-			Debug.Log("You're back in bounds!");
-		}
-	} 
-    */
-    #endregion
-
-    #region Obsolete controllers
-    /*
-    void TestSteer () {
-		if(!outOfBounds)
-		{
-			horizontalInput = Input.GetAxis("Horizontal");
-            //Debug.Log("Horizontal = " + horizontalInput);
-			steerFactor = Mathf.Lerp(steerFactor, horizontalInput, Time.deltaTime);
-            //steerFactor = Mathf.smo
-			transform.Rotate(0.0f, steerFactor, 0.0f);
-		}
-	}
-	void Movement () {
-		verticalInput = Input.GetAxis("Vertical");
-        //Debug.Log("Vertical = " + verticalInput);
-		if(Input.GetAxis("Vertical") != 0 && !outOfBounds)
-		{
-			float sinusoid = (Mathf.Sin(Time.time * 2) + 1) / 2;
-			if(sinusoid < 0.2f)
-			{
-				sinusoid = 0.2f;
-			}
-			GetComponent<Rigidbody>().AddForce(transform.forward * speed * sinusoid);
-			//Debug.Log(sinusoid);
-		}
-	}
-    */
-    #endregion
 
     public void BoatMovement()
     {

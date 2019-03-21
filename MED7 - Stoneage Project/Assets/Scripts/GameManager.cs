@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-        public static GameManager singleton = null;              
+        public static GameManager singleton = null;
     //Static instance of GameManager which allows it to be accessed by any other script.                            
     //Current level number, expressed in game as "Day 1".
 
+    public bool canMove = true;
         //instances in the scene
         
         public GameObject timer;

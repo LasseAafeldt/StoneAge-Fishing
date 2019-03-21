@@ -8,7 +8,10 @@ public class PartnerAnimator : MonoBehaviour {
     [HideInInspector]
 	public Animator anim;
 
-	GameObject boat;
+    public int EelsInTrap = 3;
+    public int FlatFishInTrap = 1;
+
+    GameObject boat;
 
 	GameObject mostRecentFish;
 
@@ -31,6 +34,8 @@ public class PartnerAnimator : MonoBehaviour {
 	public void HookAnimation()
 	{
 		anim.SetTrigger("hookFishing");
+        GameManager.singleton.canMove = false;
+        Debug.Log("I can't move anymore");
 		GameManager.singleton.paddle.SetActive(false);
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position - 0.75f*transform.up;
 	}
@@ -40,7 +45,9 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.paddle.SetActive(false);
 		GameManager.singleton.aniEelIron.SetActive(true);
 		GameManager.singleton.aniTorch.SetActive(true);
-	}
+        GameManager.singleton.canMove = false;
+        Debug.Log("I can't move anymore");
+    }
 
 	public void BasketAnimation()
 	{
@@ -57,6 +64,7 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		
 		anim.SetTrigger("trapFull");
+        
 	}
 
 	public void StartTalking()
@@ -71,18 +79,23 @@ public class PartnerAnimator : MonoBehaviour {
 	public void codCaught()
 	{
 		anim.SetTrigger("codCaught");
+        GameManager.singleton.canMove = true;
+        Debug.Log("I can move again");
 	}
 
 	public void eelCaught()
 	{
 		anim.SetTrigger("eelCaught");
-	}
+        GameManager.singleton.canMove = true;
+        Debug.Log("I can move again");
+    }
 
 	public void noCatch()
 	{
 		anim.SetTrigger("noCatch");
-
-	}
+        GameManager.singleton.canMove = true;
+        Debug.Log("I can move again");
+    }
 	public void pointLeft(bool state)
 	{
 		anim.SetBool("pointLeft", state);
@@ -168,18 +181,17 @@ public class PartnerAnimator : MonoBehaviour {
 
 			Debug.Log("putting fish in basket");
 			//PutEelInBasket();
-			PutEelInBasket(4,true);
-			//PutEelInBasket(4,false);
-			//PutEelInBasket(4,false);
-			//PutEelInBasket(4,false);
-			
+			PutEelInBasket(EelsInTrap,true);
+						
 			Debug.Log("putting fish in basket");
 			//PutEelInBasket();
-			PutFlatFishInBasket(2,true);
-			//PutFlatFishInBasket(2,false);
+			PutFlatFishInBasket(FlatFishInTrap,true);
+			
 			Debug.Log("Trap Full");
 			basketFull = false;
-		} else {
+            GameManager.singleton.canMove = true;
+            Debug.Log("i can move again");
+        } else {
 			trapEmpty();
 			Debug.Log("Trap Empty");
 		}
@@ -221,10 +233,7 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		amount = amount + GameManager.singleton.currentTorskAmount;
 		GameObject currentFish=null;
-		/*if(!GameManager.singleton.Islinear && GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
-		{
-			GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().MeetingTriibeStoleFish);
-		}*/
+		
 		if(!GameManager.singleton.Islinear && firstTimeCod  && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
 		{
 			firstTimeCod = false;

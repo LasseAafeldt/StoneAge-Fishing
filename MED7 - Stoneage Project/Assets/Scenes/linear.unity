@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14648446, g: 0.14274079, b: 0.13758913, a: 1}
+  m_IndirectSpecularColor: {r: 0.16242409, g: 0.1579636, b: 0.15189987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17672,6 +17672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512c31c253ec49540a1699923fe4c8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   timer: {fileID: 0}
   boat: {fileID: 0}
   tribeBoat: {fileID: 0}
@@ -17904,7 +17905,7 @@ MonoBehaviour:
   eelTrap: {fileID: 647167070}
   start: {fileID: 410814246}
   timeSinceLastGuidance: 0
-  guidanceTimerThreshold: 40
+  guidanceTimerThreshold: 20
   areaTimer: 0
   areaTimerThreshold: 20
 --- !u!54 &1052138934
@@ -23871,6 +23872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  EelsInTrap: 3
+  FlatFishInTrap: 1
 --- !u!82 &1380562103
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24987,6 +24990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  EelsInTrap: 3
+  FlatFishInTrap: 1
 --- !u!114 &1460966463
 MonoBehaviour:
   m_ObjectHideFlags: 0
