@@ -6,8 +6,12 @@ public class SelectTool : MonoBehaviour {
 
 public bool IsTribeBasket;
 
+    private static int timesFishedNoWhere;
+
 EventCatcher EC;
 PartnerAnimator PA;
+    PartnerSpeech PS;
+    GuidanceSounds guidance;
 
 	string tool ="";
 
@@ -18,8 +22,12 @@ PartnerAnimator PA;
 		try
 		{
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
-		}
+            PS = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
+            guidance = GameManager.singleton.CameraContainer.GetComponent<GuidanceSounds>();
+
+        }
 		catch{}
+        timesFishedNoWhere = 0;
 	}
 	
 	public void Select(){
@@ -37,9 +45,11 @@ PartnerAnimator PA;
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
-				//no fish here
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NotEnoughFishHere);
+                //no fish here
+                notEnoughFishHere();
+
+				/*GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
+					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NotEnoughFishHere);*/
 			}
 			else
 			{
@@ -67,9 +77,11 @@ PartnerAnimator PA;
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
-				//no fish here
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NotEnoughFishHere);
+                //no fish here
+                notEnoughFishHere();
+
+				/*GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
+					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NotEnoughFishHere);*/
 			}
 			else
 			{
@@ -131,6 +143,22 @@ PartnerAnimator PA;
             //play voiceline "are you sure you want to end"
             endGame = true;
 
+        }
+    }
+
+    public void notEnoughFishHere()
+    {
+        if(timesFishedNoWhere >= PS.noFishHere.Length)
+        {
+            guidance.playGuidanceSound();
+            timesFishedNoWhere = 0;
+            return;
+        }
+        if(timesFishedNoWhere < PS.noFishHere.Length)
+        {
+            Debug.Log("no fish here array: " + timesFishedNoWhere + " also this: " + PS.noFishHere.Length);
+            PS.PartnerSaysSomething(PS.noFishHere[timesFishedNoWhere]);
+            timesFishedNoWhere++;
         }
     }
 

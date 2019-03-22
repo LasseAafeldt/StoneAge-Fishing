@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour {
     //Current level number, expressed in game as "Day 1".
 
     public bool canMove = true;
-        //instances in the scene
-        
+    //instances in the scene
+
+    public GameObject CameraContainer;
         public GameObject timer;
         public GameObject boat;
         public GameObject tribeBoat;
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour {
             
             //Sets this to not be destroyed when reloading scene
             DontDestroyOnLoad(gameObject);
-
+        CameraContainer = GameObject.FindGameObjectWithTag("Guidance");
             timer = GameObject.FindGameObjectWithTag("timer");
             //Debug.Log(boat.gameObject.name); 
             boat = GameObject.FindGameObjectWithTag("boat");

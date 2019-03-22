@@ -35,6 +35,7 @@ TagManager:
   - basket
   - turnAround
   - EndGame
+  - Guidance
   layers:
   - Default
   - TransparentFX

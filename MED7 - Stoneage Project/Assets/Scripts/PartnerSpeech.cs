@@ -84,8 +84,8 @@ public class PartnerSpeech : MonoBehaviour {
     public AudioClip Starting;
 
     [Header(" sounds")]
-
-	public Text speech;
+    public AudioClip[] noFishHere;
+    public Text speech;
 	List<AudioClip> queuedAudio = new List<AudioClip>();
 	List<string> queuedText = new List<string>();
 

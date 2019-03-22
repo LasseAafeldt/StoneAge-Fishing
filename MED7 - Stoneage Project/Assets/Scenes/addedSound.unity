@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14462149, g: 0.14092961, b: 0.1358661, a: 1}
+  m_IndirectSpecularColor: {r: 0.16229704, g: 0.1578272, b: 0.15177166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1652,8 +1652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7049fa0f88a40488ee1d7cbfb7e23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 900
-  rotationSpeed: 0.35
+  speed: 1200
+  rotationSpeed: 0.55
   rotationDeadzone: 5
   ignoreCollision:
   - {fileID: 2054955769}
@@ -14370,6 +14370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
+  CameraContainer: {fileID: 0}
   timer: {fileID: 0}
   boat: {fileID: 0}
   tribeBoat: {fileID: 0}
@@ -14538,7 +14539,7 @@ GameObject:
   - component: {fileID: 1052138934}
   m_Layer: 0
   m_Name: CamContainer
-  m_TagString: Untagged
+  m_TagString: Guidance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19915,6 +19916,7 @@ MonoBehaviour:
   Fugle: {fileID: 8300000, guid: ffac6611931bf8b49844a631a7cb4ba2, type: 3}
   Ruse: {fileID: 8300000, guid: 03ac6bd3cf4095e498e91342edee4a9c, type: 3}
   Starting: {fileID: 8300000, guid: 8a2cb1a12838be4498c0a46ac37b892e, type: 3}
+  noFishHere: []
   speech: {fileID: 350137110}
 --- !u!1 &1385600245
 GameObject:
@@ -20763,6 +20765,7 @@ MonoBehaviour:
   Fugle: {fileID: 0}
   Ruse: {fileID: 0}
   Starting: {fileID: 0}
+  noFishHere: []
   speech: {fileID: 350137110}
 --- !u!82 &1460966464
 AudioSource:

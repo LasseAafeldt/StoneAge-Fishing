@@ -77,7 +77,7 @@ public class GuidanceSounds : MonoBehaviour {
         }
     }
 
-    void playGuidanceSound()
+    public void playGuidanceSound()
     {
         if(checkDistance() == null)
         {
