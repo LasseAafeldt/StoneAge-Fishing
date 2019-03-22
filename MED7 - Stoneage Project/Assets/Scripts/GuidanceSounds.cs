@@ -79,6 +79,11 @@ public class GuidanceSounds : MonoBehaviour {
 
     void playGuidanceSound()
     {
+        if(checkDistance() == null)
+        {
+            Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
+            return;
+        }
         //reset the timer
         timeSinceLastGuidance = 0f;
         GameObject closestArea = checkDistance();
@@ -120,19 +125,24 @@ public class GuidanceSounds : MonoBehaviour {
 
     GameObject checkDistance()
     {
-        float shortestDistance = Vector3.Distance(playerPos.position, Torsk.transform.position);
-        GameObject closestArea = Torsk.gameObject;
-        if(shortestDistance > Vector3.Distance(playerPos.position, eel.transform.position))
+        GameObject closestArea = null;
+        float shortestDistance = 9999999;
+        if(shortestDistance > Vector3.Distance(playerPos.position, Torsk.transform.position) && !GameManager.singleton.TorskCaught)
+        {
+            shortestDistance = Vector3.Distance(playerPos.position, Torsk.transform.position);
+            closestArea = Torsk.gameObject;
+        }
+        if(shortestDistance > Vector3.Distance(playerPos.position, eel.transform.position) && !GameManager.singleton.eelCaught)
         {
             shortestDistance = Vector3.Distance(playerPos.position, eel.transform.position);
             closestArea = eel.gameObject;
         }
-        if(shortestDistance > Vector3.Distance(playerPos.position, eelTrap.transform.position))
+        if(shortestDistance > Vector3.Distance(playerPos.position, eelTrap.transform.position) && !GameManager.singleton.eelTrapEmptied)
         {
             shortestDistance = Vector3.Distance(playerPos.position, eelTrap.transform.position);
             closestArea = eelTrap.gameObject;
         }
-        if (shortestDistance > Vector3.Distance(playerPos.position, flatFish.transform.position))
+        if (shortestDistance > Vector3.Distance(playerPos.position, flatFish.transform.position) && !GameManager.singleton.flatFishCaught)
         {
             shortestDistance = Vector3.Distance(playerPos.position, flatFish.transform.position);
             closestArea = flatFish.gameObject;
