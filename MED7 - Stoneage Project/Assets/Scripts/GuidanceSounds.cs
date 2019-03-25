@@ -73,7 +73,7 @@ public class GuidanceSounds : MonoBehaviour {
         if(other.name == start.name && !startHasPlayed)
         {
             startHasPlayed = true;
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.Starting);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.StartingSoundGoFishing);
         }
     }
 
@@ -99,19 +99,20 @@ public class GuidanceSounds : MonoBehaviour {
         //check which area is the closest
         if(closestArea.tag == "TorskArea" && lvl1GuidanceSound && !GameManager.singleton.TorskCaught)
         {
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.Bakke);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToTorsk);
         }
         if (closestArea.tag == "EelArea" && lvl1GuidanceSound && !GameManager.singleton.eelCaught)
         {
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.Fugle);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEel);
         }
         if (closestArea.tag == "emptyBasket" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
         {
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.Ruse);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEeltrap);
         }
         if (closestArea.tag == "FlatfishArea" && lvl1GuidanceSound && !GameManager.singleton.flatFishCaught)
         {
-            Debug.Log("the flatfish area is over there... Sound is suppose to play");
+            //Debug.Log("the flatfish area is over there... Sound is suppose to play");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToFlatfish);
         }
 
         updateArea(closestArea);
@@ -156,47 +157,23 @@ public class GuidanceSounds : MonoBehaviour {
         areaTimer = 0f;
         if(inArea == "TorskArea" && !GameManager.singleton.TorskCaught)
         {
-            Debug.Log("Playing detail area sund Torsk");
+            //Debug.Log("Playing detail area sund Torsk");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToTorsk);
         }
         if (inArea == "EelArea" && !GameManager.singleton.eelCaught)
         {
-            Debug.Log("Playing detail area sund Eel");
+            //Debug.Log("Playing detail area sund Eel");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToEel);
         }
         if (inArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
         {
-            Debug.Log("Playing detail area sund EelTrap");
+            //Debug.Log("Playing detail area sund EelTrap");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToEeltrap);
         }
         if (inArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
         {
-            Debug.Log("Playing detail area sund Flatfish");
+            //Debug.Log("Playing detail area sund Flatfish");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToFlatfish);
         }
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if(other.name == Torsk.name || other.name == eel.name || other.name == eelTrap.name || other.name == start.name)
-        {
-            Debug.Log(other.name);
-            if(other.name == Torsk.name && !torskHasPlayed)
-            {
-                voiceLines.PartnerSaysSomething(voiceLines.Bakke);
-                torskHasPlayed = true;
-            }
-            if(other.name == eel.name && !eelHasPlayed)
-            {
-                voiceLines.PartnerSaysSomething(voiceLines.Fugle);
-                eelHasPlayed = true;
-            }
-            if(other.name == eelTrap.name && !eeltrapHasPlayed)
-            {
-                voiceLines.PartnerSaysSomething(voiceLines.Ruse);
-                eeltrapHasPlayed = true;
-            }
-            if(other.name == start.name && !startHasPlayed)
-            {
-                voiceLines.PartnerSaysSomething(voiceLines.Starting);
-                startHasPlayed = true;
-            }
-        }
-    }*/
 }

@@ -10,19 +10,28 @@ public bool IsTribeBasket;
 
 EventCatcher EC;
 PartnerAnimator PA;
-    PartnerSpeech PS;
+    PartnerSpeech partnerSpeech;
     GuidanceSounds guidance;
 
 	string tool ="";
 
     private bool endGame = false;
-	// Use this for initialization
-	void Start () {
+    private bool firstFishingTorsk = true;
+    private bool secondFishingTorsk = false;
+    private bool thirdFishingTorsk = false;
+    private bool firstFishingEel = true;
+    private bool secondFishingEel = false;
+    private bool thirdFishingEel = false;
+    private bool firstFishingFlatfish = true;
+    private bool secondFishingFlatfish = false;
+    private bool thirdFishingFlatfish = false;
+    // Use this for initialization
+    void Start () {
 		EC = GameManager.singleton.boat.GetComponent<EventCatcher>();
 		try
 		{
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
-            PS = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
+            partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
             guidance = GameManager.singleton.CameraContainer.GetComponent<GuidanceSounds>();
 
         }
@@ -42,27 +51,44 @@ PartnerAnimator PA;
 			{
 				HideTool();
 				PA.HookAnimation();
+                Debug.Log("Player is fishing torsk now, hopefully the sound is playing while the animation happens");
+                if (firstFishingTorsk)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingFirst);
+                    firstFishingTorsk = false;
+                    secondFishingTorsk = true;
+                    EC.startFishing(tool);
+                    return;
+                }
+                if (secondFishingTorsk)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingSecond);
+                    secondFishingTorsk = false;
+                    thirdFishingTorsk = true;
+                    EC.startFishing(tool);
+                    return;
+                }
+                if (thirdFishingTorsk)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingThird);
+                    thirdFishingTorsk = false;
+                    EC.startFishing(tool);
+                    return;
+                }
+                Debug.Log("player has fished torsk 3 times now");
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
                 //no fish here
                 notEnoughFishHere();
-
-				/*GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NotEnoughFishHere);*/
 			}
 			else
 			{
-				//wrong tool
+                //wrong tool
+                Debug.Log("this is not the tool to use for torsk");
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoHook4CodTryIron);
 			}
-
-			//wait for animaion to end to show tool again
-			//ShowTool();
-
-			//StartCoroutine("OnAnimationComplete");
-
 		}
 		else if (tag == "eeliron")
 		{
@@ -70,31 +96,81 @@ PartnerAnimator PA;
 			tool = tag;
 			//play animation
 
-			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "EelArea" || GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "FlatfishArea"	)
+			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "EelArea")
 			{
 				HideTool();
 				PA.EelironAnimation();
-			}
+                Debug.Log("Player is fishing eel now, hopefully the sound is playing while the animation happens");
+                if (firstFishingEel)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingFirst);
+                    firstFishingEel = false;
+                    secondFishingEel = true;
+                    EC.startFishing(tool);
+                    return;
+                }
+                if (secondFishingEel)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingSecond);
+                    secondFishingEel = false;
+                    thirdFishingEel = true;
+                    EC.startFishing(tool);
+                    return;
+                }
+                if (thirdFishingEel)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingThird);
+                    thirdFishingEel = false;
+                    EC.startFishing(tool);
+                    return;
+                }
+                Debug.Log("player has fished eel 3 times now");
+            }
+            else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "FlatfishArea")
+            {
+                HideTool();
+                PA.EelironAnimation();
+                Debug.Log("Player is fishing Flatfish now, hopefully the sound is playing while the animation happens");
+                if (firstFishingFlatfish)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingFirst);
+                    firstFishingFlatfish = false;
+                    secondFishingFlatfish = true;
+                    EC.startFishing(tool);
+                    return;
+                }
+                if (secondFishingFlatfish)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingSecond);
+                    secondFishingFlatfish = false;
+                    thirdFishingFlatfish = true;
+                    EC.startFishing(tool);
+                    return;
+                }
+                if (thirdFishingFlatfish)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingThird);
+                    thirdFishingFlatfish = false;
+                    EC.startFishing(tool);
+                    return;
+                }
+                Debug.Log("player has fished Flatfish 3 times now");
+            }
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
                 //no fish here
                 notEnoughFishHere();
-
-				/*GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NotEnoughFishHere);*/
 			}
 			else
 			{
-				//wrong tool
+                //wrong tool
+                Debug.Log("This is not the tool to use for eel or Flatfish");
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoIron4CodTryHook);
-			}
-			//wait for animaion to end to show tool again
-			//ShowTool();
-			
+			}			
 		}
 		//admit to fish with the selected tool
-		EC.startFishing(tool);
+		//EC.startFishing(tool);
 	}
 
     #region empty basket 
@@ -105,27 +181,12 @@ PartnerAnimator PA;
 		if(tag =="emptyBasket")
 		{
             GameManager.singleton.canMove = false;
-            Debug.Log("I can't move now");
+            //Debug.Log("I can't move now");
 			PA.BasketAnimation();
+            Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEmptyingEeltrap);
 			//Debug.Log("emptying basket for test");
-			GetComponent<Collider>().enabled=false;
-			/*if(GameManager.singleton.Islinear)
-			{
-				Debug.Log("Linear empty basket");
-				GameManager.singleton.
-					partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().EmptyBasket);
-			}
-			if(IsTribeBasket)
-			{
-				GameManager.singleton.tribeBoat.GetComponent<TribeController>().SetFollowPlayer(true);
-				if(!GameManager.singleton.Islinear)
-				{
-					GameManager.singleton.
-						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-						GameManager.singleton.partner.GetComponent<PartnerSpeech>().FishingTribe);
-				}				
-			}*/
+			GetComponent<Collider>().enabled=false;			
 		}
 	}
 
@@ -135,12 +196,16 @@ PartnerAnimator PA;
         {
             if (endGame)
             {
-                Debug.Log("Play is moving on to end scene");
-                EC.CheckForEnding();
+                Debug.Log("Player is moving on to end scene");
+                partnerSpeech.PartnerSaysSomething(partnerSpeech.endIsConfirmed);
+                //waiting to load end scene till the audioclip is done playing
+                StartCoroutine(waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed));
+                //EC.CheckForEnding();
                 return;
             }
             Debug.Log("player is attempting to end game");
             //play voiceline "are you sure you want to end"
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.confirmEndPlz);
             endGame = true;
 
         }
@@ -148,16 +213,16 @@ PartnerAnimator PA;
 
     public void notEnoughFishHere()
     {
-        if(timesFishedNoWhere >= PS.noFishHere.Length)
+        if(timesFishedNoWhere >= partnerSpeech.noFishHere.Length)
         {
             guidance.playGuidanceSound();
             timesFishedNoWhere = 0;
             return;
         }
-        if(timesFishedNoWhere < PS.noFishHere.Length)
+        if(timesFishedNoWhere < partnerSpeech.noFishHere.Length)
         {
-            Debug.Log("no fish here array: " + timesFishedNoWhere + " also this: " + PS.noFishHere.Length);
-            PS.PartnerSaysSomething(PS.noFishHere[timesFishedNoWhere]);
+            Debug.Log("no fish here array: " + timesFishedNoWhere + " also this: " + partnerSpeech.noFishHere.Length);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.noFishHere[timesFishedNoWhere]);
             timesFishedNoWhere++;
         }
     }
@@ -176,5 +241,11 @@ PartnerAnimator PA;
 		GetComponent<Collider>().enabled = true;
 		GetComponentInChildren<MeshRenderer>().enabled = true;
 	}
+
+    IEnumerator waitforAudioToLoadEndScene(AudioClip clip)
+    {
+        yield return new WaitForSeconds(clip.length);
+        EC.CheckForEnding();
+    }
 
 }

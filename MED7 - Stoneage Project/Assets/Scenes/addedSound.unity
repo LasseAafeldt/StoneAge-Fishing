@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16229704, g: 0.1578272, b: 0.15177166, a: 1}
+  m_IndirectSpecularColor: {r: 0.16101563, g: 0.15662357, b: 0.15066662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1669,6 +1669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ab6281f8b65984cbbcab2f8d718065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partnerSpeech: {fileID: 0}
   fishingArea: 
   FishToSucceed: 7
 --- !u!65 &84974646
@@ -5637,138 +5638,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4508696319873668, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -78.722
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508696319873668, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -74.816
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508696319873668, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 40.123
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: lengthInSec
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508696319873668, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.1055005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508696319873668, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.1055014
-      objectReference: {fileID: 0}
-    - target: {fileID: 4508696319873668, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.1055014
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1273915125232972, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
       propertyPath: m_Name
       value: SmokeEffect (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: ShapeModule.angle
-      value: 6.581185
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxGradient.ctime1
-      value: 65535
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxGradient.key1.r
-      value: 0.764151
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxGradient.key1.g
-      value: 0.764151
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startColor.maxGradient.key1.b
-      value: 0.764151
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: ShapeModule.arc.spread
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: ShapeModule.m_TextureAlphaAffectsParticles
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: RotationModule.curve.scalar
-      value: 0.87266463
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: NoiseModule.separateAxes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: NoiseModule.octaves
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: NoiseModule.quality
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198791558892717060, guid: 613cf46f23ce8f14eaa036a33dedc666,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 613cf46f23ce8f14eaa036a33dedc666, type: 2}
@@ -8615,35 +8487,47 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -139.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -356.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.054891355
+      value: -0.0000000074505797
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.9857146
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.04863999
+      value: 0.0000000074505797
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.15161768
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302968783497982, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92e5deb19b357d4439ceb29daf9109c8, type: 2}
@@ -14835,14 +14719,14 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1061317355}
-  m_LocalRotation: {x: -0, y: 0.5475074, z: -0, w: 0.8368009}
-  m_LocalPosition: {x: -445.54, y: 122, z: 302.44}
-  m_LocalScale: {x: 0.8259468, y: 0.82586, z: 0.82594675}
+  m_LocalRotation: {x: -0.07256387, y: -0.74183506, z: -0.01064856, w: 0.6665598}
+  m_LocalPosition: {x: -712.6112, y: 6.9329224, z: 178.77638}
+  m_LocalScale: {x: 7.5484295, y: 7.547647, z: 7.5484247}
   m_Children:
   - {fileID: 590108681}
   m_Father: {fileID: 0}
   m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 66.392006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067949729
 GameObject:
   m_ObjectHideFlags: 0
@@ -19906,16 +19790,36 @@ MonoBehaviour:
   Outcome1Emergent: {fileID: 8300000, guid: 14ffdf6a579c3e842a543f8646759ee6, type: 3}
   Outcome2Emergent: {fileID: 8300000, guid: 237b0c3e6f633f64cb3b3ae46849b3d4, type: 3}
   Outcome3Emergent: {fileID: 8300000, guid: 708cb3071a016cf46a2cb539b5a49611, type: 3}
+  GameTimerLow: {fileID: 0}
+  GameTimerEnd: {fileID: 0}
+  HomeAgain: {fileID: 0}
+  confirmEndPlz: {fileID: 0}
+  endIsConfirmed: {fileID: 0}
+  whileEelFishingFirst: {fileID: 0}
+  whileEelFishingSecond: {fileID: 0}
+  whileEelFishingThird: {fileID: 0}
+  whileTorskFishingFirst: {fileID: 0}
+  whileTorskFishingSecond: {fileID: 0}
+  whileTorskFishingThird: {fileID: 0}
+  whileFlatfishFihingFirst: {fileID: 0}
+  whileFlatfishFihingSecond: {fileID: 0}
+  whileFlatfishFihingThird: {fileID: 0}
+  whileEmptyingEeltrap: {fileID: 0}
   OrcaAppears: {fileID: 8300000, guid: c6dde38a1972ff54a9ee8ff7b350f397, type: 3}
   PelicanAppears: {fileID: 8300000, guid: 986da58ed6190584ba2e33eecd2f19af, type: 3}
   NoFurther: {fileID: 8300000, guid: 638a4cabfbc36654f811e446f9475023, type: 3}
   NoIron4CodTryHook: {fileID: 8300000, guid: 652156da801b6c64ca77d8be0ba6fbe1, type: 3}
   NoHook4CodTryIron: {fileID: 8300000, guid: 53b159d87a6102b42bff9b1f0e887a0c, type: 3}
   NotEnoughFishHere: {fileID: 8300000, guid: 1cc39e19d26b20f4aabd68f3d88c4078, type: 3}
-  Bakke: {fileID: 8300000, guid: d1420f10735009944857211375d62960, type: 3}
-  Fugle: {fileID: 8300000, guid: ffac6611931bf8b49844a631a7cb4ba2, type: 3}
-  Ruse: {fileID: 8300000, guid: 03ac6bd3cf4095e498e91342edee4a9c, type: 3}
-  Starting: {fileID: 8300000, guid: 8a2cb1a12838be4498c0a46ac37b892e, type: 3}
+  ClosestToTorsk: {fileID: 0}
+  DetailClosestToTorsk: {fileID: 0}
+  ClosestToEel: {fileID: 0}
+  DetailClosestToEel: {fileID: 0}
+  ClosestToEeltrap: {fileID: 0}
+  DetailClosestToEeltrap: {fileID: 0}
+  ClosestToFlatfish: {fileID: 0}
+  DetailClosestToFlatfish: {fileID: 0}
+  StartingSoundGoFishing: {fileID: 0}
   noFishHere: []
   speech: {fileID: 350137110}
 --- !u!1 &1385600245
@@ -20755,16 +20659,36 @@ MonoBehaviour:
   Outcome1Emergent: {fileID: 0}
   Outcome2Emergent: {fileID: 0}
   Outcome3Emergent: {fileID: 0}
+  GameTimerLow: {fileID: 0}
+  GameTimerEnd: {fileID: 0}
+  HomeAgain: {fileID: 0}
+  confirmEndPlz: {fileID: 0}
+  endIsConfirmed: {fileID: 0}
+  whileEelFishingFirst: {fileID: 0}
+  whileEelFishingSecond: {fileID: 0}
+  whileEelFishingThird: {fileID: 0}
+  whileTorskFishingFirst: {fileID: 0}
+  whileTorskFishingSecond: {fileID: 0}
+  whileTorskFishingThird: {fileID: 0}
+  whileFlatfishFihingFirst: {fileID: 0}
+  whileFlatfishFihingSecond: {fileID: 0}
+  whileFlatfishFihingThird: {fileID: 0}
+  whileEmptyingEeltrap: {fileID: 0}
   OrcaAppears: {fileID: 0}
   PelicanAppears: {fileID: 0}
   NoFurther: {fileID: 0}
   NoIron4CodTryHook: {fileID: 0}
   NoHook4CodTryIron: {fileID: 0}
   NotEnoughFishHere: {fileID: 0}
-  Bakke: {fileID: 0}
-  Fugle: {fileID: 0}
-  Ruse: {fileID: 0}
-  Starting: {fileID: 0}
+  ClosestToTorsk: {fileID: 0}
+  DetailClosestToTorsk: {fileID: 0}
+  ClosestToEel: {fileID: 0}
+  DetailClosestToEel: {fileID: 0}
+  ClosestToEeltrap: {fileID: 0}
+  DetailClosestToEeltrap: {fileID: 0}
+  ClosestToFlatfish: {fileID: 0}
+  DetailClosestToFlatfish: {fileID: 0}
+  StartingSoundGoFishing: {fileID: 0}
   noFishHere: []
   speech: {fileID: 350137110}
 --- !u!82 &1460966464
@@ -23483,6 +23407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee4a06ed5cc28345baf3231815685d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partnerSpeech: {fileID: 0}
   startValue: -13
   endValue: 24
   totalPlayTime: 480

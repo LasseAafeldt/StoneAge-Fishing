@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class playTimer : MonoBehaviour {
 
+    public PartnerSpeech partnerSpeech;
+
 	public float startValue;
 	Vector3 startAngle;
 	public float endValue;
@@ -52,7 +54,10 @@ public class playTimer : MonoBehaviour {
 
         //EnableMiddenCollider();
         IfNotLinear();
-        RunOutOfTime();		
+        if(timeSpent <= 0)
+        {
+            StartCoroutine(RunOutOfTime(partnerSpeech.GameTimerEnd));
+        }
         //IfLinearScene();
 	}
 
@@ -91,24 +96,24 @@ public class playTimer : MonoBehaviour {
         }
     }
 
-    void RunOutOfTime()
+    IEnumerator RunOutOfTime(AudioClip clip)
     {
-        if (timeLeft < 0)
+        //wait till audio is done
+        yield return new WaitForSeconds(clip.length);
+        // change scene
+        Debug.Log("time has run out, and audio is done playing");
+        //did not make it back in time
+        if (GameManager.singleton.GetFishCount() >= 7)
         {
-            // change scene
-            Debug.Log("change scene");
-            //did not make it back in time
-            if (GameManager.singleton.GetFishCount() >= 7)
-            {
-                GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
-            }
-            else
-            {
-                GameManager.singleton.PrepareForEndScene(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome2Emergent,
-                    GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());
-                SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-            }
+            GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
+        }
+        else
+        {
+            Debug.Log("time has run out and player did not have enough fish");
+            GameManager.singleton.PrepareForEndScene(
+                GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome2Emergent,
+                GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());
+            SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
         }
     }
 
@@ -151,9 +156,11 @@ public class playTimer : MonoBehaviour {
             if (timeSpent <= 0.2 && oneMinLeft)
             {
                 oneMinLeft = false;
-                GameManager.singleton.partner.
+                /*GameManager.singleton.partner.
                     GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time1MinLeft);
+                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time1MinLeft);*/
+                partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerLow);
+                Debug.Log("Game is playing sound: 1 minute sound");
             }
         }
     }

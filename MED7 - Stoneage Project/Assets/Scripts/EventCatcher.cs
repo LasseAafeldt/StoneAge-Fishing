@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EventCatcher : MonoBehaviour {
+    public PartnerSpeech partnerSpeech;
 
 	bool canFish;
 	public string fishingArea;
@@ -17,28 +18,17 @@ public class EventCatcher : MonoBehaviour {
 
     private bool tribeTerritory = false;
 
-
     GameObject fishingAreaObject;
 
 	bool hasFlint=false;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	void OnTriggerEnter(Collider other)
     {
 		if(other.tag == "turnAround")
 		{
 			GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoFurther
-			);
+				GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoFurther);
+            Debug.Log("player is hitting the boundry of the map and No Further sound is played");
 		}
 		if(other.tag == "TorskArea" || other.tag == "EelArea" || other.tag == "FlatfishArea")
 		{
@@ -80,59 +70,10 @@ public class EventCatcher : MonoBehaviour {
 		{
             //change scene
             //CheckForEnding();
-            Debug.Log("I have sailed into the collider which previously caused the game to load the endscene");
-
+            //Debug.Log("I have sailed into the collider which previously caused the game to load the endscene");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.HomeAgain);
+            Debug.Log("player sailed intot the Ertebølle trigger: if you want to end then hand the fish over to the lady");
 		}
-		/*        //when you destroy a basket
-        if(other.tag == "destroyBasket")
-        {
-            other.GetComponent<Basket>().DestroyBasket();
-
-        }
-        //when you enter tribe territory
-        if(other.tag == "tribeTerritory" && tribeTerritory)
-        {
-            //partner say something
-			GameManager.singleton.
-				partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterTribe);
-        }*/
-        //when enter torsk territory orca event happens 
-        /*if(other.tag == "torskTerritory")
-        {
-            //partner says orca thing
-            GameManager.singleton.orca.GetComponent<orcaEvent>().startOrcaEvent();
-        }
-        if(other.tag == "sealTerritory")
-		{
-			if(GameManager.singleton.Islinear)
-			{
-				GameManager.singleton.
-					partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().SealAppears);
-			}
-			else
-			{
-				GameManager.singleton.
-					partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().SealAppearsEmergent);
-			}
-		}
-
-		//when the tribe is chasing you to get fish back
-		if(other.tag == "tribeTrigger")
-		{
-			//stop following
-			GameManager.singleton.tribeBoat.GetComponent<TribeController>().SetFollowPlayer(false);
-			//remove fish
-			GameManager.singleton.RemoveAnyFish(5);
-			//go back to their own midden in bjørnsholm
-			GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetInPosition(GameManager.singleton.bjørnsholm.transform.position);
-			GameManager.singleton.partner.
-				GetComponent<PartnerSpeech>().PartnerSaysSomething(
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().MeetingTribeCaught);
-		}*/
-
     }
 
 	void OnTriggerExit(Collider other)
@@ -149,24 +90,7 @@ public class EventCatcher : MonoBehaviour {
 			GameManager.singleton.PelicanEvent.transform.SetParent(null);
 			GameManager.singleton.PelicanEvent.GetComponentInChildren<orcaEvent>().startOrcaEvent();
             //partner says pelican thing
-        }
-        if(other.tag == "tribeTerritory" && tribeTerritory)
-        {
-            //partner say something
-			if(GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
-			{
-				GameManager.singleton.
-					partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().MeetingTribeEscaped);
-				GameManager.singleton.tribeBoat.GetComponent<TribeController>().SetFollowPlayer(false);
-			}
-			else
-			{
-				GameManager.singleton.
-					partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().ExitTribe);	
-			}
-        }*/
+        }*/       
     }
 
 	public void CheckForEnding()

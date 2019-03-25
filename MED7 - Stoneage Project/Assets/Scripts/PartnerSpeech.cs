@@ -49,11 +49,26 @@ public class PartnerSpeech : MonoBehaviour {
 	public AudioClip Outcome1Emergent;
 	public AudioClip Outcome2Emergent;
 	public AudioClip Outcome3Emergent;
-	//public AudioClip Outcome4Emergent;
-	//public AudioClip Outcome5Emergent;
+    //public AudioClip Outcome4Emergent;
+    //public AudioClip Outcome5Emergent;
+    public AudioClip GameTimerLow;
+    public AudioClip GameTimerEnd;
+    public AudioClip HomeAgain;
+    public AudioClip confirmEndPlz;
+    public AudioClip endIsConfirmed;
+    public AudioClip whileEelFishingFirst;
+    public AudioClip whileEelFishingSecond;
+    public AudioClip whileEelFishingThird;
+    public AudioClip whileTorskFishingFirst;
+    public AudioClip whileTorskFishingSecond;
+    public AudioClip whileTorskFishingThird;
+    public AudioClip whileFlatfishFihingFirst;
+    public AudioClip whileFlatfishFihingSecond;
+    public AudioClip whileFlatfishFihingThird;
+    public AudioClip whileEmptyingEeltrap;
 
-	//for both condition
-	[Header("neutral sounds")]
+    //for both condition
+    [Header("neutral sounds")]
 	public AudioClip OrcaAppears;
 	public AudioClip PelicanAppears;
 	/*public AudioClip SealAppears;
@@ -62,7 +77,7 @@ public class PartnerSpeech : MonoBehaviour {
 	public AudioClip ThisWay2;*/
 
 	//new sounds
-	[Header("new sounds")]
+	[Header("Warning clips")]
 	/*public AudioClip AnotherCod;
 	public AudioClip AnotherEel;
 	public AudioClip AnotherFlatfish;
@@ -78,10 +93,15 @@ public class PartnerSpeech : MonoBehaviour {
 	//public AudioClip WeNeedFish;
 
     [Header("Guidance sounds")]
-    public AudioClip Bakke;
-    public AudioClip Fugle;
-    public AudioClip Ruse;
-    public AudioClip Starting;
+    public AudioClip ClosestToTorsk;
+    public AudioClip DetailClosestToTorsk;
+    public AudioClip ClosestToEel;
+    public AudioClip DetailClosestToEel;
+    public AudioClip ClosestToEeltrap;
+    public AudioClip DetailClosestToEeltrap;
+    public AudioClip ClosestToFlatfish;
+    public AudioClip DetailClosestToFlatfish;
+    public AudioClip StartingSoundGoFishing;
 
     [Header(" sounds")]
     public AudioClip[] noFishHere;
