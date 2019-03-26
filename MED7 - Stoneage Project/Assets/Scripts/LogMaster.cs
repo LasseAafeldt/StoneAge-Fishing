@@ -34,7 +34,7 @@ public class LogMaster : MonoBehaviour {
         }
     }
 
-    public void logEntry(int amountOfVoicelinesPlayed, Vector3 playerPosition, bool triedTorsk, bool triedEel, bool triedEelTrap, bool triedFlatfish, int totalFishCaught, string attemptedInteraction, int timesWrongToolHasBeenSelected)
+    public void logEntry(int amountOfVoicelinesPlayed, Vector3 playerPosition, int totalTorskCaught, int totalEelCaught, bool triedEelTrap, int TotalFlatfishCaught, int totalFishCaught, string attemptedInteraction, string areaTag, int timesWrongToolHasBeenSelected)
     {
         using (StreamWriter SW = new StreamWriter(File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Write)))
         {
@@ -44,29 +44,31 @@ public class LogMaster : MonoBehaviour {
             string dateAndTime = System.DateTime.Now.ToString() + seperator;
             string _amountOfVoiceLinesPlayed = amountOfVoicelinesPlayed.ToString() + seperator;
             string _playerPosition = playerPosition.ToString() + seperator;
-            string _triedTorsk = triedTorsk.ToString() + seperator;
-            string _triedEel = triedEel.ToString() + seperator;
+            string _TotalTorskCaught = totalTorskCaught.ToString() + seperator;
+            string _totalEelCaught = totalEelCaught.ToString() + seperator;
             string _triedEeltrap = triedEelTrap.ToString() + seperator;
-            string _triedFlatfish = triedFlatfish.ToString() + seperator;
+            string _totalFlatfishCaught = TotalFlatfishCaught.ToString() + seperator;
             string _totalFishCaught = totalFishCaught.ToString() + seperator;
             string _attemptedInteraction = attemptedInteraction.ToString() + seperator;
+            string _areaTag = areaTag.ToString() + seperator;
             string _timesWrongTool = timesWrongToolHasBeenSelected.ToString();
 
             string[] stuffToWrite = {
                 dateAndTime,
                 _amountOfVoiceLinesPlayed,
                 _playerPosition,
-                _triedTorsk,
-                _triedEel,
+                _TotalTorskCaught,
+                _totalEelCaught,
                 _triedEeltrap,
-                _triedFlatfish,
+                _totalFlatfishCaught,
                 _totalFishCaught,
                 _attemptedInteraction,
+                _areaTag,
                 _timesWrongTool
             };
             //string data = new string((string)dateAndTime + (string)_amountOfVoiceLinesPlayed + (string)_playerPosition + (string)_triedTorsk +(string) _triedEel + (string)_triedEeltrap + (string)_triedFlatfish + (string)_totalFishCaught + (string)_attemptedInteraction + (string)_timesWrongTool);
             
-            SW.WriteLine(dateAndTime + _amountOfVoiceLinesPlayed + _playerPosition + _triedTorsk + _triedEel + _triedEeltrap + _triedFlatfish + _totalFishCaught + _attemptedInteraction + _timesWrongTool);
+            SW.WriteLine(dateAndTime + _amountOfVoiceLinesPlayed + _playerPosition + _TotalTorskCaught + _totalEelCaught + _triedEeltrap + _totalFlatfishCaught + _totalFishCaught + _attemptedInteraction + _areaTag + _timesWrongTool);
 
             Debug.Log("writing in the file has been completed");            
         }
