@@ -6,6 +6,12 @@ public class SelectTool : MonoBehaviour {
 
 public bool IsTribeBasket;
 
+    public static int totalTorskCaught = 0;
+    public static int totalEelCaught = 0;
+    public static int totalFlatfishCaught = 0;
+    public static bool eelTrapEmptied = false;
+    public static int amountWrongToolSelected = 0;
+
     private static int timesFishedNoWhere;
 
 EventCatcher EC;
@@ -58,6 +64,7 @@ PartnerAnimator PA;
                     firstFishingTorsk = false;
                     secondFishingTorsk = true;
                     EC.startFishing(tool);
+                    totalTorskCaught++;
                     return;
                 }
                 if (secondFishingTorsk)
@@ -66,6 +73,7 @@ PartnerAnimator PA;
                     secondFishingTorsk = false;
                     thirdFishingTorsk = true;
                     EC.startFishing(tool);
+                    totalTorskCaught++;
                     return;
                 }
                 if (thirdFishingTorsk)
@@ -73,6 +81,7 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingThird);
                     thirdFishingTorsk = false;
                     EC.startFishing(tool);
+                    totalTorskCaught++;
                     return;
                 }
                 Debug.Log("player has fished torsk 3 times now");
@@ -86,6 +95,9 @@ PartnerAnimator PA;
 			{
                 //wrong tool
                 Debug.Log("this is not the tool to use for torsk");
+
+                amountWrongToolSelected++;
+
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoHook4CodTryIron);
 			}
@@ -107,6 +119,7 @@ PartnerAnimator PA;
                     firstFishingEel = false;
                     secondFishingEel = true;
                     EC.startFishing(tool);
+                    totalEelCaught++;
                     return;
                 }
                 if (secondFishingEel)
@@ -115,6 +128,7 @@ PartnerAnimator PA;
                     secondFishingEel = false;
                     thirdFishingEel = true;
                     EC.startFishing(tool);
+                    totalEelCaught++;
                     return;
                 }
                 if (thirdFishingEel)
@@ -122,6 +136,7 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingThird);
                     thirdFishingEel = false;
                     EC.startFishing(tool);
+                    totalEelCaught++;
                     return;
                 }
                 Debug.Log("player has fished eel 3 times now");
@@ -137,6 +152,7 @@ PartnerAnimator PA;
                     firstFishingFlatfish = false;
                     secondFishingFlatfish = true;
                     EC.startFishing(tool);
+                    totalFlatfishCaught++;
                     return;
                 }
                 if (secondFishingFlatfish)
@@ -145,6 +161,7 @@ PartnerAnimator PA;
                     secondFishingFlatfish = false;
                     thirdFishingFlatfish = true;
                     EC.startFishing(tool);
+                    totalFlatfishCaught++;
                     return;
                 }
                 if (thirdFishingFlatfish)
@@ -152,6 +169,7 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingThird);
                     thirdFishingFlatfish = false;
                     EC.startFishing(tool);
+                    totalFlatfishCaught++;
                     return;
                 }
                 Debug.Log("player has fished Flatfish 3 times now");
@@ -165,7 +183,10 @@ PartnerAnimator PA;
 			{
                 //wrong tool
                 Debug.Log("This is not the tool to use for eel or Flatfish");
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
+
+                amountWrongToolSelected++;
+
+                GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoIron4CodTryHook);
 			}			
 		}
@@ -185,6 +206,8 @@ PartnerAnimator PA;
 			PA.BasketAnimation();
             Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEmptyingEeltrap);
+
+            eelTrapEmptied = true;
 			//Debug.Log("emptying basket for test");
 			GetComponent<Collider>().enabled=false;			
 		}

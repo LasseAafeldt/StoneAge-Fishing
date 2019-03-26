@@ -11,6 +11,8 @@ public class LogMaster : MonoBehaviour {
     public Transform player;
     public PartnerSpeech partnerSpeech;
     public SelectTool selectTool;
+    public GameManager GM;
+    public EventCatcher EC;
     //something variable where interactions are called
 
     void Start()
@@ -73,4 +75,17 @@ public class LogMaster : MonoBehaviour {
             Debug.Log("writing in the file has been completed");            
         }
     }
+
+    // copy paste this call where we want to call a log entry
+    /*logMaster.logEntry(
+                PartnerSpeech.amountOfVoiceLinesPlayed,
+                logMaster.player.position,
+                SelectTool.totalTorskCaught,
+                SelectTool.totalEelCaught,
+                SelectTool.eelTrapEmptied,
+                SelectTool.totalFlatfishCaught,
+                logMaster.GM.getTotalFishCaught(),
+                SelectTool. // not exactly sure how i will do this one...
+                , logMaster.EC.fishingArea,
+                SelectTool.amountWrongToolSelected);*/
 }

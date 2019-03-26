@@ -300,4 +300,15 @@ public class GameManager : MonoBehaviour {
             this.hasFlint = hasFlint;
         }
 
+    public int getTotalFishCaught()
+    {
+        int totalFish = 0;
+
+        foreach (GameObject fish in caughtTotal)
+        {
+            totalFish++;
+        }
+        return totalFish;
+    }
+
 }

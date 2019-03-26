@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PartnerSpeech : MonoBehaviour {
 
 	AudioSource audio;
+    public static int amountOfVoiceLinesPlayed = 0;
+    public LogMaster logMaster;
 
 	//for linear condition
 	/*[Header("linear sounds")]
@@ -160,6 +162,8 @@ public class PartnerSpeech : MonoBehaviour {
 			{
 				queuedAudio.Add(clip);
 				queuedText.Add(writtenLine);
+
+                //amountOfVoiceLinesPlayed++;
 			}
 		}
 		else
@@ -168,7 +172,18 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.clip = clip;
 			speech.text = writtenLine;
 			audio.Play();
-			
+            amountOfVoiceLinesPlayed++;
+            logMaster.logEntry(
+                PartnerSpeech.amountOfVoiceLinesPlayed,
+                logMaster.player.position,
+                SelectTool.totalTorskCaught,
+                SelectTool.totalEelCaught,
+                SelectTool.eelTrapEmptied,
+                SelectTool.totalFlatfishCaught,
+                logMaster.GM.getTotalFishCaught(),
+                SelectTool. // not exactly sure how i will do this one...
+                , logMaster.EC.fishingArea,
+                SelectTool.amountWrongToolSelected);
 		}
 
 	}
@@ -181,6 +196,7 @@ public class PartnerSpeech : MonoBehaviour {
 				queuedAudio.Add(clip);
 				queuedText.Add(writtenLine);
 								Debug.Log(audio.clip.name + " audio - clip " + clip.name);
+                //amountOfVoiceLinesPlayed++;
 			}
 
 		}
@@ -193,7 +209,8 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.clip = clip;
 			speech.text = writtenLine;
 			audio.Play();
-			
+            amountOfVoiceLinesPlayed++;
+
 		}
 
 	}
@@ -205,6 +222,7 @@ public class PartnerSpeech : MonoBehaviour {
 			{
 				queuedAudio.Add(clip);
 				Debug.Log(audio.clip.name + " audio - clip " + clip.name);
+                //amountOfVoiceLinesPlayed++;
 			}
 
 		}
@@ -213,6 +231,7 @@ public class PartnerSpeech : MonoBehaviour {
 			GetComponent<PartnerAnimator>().StartTalking();
 			audio.clip = clip;
 			audio.Play();
+            amountOfVoiceLinesPlayed++;
 		}
 
 	}
@@ -224,6 +243,7 @@ public class PartnerSpeech : MonoBehaviour {
 			{
 				queuedAudio.Add(clip);
 				Debug.Log(audio.clip.name + " audio1 - clip " + clip.name);
+                //amountOfVoiceLinesPlayed++;
 			}
 		}
 		else
@@ -234,6 +254,7 @@ public class PartnerSpeech : MonoBehaviour {
 			}
 			audio.clip = clip;
 			audio.Play();
+            amountOfVoiceLinesPlayed++;
 		}
 
 	}
