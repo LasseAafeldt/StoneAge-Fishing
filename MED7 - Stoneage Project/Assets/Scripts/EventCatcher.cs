@@ -98,14 +98,14 @@ public class EventCatcher : MonoBehaviour {
 		if(GameManager.singleton.GetFishCount() >=FishToSucceed)
 			{				
 				//enough fish 7
-				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome3Emergent, hasFlint);
+				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().GoodEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
 				
 			}
 			else 
 			{				
 				//not enough fish 7
-				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome1Emergent, hasFlint);
+				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().BadEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}
 	}

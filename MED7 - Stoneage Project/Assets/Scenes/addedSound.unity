@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16101563, g: 0.15662357, b: 0.15066662, a: 1}
+  m_IndirectSpecularColor: {r: 0.15650937, g: 0.15234792, b: 0.14665583, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14409,6 +14409,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3709d45cc447ecb4ba50aa9712e1197d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seperator: ','
+  player: {fileID: 0}
+  partnerSpeech: {fileID: 0}
+  selectTool: {fileID: 0}
+  GM: {fileID: 0}
+  EC: {fileID: 0}
 --- !u!1 &1052138929
 GameObject:
   m_ObjectHideFlags: 0
@@ -18059,6 +18065,10 @@ Prefab:
       propertyPath: m_Name
       value: LandmarkTree
       objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.17948614
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
   m_IsPrefabAsset: 0
@@ -19677,6 +19687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  partnerSpeech: {fileID: 1380562104}
   EelsInTrap: 3
   FlatFishInTrap: 1
 --- !u!82 &1380562103
@@ -19785,42 +19796,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9579d19d39fc8fd4b9f66f5ab83adac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SealAppearsEmergent: {fileID: 8300000, guid: 7803ace2abce06e42a1b07f227688fe8, type: 3}
-  Time1MinLeft: {fileID: 8300000, guid: 8eacd012c123d4248a3f5c7b0c8b3e6d, type: 3}
-  Outcome1Emergent: {fileID: 8300000, guid: 14ffdf6a579c3e842a543f8646759ee6, type: 3}
-  Outcome2Emergent: {fileID: 8300000, guid: 237b0c3e6f633f64cb3b3ae46849b3d4, type: 3}
-  Outcome3Emergent: {fileID: 8300000, guid: 708cb3071a016cf46a2cb539b5a49611, type: 3}
-  GameTimerLow: {fileID: 0}
-  GameTimerEnd: {fileID: 0}
-  HomeAgain: {fileID: 0}
-  confirmEndPlz: {fileID: 0}
-  endIsConfirmed: {fileID: 0}
-  whileEelFishingFirst: {fileID: 0}
-  whileEelFishingSecond: {fileID: 0}
-  whileEelFishingThird: {fileID: 0}
-  whileTorskFishingFirst: {fileID: 0}
-  whileTorskFishingSecond: {fileID: 0}
-  whileTorskFishingThird: {fileID: 0}
-  whileFlatfishFihingFirst: {fileID: 0}
-  whileFlatfishFihingSecond: {fileID: 0}
-  whileFlatfishFihingThird: {fileID: 0}
-  whileEmptyingEeltrap: {fileID: 0}
-  OrcaAppears: {fileID: 8300000, guid: c6dde38a1972ff54a9ee8ff7b350f397, type: 3}
-  PelicanAppears: {fileID: 8300000, guid: 986da58ed6190584ba2e33eecd2f19af, type: 3}
-  NoFurther: {fileID: 8300000, guid: 638a4cabfbc36654f811e446f9475023, type: 3}
-  NoIron4CodTryHook: {fileID: 8300000, guid: 652156da801b6c64ca77d8be0ba6fbe1, type: 3}
-  NoHook4CodTryIron: {fileID: 8300000, guid: 53b159d87a6102b42bff9b1f0e887a0c, type: 3}
-  NotEnoughFishHere: {fileID: 8300000, guid: 1cc39e19d26b20f4aabd68f3d88c4078, type: 3}
-  ClosestToTorsk: {fileID: 0}
-  DetailClosestToTorsk: {fileID: 0}
-  ClosestToEel: {fileID: 0}
-  DetailClosestToEel: {fileID: 0}
-  ClosestToEeltrap: {fileID: 0}
-  DetailClosestToEeltrap: {fileID: 0}
-  ClosestToFlatfish: {fileID: 0}
-  DetailClosestToFlatfish: {fileID: 0}
-  StartingSoundGoFishing: {fileID: 0}
-  noFishHere: []
+  logMaster: {fileID: 0}
+  SealAppearsEmergent: {fileID: 8300000, guid: 11c6b3c613853a441974aa57b4f4e870, type: 3}
+  BadEnding: {fileID: 8300000, guid: f6c58df699a189c439ca899d42df7043, type: 3}
+  GoodEnding: {fileID: 8300000, guid: 3c4cd016921d53540af96aaf4be22ddc, type: 3}
+  GameTimerLow: {fileID: 8300000, guid: db9f77e6731b0cb478ef126ccef7f911, type: 3}
+  GameTimerEnd: {fileID: 8300000, guid: 056dc51462e95ce4bbf27b899fed155c, type: 3}
+  HomeAgain: {fileID: 8300000, guid: 52eb03955e557ac4dabcc551a79c13ba, type: 3}
+  confirmEndPlz: {fileID: 8300000, guid: 1cae6b96d54f3d04494cebfb315f2c55, type: 3}
+  endIsConfirmed: {fileID: 8300000, guid: f295a0fa93e456f4dbd93a659fd5d5e3, type: 3}
+  whileEelFishingFirst: {fileID: 8300000, guid: f7a1deef6f720074f8e0051b9d99898c,
+    type: 3}
+  whileEelFishingSecond: {fileID: 8300000, guid: 34f48cf7ccd945743a4a73f3edc0ca2c,
+    type: 3}
+  whileEelFishingThird: {fileID: 8300000, guid: 953d16e0302356841b73b09cbfb86879,
+    type: 3}
+  whileTorskFishingFirst: {fileID: 8300000, guid: 9508f99692bb3cb4c91bbfef37002e18,
+    type: 3}
+  whileTorskFishingSecond: {fileID: 8300000, guid: 9c53166a0e470ea4f9cca1a14e56184d,
+    type: 3}
+  whileTorskFishingThird: {fileID: 8300000, guid: 3a31edc62ffc80f4eb168c232b141de3,
+    type: 3}
+  whileFlatfishFihingFirst: {fileID: 8300000, guid: 204ef171197c04144891c15d53fea471,
+    type: 3}
+  whileFlatfishFihingSecond: {fileID: 8300000, guid: 6714acad0a7fd104fb7a031d1346b2fe,
+    type: 3}
+  whileFlatfishFihingThird: {fileID: 8300000, guid: a1046e7b2afd1904cbed5826f9856b20,
+    type: 3}
+  whileEmptyingEeltrap: {fileID: 8300000, guid: 20f94ad172a5aec49a614d10aa463018,
+    type: 3}
+  afterEmptyingEeltrap: {fileID: 8300000, guid: 9467d96fa2776c4498a1241e0670587e,
+    type: 3}
+  OrcaAppears: {fileID: 8300000, guid: 27b86667c59a39e4ab32e5fa0afcdb48, type: 3}
+  PelicanAppears: {fileID: 8300000, guid: cab1247db24fded4ea1dded4c87e6ee1, type: 3}
+  NoFurther: {fileID: 8300000, guid: e31e2c783207cf542b9d96f5223dd5e5, type: 3}
+  NoIron4CodTryHook: {fileID: 8300000, guid: a6f33c986b399f84089e1f68e2c02193, type: 3}
+  NoHook4CodTryIron: {fileID: 8300000, guid: b305e28210aa2e645a873a56631e3135, type: 3}
+  ClosestToTorsk: {fileID: 8300000, guid: 8341d24d294ae2443badaf7c179ad14d, type: 3}
+  DetailClosestToTorsk: {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d,
+    type: 3}
+  ClosestToEel: {fileID: 8300000, guid: 50b0994df8acb9e4ea5aa8b12f735f41, type: 3}
+  DetailClosestToEel: {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
+  ClosestToEeltrap: {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
+  DetailClosestToEeltrap: {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2,
+    type: 3}
+  ClosestToFlatfish: {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
+  DetailClosestToFlatfish: {fileID: 8300000, guid: 1227b662328cc8049a5b4880f50b040d,
+    type: 3}
+  StartingSoundGoFishing: {fileID: 8300000, guid: 47129e63cdf44fe4e993f1375c3ce4ba,
+    type: 3}
+  noFishHere:
+  - {fileID: 8300000, guid: e397d7f89dd3b7a4cb039744e94ce286, type: 3}
+  - {fileID: 8300000, guid: 0fc117783b0fce34da0f6ab7fbaae583, type: 3}
+  - {fileID: 8300000, guid: f3914ba0bbfa56f48b86074215029553, type: 3}
+  - {fileID: 8300000, guid: fc3beb69779751e40b9e94281142e591, type: 3}
+  - {fileID: 8300000, guid: 4d798c64abfb98143894c7df6924287a, type: 3}
   speech: {fileID: 350137110}
 --- !u!1 &1385600245
 GameObject:
@@ -20641,6 +20671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  partnerSpeech: {fileID: 0}
   EelsInTrap: 3
   FlatFishInTrap: 1
 --- !u!114 &1460966463
@@ -20654,11 +20685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9579d19d39fc8fd4b9f66f5ab83adac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logMaster: {fileID: 0}
   SealAppearsEmergent: {fileID: 0}
-  Time1MinLeft: {fileID: 0}
-  Outcome1Emergent: {fileID: 0}
-  Outcome2Emergent: {fileID: 0}
-  Outcome3Emergent: {fileID: 0}
+  BadEnding: {fileID: 0}
+  GoodEnding: {fileID: 0}
   GameTimerLow: {fileID: 0}
   GameTimerEnd: {fileID: 0}
   HomeAgain: {fileID: 0}
@@ -20674,12 +20704,12 @@ MonoBehaviour:
   whileFlatfishFihingSecond: {fileID: 0}
   whileFlatfishFihingThird: {fileID: 0}
   whileEmptyingEeltrap: {fileID: 0}
+  afterEmptyingEeltrap: {fileID: 0}
   OrcaAppears: {fileID: 0}
   PelicanAppears: {fileID: 0}
   NoFurther: {fileID: 0}
   NoIron4CodTryHook: {fileID: 0}
   NoHook4CodTryIron: {fileID: 0}
-  NotEnoughFishHere: {fileID: 0}
   ClosestToTorsk: {fileID: 0}
   DetailClosestToTorsk: {fileID: 0}
   ClosestToEel: {fileID: 0}

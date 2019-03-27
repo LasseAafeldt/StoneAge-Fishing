@@ -7,7 +7,7 @@ public class PartnerAnimator : MonoBehaviour {
 
     [HideInInspector]
 	public Animator anim;
-
+    public PartnerSpeech partnerSpeech;
     public int EelsInTrap = 3;
     public int FlatFishInTrap = 1;
 
@@ -197,6 +197,7 @@ public class PartnerAnimator : MonoBehaviour {
 
             GameManager.singleton.canMove = true;
             Debug.Log("i can move again");
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.afterEmptyingEeltrap);
         } else {
 			trapEmpty();
 			Debug.Log("Trap Empty");

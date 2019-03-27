@@ -46,11 +46,11 @@ public class PartnerSpeech : MonoBehaviour {
 	//public AudioClip FirstTimeCod;
 	//public AudioClip FirstTimeFlatFish;
 	public AudioClip SealAppearsEmergent;
-	public AudioClip Time1MinLeft;
+	//public AudioClip Time1MinLeft;
 	//public AudioClip Time2MinLeft;
-	public AudioClip Outcome1Emergent;
-	public AudioClip Outcome2Emergent;
-	public AudioClip Outcome3Emergent;
+	public AudioClip BadEnding;
+	//public AudioClip Outcome2Emergent;
+	public AudioClip GoodEnding;
     //public AudioClip Outcome4Emergent;
     //public AudioClip Outcome5Emergent;
     public AudioClip GameTimerLow;
@@ -68,6 +68,7 @@ public class PartnerSpeech : MonoBehaviour {
     public AudioClip whileFlatfishFihingSecond;
     public AudioClip whileFlatfishFihingThird;
     public AudioClip whileEmptyingEeltrap;
+    public AudioClip afterEmptyingEeltrap;
 
     //for both condition
     [Header("neutral sounds")]
@@ -91,7 +92,7 @@ public class PartnerSpeech : MonoBehaviour {
 	public AudioClip NoFurther;
 	public AudioClip NoIron4CodTryHook;
 	public AudioClip NoHook4CodTryIron;
-	public AudioClip NotEnoughFishHere;
+	//public AudioClip NotEnoughFishHere;
 	//public AudioClip WeNeedFish;
 
     [Header("Guidance sounds")]
@@ -174,7 +175,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             amountOfVoiceLinesPlayed++;
             //sound is played so do log entry
-            logMaster.logEntry(
+            /*logMaster.logEntry(
                 PartnerSpeech.amountOfVoiceLinesPlayed,
                 logMaster.player.position,
                 SelectTool.totalTorskCaught,
@@ -185,7 +186,7 @@ public class PartnerSpeech : MonoBehaviour {
                 SelectTool.latestInteraction,
                 logMaster.EC.fishingArea,
                 SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);
+                SelectTool.amountWrongToolSelected);*/
 		}
 
 	}
@@ -213,7 +214,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             amountOfVoiceLinesPlayed++;
             //sound is played so do log entry
-            logMaster.logEntry(
+            /*logMaster.logEntry(
                 PartnerSpeech.amountOfVoiceLinesPlayed,
                 logMaster.player.position,
                 SelectTool.totalTorskCaught,
@@ -224,7 +225,7 @@ public class PartnerSpeech : MonoBehaviour {
                 SelectTool.latestInteraction,
                 logMaster.EC.fishingArea,
                 SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);
+                SelectTool.amountWrongToolSelected);*/
         }
 
 	}
@@ -247,7 +248,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             amountOfVoiceLinesPlayed++;
             //sound is played so do log entry
-            logMaster.logEntry(
+            /*logMaster.logEntry(
                 PartnerSpeech.amountOfVoiceLinesPlayed,
                 logMaster.player.position,
                 SelectTool.totalTorskCaught,
@@ -258,7 +259,7 @@ public class PartnerSpeech : MonoBehaviour {
                 SelectTool.latestInteraction,
                 logMaster.EC.fishingArea,
                 SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);
+                SelectTool.amountWrongToolSelected);*/
         }
 
 	}
@@ -283,7 +284,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             amountOfVoiceLinesPlayed++;
             //sound is played so do log entry
-            logMaster.logEntry(
+            /*logMaster.logEntry(
                 PartnerSpeech.amountOfVoiceLinesPlayed,
                 logMaster.player.position,
                 SelectTool.totalTorskCaught,
@@ -294,7 +295,7 @@ public class PartnerSpeech : MonoBehaviour {
                 SelectTool.latestInteraction,
                 logMaster.EC.fishingArea,
                 SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);
+                SelectTool.amountWrongToolSelected);*/
         }
 
 	}

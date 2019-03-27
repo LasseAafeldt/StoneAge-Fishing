@@ -110,9 +110,9 @@ public class playTimer : MonoBehaviour {
         else
         {
             Debug.Log("time has run out and player did not have enough fish");
-            GameManager.singleton.PrepareForEndScene(
+            /*GameManager.singleton.PrepareForEndScene(
                 GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome2Emergent,
-                GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());
+                GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());*/
             SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
         }
     }
