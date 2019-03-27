@@ -36,7 +36,7 @@ public class LogMaster : MonoBehaviour {
         }
     }
 
-    public void logEntry(int amountOfVoicelinesPlayed, Vector3 playerPosition, int totalTorskCaught, int totalEelCaught, bool triedEelTrap, int TotalFlatfishCaught, int totalFishCaught, string attemptedInteraction, string areaTag, int timesWrongToolHasBeenSelected)
+    public void logEntry(int amountOfVoicelinesPlayed, Vector3 playerPosition, int totalTorskCaught, int totalEelCaught, bool triedEelTrap, int TotalFlatfishCaught, int totalFishCaught, string latestInteraction, string areaTag, int timesFishedNowhere, int timesWrongToolHasBeenSelected)
     {
         using (StreamWriter SW = new StreamWriter(File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Write)))
         {
@@ -51,8 +51,9 @@ public class LogMaster : MonoBehaviour {
             string _triedEeltrap = triedEelTrap.ToString() + seperator;
             string _totalFlatfishCaught = TotalFlatfishCaught.ToString() + seperator;
             string _totalFishCaught = totalFishCaught.ToString() + seperator;
-            string _attemptedInteraction = attemptedInteraction.ToString() + seperator;
+            string _latestInteraction = latestInteraction.ToString() + seperator;
             string _areaTag = areaTag.ToString() + seperator;
+            string _timesFishedNowhere = timesFishedNowhere.ToString() + seperator;
             string _timesWrongTool = timesWrongToolHasBeenSelected.ToString();
 
             string[] stuffToWrite = {
@@ -64,13 +65,15 @@ public class LogMaster : MonoBehaviour {
                 _triedEeltrap,
                 _totalFlatfishCaught,
                 _totalFishCaught,
-                _attemptedInteraction,
+                _latestInteraction,
                 _areaTag,
+                _timesFishedNowhere,
                 _timesWrongTool
             };
             //string data = new string((string)dateAndTime + (string)_amountOfVoiceLinesPlayed + (string)_playerPosition + (string)_triedTorsk +(string) _triedEel + (string)_triedEeltrap + (string)_triedFlatfish + (string)_totalFishCaught + (string)_attemptedInteraction + (string)_timesWrongTool);
             
-            SW.WriteLine(dateAndTime + _amountOfVoiceLinesPlayed + _playerPosition + _TotalTorskCaught + _totalEelCaught + _triedEeltrap + _totalFlatfishCaught + _totalFishCaught + _attemptedInteraction + _areaTag + _timesWrongTool);
+            SW.WriteLine(dateAndTime + _amountOfVoiceLinesPlayed + _playerPosition + _TotalTorskCaught + _totalEelCaught + _triedEeltrap + _totalFlatfishCaught + _totalFishCaught + _latestInteraction + _areaTag + _timesFishedNowhere + _timesWrongTool);
+            // log entry when a sound is played...
 
             Debug.Log("writing in the file has been completed");            
         }
@@ -85,7 +88,8 @@ public class LogMaster : MonoBehaviour {
                 SelectTool.eelTrapEmptied,
                 SelectTool.totalFlatfishCaught,
                 logMaster.GM.getTotalFishCaught(),
-                SelectTool. // not exactly sure how i will do this one...
-                , logMaster.EC.fishingArea,
+                SelectTool.latestInteraction,
+                logMaster.EC.fishingArea,
+                SelectTool.timesFishedNowhereTotal,
                 SelectTool.amountWrongToolSelected);*/
 }

@@ -173,6 +173,7 @@ public class PartnerSpeech : MonoBehaviour {
 			speech.text = writtenLine;
 			audio.Play();
             amountOfVoiceLinesPlayed++;
+            //sound is played so do log entry
             logMaster.logEntry(
                 PartnerSpeech.amountOfVoiceLinesPlayed,
                 logMaster.player.position,
@@ -181,8 +182,9 @@ public class PartnerSpeech : MonoBehaviour {
                 SelectTool.eelTrapEmptied,
                 SelectTool.totalFlatfishCaught,
                 logMaster.GM.getTotalFishCaught(),
-                SelectTool. // not exactly sure how i will do this one...
-                , logMaster.EC.fishingArea,
+                SelectTool.latestInteraction,
+                logMaster.EC.fishingArea,
+                SelectTool.timesFishedNowhereTotal,
                 SelectTool.amountWrongToolSelected);
 		}
 
@@ -210,8 +212,20 @@ public class PartnerSpeech : MonoBehaviour {
 			speech.text = writtenLine;
 			audio.Play();
             amountOfVoiceLinesPlayed++;
-
-		}
+            //sound is played so do log entry
+            logMaster.logEntry(
+                PartnerSpeech.amountOfVoiceLinesPlayed,
+                logMaster.player.position,
+                SelectTool.totalTorskCaught,
+                SelectTool.totalEelCaught,
+                SelectTool.eelTrapEmptied,
+                SelectTool.totalFlatfishCaught,
+                logMaster.GM.getTotalFishCaught(),
+                SelectTool.latestInteraction,
+                logMaster.EC.fishingArea,
+                SelectTool.timesFishedNowhereTotal,
+                SelectTool.amountWrongToolSelected);
+        }
 
 	}
 	public void PartnerSaysSomething(AudioClip clip)
@@ -232,7 +246,20 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.clip = clip;
 			audio.Play();
             amountOfVoiceLinesPlayed++;
-		}
+            //sound is played so do log entry
+            logMaster.logEntry(
+                PartnerSpeech.amountOfVoiceLinesPlayed,
+                logMaster.player.position,
+                SelectTool.totalTorskCaught,
+                SelectTool.totalEelCaught,
+                SelectTool.eelTrapEmptied,
+                SelectTool.totalFlatfishCaught,
+                logMaster.GM.getTotalFishCaught(),
+                SelectTool.latestInteraction,
+                logMaster.EC.fishingArea,
+                SelectTool.timesFishedNowhereTotal,
+                SelectTool.amountWrongToolSelected);
+        }
 
 	}
 	public void PartnerSaysSomething(AudioClip clip, bool animation)
@@ -255,7 +282,20 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.clip = clip;
 			audio.Play();
             amountOfVoiceLinesPlayed++;
-		}
+            //sound is played so do log entry
+            logMaster.logEntry(
+                PartnerSpeech.amountOfVoiceLinesPlayed,
+                logMaster.player.position,
+                SelectTool.totalTorskCaught,
+                SelectTool.totalEelCaught,
+                SelectTool.eelTrapEmptied,
+                SelectTool.totalFlatfishCaught,
+                logMaster.GM.getTotalFishCaught(),
+                SelectTool.latestInteraction,
+                logMaster.EC.fishingArea,
+                SelectTool.timesFishedNowhereTotal,
+                SelectTool.amountWrongToolSelected);
+        }
 
 	}
 

@@ -11,6 +11,8 @@ public bool IsTribeBasket;
     public static int totalFlatfishCaught = 0;
     public static bool eelTrapEmptied = false;
     public static int amountWrongToolSelected = 0;
+    public static string latestInteraction = "No interaction yet";
+    public static int timesFishedNowhereTotal = 0;
 
     private static int timesFishedNoWhere;
 
@@ -51,6 +53,7 @@ PartnerAnimator PA;
 		{
 			Debug.Log("selected hook");
 			tool = tag;
+            latestInteraction = tool;
 			//play animation
 
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
@@ -106,6 +109,8 @@ PartnerAnimator PA;
 		{
 			Debug.Log("selected eeliron");
 			tool = tag;
+
+            latestInteraction = tool;
 			//play animation
 
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "EelArea")
@@ -202,6 +207,8 @@ PartnerAnimator PA;
 		if(tag =="emptyBasket")
 		{
             GameManager.singleton.canMove = false;
+
+            latestInteraction = tag;
             //Debug.Log("I can't move now");
 			PA.BasketAnimation();
             Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");
@@ -217,9 +224,11 @@ PartnerAnimator PA;
     {
         if (tag == "EndGame")
         {
+            latestInteraction = tag + " First";
             if (endGame)
             {
                 Debug.Log("Player is moving on to end scene");
+                latestInteraction = tag + " confirmed";
                 partnerSpeech.PartnerSaysSomething(partnerSpeech.endIsConfirmed);
                 //waiting to load end scene till the audioclip is done playing
                 StartCoroutine(waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed));
@@ -236,6 +245,7 @@ PartnerAnimator PA;
 
     public void notEnoughFishHere()
     {
+        timesFishedNowhereTotal++;
         if(timesFishedNoWhere >= partnerSpeech.noFishHere.Length)
         {
             guidance.playGuidanceSound();
