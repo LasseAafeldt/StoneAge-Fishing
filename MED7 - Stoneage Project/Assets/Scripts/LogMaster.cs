@@ -70,10 +70,16 @@ public class LogMaster : MonoBehaviour {
                 _timesFishedNowhere,
                 _timesWrongTool
             };
-            //string data = new string((string)dateAndTime + (string)_amountOfVoiceLinesPlayed + (string)_playerPosition + (string)_triedTorsk +(string) _triedEel + (string)_triedEeltrap + (string)_triedFlatfish + (string)_totalFishCaught + (string)_attemptedInteraction + (string)_timesWrongTool);
             
             SW.WriteLine(dateAndTime + _amountOfVoiceLinesPlayed + _playerPosition + _TotalTorskCaught + _totalEelCaught + _triedEeltrap + _totalFlatfishCaught + _totalFishCaught + _latestInteraction + _areaTag + _timesFishedNowhere + _timesWrongTool);
             // log entry when a sound is played...
+            // should maybe log when player changes position..................................
+            // log whenever a fish is caught (when total fish caught is updated)???????
+            // log when eeltrap is emptied?????????
+            // log whenever an interaction is made ???????????
+            // log whenever the area changes ?????????
+            // log whenever player fishes nowhere ??????????
+            // log whenever the wrong tool is used?????????
 
             Debug.Log("writing in the file has been completed");            
         }
