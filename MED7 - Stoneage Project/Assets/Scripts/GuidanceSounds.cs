@@ -20,6 +20,8 @@ public class GuidanceSounds : MonoBehaviour {
     public float areaTimer;
     public float areaTimerThreshold = 20f;
 
+    public static string lastGuidanceSound;
+
     string inArea = "none";
     string previousArea = "different none";
 
@@ -100,19 +102,23 @@ public class GuidanceSounds : MonoBehaviour {
         if(closestArea.tag == "TorskArea" && lvl1GuidanceSound && !GameManager.singleton.TorskCaught)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToTorsk);
+            setLastGuidanceSound(partnerSpeech.ClosestToTorsk);
         }
         if (closestArea.tag == "EelArea" && lvl1GuidanceSound && !GameManager.singleton.eelCaught)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEel);
+            setLastGuidanceSound(partnerSpeech.ClosestToEel);
         }
         if (closestArea.tag == "emptyBasket" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEeltrap);
+            setLastGuidanceSound(partnerSpeech.ClosestToEeltrap);
         }
         if (closestArea.tag == "FlatfishArea" && lvl1GuidanceSound && !GameManager.singleton.flatFishCaught)
         {
             //Debug.Log("the flatfish area is over there... Sound is suppose to play");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToFlatfish);
+            setLastGuidanceSound(partnerSpeech.ClosestToFlatfish);
         }
 
         updateArea(closestArea);
@@ -159,21 +165,30 @@ public class GuidanceSounds : MonoBehaviour {
         {
             //Debug.Log("Playing detail area sund Torsk");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToTorsk);
+            setLastGuidanceSound(partnerSpeech.DetailClosestToTorsk);
         }
         if (inArea == "EelArea" && !GameManager.singleton.eelCaught)
         {
             //Debug.Log("Playing detail area sund Eel");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToEel);
+            setLastGuidanceSound(partnerSpeech.DetailClosestToEel);
         }
         if (inArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
         {
             //Debug.Log("Playing detail area sund EelTrap");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToEeltrap);
+            setLastGuidanceSound(partnerSpeech.DetailClosestToEeltrap);
         }
         if (inArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
         {
             //Debug.Log("Playing detail area sund Flatfish");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToFlatfish);
+            setLastGuidanceSound(partnerSpeech.DetailClosestToFlatfish);
         }
+    }
+
+    void setLastGuidanceSound(AudioClip clip)
+    {
+        lastGuidanceSound = clip.name;
     }
 }

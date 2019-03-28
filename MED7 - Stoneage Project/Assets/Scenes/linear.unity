@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15651086, g: 0.15235108, b: 0.14665833, a: 1}
+  m_IndirectSpecularColor: {r: 0.16114876, g: 0.15674996, b: 0.15075472, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTribeBasket: 0
+  wrongTool: 0
 --- !u!1 &2010037
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,7 +5947,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 424200592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
   m_Name: 
@@ -9255,6 +9256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTribeBasket: 0
+  wrongTool: 0
 --- !u!65 &647167070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14028,6 +14030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTribeBasket: 1
+  wrongTool: 0
 --- !u!65 &1008707523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14643,10 +14646,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seperator: ','
   player: {fileID: 0}
-  partnerSpeech: {fileID: 0}
-  selectTool: {fileID: 0}
-  GM: {fileID: 0}
-  EC: {fileID: 0}
 --- !u!1 &1052138929
 GameObject:
   m_ObjectHideFlags: 0
@@ -14815,6 +14814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTribeBasket: 0
+  wrongTool: 0
 --- !u!114 &1058819449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19914,7 +19914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9579d19d39fc8fd4b9f66f5ab83adac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logMaster: {fileID: 0}
   SealAppearsEmergent: {fileID: 8300000, guid: 7803ace2abce06e42a1b07f227688fe8, type: 3}
   BadEnding: {fileID: 0}
   GoodEnding: {fileID: 0}
@@ -20851,7 +20850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9579d19d39fc8fd4b9f66f5ab83adac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logMaster: {fileID: 0}
   SealAppearsEmergent: {fileID: 0}
   BadEnding: {fileID: 0}
   GoodEnding: {fileID: 0}
@@ -25264,6 +25262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTribeBasket: 0
+  wrongTool: 0
 --- !u!65 &1811565867
 BoxCollider:
   m_ObjectHideFlags: 0
