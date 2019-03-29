@@ -84,13 +84,13 @@ public class EventCatcher : MonoBehaviour {
             ExitArea();
         }
         //when exit torsk territory pelican event happens 
-        /*if(other.tag == "pelicanTrigger")
+        if(other.tag == "pelicanTrigger")
         {
 			GameManager.singleton.PelicanEvent.SetActive(true);
 			GameManager.singleton.PelicanEvent.transform.SetParent(null);
 			GameManager.singleton.PelicanEvent.GetComponentInChildren<orcaEvent>().startOrcaEvent();
             //partner says pelican thing
-        }*/       
+        }       
     }
 
 	public void CheckForEnding()
