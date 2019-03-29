@@ -71,7 +71,7 @@ public class EventCatcher : MonoBehaviour {
             //change scene
             //CheckForEnding();
             //Debug.Log("I have sailed into the collider which previously caused the game to load the endscene");
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.HomeAgain);
+            //partnerSpeech.PartnerSaysSomething(partnerSpeech.HomeAgain);
             Debug.Log("player sailed intot the Ertebølle trigger: if you want to end then hand the fish over to the lady");
 		}
     }
@@ -95,17 +95,19 @@ public class EventCatcher : MonoBehaviour {
 
 	public void CheckForEnding()
 	{
-		if(GameManager.singleton.GetFishCount() >=FishToSucceed)
-			{				
-				//enough fish 7
+		if(GameManager.singleton.GetFishCount() >= FishToSucceed)
+			{
+            //enough fish 7
+            Debug.Log("Good ending");
 				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().GoodEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
 				
 			}
 			else 
-			{				
-				//not enough fish 7
-				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().BadEnding, hasFlint);
+			{
+            //not enough fish 7
+            Debug.Log("Bad ending");
+            GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().BadEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}
 	}

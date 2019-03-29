@@ -103,18 +103,18 @@ public class playTimer : MonoBehaviour {
         // change scene
         Debug.Log("time has run out, and audio is done playing");
         //did not make it back in time
-        if (GameManager.singleton.GetFishCount() >= 7)
-        {
+        //if (GameManager.singleton.GetFishCount() >= 7)
+        //{
             GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
-        }
-        else
-        {
-            Debug.Log("time has run out and player did not have enough fish");
-            /*GameManager.singleton.PrepareForEndScene(
-                GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome2Emergent,
-                GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());*/
-            SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-        }
+        //}
+        //else
+        //{
+        //    Debug.Log("time has run out and player did not have enough fish");
+        //    /*GameManager.singleton.PrepareForEndScene(
+        //        GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome2Emergent,
+        //        GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());*/
+        //    SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
+        //}
     }
 
 	public float GetTimeSpent()
