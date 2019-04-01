@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrcaTrigger : MonoBehaviour {
     public Collider collider;
-    public GameObject orca;
+    public GameObject orca; //makes sure the model is active
     public AnimationClip playAnimation;
 
 	// Use this for initialization
@@ -16,9 +16,9 @@ public class OrcaTrigger : MonoBehaviour {
        
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider collision) //collider collision er sådan man kalder den. 
     {
-        orca.SetActive(true);
+        orca.SetActive(true); //gør gameobjected aktivt
         StartCoroutine(waitForOrcaAnimation(playAnimation));
         Debug.Log("hello world");
     }
