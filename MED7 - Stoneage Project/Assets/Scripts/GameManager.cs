@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(LogMaster))]
 public class GameManager : MonoBehaviour {
 
         public static GameManager singleton = null;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour {
     //instances in the scene
 
     public GameObject CameraContainer;
+    public LogMaster logMaster;
         public GameObject timer;
         public GameObject boat;
         public GameObject tribeBoat;
@@ -98,6 +100,15 @@ public class GameManager : MonoBehaviour {
             //Sets this to not be destroyed when reloading scene
             DontDestroyOnLoad(gameObject);
         CameraContainer = GameObject.FindGameObjectWithTag("Guidance");
+        if(GetComponent<LogMaster>() != null)
+        {
+            logMaster = GetComponent<LogMaster>();
+        }
+        else
+        {
+            Debug.LogError("GameManager object have no logMaster component");
+        }
+
             timer = GameObject.FindGameObjectWithTag("timer");
             //Debug.Log(boat.gameObject.name); 
             boat = GameObject.FindGameObjectWithTag("boat");

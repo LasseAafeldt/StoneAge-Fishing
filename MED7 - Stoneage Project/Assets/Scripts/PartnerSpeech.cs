@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class PartnerSpeech : MonoBehaviour {
 
 	AudioSource audio;
-    public static int amountOfVoiceLinesPlayed = 0;
-    public LogMaster logMaster;
+    public static string lastVoiceline;
 
-	//for linear condition
-	/*[Header("linear sounds")]
+    //for linear condition
+    /*[Header("linear sounds")]
 	public AudioClip StartofGameLinear;
 	public AudioClip AfterEmptyBasket;
 	public AudioClip AfterCodCatch;
@@ -26,8 +25,8 @@ public class PartnerSpeech : MonoBehaviour {
 	public AudioClip Outcome1Linear;
 	public AudioClip Outcome2Linear;*/
 
-	//for emergent condition
-	[Header("Emergent sounds")]
+    //for emergent condition
+    [Header("Emergent sounds")]
 	//public AudioClip StartofGameEmergent;
 	//public AudioClip CheckBasketFish;
 	//public AudioClip CheckBasketNoFish;
@@ -173,20 +172,10 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.clip = clip;
 			speech.text = writtenLine;
 			audio.Play();
-            amountOfVoiceLinesPlayed++;
+            //amountOfVoiceLinesPlayed++;
+            setLastPlayedVoiceline(clip);
             //sound is played so do log entry
-            /*logMaster.logEntry(
-                PartnerSpeech.amountOfVoiceLinesPlayed,
-                logMaster.player.position,
-                SelectTool.totalTorskCaught,
-                SelectTool.totalEelCaught,
-                SelectTool.eelTrapEmptied,
-                SelectTool.totalFlatfishCaught,
-                logMaster.GM.getTotalFishCaught(),
-                SelectTool.latestInteraction,
-                logMaster.EC.fishingArea,
-                SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);*/
+            
 		}
 
 	}
@@ -212,20 +201,10 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.clip = clip;
 			speech.text = writtenLine;
 			audio.Play();
-            amountOfVoiceLinesPlayed++;
+            //amountOfVoiceLinesPlayed++;
+            setLastPlayedVoiceline(clip);
             //sound is played so do log entry
-            /*logMaster.logEntry(
-                PartnerSpeech.amountOfVoiceLinesPlayed,
-                logMaster.player.position,
-                SelectTool.totalTorskCaught,
-                SelectTool.totalEelCaught,
-                SelectTool.eelTrapEmptied,
-                SelectTool.totalFlatfishCaught,
-                logMaster.GM.getTotalFishCaught(),
-                SelectTool.latestInteraction,
-                logMaster.EC.fishingArea,
-                SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);*/
+            
         }
 
 	}
@@ -246,20 +225,10 @@ public class PartnerSpeech : MonoBehaviour {
 			GetComponent<PartnerAnimator>().StartTalking();
 			audio.clip = clip;
 			audio.Play();
-            amountOfVoiceLinesPlayed++;
+            //amountOfVoiceLinesPlayed++;
+            setLastPlayedVoiceline(clip);
             //sound is played so do log entry
-            /*logMaster.logEntry(
-                PartnerSpeech.amountOfVoiceLinesPlayed,
-                logMaster.player.position,
-                SelectTool.totalTorskCaught,
-                SelectTool.totalEelCaught,
-                SelectTool.eelTrapEmptied,
-                SelectTool.totalFlatfishCaught,
-                logMaster.GM.getTotalFishCaught(),
-                SelectTool.latestInteraction,
-                logMaster.EC.fishingArea,
-                SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);*/
+            
         }
 
 	}
@@ -282,22 +251,15 @@ public class PartnerSpeech : MonoBehaviour {
 			}
 			audio.clip = clip;
 			audio.Play();
-            amountOfVoiceLinesPlayed++;
-            //sound is played so do log entry
-            /*logMaster.logEntry(
-                PartnerSpeech.amountOfVoiceLinesPlayed,
-                logMaster.player.position,
-                SelectTool.totalTorskCaught,
-                SelectTool.totalEelCaught,
-                SelectTool.eelTrapEmptied,
-                SelectTool.totalFlatfishCaught,
-                logMaster.GM.getTotalFishCaught(),
-                SelectTool.latestInteraction,
-                logMaster.EC.fishingArea,
-                SelectTool.timesFishedNowhereTotal,
-                SelectTool.amountWrongToolSelected);*/
+            //amountOfVoiceLinesPlayed++;
+            setLastPlayedVoiceline(clip);
+            
         }
 
 	}
 
+    void setLastPlayedVoiceline(AudioClip clip)
+    {
+        lastVoiceline = clip.name;
+    }
 }

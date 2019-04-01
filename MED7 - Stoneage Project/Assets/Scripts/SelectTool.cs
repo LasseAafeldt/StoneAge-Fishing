@@ -5,13 +5,26 @@ using UnityEngine;
 public class SelectTool : MonoBehaviour {
 
 public bool IsTribeBasket;
+    enum FishCaught //may need to map this to a static int....
+    {
+        None,
+        Torsk,
+        Eel,
+        Flatfish,
+        EeltrapEmptied
+    }
+    [HideInInspector]
+    FishCaught fishCaught; //call with the right fish in select tool
+    public enum WrongTool
+    {
+        None,
+        NoIron4Cod,
+        NoHook4Eel
+    }
+    [HideInInspector]
+    public WrongTool wrongTool; //call with the wright wrong tool voiceline in select tool
 
-    public static int totalTorskCaught = 0;
-    public static int totalEelCaught = 0;
-    public static int totalFlatfishCaught = 0;
-    public static bool eelTrapEmptied = false;
-    public static int amountWrongToolSelected = 0;
-    public static string latestInteraction = "No interaction yet";
+    public static bool eelTrapEmptied = false;    
     public static int timesFishedNowhereTotal = 0;
 
     private static int timesFishedNoWhere;
@@ -20,6 +33,7 @@ EventCatcher EC;
 PartnerAnimator PA;
     PartnerSpeech partnerSpeech;
     GuidanceSounds guidance;
+    LogMaster logMaster;
 
 	string tool ="";
 
@@ -41,11 +55,12 @@ PartnerAnimator PA;
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
             partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
             guidance = GameManager.singleton.CameraContainer.GetComponent<GuidanceSounds>();
+            logMaster = GameManager.singleton.logMaster;
 
         }
 		catch{}
         timesFishedNoWhere = 0;
-	}
+    }
 	
 	public void Select(){
 		//selecting which tool to use 
@@ -53,7 +68,6 @@ PartnerAnimator PA;
 		{
 			Debug.Log("selected hook");
 			tool = tag;
-            latestInteraction = tool;
 			//play animation
 
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
@@ -67,7 +81,6 @@ PartnerAnimator PA;
                     firstFishingTorsk = false;
                     secondFishingTorsk = true;
                     EC.startFishing(tool);
-                    totalTorskCaught++;
                     return;
                 }
                 if (secondFishingTorsk)
@@ -76,7 +89,6 @@ PartnerAnimator PA;
                     secondFishingTorsk = false;
                     thirdFishingTorsk = true;
                     EC.startFishing(tool);
-                    totalTorskCaught++;
                     return;
                 }
                 if (thirdFishingTorsk)
@@ -84,7 +96,6 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingThird);
                     thirdFishingTorsk = false;
                     EC.startFishing(tool);
-                    totalTorskCaught++;
                     return;
                 }
                 Debug.Log("player has fished torsk 3 times now");
@@ -97,10 +108,8 @@ PartnerAnimator PA;
 			else
 			{
                 //wrong tool
+                setWrongToolVoicelineInt(WrongTool.NoIron4Cod);
                 Debug.Log("this is not the tool to use for torsk");
-
-                amountWrongToolSelected++;
-
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoHook4CodTryIron);
 			}
@@ -109,8 +118,6 @@ PartnerAnimator PA;
 		{
 			Debug.Log("selected eeliron");
 			tool = tag;
-
-            latestInteraction = tool;
 			//play animation
 
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "EelArea")
@@ -124,7 +131,6 @@ PartnerAnimator PA;
                     firstFishingEel = false;
                     secondFishingEel = true;
                     EC.startFishing(tool);
-                    totalEelCaught++;
                     return;
                 }
                 if (secondFishingEel)
@@ -133,7 +139,6 @@ PartnerAnimator PA;
                     secondFishingEel = false;
                     thirdFishingEel = true;
                     EC.startFishing(tool);
-                    totalEelCaught++;
                     return;
                 }
                 if (thirdFishingEel)
@@ -141,7 +146,6 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingThird);
                     thirdFishingEel = false;
                     EC.startFishing(tool);
-                    totalEelCaught++;
                     return;
                 }
                 Debug.Log("player has fished eel 3 times now");
@@ -157,7 +161,6 @@ PartnerAnimator PA;
                     firstFishingFlatfish = false;
                     secondFishingFlatfish = true;
                     EC.startFishing(tool);
-                    totalFlatfishCaught++;
                     return;
                 }
                 if (secondFishingFlatfish)
@@ -166,7 +169,6 @@ PartnerAnimator PA;
                     secondFishingFlatfish = false;
                     thirdFishingFlatfish = true;
                     EC.startFishing(tool);
-                    totalFlatfishCaught++;
                     return;
                 }
                 if (thirdFishingFlatfish)
@@ -174,7 +176,6 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingThird);
                     thirdFishingFlatfish = false;
                     EC.startFishing(tool);
-                    totalFlatfishCaught++;
                     return;
                 }
                 Debug.Log("player has fished Flatfish 3 times now");
@@ -187,17 +188,18 @@ PartnerAnimator PA;
 			else
 			{
                 //wrong tool
+                setWrongToolVoicelineInt(WrongTool.NoHook4Eel);
+
                 Debug.Log("This is not the tool to use for eel or Flatfish");
-
-                amountWrongToolSelected++;
-
                 GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoIron4CodTryHook);
 			}			
 		}
-		//admit to fish with the selected tool
-		//EC.startFishing(tool);
-	}
+
+        setWrongToolVoicelineInt(WrongTool.None);
+        //admit to fish with the selected tool
+        //EC.startFishing(tool);
+    }
 
     #region empty basket 
     //PA.BasketAnimation is apparently what empties the basket and adds fish to the basket, or well it makes it somehow
@@ -207,8 +209,6 @@ PartnerAnimator PA;
 		if(tag =="emptyBasket")
 		{
             GameManager.singleton.canMove = false;
-
-            latestInteraction = tag;
             //Debug.Log("I can't move now");
 			PA.BasketAnimation();
             Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");
@@ -224,11 +224,9 @@ PartnerAnimator PA;
     {
         if (tag == "EndGame")
         {
-            latestInteraction = tag + " First";
             if (endGame)
             {
                 Debug.Log("Player is moving on to end scene");
-                latestInteraction = tag + " confirmed";
                 partnerSpeech.PartnerSaysSomething(partnerSpeech.endIsConfirmed);
                 //waiting to load end scene till the audioclip is done playing
                 StartCoroutine(waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed));
@@ -281,4 +279,42 @@ PartnerAnimator PA;
         EC.CheckForEnding();
     }
 
+    void setWrongToolVoicelineInt(WrongTool WrongToolVoice)
+    {
+        wrongTool = WrongToolVoice;
+        //Debug.Log("I set the enum to: " + WrongToolVoice);
+        LogMaster.WrongToolVoiceline = (int)wrongTool;
+        //call the log entry function here inorder not to loose the wrongtool data
+        if(LogMaster.filePath != null)
+        {
+            logMaster.logEntry(
+                logMaster.player.position,
+                logMaster.player.rotation.eulerAngles,
+                PartnerSpeech.lastVoiceline,
+                LogMaster.TypeOfFishCaught,
+                GuidanceSounds.lastGuidanceSound,
+                timesFishedNowhereTotal,
+                LogMaster.WrongToolVoiceline);
+            Debug.Log("An entry is made in the log file...");
+        }
+    }
+
+    void setFishCaughtInt(FishCaught _fishcaught)
+    {
+        fishCaught = _fishcaught;
+        LogMaster.TypeOfFishCaught = (int)fishCaught;
+        //call logEntry function here inorder not to loose data
+        if (LogMaster.filePath != null)
+        {
+            logMaster.logEntry(
+                logMaster.player.position,
+                logMaster.player.rotation.eulerAngles,
+                PartnerSpeech.lastVoiceline,
+                LogMaster.TypeOfFishCaught,
+                GuidanceSounds.lastGuidanceSound,
+                timesFishedNowhereTotal,
+                LogMaster.WrongToolVoiceline);
+            Debug.Log("An entry is made in the log file...");
+        }
+    }
 }
