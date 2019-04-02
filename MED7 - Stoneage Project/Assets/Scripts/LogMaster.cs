@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LogMaster : MonoBehaviour {
 
     public static string filePath;
+    public static string directoryPath;
     public string seperator = ",";
     public string errorMessageToDisplay = "none";
     public Text errorTextDisplay;
@@ -67,7 +68,14 @@ public class LogMaster : MonoBehaviour {
     void setPath()
     {
         //filePath = Application.persistentDataPath + "/" + System.DateTime.Now.ToString() + ".txt";
-        filePath = Application.persistentDataPath + "/test.text";
+        string date = System.DateTime.Today.ToShortDateString();
+        string timeNow = System.DateTime.UtcNow.ToLongTimeString();
+        //Debug.Log("Date: " + date);
+        //Debug.Log("Time: " + timeNow);
+
+        directoryPath = Application.persistentDataPath + date;
+        //filePath = Application.persistentDataPath + "/test.text";
+        filePath = directoryPath + timeNow;
         Debug.Log(filePath);
     }
 
@@ -75,11 +83,8 @@ public class LogMaster : MonoBehaviour {
     public void createFile()
     {
         setPath();
-        /*if (!File.Exists(filePath))
-        {            
-            FileStream file = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
-            file.Close();
-        }*/
+        FileInfo fileInfo = new FileInfo(directoryPath);
+        fileInfo.Directory.Create();
         if (!File.Exists(filePath))
         {
             Debug.Log("The file does not exists yet so lets create it");
@@ -89,6 +94,7 @@ public class LogMaster : MonoBehaviour {
             }
             catch(System.Exception e)
             {
+                Debug.LogError(e);
                 errorMessageToDisplay = e.ToString();
                 errorTextDisplay.text = errorMessageToDisplay;
             }
