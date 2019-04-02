@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class LogMaster : MonoBehaviour {
 
     public static string filePath;
     public string seperator = ",";
+    public string errorMessageToDisplay = "none";
+    public Text errorTextDisplay;
 
     #region Log Planning
     //Log entry should be called when TypeOfFishCaught is set,
@@ -84,9 +87,10 @@ public class LogMaster : MonoBehaviour {
             {
                 FileStream file = File.Create(filePath);
             }
-            catch
+            catch(System.Exception e)
             {
-                
+                errorMessageToDisplay = e.ToString();
+                errorTextDisplay.text = errorMessageToDisplay;
             }
         }
     }
