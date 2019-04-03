@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06826014, g: 0.06736288, b: 0.065743126, a: 1}
+  m_IndirectSpecularColor: {r: 0.08622461, g: 0.084895976, b: 0.08268475, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4558,7 +4558,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.17948614
+      value: 0.32908952
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.59218705
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.9620801
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0.05919251
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
