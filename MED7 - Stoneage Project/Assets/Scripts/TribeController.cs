@@ -32,7 +32,7 @@ public class TribeController : MonoBehaviour {
 	{
 		playerBoat = GameManager.singleton.boat;
 		tribeTrigger = GameObject.FindGameObjectWithTag("tribeTrigger");
-		newPos=pillar.transform.position;
+		//newPos=pillar.transform.position;
 	}
 
 	// Update is called once per frame
