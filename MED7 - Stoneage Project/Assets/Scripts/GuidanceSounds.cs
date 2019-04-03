@@ -15,15 +15,19 @@ public class GuidanceSounds : MonoBehaviour {
     public Collider flatFish;
     public Collider start;
 
-    public float timeSinceLastGuidance;
-    public float guidanceTimerThreshold = 40f;
-    public float areaTimer;
+    public static float timeSinceLastGuidance;
+    public float guidanceTimerThreshold = 35f;
+    public static float areaTimer;
     public float areaTimerThreshold = 20f;
 
     public static string lastGuidanceSound;
 
+    public static bool standardGuidance = true;
+    public static bool detailedGuidance = false;
+
     string inArea = "none";
     string previousArea = "different none";
+    GameObject closestArea;
 
     /*bool torskHasPlayed = false;
     bool eelHasPlayed = false;
@@ -38,6 +42,8 @@ public class GuidanceSounds : MonoBehaviour {
 
     private void Start()
     {
+        standardGuidance = true;
+        detailedGuidance = false;
         timeSinceLastGuidance = 0f;
         areaTimer = 0f;
         GetComponent<SphereCollider>().radius = triggerRadius;
@@ -50,26 +56,31 @@ public class GuidanceSounds : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(timeSinceLastGuidance >= guidanceTimerThreshold)
+        updateGuidanceTimers();
+    }
+    
+    void updateGuidanceTimers()
+    {
+        if (timeSinceLastGuidance >= guidanceTimerThreshold)
         {
             playGuidanceSound();
         }
         //Debug.Log("Previous area: " + previousArea + " = Current area: " + inArea);
-        if(previousArea == inArea)
+        if (detailedGuidance)
         {
-            areaTimer += Time.deltaTime;
             if (areaTimer > areaTimerThreshold)
             {
                 detailedAreaSound();
             }
+            areaTimer += Time.deltaTime;
         }
-        timeSinceLastGuidance += Time.deltaTime;
+        if (standardGuidance)
+        {
+            timeSinceLastGuidance += Time.deltaTime;
+        }
     }
     
-    // trigger bakke sound when closest to torsk fishing
-    // trugger fugle sound when closest to ål areas
-    // trigger Ruse sound when closest to eel trap
-    // trigger start sound when ..................
+    //plays the start sound once
     private void OnTriggerEnter(Collider other)
     {
         if(other.name == start.name && !startHasPlayed)
@@ -88,7 +99,7 @@ public class GuidanceSounds : MonoBehaviour {
         }
         //reset the timer
         timeSinceLastGuidance = 0f;
-        GameObject closestArea = checkDistance();
+        closestArea = checkDistance();
 
         bool lvl1GuidanceSound = true;
         //don't play the first sound again if they are still closest to the same area.
@@ -96,6 +107,10 @@ public class GuidanceSounds : MonoBehaviour {
         {
             Debug.Log("Closest area is unchanged");
             lvl1GuidanceSound = false;
+            //change which guidance timer to use
+            detailedGuidance = true;
+            standardGuidance = false;
+            detailedAreaSound();
         }
         Debug.Log("Closest area: " + closestArea);
         //check which area is the closest
@@ -160,7 +175,24 @@ public class GuidanceSounds : MonoBehaviour {
 
     void detailedAreaSound()
     {
+        if (checkDistance() == null)
+        {
+            Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
+            return;
+        }
+        //reset the timer
         areaTimer = 0f;
+        closestArea = checkDistance();
+
+        //reset which guidance timer to use
+        if (closestArea.tag != inArea)
+        {
+            Debug.Log("Closest area is new");
+            //change which guidance timer to use
+            detailedGuidance = false;
+            standardGuidance = true;
+            return;
+        }
         if(inArea == "TorskArea" && !GameManager.singleton.TorskCaught)
         {
             //Debug.Log("Playing detail area sund Torsk");
@@ -185,10 +217,34 @@ public class GuidanceSounds : MonoBehaviour {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.DetailClosestToFlatfish);
             setLastGuidanceSound(partnerSpeech.DetailClosestToFlatfish);
         }
+        updateArea(closestArea);
     }
 
     void setLastGuidanceSound(AudioClip clip)
     {
         lastGuidanceSound = clip.name;
+    }
+
+    public void resetGuidanceTimers()
+    {
+        //reset is called in PartnerAnimator when a fish is caught
+        standardGuidance = true;
+        detailedGuidance = false;
+        timeSinceLastGuidance = 0f;
+        areaTimer = 0f;
+    }
+
+    public void addVoiceTimeToActiveTimer(float clipTime)
+    {
+        if (standardGuidance)
+        {
+            Debug.Log("voiceclip is altering Standard guidance timer");
+            timeSinceLastGuidance -= clipTime;
+        }
+        if (detailedGuidance)
+        {
+            Debug.Log("voiceclip is altering Detailed guidance timer");
+            areaTimer -= clipTime;
+        }
     }
 }
