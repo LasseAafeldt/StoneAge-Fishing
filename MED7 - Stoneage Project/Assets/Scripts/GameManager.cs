@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour {
             eeliron = GameObject.FindGameObjectWithTag("eeliron");
             //Debug.Log(eeliron.gameObject.name);
             paddle = GameObject.FindGameObjectWithTag("paddle");
-            orca = GameObject.FindGameObjectWithTag("orca");
+            //orca = GameObject.FindGameObjectWithTag("orca");
             //Debug.Log(orca.gameObject.name);
             PelicanEvent = GameObject.FindGameObjectWithTag("flyingPelican");
             //Debug.Log(PelicanEvent.gameObject.name);
