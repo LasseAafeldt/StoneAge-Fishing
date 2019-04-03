@@ -8,9 +8,7 @@ public class LogMaster : MonoBehaviour {
 
     public static string filePath;
     public static string directoryPath;
-    public string seperator = ",";
-    public string errorMessageToDisplay = "none";
-    public Text errorTextDisplay;
+    public string seperator = ",";    
 
     #region Log Planning
     //Log entry should be called when TypeOfFishCaught is set,
@@ -95,8 +93,7 @@ public class LogMaster : MonoBehaviour {
             catch(System.Exception e)
             {
                 Debug.LogError(e);
-                errorMessageToDisplay = e.ToString();
-                errorTextDisplay.text = errorMessageToDisplay;
+                // do something to show the error
             }
         }
     }

@@ -8,6 +8,7 @@ public class PartnerAnimator : MonoBehaviour {
     [HideInInspector]
 	public Animator anim;
     public PartnerSpeech partnerSpeech;
+    public GuidanceSounds guidance;
     public int EelsInTrap = 3;
     public int FlatFishInTrap = 1;
 
@@ -125,7 +126,10 @@ public class PartnerAnimator : MonoBehaviour {
 		{
 			codCaught();
 			PutTorskInBasket(1);
+            //tosk area has now been used once
             GameManager.singleton.TorskCaught = true;
+            //maybe do reset of guidance timer here????
+            guidance.resetGuidanceTimers();
         } else {
 			noCatch();
 		}
@@ -157,11 +161,13 @@ public class PartnerAnimator : MonoBehaviour {
 				
 				PutEelInBasket(1,true);
                 GameManager.singleton.eelCaught = true;
+                guidance.resetGuidanceTimers();
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().tag == "FlatfishArea")
 			{
 				PutFlatFishInBasket(1,true);
                 GameManager.singleton.flatFishCaught = true;
+                guidance.resetGuidanceTimers();
 			}
 
 		} else {
@@ -193,6 +199,7 @@ public class PartnerAnimator : MonoBehaviour {
 			Debug.Log("Trap Full");
 			basketFull = false;
 
+            guidance.resetGuidanceTimers();
             GameManager.singleton.eelTrapEmptied = true;
 
             GameManager.singleton.canMove = true;

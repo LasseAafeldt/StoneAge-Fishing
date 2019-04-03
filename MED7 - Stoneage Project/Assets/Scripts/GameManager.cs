@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(LogMaster))]
+//[RequireComponent(typeof(LogMaster))]
+//main scene needs to have a LogMaster component on this... doesn't need in other scenes
 public class GameManager : MonoBehaviour {
 
         public static GameManager singleton = null;

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class PartnerSpeech : MonoBehaviour {
-
+    public GuidanceSounds guidance;
 	AudioSource audio;
     public static string lastVoiceline;
 
@@ -115,8 +116,9 @@ public class PartnerSpeech : MonoBehaviour {
 
 	bool donePlaying =true;
 	// Use this for initialization
-	void Start () {
-		audio = GetComponent<AudioSource>();
+	void Start ()
+    {
+		audio = GetComponent<AudioSource>();        
 	}
 	
 	// Update is called once per frame
@@ -174,8 +176,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            //sound is played so do log entry
-            
+            guidance.addVoiceTimeToActiveTimer(clip.length);
 		}
 
 	}
@@ -203,8 +204,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            //sound is played so do log entry
-            
+            guidance.addVoiceTimeToActiveTimer(clip.length);
         }
 
 	}
@@ -227,8 +227,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            //sound is played so do log entry
-            
+            guidance.addVoiceTimeToActiveTimer(clip.length);
         }
 
 	}
@@ -253,7 +252,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            
+            guidance.addVoiceTimeToActiveTimer(clip.length);
         }
 
 	}
