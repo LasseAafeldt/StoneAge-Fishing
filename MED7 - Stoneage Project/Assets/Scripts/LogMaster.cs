@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LogMaster : MonoBehaviour {
 
+    public static bool shouldBeLogging = true;
+
     public static string filePath;
     public static string directoryPath;
-    public string seperator = ",";    
+    public string seperator = ",";
+    int timesIHaveLogged = 0;
 
     #region Log Planning
     //Log entry should be called when TypeOfFishCaught is set,
@@ -29,13 +32,18 @@ public class LogMaster : MonoBehaviour {
     {
         //fishCaught = FishCaught.None;
         //wrongTool = WrongTool.None;
+        if (filePath != null)
+        {
+            //Debug.Log("I should have a file path now...");
+            //do the every second call stuff here..
+            if(shouldBeLogging)
+                InvokeRepeating("doLogEntryEverySecond", 0f, 1f);
+        }
     }
     private void Update()
     {
         if(filePath != null)
         {
-            //do the every second call stuff here..
-            InvokeRepeating("doLogEntryEverySecond", 1f, 1f);
             if(Input.touchCount > 0) //if the screen is touched this frame
             {
                 if(Input.GetTouch(0).phase == TouchPhase.Began) //if the screen has just been pressed this frame
@@ -61,6 +69,9 @@ public class LogMaster : MonoBehaviour {
                 }
             }
         }
+        //reset the two enums so they are only logged when they actually happen...
+        TypeOfFishCaught = 0;
+        WrongToolVoiceline = 0;
     }
 
     void setPath()
@@ -72,9 +83,10 @@ public class LogMaster : MonoBehaviour {
         //Debug.Log("Time: " + timeNow);
 
         directoryPath = Application.persistentDataPath + date;
-        //filePath = Application.persistentDataPath + "/test.text";
-        filePath = directoryPath + timeNow;
-        Debug.Log(filePath);
+        filePath = directoryPath + timeNow + ".txt";
+        //filePath = "testWorking.txt";
+        //Debug.Log("Directory path = " + directoryPath);
+        //Debug.Log("File path = " + filePath);
     }
 
     //Called in GoToLinearScene
@@ -83,12 +95,14 @@ public class LogMaster : MonoBehaviour {
         setPath();
         FileInfo fileInfo = new FileInfo(directoryPath);
         fileInfo.Directory.Create();
+        //fileInfo.Directory.CreateSubdirectory("/test01");
         if (!File.Exists(filePath))
         {
             Debug.Log("The file does not exists yet so lets create it");
             try
             {
                 FileStream file = File.Create(filePath);
+                file.Close();
             }
             catch(System.Exception e)
             {
@@ -106,35 +120,33 @@ public class LogMaster : MonoBehaviour {
     //every second if file is not already in use...                     Done            (in this script)
     public void logEntry(Vector3 _PlayerPos, Vector3 _PlayerLookRotation, string _LastVoiceline, int _TypeOfFishCaught, string _LastGuidanceSound, int _TimesFishedNowhere, int _TypeOfWrongTool)
     {
+        Debug.Log("the file is being written in now...");
+        //write the log stuff...
+        //remember system.DateTime first
+        string dateAndTime = System.DateTime.Now.ToString() + seperator;
+        string _playerPos = _PlayerPos.ToString() + seperator;
+        string _playerLookRotation = _PlayerLookRotation.ToString() + seperator;
+        string _lastVoiceline = _LastVoiceline + seperator;
+        string _typeOfFishCaught = _TypeOfFishCaught.ToString() + seperator;
+        string _lastGuidanceSound = _LastGuidanceSound + seperator;
+        string _timesFishedNowhere = _TimesFishedNowhere.ToString() + seperator;
+        string _typeOfWrongTool = _TypeOfWrongTool.ToString();
+
+        string[] stuffToWrite = {
+            dateAndTime,
+            _playerPos,
+            _playerLookRotation,
+            _lastVoiceline,
+            _typeOfFishCaught,
+            _lastGuidanceSound,
+            _timesFishedNowhere,
+            _typeOfWrongTool
+        };
         using (StreamWriter SW = new StreamWriter(File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Write)))
         {
-            Debug.Log("the file is being written in now...");
-            //write the log stuff...
-            //remember system.DateTime first
-            string dateAndTime = System.DateTime.Now.ToString() + seperator;
-            string _playerPos = _PlayerPos.ToString() + seperator;
-            string _playerLookRotation = _PlayerLookRotation.ToString() + seperator;
-            string _lastVoiceline = _LastVoiceline + seperator;
-            string _typeOfFishCaught = _TypeOfFishCaught.ToString() + seperator;
-            string _lastGuidanceSound = _LastGuidanceSound + seperator;
-            string _timesFishedNowhere = _TimesFishedNowhere.ToString() + seperator;
-            string _typeOfWrongTool = _TypeOfWrongTool.ToString();
-
-            string[] stuffToWrite = {
-                dateAndTime,
-                _playerPos,
-                _playerLookRotation,
-                _lastVoiceline,
-                _typeOfFishCaught,
-                _lastGuidanceSound,
-                _timesFishedNowhere,
-                _typeOfWrongTool
-            };
             
-            SW.WriteLine(dateAndTime + _playerPos + _playerLookRotation + _lastVoiceline + _typeOfFishCaught + _lastGuidanceSound + _timesFishedNowhere + _typeOfWrongTool);
-            // log once a second
-            //log on pointer click, so every time the button on the cardboard HMD is pressed
-
+            SW.WriteLine(dateAndTime + _playerPos + _playerLookRotation + _lastVoiceline + _typeOfFishCaught + _lastGuidanceSound + _timesFishedNowhere + _typeOfWrongTool + seperator + timesIHaveLogged.ToString());
+            timesIHaveLogged++;
             Debug.Log("writing in the file has been completed");            
         }
     }
@@ -155,16 +167,22 @@ public class LogMaster : MonoBehaviour {
 
     void doLogEntryEverySecond()
     {
+        //Debug.Log("Do log entry every second has been called");
+        //Debug.LogWarning("Log will break in endscene if that scene is not named: End Scene");
         if (!IsFileLocked(filePath))
         {
+            if (!shouldBeLogging)
+            {
+                return;
+            }
             logEntry(
                 player.position,
                 player.rotation.eulerAngles,
                 PartnerSpeech.lastVoiceline,
-                LogMaster.TypeOfFishCaught,
+                TypeOfFishCaught,
                 GuidanceSounds.lastGuidanceSound,
                 SelectTool.timesFishedNowhereTotal,
-                LogMaster.WrongToolVoiceline);
+                WrongToolVoiceline);
             Debug.Log("An entry is made in the log file...");
         }
     }

@@ -110,6 +110,9 @@ public class EventCatcher : MonoBehaviour {
             GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().BadEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}
+        LogMaster.shouldBeLogging = false;
+        GameManager.singleton.logMaster.enabled = false;
+        Debug.Log("Log Master is disabled...");
 	}
 
 	public void ExitArea()
