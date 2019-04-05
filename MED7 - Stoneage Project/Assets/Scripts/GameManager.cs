@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public GameObject spawnPoint;
     public PartnerSpeech guide;
+    public GameObject map;
+    public GameObject mapOnCam;
 
     [Header("Prefabs that are probably not used anymore")]
     public GameObject torsk;

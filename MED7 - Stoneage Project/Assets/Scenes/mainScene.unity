@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15930724, g: 0.15500876, b: 0.14914873, a: 1}
+  m_IndirectSpecularColor: {r: 0.15823838, g: 0.1539712, b: 0.1481776, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23347,6 +23347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
+  _useGuidanceSounds: 1
   CameraContainer: {fileID: 0}
   logMaster: {fileID: 0}
   timer: {fileID: 0}
@@ -23355,10 +23356,9 @@ MonoBehaviour:
   partner: {fileID: 0}
   hook: {fileID: 0}
   eeliron: {fileID: 0}
-  orca: {fileID: 0}
-  "bj\xF8rnsholm": {fileID: 0}
   PelicanEvent: {fileID: 0}
   spawnPoint: {fileID: 644873808}
+  guide: {fileID: 0}
   map: {fileID: 1740933047}
   mapOnCam: {fileID: 1888711649}
   torsk: {fileID: 1421292923936632, guid: 68ef6310289c48543b2bbce819b2f643, type: 2}
@@ -23551,7 +23551,6 @@ Transform:
   m_LocalScale: {x: 1.0002428, y: 1, z: 1.0002421}
   m_Children:
   - {fileID: 534669905}
-  - {fileID: 1888711650}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23579,7 +23578,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voiceLines: {fileID: 1380562104}
-  GuidanceIsOn: 1
   triggerRadius: 160
   Torsk: {fileID: 372945722}
   eel: {fileID: 2047598643}
@@ -37407,12 +37405,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1888711649}
-  m_LocalRotation: {x: 0.003392786, y: -0.96533704, z: 0.2608831, w: 0.0072756163}
-  m_LocalPosition: {x: 0.05, y: -0.94, z: 0.695}
-  m_LocalScale: {x: 0.50792664, y: 0.040950004, z: 0.507927}
+  m_LocalRotation: {x: 0.26116833, y: 4.656613e-10, z: -1.8781066e-10, w: 0.96529335}
+  m_LocalPosition: {x: -0.03642273, y: 1.0566609, z: 4.033615}
+  m_LocalScale: {x: 0.50805056, y: 0.040952522, z: 0.50801927}
   m_Children: []
-  m_Father: {fileID: 1052138931}
-  m_RootOrder: 1
+  m_Father: {fileID: 1248863808}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 30.247002, y: -179.186, z: -0.18300001}
 --- !u!114 &1888711651
 MonoBehaviour:
