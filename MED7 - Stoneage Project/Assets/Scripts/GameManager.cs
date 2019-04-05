@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public bool canMove = true;
 
-    public static bool useGuidanceSounds = true;
-    public bool _useGuidanceSounds = true; //not to be altared from what it's set to in start
+    public bool useGuidanceSounds = true;
+    public bool useMapGuidance = true;
     
     //instances in the scene
     [Header("Object references to be used by other scripts")]
@@ -103,9 +103,6 @@ public class GameManager : MonoBehaviour {
         //Awake is always called before any Start functions
         void Awake()
         {
-        //set static bools to the values we can see in the inspector...
-        useGuidanceSounds = _useGuidanceSounds;
-
             //Check if instance already exists
             if (singleton == null)
                 
@@ -175,7 +172,12 @@ public class GameManager : MonoBehaviour {
         }
     private void Start()
     {
-        if (!useGuidanceSounds)
+        if (!useMapGuidance)
+        {
+            map.SetActive(false);
+            mapOnCam.SetActive(false);
+        }
+        if(!useGuidanceSounds)
         {
             StartCoroutine(makeSureStartSoundPlays(guide.StartingSoundGoFishing));
         }
