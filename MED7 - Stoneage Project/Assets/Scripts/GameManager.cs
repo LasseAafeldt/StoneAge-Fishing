@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour {
         public GameObject bjørnsholm;
         public GameObject PelicanEvent;
         public GameObject spawnPoint;
+    public GameObject map;
+    public GameObject mapOnCam;
 
         //prefabs
         public GameObject torsk;

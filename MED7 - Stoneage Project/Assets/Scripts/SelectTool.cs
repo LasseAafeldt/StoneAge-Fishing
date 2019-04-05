@@ -195,6 +195,22 @@ PartnerAnimator PA;
 					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoIron4CodTryHook);
 			}			
 		}
+        else if (tag == "map")
+        {
+            if (GameManager.singleton.map.activeSelf == true)
+            {
+                GameManager.singleton.map.SetActive(false);
+                GameManager.singleton.mapOnCam.SetActive(true);
+            }
+            else
+            {
+                GameManager.singleton.map.SetActive(true);
+                GameManager.singleton.mapOnCam.SetActive(false);
+            }
+            Debug.Log("selected map");
+            tool = tag;
+            //play animation
+        }
 
         setWrongToolVoicelineInt(WrongTool.None);
         //admit to fish with the selected tool
