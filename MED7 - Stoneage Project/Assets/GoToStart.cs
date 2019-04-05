@@ -18,6 +18,7 @@ public class GoToStart : MonoBehaviour {
 		if(totalTime < 0 && Input.GetButtonDown("Fire1"))
 		{
 			Debug.Log("go to starrt");
+            //LogMaster.shouldBeLogging = true; this enables it too early
 			Destroy(GameObject.Find("Game Manager"));
 			SceneManager.LoadScene("start", LoadSceneMode.Single);
 		}

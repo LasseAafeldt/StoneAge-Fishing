@@ -27,6 +27,7 @@ public class GoToLinearScene : MonoBehaviour {
     IEnumerator delayLoadScene()
     {
         yield return new WaitForSeconds(0.5f);
+        LogMaster.shouldBeLogging = true;
         SceneManager.LoadScene("mainScene", LoadSceneMode.Single);
     }
 }

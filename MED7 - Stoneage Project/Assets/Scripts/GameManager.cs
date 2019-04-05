@@ -11,63 +11,77 @@ public class GameManager : MonoBehaviour {
     //Static instance of GameManager which allows it to be accessed by any other script.                            
     //Current level number, expressed in game as "Day 1".
 
+    [HideInInspector]
     public bool canMove = true;
+
+    public static bool useGuidanceSounds = true;
+    public bool _useGuidanceSounds = true; //not to be altared from what it's set to in start
+    
     //instances in the scene
-
+    [Header("Object references to be used by other scripts")]
+    [HideInInspector]
     public GameObject CameraContainer;
+    [HideInInspector]
     public LogMaster logMaster;
-        public GameObject timer;
-        public GameObject boat;
-        public GameObject tribeBoat;
-        public GameObject partner;
-        public GameObject hook;
-        public GameObject eeliron;
-        public GameObject orca;
-        public GameObject bjørnsholm;
-        public GameObject PelicanEvent;
-        public GameObject spawnPoint;
+    [HideInInspector]
+    public GameObject timer;
+    [HideInInspector]
+    public GameObject boat;
+    [HideInInspector]
+    public GameObject tribeBoat;
+    [HideInInspector]
+    public GameObject partner;
+    [HideInInspector]
+    public GameObject hook;
+    [HideInInspector]
+    public GameObject eeliron;
+    //public GameObject orca;
+    //public GameObject bjørnsholm;
+    [HideInInspector]
+    public GameObject PelicanEvent;
+    [HideInInspector]
+    public GameObject spawnPoint;
+    public PartnerSpeech guide;
 
-        //prefabs
-        public GameObject torsk;
-	    public GameObject eel;
-	    public GameObject flatFish;
-        public GameObject flint;
-        public GameObject tradingObject;
+    [Header("Prefabs that are probably not used anymore")]
+    public GameObject torsk;
+	public GameObject eel;
+	public GameObject flatFish;
+    public GameObject flint;
+    public GameObject tradingObject;
+
+    //tools held by guide + the paddle with audio source
+    [Header("Tools held by the guide")]
+    public GameObject aniTorch;
+    public GameObject aniEelIron;
+    public GameObject paddle;
+
+    //linear stuff
+    bool isCountingTorsk = false;
+    int startTorskAmount;
+    bool isCountingEel = false;
+    int startEelAmount;
+    public int currentTorskAmount=0;
+    public int currentEelAmount=0;
+    public int currentFlatfishAmount=0;
+
+    public bool pointingAtInteractable = false;
+
+    [Header("Linear stuff that is probably not used either")]
+    public bool Islinear;
+    public List<GameObject> torskArea, eelArea, flatFishArea = new List<GameObject>();
+    public GameObject trading;
+    public GameObject pillar1,pillar2,pillar3,pillar4,pillar5, currentPillar;
+
+    public GameObject torskTerritory, torskTerritory2, eelTerritory, tribeTerritory;
+    public GameObject basket,tribeBasket;
+    public GameObject midden;
 
 
-        List<GameObject> caughtTotal = new List<GameObject>();
-        List<GameObject> caughtEel = new List<GameObject>();
-        List<GameObject> caughtTorsk =new List<GameObject>();
-        List<GameObject> caughtFlatfish =new List<GameObject>();
-
-        //tools held by guide + the paddle with audio source
-        public GameObject aniTorch;
-        public GameObject aniEelIron;
-
-        // Audio Sources
-
-        public GameObject paddle;
-
-
-        //linear stuff
-        bool isCountingTorsk = false;
-        int startTorskAmount;
-        public int currentTorskAmount=0;
-        bool isCountingEel = false;
-        int startEelAmount;
-        public int currentEelAmount=0;
-        public int currentFlatfishAmount=0;
-
-        public bool pointingAtInteractable = false;
-
-        public bool Islinear;
-        public List<GameObject> torskArea, eelArea, flatFishArea = new List<GameObject>();
-        public GameObject trading;
-        public GameObject pillar1,pillar2,pillar3,pillar4,pillar5, currentPillar;
-
-        public GameObject torskTerritory, torskTerritory2, eelTerritory, tribeTerritory;
-        public GameObject basket,tribeBasket;
-        public GameObject midden;
+    List<GameObject> caughtTotal = new List<GameObject>();
+    List<GameObject> caughtEel = new List<GameObject>();
+    List<GameObject> caughtTorsk =new List<GameObject>();
+    List<GameObject> caughtFlatfish =new List<GameObject>();
 
     //hidden bools for if fish has been caught in their area
     [HideInInspector]
@@ -79,13 +93,17 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public bool flatFishCaught = false;
 
-    //for change to end scene:
+    // Audio Sources
     AudioSource audio;
+    //for change to end scene:
         bool hasFlint = false;
 
         //Awake is always called before any Start functions
         void Awake()
         {
+        //set static bools to the values we can see in the inspector...
+        useGuidanceSounds = _useGuidanceSounds;
+
             //Check if instance already exists
             if (singleton == null)
                 
@@ -114,7 +132,7 @@ public class GameManager : MonoBehaviour {
             //Debug.Log(boat.gameObject.name); 
             boat = GameObject.FindGameObjectWithTag("boat");
             //Debug.Log(boat.gameObject.name);      
-            bjørnsholm = GameObject.FindGameObjectWithTag("bjørnholm");
+            //bjørnsholm = GameObject.FindGameObjectWithTag("bjørnholm");
             //Debug.Log(boat.gameObject.name);            
             tribeBoat = GameObject.FindGameObjectWithTag("tribeBoat");
             //Debug.Log(tribeBoat.gameObject.name);
@@ -152,9 +170,16 @@ public class GameManager : MonoBehaviour {
 
             Physics.IgnoreLayerCollision(0, 11);
                 
-        } 
+        }
+    private void Start()
+    {
+        if (!useGuidanceSounds)
+        {
+            StartCoroutine(makeSureStartSoundPlays(guide.StartingSoundGoFishing));
+        }
+    }
 
-        public void AddEel(GameObject eel)
+    public void AddEel(GameObject eel)
         {
             //caughtEel.Add(eel);
             caughtTotal.Add(eel);
@@ -257,7 +282,7 @@ public class GameManager : MonoBehaviour {
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             //Debug.Log("i am in end scene");
-            //Debug.Log("OnSceneLoaded: " + scene.name); 
+            Debug.Log("OnSceneLoaded: " + scene.name); 
             audio.Play();
             for (int i = 1; i < currentFlatfishAmount+1; i++)
             {
@@ -323,4 +348,9 @@ public class GameManager : MonoBehaviour {
         return totalFish;
     }
 
+    IEnumerator makeSureStartSoundPlays(AudioClip clip)
+    {
+        yield return new WaitForSeconds(clip.length);
+        CameraContainer.GetComponent<GuidanceSounds>().enabled = false;
+    }
 }

@@ -28,6 +28,7 @@ public class LogMaster : MonoBehaviour {
     public static int WrongToolVoiceline = 0; //set in SelectTool
     #endregion
 
+    //static int logFileNumber = 0;
     void Start()
     {
         //fishCaught = FishCaught.None;
@@ -76,6 +77,8 @@ public class LogMaster : MonoBehaviour {
 
     void setPath()
     {
+        //logFileNumber++;
+        //Debug.Log("number of files that should exist: " + logFileNumber);
         //filePath = Application.persistentDataPath + "/" + System.DateTime.Now.ToString() + ".txt";
         string date = System.DateTime.Today.ToShortDateString();
         string timeNow = System.DateTime.UtcNow.ToLongTimeString();
@@ -84,7 +87,7 @@ public class LogMaster : MonoBehaviour {
 
         directoryPath = Application.persistentDataPath + date;
         filePath = directoryPath + timeNow + ".txt";
-        //filePath = "testWorking.txt";
+        //filePath = "testWorking0" + logFileNumber.ToString() + ".txt";
         //Debug.Log("Directory path = " + directoryPath);
         //Debug.Log("File path = " + filePath);
     }
@@ -173,6 +176,7 @@ public class LogMaster : MonoBehaviour {
         {
             if (!shouldBeLogging)
             {
+                CancelInvoke();
                 return;
             }
             logEntry(

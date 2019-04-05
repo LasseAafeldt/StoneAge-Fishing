@@ -111,8 +111,8 @@ public class EventCatcher : MonoBehaviour {
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}
         LogMaster.shouldBeLogging = false;
-        GameManager.singleton.logMaster.enabled = false;
-        Debug.Log("Log Master is disabled...");
+        //GameManager.singleton.logMaster.enabled = false;
+        Debug.Log("Logging is disabled...");
 	}
 
 	public void ExitArea()

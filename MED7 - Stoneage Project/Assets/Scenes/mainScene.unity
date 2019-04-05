@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15319878, g: 0.14917856, b: 0.14370137, a: 1}
+  m_IndirectSpecularColor: {r: 0.14848104, g: 0.14465678, b: 0.13943163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23347,6 +23347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
+  _useGuidanceSounds: 0
   CameraContainer: {fileID: 0}
   logMaster: {fileID: 0}
   timer: {fileID: 0}
@@ -23355,10 +23356,9 @@ MonoBehaviour:
   partner: {fileID: 0}
   hook: {fileID: 0}
   eeliron: {fileID: 0}
-  orca: {fileID: 0}
-  "bj\xF8rnsholm": {fileID: 0}
   PelicanEvent: {fileID: 0}
   spawnPoint: {fileID: 644873808}
+  guide: {fileID: 1204856322}
   torsk: {fileID: 1421292923936632, guid: 68ef6310289c48543b2bbce819b2f643, type: 2}
   eel: {fileID: 1672999333881692, guid: ac07141994952504d8aba2fbd7983871, type: 2}
   flatFish: {fileID: 1543670651725586, guid: d4027a510985b4d48b34481b2e0447eb, type: 2}
@@ -23576,7 +23576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voiceLines: {fileID: 1380562104}
-  GuidanceIsOn: 1
   triggerRadius: 160
   Torsk: {fileID: 372945722}
   eel: {fileID: 2047598643}
