@@ -131,8 +131,8 @@ public class EventCatcher : MonoBehaviour {
 				if (tool == "hook")
 				{
 					Debug.Log("caugth a torsk");
-                    LogMaster logMaster = GameManager.singleton.logMaster;
-                    Debug.Log(logMaster.mapOnCamera.activeSelf);
+                    //LogMaster logMaster = GameManager.singleton.logMaster;
+                    //Debug.Log(logMaster.mapOnCamera.activeSelf);
 					//instatiate a fish in the boay
 					//Instantiate(torsk,transform.position, transform.rotation);
 					//remove a fish from the ocean

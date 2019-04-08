@@ -29,7 +29,7 @@ public class LogMaster : MonoBehaviour {
     public GameObject mapOnCamera;
     #endregion
 
-    //static int logFileNumber = 0;
+    static int logFileNumber = 0;
     void Start()
     {
         //fishCaught = FishCaught.None;
@@ -80,7 +80,7 @@ public class LogMaster : MonoBehaviour {
 
     void setPath()
     {
-        //logFileNumber++;
+        logFileNumber++;
         //Debug.Log("number of files that should exist: " + logFileNumber);
         //filePath = Application.persistentDataPath + "/" + System.DateTime.Now.ToString() + ".txt";
         string date = System.DateTime.Today.ToShortDateString();
@@ -122,6 +122,7 @@ public class LogMaster : MonoBehaviour {
     //call the function when:
     //TypeOfFishCaught is set       SelectTool script                   Done            (In SelectTools script)
     //WrongToolVoiceline is set     SelectTool script                   Done            (In SelectTools script)
+    //map is setActive              SelectTool script                   Done            (In SelectTools script)
     //coardboard button is pressed(so when the screen is pressed),      Done            (in this script)
     //every second if file is not already in use...                     Done            (in this script)
     public void logEntry(Vector3 _PlayerPos, Vector3 _PlayerLookRotation, string _LastVoiceline, int _TypeOfFishCaught, string _LastGuidanceSound, int _TimesFishedNowhere, int _TypeOfWrongTool, bool _MapActive)
@@ -169,7 +170,8 @@ public class LogMaster : MonoBehaviour {
                 LogMaster.TypeOfFishCaught,
                 GuidanceSounds.lastGuidanceSound,
                 SelectTool.timesFishedNowhereTotal,
-                LogMaster.WrongToolVoiceline);
+                LogMaster.WrongToolVoiceline,
+                logmaster.mapOnCamera.activeSelf);
             Debug.Log("An entry is made in the log file...");
         }*/
 
@@ -194,7 +196,6 @@ public class LogMaster : MonoBehaviour {
                 WrongToolVoiceline,
                 mapOnCamera.activeSelf);
             Debug.Log("An entry is made in the log file...");
-            Debug.Log(mapOnCamera.activeSelf);
         }
     }
 

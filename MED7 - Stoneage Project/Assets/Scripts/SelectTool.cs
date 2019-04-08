@@ -219,11 +219,29 @@ PartnerAnimator PA;
             {
                 GameManager.singleton.map.SetActive(false);
                 GameManager.singleton.mapOnCam.SetActive(true);
+                logMaster.logEntry(
+                    logMaster.player.position,
+                    logMaster.player.rotation.eulerAngles,
+                    PartnerSpeech.lastVoiceline,
+                    LogMaster.TypeOfFishCaught,
+                    GuidanceSounds.lastGuidanceSound,
+                    SelectTool.timesFishedNowhereTotal,
+                    LogMaster.WrongToolVoiceline,
+                    logMaster.mapOnCamera.activeSelf);
             }
             else
             {
                 GameManager.singleton.map.SetActive(true);
                 GameManager.singleton.mapOnCam.SetActive(false);
+                logMaster.logEntry(
+                    logMaster.player.position,
+                    logMaster.player.rotation.eulerAngles,
+                    PartnerSpeech.lastVoiceline,
+                    LogMaster.TypeOfFishCaught,
+                    GuidanceSounds.lastGuidanceSound,
+                    SelectTool.timesFishedNowhereTotal,
+                    LogMaster.WrongToolVoiceline,
+                    logMaster.mapOnCamera.activeSelf);
             }
             Debug.Log("selected map");
             tool = tag;
