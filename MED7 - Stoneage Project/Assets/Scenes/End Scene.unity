@@ -1779,16 +1779,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512c31c253ec49540a1699923fe4c8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  useGuidanceSounds: 1
+  useMapGuidance: 1
+  CameraContainer: {fileID: 0}
+  logMaster: {fileID: 0}
   timer: {fileID: 0}
   boat: {fileID: 0}
   tribeBoat: {fileID: 0}
   partner: {fileID: 0}
   hook: {fileID: 0}
   eeliron: {fileID: 0}
-  orca: {fileID: 0}
-  "bj\xF8rnsholm": {fileID: 0}
   PelicanEvent: {fileID: 0}
   spawnPoint: {fileID: 1971438046}
+  guide: {fileID: 0}
+  map: {fileID: 0}
+  mapOnCam: {fileID: 0}
   torsk: {fileID: 1421292923936632, guid: 68ef6310289c48543b2bbce819b2f643, type: 2}
   eel: {fileID: 1672999333881692, guid: ac07141994952504d8aba2fbd7983871, type: 2}
   flatFish: {fileID: 1543670651725586, guid: d4027a510985b4d48b34481b2e0447eb, type: 2}
@@ -1821,6 +1827,10 @@ MonoBehaviour:
   basket: {fileID: 0}
   tribeBasket: {fileID: 0}
   midden: {fileID: 0}
+  TorskCaught: 0
+  eelCaught: 0
+  eelTrapEmptied: 0
+  flatFishCaught: 0
 --- !u!82 &1044151179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2892,6 +2902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1778524287}
   - component: {fileID: 1778524286}
+  - component: {fileID: 1778524288}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -2950,6 +2961,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1778524288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778524285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30c8df3ec78a164a9b0f194543e8fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothTime: 8.6
+  radiusOfAnimation: 1
 --- !u!1 &1790799201
 GameObject:
   m_ObjectHideFlags: 0
