@@ -29,7 +29,7 @@ public class BoatControllerScript : MonoBehaviour
 
     public void BoatMovement()
     {
-        if (Input.GetButtonDown("Fire1") && !outOfBounds && !GameManager.singleton.pointingAtInteractable)
+        if (Input.GetButtonDown("Fire1") && !outOfBounds && !GameManager.singleton.pointingAtInteractable && GameManager.singleton.canMove)
         {
             GameManager.singleton.paddle.GetComponent<AudioSource>().Play();
             GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(true);

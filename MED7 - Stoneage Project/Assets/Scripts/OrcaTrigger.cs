@@ -24,6 +24,8 @@ public class OrcaTrigger : MonoBehaviour {
         {
             orca.SetActive(true); //gør gameobjected aktivt
             GameManager.singleton.canMove = false;
+            //reset the paddle animation
+            GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(false);
 
             //Play "se en spækhugger" sound
             ps.PartnerSaysSomething(ps.OrcaAppears);
