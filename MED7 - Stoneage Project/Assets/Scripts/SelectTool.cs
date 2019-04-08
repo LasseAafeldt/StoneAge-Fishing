@@ -331,7 +331,8 @@ PartnerAnimator PA;
                 LogMaster.TypeOfFishCaught,
                 GuidanceSounds.lastGuidanceSound,
                 timesFishedNowhereTotal,
-                LogMaster.WrongToolVoiceline);
+                LogMaster.WrongToolVoiceline,
+                logMaster.mapOnCamera.activeSelf);
             Debug.Log("An entry is made in the log file...");
         }
     }
@@ -349,7 +350,8 @@ PartnerAnimator PA;
                 LogMaster.TypeOfFishCaught,
                 GuidanceSounds.lastGuidanceSound,
                 timesFishedNowhereTotal,
-                LogMaster.WrongToolVoiceline);
+                LogMaster.WrongToolVoiceline,
+                logMaster.mapOnCamera.activeSelf);
             Debug.Log("An entry is made in the log file...");
         }
     }

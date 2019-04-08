@@ -26,6 +26,7 @@ public class LogMaster : MonoBehaviour {
     //call GuidanceSounds.latestGuideSound to get last guidance sound
     //call SelectTool.timesFishedNowhereTotal to get total times fished nowhere
     public static int WrongToolVoiceline = 0; //set in SelectTool
+    public GameObject mapOnCamera;
     #endregion
 
     //static int logFileNumber = 0;
@@ -64,7 +65,9 @@ public class LogMaster : MonoBehaviour {
                             LogMaster.TypeOfFishCaught,
                             GuidanceSounds.lastGuidanceSound,
                             SelectTool.timesFishedNowhereTotal,
-                            LogMaster.WrongToolVoiceline);
+                            LogMaster.WrongToolVoiceline,
+                            mapOnCamera.activeSelf);
+
                         Debug.Log("An entry is made in the log file...");
                     }
                 }
@@ -121,7 +124,7 @@ public class LogMaster : MonoBehaviour {
     //WrongToolVoiceline is set     SelectTool script                   Done            (In SelectTools script)
     //coardboard button is pressed(so when the screen is pressed),      Done            (in this script)
     //every second if file is not already in use...                     Done            (in this script)
-    public void logEntry(Vector3 _PlayerPos, Vector3 _PlayerLookRotation, string _LastVoiceline, int _TypeOfFishCaught, string _LastGuidanceSound, int _TimesFishedNowhere, int _TypeOfWrongTool)
+    public void logEntry(Vector3 _PlayerPos, Vector3 _PlayerLookRotation, string _LastVoiceline, int _TypeOfFishCaught, string _LastGuidanceSound, int _TimesFishedNowhere, int _TypeOfWrongTool, bool _MapActive)
     {
         Debug.Log("the file is being written in now...");
         //write the log stuff...
@@ -133,7 +136,8 @@ public class LogMaster : MonoBehaviour {
         string _typeOfFishCaught = _TypeOfFishCaught.ToString() + seperator;
         string _lastGuidanceSound = _LastGuidanceSound + seperator;
         string _timesFishedNowhere = _TimesFishedNowhere.ToString() + seperator;
-        string _typeOfWrongTool = _TypeOfWrongTool.ToString();
+        string _typeOfWrongTool = _TypeOfWrongTool.ToString() + seperator;
+        string _mapActive = _MapActive.ToString();
 
         string[] stuffToWrite = {
             dateAndTime,
@@ -143,12 +147,13 @@ public class LogMaster : MonoBehaviour {
             _typeOfFishCaught,
             _lastGuidanceSound,
             _timesFishedNowhere,
-            _typeOfWrongTool
+            _typeOfWrongTool,
+            _mapActive
         };
         using (StreamWriter SW = new StreamWriter(File.Open(filePath, FileMode.Append, FileAccess.Write, FileShare.Write)))
         {
             
-            SW.WriteLine(dateAndTime + _playerPos + _playerLookRotation + _lastVoiceline + _typeOfFishCaught + _lastGuidanceSound + _timesFishedNowhere + _typeOfWrongTool + seperator + timesIHaveLogged.ToString());
+            SW.WriteLine(dateAndTime + _playerPos + _playerLookRotation + _lastVoiceline + _typeOfFishCaught + _lastGuidanceSound + _timesFishedNowhere + _typeOfWrongTool + _mapActive + seperator + timesIHaveLogged.ToString());
             timesIHaveLogged++;
             Debug.Log("writing in the file has been completed");            
         }
@@ -186,8 +191,10 @@ public class LogMaster : MonoBehaviour {
                 TypeOfFishCaught,
                 GuidanceSounds.lastGuidanceSound,
                 SelectTool.timesFishedNowhereTotal,
-                WrongToolVoiceline);
+                WrongToolVoiceline,
+                mapOnCamera.activeSelf);
             Debug.Log("An entry is made in the log file...");
+            Debug.Log(mapOnCamera.activeSelf);
         }
     }
 
