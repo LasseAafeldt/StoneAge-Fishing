@@ -114,6 +114,7 @@ public class PartnerAnimator : MonoBehaviour {
 	}
 
 	public void paddleAnimation(bool state){
+        //Debug.Log("I am paddling...");
 		anim.SetBool("isRowing", state);
 	}
 
