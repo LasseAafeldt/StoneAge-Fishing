@@ -11,6 +11,7 @@ public class PartnerAnimator : MonoBehaviour {
     public GuidanceSounds guidance;
     public int EelsInTrap = 3;
     public int FlatFishInTrap = 1;
+    public AudioSource basketSound;
 
     GameObject boat;
 
@@ -233,6 +234,7 @@ public class PartnerAnimator : MonoBehaviour {
 				{
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
+                    basketSound.Play();
 					Debug.Log(currentFish);
 		            GameManager.singleton.AddFlatFish(currentFish);
 				}
@@ -264,7 +266,8 @@ public class PartnerAnimator : MonoBehaviour {
 				{
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
-					Debug.Log(currentFish);
+                    basketSound.Play();
+                    Debug.Log(currentFish);
 					Debug.Log("add torsk to basket");
 		            GameManager.singleton.AddTorsk(currentFish);
 				}
@@ -298,7 +301,8 @@ public class PartnerAnimator : MonoBehaviour {
 				{
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
-					Debug.Log(currentFish);
+                    basketSound.Play();
+                    Debug.Log(currentFish);
 					Debug.Log("add eel to basket");
 		            GameManager.singleton.AddEel(currentFish);
 				}
