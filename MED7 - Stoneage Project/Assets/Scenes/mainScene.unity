@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15782723, g: 0.15360138, b: 0.14784774, a: 1}
+  m_IndirectSpecularColor: {r: 0.15006399, g: 0.14617771, b: 0.14085707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19051,12 +19051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b73aeaa9cd34b46800fd8590e2dbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsOrca: 0
-  start: {fileID: 1965263397}
-  middle: {fileID: 2040595872}
-  end: {fileID: 890177802}
-  t: 0
-  velocitySpeed: 0.15
 --- !u!1 &841598038
 GameObject:
   m_ObjectHideFlags: 0
@@ -27176,16 +27170,33 @@ MonoBehaviour:
   NoIron4CodTryHook: {fileID: 8300000, guid: a6f33c986b399f84089e1f68e2c02193, type: 3}
   NoHook4CodTryIron: {fileID: 8300000, guid: b305e28210aa2e645a873a56631e3135, type: 3}
   ClosestToTorsk: {fileID: 8300000, guid: 8341d24d294ae2443badaf7c179ad14d, type: 3}
-  DetailClosestToTorsk: {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d,
-    type: 3}
+  DetailClosestToTorsk:
+  - {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d, type: 3}
+  - {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d, type: 3}
+  - {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d, type: 3}
+  - {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d, type: 3}
+  - {fileID: 8300000, guid: d726b91bcaf8d5d42b94dc0e848bfe4d, type: 3}
   ClosestToEel: {fileID: 8300000, guid: 50b0994df8acb9e4ea5aa8b12f735f41, type: 3}
-  DetailClosestToEel: {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
+  DetailClosestToEel:
+  - {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
+  - {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
+  - {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
+  - {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
+  - {fileID: 8300000, guid: 9430bf6d2c7ed114e903db4e0ae87f75, type: 3}
   ClosestToEeltrap: {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
-  DetailClosestToEeltrap: {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2,
-    type: 3}
+  DetailClosestToEeltrap:
+  - {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
+  - {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
+  - {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
+  - {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
+  - {fileID: 8300000, guid: 2d2f3fe86c6dda349b93675dab5b85d2, type: 3}
   ClosestToFlatfish: {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
-  DetailClosestToFlatfish: {fileID: 8300000, guid: 1227b662328cc8049a5b4880f50b040d,
-    type: 3}
+  DetailClosestToFlatfish:
+  - {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
+  - {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
+  - {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
+  - {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
+  - {fileID: 8300000, guid: 92bb659c941086441979e23ea0945ebf, type: 3}
   StartingSoundGoFishing: {fileID: 8300000, guid: 47129e63cdf44fe4e993f1375c3ce4ba,
     type: 3}
   noFishHere:
@@ -30241,16 +30252,25 @@ MonoBehaviour:
   NoIron4CodTryHook: {fileID: 8300000, guid: 652156da801b6c64ca77d8be0ba6fbe1, type: 3}
   NoHook4CodTryIron: {fileID: 8300000, guid: 53b159d87a6102b42bff9b1f0e887a0c, type: 3}
   ClosestToTorsk: {fileID: 8300000, guid: d1420f10735009944857211375d62960, type: 3}
-  DetailClosestToTorsk: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8,
-    type: 3}
+  DetailClosestToTorsk:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ClosestToEel: {fileID: 8300000, guid: ffac6611931bf8b49844a631a7cb4ba2, type: 3}
-  DetailClosestToEel: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8, type: 3}
+  DetailClosestToEel:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ClosestToEeltrap: {fileID: 8300000, guid: 03ac6bd3cf4095e498e91342edee4a9c, type: 3}
-  DetailClosestToEeltrap: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8,
-    type: 3}
+  DetailClosestToEeltrap:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ClosestToFlatfish: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8, type: 3}
-  DetailClosestToFlatfish: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8,
-    type: 3}
+  DetailClosestToFlatfish:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   StartingSoundGoFishing: {fileID: 8300000, guid: 8a2cb1a12838be4498c0a46ac37b892e,
     type: 3}
   noFishHere:
@@ -31383,13 +31403,17 @@ MonoBehaviour:
   NoIron4CodTryHook: {fileID: 0}
   NoHook4CodTryIron: {fileID: 0}
   ClosestToTorsk: {fileID: 0}
-  DetailClosestToTorsk: {fileID: 0}
+  DetailClosestToTorsk:
+  - {fileID: 0}
   ClosestToEel: {fileID: 0}
-  DetailClosestToEel: {fileID: 0}
+  DetailClosestToEel:
+  - {fileID: 0}
   ClosestToEeltrap: {fileID: 0}
-  DetailClosestToEeltrap: {fileID: 0}
+  DetailClosestToEeltrap:
+  - {fileID: 0}
   ClosestToFlatfish: {fileID: 0}
-  DetailClosestToFlatfish: {fileID: 0}
+  DetailClosestToFlatfish:
+  - {fileID: 0}
   StartingSoundGoFishing: {fileID: 0}
   noFishHere: []
   speech: {fileID: 350137110}

@@ -97,13 +97,13 @@ public class PartnerSpeech : MonoBehaviour {
 
     [Header("Guidance sounds")]
     public AudioClip ClosestToTorsk;
-    public AudioClip DetailClosestToTorsk;
+    public AudioClip[] DetailClosestToTorsk;
     public AudioClip ClosestToEel;
-    public AudioClip DetailClosestToEel;
+    public AudioClip[] DetailClosestToEel;
     public AudioClip ClosestToEeltrap;
-    public AudioClip DetailClosestToEeltrap;
+    public AudioClip[] DetailClosestToEeltrap;
     public AudioClip ClosestToFlatfish;
-    public AudioClip DetailClosestToFlatfish;
+    public AudioClip[] DetailClosestToFlatfish;
     public AudioClip StartingSoundGoFishing;
 
     [Header(" sounds")]
