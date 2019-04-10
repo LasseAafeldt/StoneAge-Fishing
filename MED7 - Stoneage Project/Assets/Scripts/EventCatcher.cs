@@ -88,7 +88,8 @@ public class EventCatcher : MonoBehaviour {
         {
 			GameManager.singleton.PelicanEvent.SetActive(true);
 			GameManager.singleton.PelicanEvent.transform.SetParent(null);
-			//GameManager.singleton.PelicanEvent.GetComponentInChildren<orcaEvent>().startOrcaEvent();
+            //remains from old project... don't fix if not broken....
+			GameManager.singleton.PelicanEvent.GetComponentInChildren<PelicanEvent>().startOrcaEvent();
             //partner says pelican thing
         }       
     }
