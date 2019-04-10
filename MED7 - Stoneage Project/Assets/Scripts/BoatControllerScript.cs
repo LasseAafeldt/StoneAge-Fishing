@@ -5,6 +5,8 @@ using UnityEngine;
 public class BoatControllerScript : MonoBehaviour
 {
 
+    public static string currentlyInRegion = "No Region";
+
     public float speed = 15f;
     public float rotationSpeed = 0.1f;
     public float rotationDeadzone = 5f;
@@ -17,6 +19,7 @@ public class BoatControllerScript : MonoBehaviour
     float steerFactor;
 
     private bool outOfBounds = false;
+
 
     // Update is called once per frame
     void Update()
@@ -121,6 +124,42 @@ public class BoatControllerScript : MonoBehaviour
             //Debug.Log(Vector3.Angle(transform.forward, Camera.main.transform.forward));
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Regions"))
+            return;
+        //Debug.Log("layer should be regions, and it is = " + LayerMask.LayerToName(other.gameObject.layer));
+        setCurrentRegion(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer != LayerMask.NameToLayer("Regions"))
+            return;
+        //Debug.Log("layer should be regions, and it is = " + other.gameObject.layer);
+        resetCurrentRegion();
+    }
+
+    void setCurrentRegion(GameObject region)
+    {
+        currentlyInRegion = region.name;
+        Debug.Log("Current region is now: " + currentlyInRegion);
+    }
+
+    public string getCurrentRegion()
+    {
+        return currentlyInRegion;
+    }
+
+    void resetCurrentRegion()
+    {
+        //set curentregion to no region
+        currentlyInRegion = "No Region";
+        Debug.Log("Current region is now: " + currentlyInRegion);
+        //if multiple colliders is use to make one region, then check if other region colliders overlap with current position
+    }
+
     #region More force turn 
     /*
     IEnumerator forceRotate()

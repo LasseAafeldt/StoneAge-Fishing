@@ -227,7 +227,8 @@ PartnerAnimator PA;
                     GuidanceSounds.lastGuidanceSound,
                     SelectTool.timesFishedNowhereTotal,
                     LogMaster.WrongToolVoiceline,
-                    logMaster.mapOnCamera.activeSelf);
+                    logMaster.mapOnCamera.activeSelf,
+                    BoatControllerScript.currentlyInRegion);
             }
             else
             {
@@ -241,7 +242,8 @@ PartnerAnimator PA;
                     GuidanceSounds.lastGuidanceSound,
                     SelectTool.timesFishedNowhereTotal,
                     LogMaster.WrongToolVoiceline,
-                    logMaster.mapOnCamera.activeSelf);
+                    logMaster.mapOnCamera.activeSelf,
+                    BoatControllerScript.currentlyInRegion);
             }
             Debug.Log("selected map");
             tool = tag;
@@ -350,8 +352,9 @@ PartnerAnimator PA;
                 GuidanceSounds.lastGuidanceSound,
                 timesFishedNowhereTotal,
                 LogMaster.WrongToolVoiceline,
-                logMaster.mapOnCamera.activeSelf);
-            Debug.Log("An entry is made in the log file...");
+                logMaster.mapOnCamera.activeSelf,
+                BoatControllerScript.currentlyInRegion);
+            //Debug.Log("An entry is made in the log file...");
         }
     }
 
@@ -369,8 +372,9 @@ PartnerAnimator PA;
                 GuidanceSounds.lastGuidanceSound,
                 timesFishedNowhereTotal,
                 LogMaster.WrongToolVoiceline,
-                logMaster.mapOnCamera.activeSelf);
-            Debug.Log("An entry is made in the log file...");
+                logMaster.mapOnCamera.activeSelf,
+                BoatControllerScript.currentlyInRegion);
+            //Debug.Log("An entry is made in the log file...");
         }
     }
 }

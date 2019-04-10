@@ -29,9 +29,6 @@ public class GuidanceSounds : MonoBehaviour {
     string previousArea = "different none";
     GameObject closestArea;
 
-    /*bool torskHasPlayed = false;
-    bool eelHasPlayed = false;
-    bool eeltrapHasPlayed = false;*/
     bool startHasPlayed = false;
 
     PartnerSpeech partnerSpeech;
@@ -83,7 +80,9 @@ public class GuidanceSounds : MonoBehaviour {
     //plays the start sound once
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == start.name && !startHasPlayed)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Regions"))
+            return;
+        if (other.name == start.name && !startHasPlayed)
         {
             startHasPlayed = true;
             partnerSpeech.PartnerSaysSomething(partnerSpeech.StartingSoundGoFishing);
