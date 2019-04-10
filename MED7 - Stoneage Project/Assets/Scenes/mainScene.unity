@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15006399, g: 0.14617771, b: 0.14085707, a: 1}
+  m_IndirectSpecularColor: {r: 0.1542522, g: 0.15019232, b: 0.14465007, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33388,7 +33388,7 @@ MonoBehaviour:
   partnerSpeech: {fileID: 1204856322}
   startValue: -13
   endValue: 24
-  totalPlayTime: 400
+  totalPlayTime: 300
   skyBox: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
   skyboxAngle: 380
   skyboxExposure: 1
