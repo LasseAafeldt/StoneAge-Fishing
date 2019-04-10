@@ -99,6 +99,7 @@ public class playTimer : MonoBehaviour {
     IEnumerator RunOutOfTime(AudioClip clip)
     {
         //wait till audio is done
+        partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerEnd);
         yield return new WaitForSeconds(clip.length);
         // change scene
         Debug.Log("time has run out, and audio is done playing");

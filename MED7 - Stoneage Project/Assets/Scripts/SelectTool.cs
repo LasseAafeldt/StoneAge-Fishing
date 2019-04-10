@@ -294,7 +294,7 @@ PartnerAnimator PA;
             //play voiceline "are you sure you want to end"
             partnerSpeech.PartnerSaysSomething(partnerSpeech.confirmEndPlz);
             endGame = true;
-
+            StartCoroutine(resetEnding());
         }
     }
 
@@ -334,6 +334,13 @@ PartnerAnimator PA;
     {
         yield return new WaitForSeconds(clip.length);
         EC.CheckForEnding();
+    }
+
+    IEnumerator resetEnding()
+    {
+        yield return new WaitForSeconds(15);
+        endGame = false;
+        Debug.Log("endgame was reset");
     }
 
     void setWrongToolVoicelineInt(WrongTool WrongToolVoice)
