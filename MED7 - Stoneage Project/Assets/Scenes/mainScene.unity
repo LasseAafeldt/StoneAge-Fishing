@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14441359, g: 0.1407252, b: 0.13567847, a: 1}
+  m_IndirectSpecularColor: {r: 0.1444037, g: 0.14072251, b: 0.1356766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6205,7 +6205,7 @@ TerrainCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 100216439}
   m_Material: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: eafe2fe12b5e0ef4cb6729f1722139c9, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &100216441
@@ -6217,7 +6217,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: eafe2fe12b5e0ef4cb6729f1722139c9, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 2000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -9612,19 +9612,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
       propertyPath: m_LODs.Array.data[2].screenRelativeHeight
-      value: 0.32908952
+      value: 0.028435795
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
       propertyPath: m_LODs.Array.data[1].screenRelativeHeight
-      value: 0.59218705
+      value: 0.36847332
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.9620801
+      value: 0.7306958
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
       propertyPath: m_LODs.Array.data[3].screenRelativeHeight
-      value: 0.05919251
+      value: 0.007224001
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b6972eaa35c2e574e8ab5083a59d8459, type: 3}
       propertyPath: m_StaticEditorFlags
