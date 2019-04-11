@@ -11,7 +11,7 @@ public class EventCatcher : MonoBehaviour {
 
     [Range(0,10)]
     public int FishToSucceed = 7;
-
+    public float OutOfBoundsSoundTimer = 7f;
 
     bool firstTimeInTorskArea = true;
 	bool firstTimeInEelArea = true;
@@ -22,13 +22,17 @@ public class EventCatcher : MonoBehaviour {
 
 	bool hasFlint=false;
 
+    bool canPlayTurnAroundSound = true;
+
 	void OnTriggerEnter(Collider other)
     {
-		if(other.tag == "turnAround")
+		if(other.tag == "turnAround" && canPlayTurnAroundSound)
 		{
 			GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoFurther);
             Debug.Log("player is hitting the boundry of the map and No Further sound is played");
+            canPlayTurnAroundSound = false;
+            StartCoroutine(outOfBoundsSoundDelay(OutOfBoundsSoundTimer));
 		}
 		if(other.tag == "TorskArea" || other.tag == "EelArea" || other.tag == "FlatfishArea")
 		{
@@ -217,5 +221,9 @@ public class EventCatcher : MonoBehaviour {
         return fishingAreaObject;
     }
 
-
+    IEnumerator outOfBoundsSoundDelay(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        canPlayTurnAroundSound = true;
+    }
 }
