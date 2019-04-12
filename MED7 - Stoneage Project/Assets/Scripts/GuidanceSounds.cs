@@ -6,7 +6,7 @@ using UnityEngine;
 public class GuidanceSounds : MonoBehaviour {
     public PartnerSpeech voiceLines;
     [HideInInspector]
-    public float triggerRadius = 150; //this is not used anymore except to activate the start sound
+    //public float triggerRadius = 150; //this is not used anymore except to activate the start sound
 
     [Header("Trigger areas")]
     public Collider Torsk;
@@ -45,7 +45,7 @@ public class GuidanceSounds : MonoBehaviour {
         detailedGuidance = false;
         timeSinceLastGuidance = 0f;
         areaTimer = 0f;
-        GetComponent<SphereCollider>().radius = triggerRadius;
+        //GetComponent<SphereCollider>().radius = triggerRadius;
         GetComponent<SphereCollider>().isTrigger = true;
         GetComponent<Rigidbody>().useGravity = false;
 

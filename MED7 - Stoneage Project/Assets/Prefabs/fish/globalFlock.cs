@@ -33,4 +33,9 @@ public class globalFlock : MonoBehaviour {
         }
         //goalPrefab.transform.position = goalPos;
 	}
+
+    public Renderer getTorskRendere()
+    {
+        return fishPrefab.GetComponentInChildren<SkinnedMeshRenderer>();
+    }
 }

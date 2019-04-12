@@ -53,4 +53,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 4724825349252830}
   fishPrefab: {fileID: 1071001734306638, guid: 01cc9cfdf1d1aad4691ddabf24318db3, type: 2}
-  goalPrefab: {fileID: 0}
