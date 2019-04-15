@@ -7,6 +7,7 @@ public class OrcaTrigger : MonoBehaviour {
     public GameObject orca; //makes sure the model is active
     public AnimationClip playAnimation;
     PartnerSpeech ps;
+    bool orcaHasBeenActivated = false;
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +21,13 @@ public class OrcaTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision) //collider collision er sådan man kalder den. 
     {
+        if (orcaHasBeenActivated)
+        {
+            return;
+        }
         if (collision.gameObject.tag == GameManager.singleton.boat.tag)
         {
+            playTimer.timeLeft += playAnimation.length + 0.5f;
             orca.SetActive(true); //gør gameobjected aktivt
             GameManager.singleton.canMove = false;
             //reset the paddle animation
@@ -31,6 +37,8 @@ public class OrcaTrigger : MonoBehaviour {
             ps.PartnerSaysSomething(ps.OrcaAppears);
 
             StartCoroutine(waitForOrcaAnimation(playAnimation));
+
+            orcaHasBeenActivated = true;
         }
     }
     IEnumerator waitForOrcaAnimation(AnimationClip clip)

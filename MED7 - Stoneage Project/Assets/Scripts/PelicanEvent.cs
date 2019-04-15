@@ -69,7 +69,7 @@ public class PelicanEvent : MonoBehaviour
     {
         if (!hasHappening)
         {
-
+            playTimer.timeLeft += GameManager.singleton.partner.GetComponent<PartnerSpeech>().PelicanAppears.length;
             orcaMoving = true;
             velocity = velocitySpeed;
 

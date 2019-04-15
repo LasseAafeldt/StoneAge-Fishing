@@ -15,7 +15,7 @@ public class playTimer : MonoBehaviour {
 	Vector3 currentAngle = new Vector3(0,0,0);
 
 	public float totalPlayTime =300;
-	float timeLeft;
+	public static float timeLeft;
 	float timeSpent=0;
 
 	public Material skyBox;
@@ -24,6 +24,8 @@ public class playTimer : MonoBehaviour {
     [Range(0.5f,1f)]
 	public float skyboxExposure;
     public Light lightSource;
+
+    AudioSource guide;
 
 	// 360 -> 345
 
@@ -34,6 +36,8 @@ public class playTimer : MonoBehaviour {
 	bool sixMinLeft=true;
 	bool fourMinLeft=true;
 
+    bool endHasCome = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +45,8 @@ public class playTimer : MonoBehaviour {
 
 		Vector3 startAngle = new Vector3(startValue,23,3);	
 		Vector3 endAngle = new Vector3(endValue,0,0);
+
+        guide = GameManager.singleton.guide.GetComponent<AudioSource>();
 	}
 	
 	
@@ -54,9 +60,11 @@ public class playTimer : MonoBehaviour {
 
         //EnableMiddenCollider();
         IfNotLinear();
-        if(timeSpent <= 0)
+        if(timeSpent <= 0 && !endHasCome)
         {
+            Debug.Log("time has run out =" + timeSpent);
             StartCoroutine(RunOutOfTime(partnerSpeech.GameTimerEnd));
+            endHasCome = true;
         }
         //IfLinearScene();
 	}
@@ -98,6 +106,11 @@ public class playTimer : MonoBehaviour {
 
     IEnumerator RunOutOfTime(AudioClip clip)
     {
+        if (guide.isPlaying)
+        {
+            StartCoroutine(waitForSoundToEnd(guide.clip));
+            yield break;
+        }
         //wait till audio is done
         partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerEnd);
         yield return new WaitForSeconds(clip.length);
@@ -164,5 +177,11 @@ public class playTimer : MonoBehaviour {
                 Debug.Log("Game is playing sound: 1 minute sound");
             }
         }
+    }
+    IEnumerator waitForSoundToEnd(AudioClip clip)
+    {
+        Debug.Log("I'm waiting for audioclip to end");
+        yield return new WaitForSeconds(clip.length);
+        StartCoroutine(RunOutOfTime(partnerSpeech.GameTimerEnd));
     }
 }

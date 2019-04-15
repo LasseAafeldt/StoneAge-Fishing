@@ -26,7 +26,11 @@ public class EventCatcher : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
     {
-		if(other.tag == "turnAround" && canPlayTurnAroundSound)
+        if (other.name == "Starting area")
+        {
+
+        }
+        if (other.tag == "turnAround" && canPlayTurnAroundSound)
 		{
 			GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoFurther);

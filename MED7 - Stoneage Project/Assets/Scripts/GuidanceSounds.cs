@@ -29,7 +29,7 @@ public class GuidanceSounds : MonoBehaviour {
     string previousArea = "different none";
     GameObject closestArea;
 
-    bool startHasPlayed = false;
+    public static bool startHasPlayed = false;
 
     PartnerSpeech partnerSpeech;
     Transform playerPos;
