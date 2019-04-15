@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AcitivateFish : MonoBehaviour {
-    public Collider cameraCollider;
+    //public Collider cameraCollider;
     public GameObject childObj;
     [ColorUsageAttribute(false, true)]
     public Color startEmissionColor;
@@ -47,33 +47,14 @@ public class AcitivateFish : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other != cameraCollider)
-        {
-            return;
-        }
-        //Debug.Log("I should activate the fish now...");
-        activateChild();
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other != cameraCollider)
-        {
-            return;
-        }
-        deactivateChild();
-    }
-
-    private void activateChild()
+    public void activateChild()
     {
         childObj.SetActive(true);
         //do some animation fade in stuff
         fishFadeIn();
     }
 
-    private void deactivateChild()
+    public void deactivateChild()
     {
         //do some animation fade out stuff
         fishFadeOut();
@@ -100,7 +81,7 @@ public class AcitivateFish : MonoBehaviour {
     IEnumerator fishDeactivationDelay()
     {
         float waitTime = 1/fadeSpeed;
-        Debug.Log("Fish fade WAIT Time = " + waitTime);
+        //Debug.Log("Fish fade WAIT Time = " + waitTime);
         yield return new WaitForSeconds(waitTime);
         childObj.SetActive(false);
     }
