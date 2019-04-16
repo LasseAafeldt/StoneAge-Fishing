@@ -18,6 +18,7 @@ public class PelicanEvent : MonoBehaviour
 
     bool orcaMoving = true;
     bool aSoundIsAlreadyPlaying = false;
+    bool eventIsStarted = false;
 
     float velocity = 0;
     // Use this for initialization
@@ -71,6 +72,9 @@ public class PelicanEvent : MonoBehaviour
     //old script that that is taken from the previous groups project.... don't fix if it isn't broken...
     public void startOrcaEvent()
     {
+        if (eventIsStarted)
+            return;
+        eventIsStarted = true;
         if (partner.GetComponent<AudioSource>().isPlaying)
         {
             aSoundIsAlreadyPlaying = true;
