@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1582129, g: 0.15396339, b: 0.1481837, a: 1}
+  m_IndirectSpecularColor: {r: 0.14892396, g: 0.14509049, b: 0.13982314, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28485,10 +28485,15 @@ MonoBehaviour:
   afterEmptyingEeltrap: {fileID: 8300000, guid: 9467d96fa2776c4498a1241e0670587e,
     type: 3}
   OrcaAppears: {fileID: 8300000, guid: c85d0d4892363dd47b09b1fd7953486e, type: 3}
-  PelicanAppears: {fileID: 8300000, guid: 817d800ecb564ae498ad0444c4e8d4d9, type: 3}
+  PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 817d800ecb564ae498ad0444c4e8d4d9,
+    type: 3}
+  PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 8300000, guid: 5a3cbc9fa14bf044980bbfee2463cc4f,
+    type: 3}
   NoFurther: {fileID: 8300000, guid: fd95aa3654d42d744a278c0117f848c0, type: 3}
   NoIron4CodTryHook: {fileID: 8300000, guid: 9848e45b34f87064f9ad6cd441fea87d, type: 3}
-  NoHook4CodTryIron: {fileID: 8300000, guid: 071e2fc426e8e3944a2244f74c1d9c04, type: 3}
+  NoIron4CodTryHook2: {fileID: 8300000, guid: 96dfcaea000fbd842aff1a38c2f7e03a, type: 3}
+  NoHook4EelTryIron: {fileID: 8300000, guid: 071e2fc426e8e3944a2244f74c1d9c04, type: 3}
+  NoHook4EelTryIron2: {fileID: 8300000, guid: 5283acc0619f9a541bd1491dc2316c17, type: 3}
   ClosestToTorsk: {fileID: 8300000, guid: 91bbb81255d4d28449bb126b116e0e30, type: 3}
   DetailClosestToTorsk:
   - {fileID: 8300000, guid: d430bcba4c793234b8a686c15e97575a, type: 3}
@@ -29755,6 +29760,7 @@ GameObject:
   - component: {fileID: 1261559833}
   - component: {fileID: 1261559832}
   - component: {fileID: 1261559831}
+  - component: {fileID: 1261559834}
   m_Layer: 0
   m_Name: seal Event trigger
   m_TagString: sealTerritory
@@ -29768,13 +29774,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261559829}
-  m_LocalRotation: {x: -0.0060535925, y: 0.95364994, z: 0.0064003724, w: -0.30078954}
-  m_LocalPosition: {x: -564.3, y: -4.6, z: 57.6}
+  m_LocalRotation: {x: -0.007242788, y: 0.871179, z: 0.0050152545, w: -0.49088654}
+  m_LocalPosition: {x: -550.3, y: -4.8, z: 77.6}
   m_LocalScale: {x: 174.2934, y: 6.235021, z: 171.4067}
   m_Children: []
   m_Father: {fileID: 1150893320}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.49100003, y: 215.015, z: -0.882}
+  m_LocalEulerAnglesHint: {x: -0.093, y: 238.801, z: -1.005}
 --- !u!65 &1261559831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29829,6 +29835,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261559829}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1261559834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261559829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef926dc6033fa6478f073458c83dd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1268059635
 Prefab:
   m_ObjectHideFlags: 0
@@ -31635,10 +31652,13 @@ MonoBehaviour:
     type: 3}
   afterEmptyingEeltrap: {fileID: 0}
   OrcaAppears: {fileID: 8300000, guid: c6dde38a1972ff54a9ee8ff7b350f397, type: 3}
-  PelicanAppears: {fileID: 8300000, guid: 986da58ed6190584ba2e33eecd2f19af, type: 3}
+  PelicanAppearsNoSoundPlaying: {fileID: 0}
+  PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 0}
   NoFurther: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8, type: 3}
   NoIron4CodTryHook: {fileID: 8300000, guid: 652156da801b6c64ca77d8be0ba6fbe1, type: 3}
-  NoHook4CodTryIron: {fileID: 8300000, guid: 53b159d87a6102b42bff9b1f0e887a0c, type: 3}
+  NoIron4CodTryHook2: {fileID: 0}
+  NoHook4EelTryIron: {fileID: 0}
+  NoHook4EelTryIron2: {fileID: 0}
   ClosestToTorsk: {fileID: 8300000, guid: d1420f10735009944857211375d62960, type: 3}
   DetailClosestToTorsk:
   - {fileID: 0}
@@ -32740,10 +32760,13 @@ MonoBehaviour:
   whileEmptyingEeltrap: {fileID: 0}
   afterEmptyingEeltrap: {fileID: 0}
   OrcaAppears: {fileID: 0}
-  PelicanAppears: {fileID: 0}
+  PelicanAppearsNoSoundPlaying: {fileID: 0}
+  PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 0}
   NoFurther: {fileID: 0}
   NoIron4CodTryHook: {fileID: 0}
-  NoHook4CodTryIron: {fileID: 0}
+  NoIron4CodTryHook2: {fileID: 0}
+  NoHook4EelTryIron: {fileID: 0}
+  NoHook4EelTryIron2: {fileID: 0}
   ClosestToTorsk: {fileID: 0}
   DetailClosestToTorsk:
   - {fileID: 0}
