@@ -37,6 +37,9 @@ PartnerAnimator PA;
 
 	string tool ="";
 
+    static bool wrongToolOneHook = true;
+    static bool wrongToolOneSpear = true;
+
     private bool endGame = false;
     private bool firstFishingTorsk = true;
     private bool secondFishingTorsk = false;
@@ -116,8 +119,16 @@ PartnerAnimator PA;
                 //wrong tool
                 setWrongToolVoicelineInt(WrongTool.NoIron4Cod);
                 Debug.Log("this is not the tool to use for torsk");
-				GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoHook4CodTryIron);
+                if (wrongToolOneHook)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron);
+                    wrongToolOneHook = !wrongToolOneHook;
+                }
+                else
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron2);
+                    wrongToolOneHook = !wrongToolOneHook;
+                }
 			}
 		}
 		else if (tag == "eeliron")
@@ -209,8 +220,16 @@ PartnerAnimator PA;
                 setWrongToolVoicelineInt(WrongTool.NoHook4Eel);
 
                 Debug.Log("This is not the tool to use for eel or Flatfish");
-                GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-					GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoIron4CodTryHook);
+                if (wrongToolOneSpear)
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook);
+                    wrongToolOneSpear = !wrongToolOneSpear;
+                }
+                else
+                {
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook2);
+                    wrongToolOneSpear = !wrongToolOneSpear;
+                }
 			}			
 		}
         else if (tag == "map")

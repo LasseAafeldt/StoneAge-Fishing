@@ -9,50 +9,11 @@ public class PartnerSpeech : MonoBehaviour {
 	AudioSource audio;
     public static string lastVoiceline;
 
-    //for linear condition
-    /*[Header("linear sounds")]
-	public AudioClip StartofGameLinear;
-	public AudioClip AfterEmptyBasket;
-	public AudioClip AfterCodCatch;
-	public AudioClip AfterTradingFlint;
-	public AudioClip AfterFlaringEel;
-	public AudioClip CodEnterArea;
-	public AudioClip CodOneMore;
-	public AudioClip CodTwoMore;
-	public AudioClip EmptyBasket;
-	public AudioClip FlaringEel;
-	public AudioClip NotThatWay;
-	public AudioClip OtherTribeSpotTrade;
-	public AudioClip Outcome1Linear;
-	public AudioClip Outcome2Linear;*/
-
     //for emergent condition
     [Header("Emergent sounds")]
-	//public AudioClip StartofGameEmergent;
-	//public AudioClip CheckBasketFish;
-	//public AudioClip CheckBasketNoFish;
-	//public AudioClip EnterCodAreaEmergent;
-	//public AudioClip EnterCoastAreaDay;
-	//public AudioClip EnterCoastAreaNight;
-	//public AudioClip EnterTribe;
-	//public AudioClip ExitTribe;
-	//public AudioClip FishingTribe;
-	//public AudioClip MeetingTribeCaught;
-	//public AudioClip MeetingTribeEscaped;
-	//public AudioClip MeetingTribeSpotTrade;
-	//public AudioClip MeetingTriibeStoleFish;
-	//public AudioClip MeeetingTribeTrade;
-	//public AudioClip FirstTimeEel;
-	//public AudioClip FirstTimeCod;
-	//public AudioClip FirstTimeFlatFish;
 	public AudioClip SealAppearsEmergent;
-	//public AudioClip Time1MinLeft;
-	//public AudioClip Time2MinLeft;
 	public AudioClip BadEnding;
-	//public AudioClip Outcome2Emergent;
 	public AudioClip GoodEnding;
-    //public AudioClip Outcome4Emergent;
-    //public AudioClip Outcome5Emergent;
     public AudioClip GameTimerLow;
     public AudioClip GameTimerEnd;
     public AudioClip HomeAgain;
@@ -70,30 +31,17 @@ public class PartnerSpeech : MonoBehaviour {
     public AudioClip whileEmptyingEeltrap;
     public AudioClip afterEmptyingEeltrap;
 
-    //for both condition
-    [Header("neutral sounds")]
+    [Header("Event sounds")]
 	public AudioClip OrcaAppears;
-	public AudioClip PelicanAppears;
-	/*public AudioClip SealAppears;
-	public AudioClip StartofGame;
-	public AudioClip ThisWay1;
-	public AudioClip ThisWay2;*/
+	public AudioClip PelicanAppearsNoSoundPlaying;
+    public AudioClip PelicanAppearsSomeSoundIsAlreadyPlaying;
 
-	//new sounds
-	[Header("Warning clips")]
-	/*public AudioClip AnotherCod;
-	public AudioClip AnotherEel;
-	public AudioClip AnotherFlatfish;
-	public AudioClip Catch1Eel;
-	public AudioClip Catch2Eel;
-	public AudioClip Catch3Eel;
-	public AudioClip DarkSoon;
-	public AudioClip GoSomewhereElse;*/
+    [Header("Warning clips")]
 	public AudioClip NoFurther;
 	public AudioClip NoIron4CodTryHook;
-	public AudioClip NoHook4CodTryIron;
-	//public AudioClip NotEnoughFishHere;
-	//public AudioClip WeNeedFish;
+    public AudioClip NoIron4CodTryHook2;
+    public AudioClip NoHook4EelTryIron;
+    public AudioClip NoHook4EelTryIron2;
 
     [Header("Guidance sounds")]
     public AudioClip ClosestToTorsk;
@@ -111,8 +59,6 @@ public class PartnerSpeech : MonoBehaviour {
     public Text speech;
 	List<AudioClip> queuedAudio = new List<AudioClip>();
 	List<string> queuedText = new List<string>();
-
-
 
 	bool donePlaying =true;
 	// Use this for initialization
