@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 //main scene needs to have a LogMaster component on this... doesn't need in other scenes
 public class GameManager : MonoBehaviour {
 
-        public static GameManager singleton = null;
+    public static GameManager singleton = null;
     //Static instance of GameManager which allows it to be accessed by any other script.                            
     //Current level number, expressed in game as "Day 1".
 
@@ -172,6 +172,16 @@ public class GameManager : MonoBehaviour {
         }
     private void Start()
     {
+        canMove = true;
+
+        isCountingTorsk = false;
+        isCountingEel = false;
+        currentTorskAmount = 0;
+        currentEelAmount = 0;
+        currentFlatfishAmount = 0;
+
+        pointingAtInteractable = false;
+
         if (!useMapGuidance)
         {
             map.SetActive(false);

@@ -23,7 +23,11 @@ public class PartnerAnimator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator>();
+        firstTimeEel = true;
+        firstTimeCod = true;
+        firstTimeFlatfish = true;
+
+        anim = GetComponent<Animator>();
 		boat = GameManager.singleton.spawnPoint;
 	}
 	

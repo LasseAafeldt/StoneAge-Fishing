@@ -11,6 +11,9 @@ public class retunToMiddenSound : MonoBehaviour {
 
     private void Start()
     {
+        isHome = false;
+        canPlaySound = false;
+
         middenRange = GetComponent<SphereCollider>();
         ps = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
         StartCoroutine(waitForCanPlay());

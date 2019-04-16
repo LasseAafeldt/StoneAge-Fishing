@@ -52,7 +52,24 @@ PartnerAnimator PA;
     private bool thirdFishingFlatfish = false;
     // Use this for initialization
     void Start () {
-		EC = GameManager.singleton.boat.GetComponent<EventCatcher>();
+        eelTrapEmptied = false;
+        timesFishedNowhereTotal = 0;
+
+        wrongToolOneHook = true;
+        wrongToolOneSpear = true;
+
+        endGame = false;
+        firstFishingTorsk = true;
+        secondFishingTorsk = false;
+        thirdFishingTorsk = false;
+        firstFishingEel = true;
+        secondFishingEel = false;
+        thirdFishingEel = false;
+        firstFishingFlatfish = true;
+        secondFishingFlatfish = false;
+        thirdFishingFlatfish = false;
+
+    EC = GameManager.singleton.boat.GetComponent<EventCatcher>();
 		try
 		{
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();

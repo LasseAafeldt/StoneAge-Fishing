@@ -13,7 +13,12 @@ public class SplineWalker : MonoBehaviour {
 	private float progress;
 	private bool goingForward = true;
 
-	private void Update () {
+    private void Start()
+    {
+        goingForward = true;
+    }
+
+    private void Update () {
 		if (goingForward) {
 			progress += Time.deltaTime / duration;
 			if (progress > 1f) {

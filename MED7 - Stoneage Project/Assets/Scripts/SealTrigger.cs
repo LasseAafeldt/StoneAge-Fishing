@@ -8,6 +8,7 @@ public class SealTrigger : MonoBehaviour {
 
     private void Start()
     {
+        hasPlayed = false;
         ps = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
     }
 

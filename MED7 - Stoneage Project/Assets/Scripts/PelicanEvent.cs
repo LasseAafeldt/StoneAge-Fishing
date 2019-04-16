@@ -24,6 +24,11 @@ public class PelicanEvent : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        hasHappening = false;
+        orcaMoving = true;
+        aSoundIsAlreadyPlaying = false;
+        eventIsStarted = false;
+
         partner = GameManager.singleton.partner;
         ps = partner.GetComponent<PartnerSpeech>();
     }

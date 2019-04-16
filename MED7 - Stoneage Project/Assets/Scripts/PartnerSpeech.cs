@@ -64,7 +64,8 @@ public class PartnerSpeech : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		audio = GetComponent<AudioSource>();        
+        donePlaying = true;
+        audio = GetComponent<AudioSource>();        
 	}
 	
 	// Update is called once per frame
