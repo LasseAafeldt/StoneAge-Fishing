@@ -140,7 +140,7 @@ PartnerAnimator PA;
 			{
                 //wrong tool
                 setWrongToolVoicelineInt(WrongTool.NoIron4Cod);
-                Debug.Log("this is not the tool to use for torsk");
+                Debug.Log("this is not the tool to use for eel or flatfish");
                 if (wrongToolOneHook)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron);
@@ -246,13 +246,12 @@ PartnerAnimator PA;
                 //no fish here
                 notEnoughFishHere();
 			}
-			else
+			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
 			{
                 //wrong tool
                 setWrongToolVoicelineInt(WrongTool.NoHook4Eel);
-
-                Debug.Log("This is not the tool to use for eel or Flatfish");
-                if (wrongToolOneSpear)
+                Debug.Log("This is not the tool to use for cod");
+                if (wrongToolOneSpear == true)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook);
                     wrongToolOneSpear = !wrongToolOneSpear;
@@ -402,7 +401,7 @@ PartnerAnimator PA;
         //Debug.Log("I set the enum to: " + WrongToolVoice);
         LogMaster.WrongToolVoiceline = (int)wrongTool;
         //call the log entry function here inorder not to loose the wrongtool data
-        if(LogMaster.filePath != null)
+        //if(LogMaster.filePath != null)
         {
             logMaster.logEntry(
                 logMaster.player.position,
