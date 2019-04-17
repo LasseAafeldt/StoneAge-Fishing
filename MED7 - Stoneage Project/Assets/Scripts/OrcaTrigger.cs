@@ -22,11 +22,12 @@ public class OrcaTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision) //collider collision er sådan man kalder den. 
     {
+        Debug.Log(collision.gameObject.name);
         if (orcaHasBeenActivated)
         {
             return;
         }
-        if (collision.gameObject.tag == GameManager.singleton.boat.tag)
+        if (collision.gameObject.name == "Boat")
         {
             playTimer.timeLeft += playAnimation.length + 0.5f;
             orca.SetActive(true); //gør gameobjected aktivt
@@ -37,16 +38,20 @@ public class OrcaTrigger : MonoBehaviour {
             //Play "se en spækhugger" sound
             ps.PartnerSaysSomething(ps.OrcaAppears);
 
-            StartCoroutine(waitForOrcaAnimation(ps.OrcaAppears.length)); //now wait for sound instead of animation to finish
-
+            StartCoroutine(waitForOrcaSpeech(ps.OrcaAppears.length)); //now wait for sound instead of animation to finish
+    
             orcaHasBeenActivated = true;
         }
+    }
+    IEnumerator waitForOrcaSpeech(float clipLength)
+    {
+        yield return new WaitForSeconds(clipLength);
+        GameManager.singleton.canMove = true;
+        StartCoroutine(waitForOrcaAnimation(playAnimation.length));
     }
     IEnumerator waitForOrcaAnimation(float clipLength)
     {
         yield return new WaitForSeconds(clipLength);
         orca.SetActive(false);
-        GameManager.singleton.canMove = true;
     }
-
 }
