@@ -30,6 +30,7 @@ public class PartnerSpeech : MonoBehaviour {
     public AudioClip whileFlatfishFihingThird;
     public AudioClip whileEmptyingEeltrap;
     public AudioClip afterEmptyingEeltrap;
+    public AudioClip areaIsOutOfFish;
 
     [Header("Event sounds")]
 	public AudioClip OrcaAppears;

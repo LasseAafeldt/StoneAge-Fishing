@@ -92,15 +92,20 @@ PartnerAnimator PA;
 
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
 			{
+                EC.startFishing(tool);
+                if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
+                {
+                    return;                  
+                }
 				HideTool();
 				PA.HookAnimation();
-                Debug.Log("Player is fishing torsk now, hopefully the sound is playing while the animation happens");
+                //Debug.Log("Player is fishing torsk now, hopefully the sound is playing while the animation happens");
                 if (firstFishingTorsk)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingFirst);
                     firstFishingTorsk = false;
                     secondFishingTorsk = true;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -110,7 +115,7 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingSecond);
                     secondFishingTorsk = false;
                     thirdFishingTorsk = true;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -119,12 +124,12 @@ PartnerAnimator PA;
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingThird);
                     thirdFishingTorsk = false;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
+                    Debug.Log("player has fished torsk 3 times now");
                     return;
                 }
-                Debug.Log("player has fished torsk 3 times now");
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
@@ -156,15 +161,20 @@ PartnerAnimator PA;
 
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "EelArea")
 			{
-				HideTool();
+                EC.startFishing(tool);
+                if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
+                {
+                    return;
+                }
+                HideTool();
 				PA.EelironAnimation();
-                Debug.Log("Player is fishing eel now, hopefully the sound is playing while the animation happens");
+                //Debug.Log("Player is fishing eel now, hopefully the sound is playing while the animation happens");
                 if (firstFishingEel)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingFirst);
                     firstFishingEel = false;
                     secondFishingEel = true;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Eel;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -174,7 +184,7 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingSecond);
                     secondFishingEel = false;
                     thirdFishingEel = true;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Eel;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -183,24 +193,29 @@ PartnerAnimator PA;
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingThird);
                     thirdFishingEel = false;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Eel;
                     setFishCaughtInt(fishCaught);
+                    Debug.Log("player has fished eel 3 times now");
                     return;
                 }
-                Debug.Log("player has fished eel 3 times now");
             }
             else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "FlatfishArea")
             {
+                EC.startFishing(tool);
+                if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
+                {
+                    return;
+                }
                 HideTool();
                 PA.EelironAnimation();
-                Debug.Log("Player is fishing Flatfish now, hopefully the sound is playing while the animation happens");
+                //Debug.Log("Player is fishing Flatfish now, hopefully the sound is playing while the animation happens");
                 if (firstFishingFlatfish)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingFirst);
                     firstFishingFlatfish = false;
                     secondFishingFlatfish = true;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Flatfish;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -210,7 +225,7 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingSecond);
                     secondFishingFlatfish = false;
                     thirdFishingFlatfish = true;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Flatfish;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -219,12 +234,12 @@ PartnerAnimator PA;
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingThird);
                     thirdFishingFlatfish = false;
-                    EC.startFishing(tool);
+                    //EC.startFishing(tool);
                     fishCaught = FishCaught.Flatfish;
                     setFishCaughtInt(fishCaught);
+                    Debug.Log("player has fished Flatfish 3 times now");
                     return;
                 }
-                Debug.Log("player has fished Flatfish 3 times now");
             }
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
@@ -255,6 +270,7 @@ PartnerAnimator PA;
             {
                 GameManager.singleton.map.SetActive(false);
                 GameManager.singleton.mapOnCam.SetActive(true);
+
                 logMaster.logEntry(
                     logMaster.player.position,
                     logMaster.player.rotation.eulerAngles,
@@ -270,6 +286,7 @@ PartnerAnimator PA;
             {
                 GameManager.singleton.map.SetActive(true);
                 GameManager.singleton.mapOnCam.SetActive(false);
+
                 logMaster.logEntry(
                     logMaster.player.position,
                     logMaster.player.rotation.eulerAngles,

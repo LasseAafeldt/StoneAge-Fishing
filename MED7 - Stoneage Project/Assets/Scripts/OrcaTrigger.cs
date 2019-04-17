@@ -37,14 +37,14 @@ public class OrcaTrigger : MonoBehaviour {
             //Play "se en spækhugger" sound
             ps.PartnerSaysSomething(ps.OrcaAppears);
 
-            StartCoroutine(waitForOrcaAnimation(playAnimation));
+            StartCoroutine(waitForOrcaAnimation(ps.OrcaAppears.length)); //now wait for sound instead of animation to finish
 
             orcaHasBeenActivated = true;
         }
     }
-    IEnumerator waitForOrcaAnimation(AnimationClip clip)
+    IEnumerator waitForOrcaAnimation(float clipLength)
     {
-        yield return new WaitForSeconds(clip.length);
+        yield return new WaitForSeconds(clipLength);
         orca.SetActive(false);
         GameManager.singleton.canMove = true;
     }

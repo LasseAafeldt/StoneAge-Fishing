@@ -143,7 +143,7 @@ public class PartnerAnimator : MonoBehaviour {
 		//check if there is more fish in the area
 		try
 		{
-			GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().GetComponent<FishContent>().DestroyEmptyArea();
+			//GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().GetComponent<FishContent>().DestroyEmptyArea();
 		}
 		catch{}
 
@@ -182,7 +182,7 @@ public class PartnerAnimator : MonoBehaviour {
 
 		try
 		{
-			GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().GetComponent<FishContent>().DestroyEmptyArea();
+			//GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().GetComponent<FishContent>().DestroyEmptyArea();
 		}
 		catch{}
 

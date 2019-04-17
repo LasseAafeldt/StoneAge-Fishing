@@ -12,7 +12,7 @@ public class EventCatcher : MonoBehaviour {
     public int FishToSucceed = 7;
     public float OutOfBoundsSoundTimer = 7f;
 
-    GameObject fishingAreaObject;
+    public GameObject fishingAreaObject;
 	bool canFish;
     bool firstTimeInTorskArea = true;
 	bool firstTimeInEelArea = true;
@@ -50,38 +50,10 @@ public class EventCatcher : MonoBehaviour {
 		}
 		if(other.tag == "TorskArea" || other.tag == "EelArea" || other.tag == "FlatfishArea")
 		{
-			canFish = true;
+            canFish = true;
 			fishingArea = other.tag;
 			fishingAreaObject = other.gameObject;
-			Debug.Log("you are now in the "+fishingArea);
-			
-			if(other.tag == "TorskArea" && firstTimeInTorskArea)
-			{
-                //Debug.Log("I have entered the torsk area first time");
-				firstTimeInTorskArea = false;
-				/*GameManager.singleton.
-						partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-						GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCodAreaEmergent);*/					
-			}
-			if( other.tag == "EelArea" && firstTimeInEelArea)
-			{
-				firstTimeInEelArea = false;
-				/*float time =GameManager.singleton.timer.GetComponent<playTimer>().GetTimeSpent();
-					if(time > 0.4)
-					{
-						GameManager.singleton.
-							partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-							GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCoastAreaDay);
-					}
-
-					else
-					{
-						GameManager.singleton.
-							partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
-							GameManager.singleton.partner.GetComponent<PartnerSpeech>().EnterCoastAreaNight);
-					}
-				}*/
-			}
+			Debug.Log("you are now in the "+fishingArea);			
 		}
         //when you go back to ertebølle midden to retrieve tool
 		if(other.tag == "ertebølle")
