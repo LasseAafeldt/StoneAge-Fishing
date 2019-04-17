@@ -96,7 +96,8 @@ public class GameManager : MonoBehaviour {
     public bool flatFishCaught = false;
 
     // Audio Sources
-    AudioSource audio;
+    [HideInInspector]
+    public AudioSource _audio;
     //for change to end scene:
     bool hasFlint = false;
 
@@ -166,7 +167,7 @@ public class GameManager : MonoBehaviour {
             pillar5.SetActive(false);
 
             } catch{}
-        audio = GetComponent<AudioSource>();
+        _audio = GetComponent<AudioSource>();
 
         Physics.IgnoreLayerCollision(0, 11);
                 
@@ -260,7 +261,7 @@ public class GameManager : MonoBehaviour {
     public void PrepareForEndScene(AudioClip clip, bool hasFlint)
     {
             
-        audio.clip = clip;
+        _audio.clip = clip;
         this.hasFlint = hasFlint;
     }
 

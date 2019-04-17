@@ -22,26 +22,24 @@ public class OrcaTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision) //collider collision er sådan man kalder den. 
     {
-        Debug.Log(collision.gameObject.name);
-        if (orcaHasBeenActivated)
+        //Debug.Log(collision.gameObject.name);
+        if (orcaHasBeenActivated || collision.tag != "boat")
         {
             return;
         }
-        if (collision.gameObject.name == "Boat")
-        {
-            playTimer.timeLeft += playAnimation.length + 0.5f;
-            orca.SetActive(true); //gør gameobjected aktivt
-            GameManager.singleton.canMove = false;
-            //reset the paddle animation
-            GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(false);
+        Debug.Log("Collider is tag boat");
+        playTimer.timeLeft += playAnimation.length + 0.5f;
+        orca.SetActive(true); //gør gameobjected aktivt
+        GameManager.singleton.canMove = false;
+        //reset the paddle animation
+        GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(false);
 
-            //Play "se en spækhugger" sound
-            ps.PartnerSaysSomething(ps.OrcaAppears);
+        //Play "se en spækhugger" sound
+        ps.PartnerSaysSomething(ps.OrcaAppears);
 
-            StartCoroutine(waitForOrcaSpeech(ps.OrcaAppears.length)); //now wait for sound instead of animation to finish
+        StartCoroutine(waitForOrcaSpeech(ps.OrcaAppears.length)); //now wait for sound instead of animation to finish
     
-            orcaHasBeenActivated = true;
-        }
+        orcaHasBeenActivated = true;
     }
     IEnumerator waitForOrcaSpeech(float clipLength)
     {

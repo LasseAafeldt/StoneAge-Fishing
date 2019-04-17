@@ -1,0 +1,322 @@
+4/17/2019 3:26:24 PM,(-97.3, 2.5, 198.3),(360.0, 359.1, 359.8),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,0
+4/17/2019 3:26:25 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,1
+4/17/2019 3:26:26 PM,(-97.3, 2.5, 198.4),(360.0, 355.6, 359.8),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,2
+4/17/2019 3:26:27 PM,(-97.3, 2.5, 198.3),(358.3, 258.8, 0.1),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,3
+4/17/2019 3:26:28 PM,(-97.2, 2.5, 198.4),(344.8, 59.6, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,4
+4/17/2019 3:26:29 PM,(-98.3, 2.5, 198.9),(350.8, 59.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,5
+4/17/2019 3:26:30 PM,(-99.0, 2.5, 202.3),(350.8, 59.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,6
+4/17/2019 3:26:31 PM,(-95.4, 2.5, 209.3),(350.8, 59.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Starting Region,7
+4/17/2019 3:26:32 PM,(-84.9, 2.5, 220.8),(350.8, 59.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,8
+4/17/2019 3:26:33 PM,(-70.1, 2.5, 233.7),(350.8, 59.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,9
+4/17/2019 3:26:34 PM,(-57.0, 2.5, 243.6),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,10
+4/17/2019 3:26:35 PM,(-48.9, 2.5, 249.2),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,11
+4/17/2019 3:26:36 PM,(-43.7, 2.5, 253.2),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,12
+4/17/2019 3:26:37 PM,(-38.1, 2.5, 258.2),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,13
+4/17/2019 3:26:38 PM,(-27.9, 2.5, 267.9),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,14
+4/17/2019 3:26:39 PM,(-13.7, 2.5, 281.2),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,15
+4/17/2019 3:26:40 PM,(-0.5, 2.5, 293.7),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,16
+4/17/2019 3:26:41 PM,(7.8, 2.5, 301.7),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,17
+4/17/2019 3:26:42 PM,(13.0, 2.5, 306.6),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,18
+4/17/2019 3:26:43 PM,(17.8, 2.5, 311.1),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,19
+4/17/2019 3:26:44 PM,(26.5, 2.5, 319.4),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,20
+4/17/2019 3:26:45 PM,(39.9, 2.5, 332.1),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,No Region,21
+4/17/2019 3:26:46 PM,(53.9, 2.5, 345.4),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Torsk Region,22
+4/17/2019 3:26:47 PM,(63.6, 2.5, 354.6),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Torsk Region,23
+4/17/2019 3:26:48 PM,(69.5, 2.5, 360.2),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Torsk Region,24
+4/17/2019 3:26:49 PM,(74.0, 2.5, 364.4),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Torsk Region,25
+4/17/2019 3:26:50 PM,(81.2, 2.5, 371.3),(352.6, 43.4, 359.9),spillet start,0,Guide mod åleruse,0,0,False,Torsk Region,26
+4/17/2019 3:26:51 PM,(90.5, 2.5, 380.2),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,27
+4/17/2019 3:26:52 PM,(94.3, 2.5, 383.8),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,28
+4/17/2019 3:26:53 PM,(95.7, 2.5, 385.1),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,29
+4/17/2019 3:26:54 PM,(96.2, 2.5, 385.6),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,30
+4/17/2019 3:26:55 PM,(96.4, 2.5, 385.7),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,31
+4/17/2019 3:26:56 PM,(96.5, 2.5, 385.8),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,32
+4/17/2019 3:26:57 PM,(96.6, 2.5, 385.9),(352.6, 43.4, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,33
+4/17/2019 3:26:58 PM,(102.0, 2.5, 391.0),(355.0, 36.6, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,34
+4/17/2019 3:26:59 PM,(108.8, 2.5, 397.4),(355.1, 55.6, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,35
+4/17/2019 3:27:00 PM,(113.9, 2.5, 403.2),(357.4, 67.3, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,Orca Region,36
+4/17/2019 3:27:01 PM,(118.0, 2.5, 407.3),(357.4, 67.3, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,No Region,37
+4/17/2019 3:27:02 PM,(123.4, 2.5, 411.0),(357.4, 67.3, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,No Region,38
+4/17/2019 3:27:03 PM,(134.3, 2.5, 417.5),(19.6, 62.6, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,No Region,39
+4/17/2019 3:27:04 PM,(146.4, 2.5, 424.1),(16.1, 31.3, 359.8),man kan se spækhugger,0,Guide mod åleruse,0,0,False,No Region,40
+4/17/2019 3:27:05 PM,(159.2, 2.5, 433.0),(17.1, 84.6, 360.0),man kan se spækhugger,0,Guide mod åleruse,0,0,False,No Region,41
+4/17/2019 3:27:06 PM,(168.0, 2.4, 438.6),(36.0, 75.3, 359.9),man kan se spækhugger,0,Guide mod åleruse,0,0,False,No Region,42
+4/17/2019 3:27:07 PM,(171.4, 2.4, 440.7),(43.4, 54.2, 359.8),når man ikke kan fiske 1,0,Guide mod åleruse,1,0,False,No Region,43
+4/17/2019 3:27:08 PM,(172.6, 2.4, 441.4),(33.6, 83.1, 359.9),når man ikke kan fiske 1,0,Guide mod åleruse,2,0,False,No Region,44
+4/17/2019 3:27:09 PM,(173.0, 2.5, 441.5),(6.4, 193.1, 0.2),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,45
+4/17/2019 3:27:10 PM,(173.1, 2.5, 441.6),(0.9, 200.3, 0.2),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,46
+4/17/2019 3:27:11 PM,(173.2, 2.5, 441.7),(356.9, 222.1, 0.1),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,47
+4/17/2019 3:27:12 PM,(173.2, 2.5, 441.7),(356.6, 224.3, 0.1),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,48
+4/17/2019 3:27:13 PM,(173.2, 2.5, 441.7),(356.3, 226.8, 0.1),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,49
+4/17/2019 3:27:14 PM,(173.2, 2.5, 441.7),(355.9, 234.6, 0.1),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,50
+4/17/2019 3:27:15 PM,(173.2, 2.5, 441.7),(11.4, 226.4, 0.1),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,51
+4/17/2019 3:27:16 PM,(173.1, 2.4, 441.8),(34.3, 267.4, 0.0),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,52
+4/17/2019 3:27:17 PM,(173.2, 2.5, 441.8),(10.2, 311.1, 359.9),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,53
+4/17/2019 3:27:18 PM,(173.3, 2.4, 441.9),(22.6, 18.3, 359.8),når man ikke kan fiske 2,0,Guide mod åleruse,2,0,False,No Region,54
+4/17/2019 3:27:19 PM,(174.0, 2.5, 442.1),(11.4, 68.6, 359.9),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,55
+4/17/2019 3:27:20 PM,(177.3, 2.5, 441.2),(18.1, 286.1, 360.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,56
+4/17/2019 3:27:21 PM,(185.7, 2.5, 446.6),(8.8, 183.6, 0.2),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,57
+4/17/2019 3:27:22 PM,(178.9, 2.5, 458.8),(5.4, 138.1, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,58
+4/17/2019 3:27:23 PM,(162.7, 2.5, 457.3),(342.2, 244.8, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,59
+4/17/2019 3:27:24 PM,(150.0, 2.5, 447.9),(0.8, 220.6, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,60
+4/17/2019 3:27:25 PM,(141.4, 2.5, 441.6),(7.4, 236.6, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,61
+4/17/2019 3:27:26 PM,(135.9, 2.5, 437.6),(6.0, 241.1, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,Torsk Region,62
+4/17/2019 3:27:27 PM,(130.7, 2.5, 433.7),(6.0, 241.4, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,Torsk Region,63
+4/17/2019 3:27:28 PM,(120.8, 2.5, 426.7),(4.1, 247.9, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,Torsk Region,64
+4/17/2019 3:27:29 PM,(104.9, 2.5, 417.3),(4.1, 247.9, 0.1),Guide mod torsk,0,Guide mod torsk,2,0,False,Torsk Region,65
+4/17/2019 3:27:30 PM,(88.4, 2.5, 407.1),(3.9, 276.6, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,Torsk Region,66
+4/17/2019 3:27:31 PM,(79.3, 2.5, 401.8),(3.1, 268.1, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,67
+4/17/2019 3:27:32 PM,(74.8, 2.5, 399.9),(3.1, 268.1, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,68
+4/17/2019 3:27:33 PM,(70.0, 2.5, 398.4),(349.3, 298.1, 360.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,69
+4/17/2019 3:27:34 PM,(60.4, 2.5, 396.9),(353.8, 268.8, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,70
+4/17/2019 3:27:35 PM,(44.6, 2.5, 397.6),(353.8, 268.8, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,71
+4/17/2019 3:27:36 PM,(38.0, 2.5, 395.7),(353.8, 268.8, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,72
+4/17/2019 3:27:37 PM,(28.3, 2.5, 395.2),(353.0, 296.1, 360.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,73
+4/17/2019 3:27:38 PM,(24.3, 2.5, 392.6),(350.0, 328.1, 359.9),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,74
+4/17/2019 3:27:39 PM,(23.7, 2.5, 391.4),(352.9, 281.1, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,75
+4/17/2019 3:27:40 PM,(22.0, 2.5, 392.7),(352.9, 273.8, 0.0),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,76
+4/17/2019 3:27:41 PM,(15.0, 2.5, 392.4),(349.1, 330.6, 359.9),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,77
+4/17/2019 3:27:42 PM,(-0.8, 2.5, 395.0),(343.4, 54.4, 359.9),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,78
+4/17/2019 3:27:43 PM,(-16.1, 2.5, 402.5),(352.3, 6.6, 359.8),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,79
+4/17/2019 3:27:44 PM,(-21.8, 2.4, 409.6),(24.0, 344.0, 359.8),Guide mod torsk,0,Guide mod torsk,2,0,False,No Region,80
+4/17/2019 3:27:45 PM,(-23.7, 2.4, 412.6),(43.5, 351.9, 359.8),fanger torsk,1,Guide mod torsk,2,0,False,No Region,81
+4/17/2019 3:27:45 PM,(-23.7, 2.4, 412.6),(43.5, 351.9, 359.8),fanger torsk,0,Guide mod torsk,2,0,False,No Region,82
+4/17/2019 3:27:46 PM,(-24.5, 2.5, 413.6),(14.8, 264.6, 0.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,83
+4/17/2019 3:27:47 PM,(-24.7, 2.4, 414.1),(38.0, 320.8, 359.9),fanger torsk,0,Guide mod torsk,2,0,False,No Region,84
+4/17/2019 3:27:48 PM,(-24.8, 2.4, 414.3),(41.4, 324.5, 359.9),fanger torsk,0,Guide mod torsk,2,0,False,No Region,85
+4/17/2019 3:27:49 PM,(-24.9, 2.5, 414.3),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,86
+4/17/2019 3:27:50 PM,(-24.9, 2.5, 414.3),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,87
+4/17/2019 3:27:51 PM,(-24.9, 2.5, 414.3),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,88
+4/17/2019 3:27:52 PM,(-24.9, 2.5, 414.3),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,89
+4/17/2019 3:27:53 PM,(-23.8, 2.5, 417.6),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,90
+4/17/2019 3:27:54 PM,(-28.0, 2.5, 431.5),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,91
+4/17/2019 3:27:55 PM,(-37.7, 2.5, 446.9),(12.1, 297.3, 360.0),fanger torsk,0,Guide mod torsk,2,0,False,No Region,92
+4/17/2019 3:27:56 PM,(-46.2, 2.5, 458.0),(4.5, 250.6, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,93
+4/17/2019 3:27:57 PM,(-52.0, 2.5, 464.9),(1.8, 224.1, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,94
+4/17/2019 3:27:58 PM,(-57.7, 2.5, 468.2),(1.8, 224.1, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,95
+4/17/2019 3:27:59 PM,(-66.4, 2.5, 467.0),(1.6, 224.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,96
+4/17/2019 3:28:00 PM,(-80.0, 2.5, 458.7),(353.4, 310.9, 359.9),fanger torsk,0,Guide mod torsk,2,0,False,No Region,97
+4/17/2019 3:28:01 PM,(-98.3, 2.5, 448.4),(0.1, 333.8, 359.9),fanger torsk,0,Guide mod torsk,2,0,False,No Region,98
+4/17/2019 3:28:02 PM,(-113.0, 2.4, 449.6),(13.3, 226.9, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,99
+4/17/2019 3:28:03 PM,(-122.6, 2.5, 454.0),(10.9, 155.6, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,100
+4/17/2019 3:28:04 PM,(-130.3, 2.5, 454.5),(5.8, 173.9, 0.2),fanger torsk,0,Guide mod torsk,2,0,False,No Region,101
+4/17/2019 3:28:05 PM,(-134.8, 2.5, 449.3),(0.8, 198.3, 0.2),fanger torsk,0,Guide mod torsk,2,0,False,No Region,102
+4/17/2019 3:28:06 PM,(-139.8, 2.5, 436.4),(353.0, 220.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,103
+4/17/2019 3:28:07 PM,(-147.6, 2.5, 418.6),(352.2, 233.6, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,104
+4/17/2019 3:28:08 PM,(-156.5, 2.5, 403.0),(352.2, 233.6, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,105
+4/17/2019 3:28:09 PM,(-162.7, 2.5, 393.5),(349.6, 242.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,106
+4/17/2019 3:28:10 PM,(-167.2, 2.5, 388.0),(349.6, 242.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,107
+4/17/2019 3:28:11 PM,(-171.9, 2.5, 384.0),(349.7, 241.6, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,108
+4/17/2019 3:28:12 PM,(-181.9, 2.5, 377.6),(350.0, 239.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,109
+4/17/2019 3:28:13 PM,(-197.8, 2.5, 368.0),(350.0, 239.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,110
+4/17/2019 3:28:14 PM,(-214.3, 2.5, 358.2),(349.3, 243.6, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,111
+4/17/2019 3:28:15 PM,(-225.4, 2.5, 351.0),(347.6, 257.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,112
+4/17/2019 3:28:16 PM,(-232.3, 2.5, 347.1),(347.6, 257.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,113
+4/17/2019 3:28:17 PM,(-238.0, 2.5, 344.6),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,114
+4/17/2019 3:28:18 PM,(-247.7, 2.5, 341.5),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,115
+4/17/2019 3:28:19 PM,(-264.2, 2.5, 336.6),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,116
+4/17/2019 3:28:20 PM,(-283.1, 2.5, 330.9),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,117
+4/17/2019 3:28:21 PM,(-297.8, 2.5, 326.5),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,118
+4/17/2019 3:28:22 PM,(-306.4, 2.5, 324.0),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,119
+4/17/2019 3:28:23 PM,(-312.4, 2.5, 322.2),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,No Region,120
+4/17/2019 3:28:24 PM,(-320.5, 2.5, 319.8),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,Eel Region,121
+4/17/2019 3:28:25 PM,(-335.3, 2.5, 315.4),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,Eel Region,122
+4/17/2019 3:28:26 PM,(-354.3, 2.5, 309.8),(355.8, 258.3, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,Eel Region,123
+4/17/2019 3:28:27 PM,(-370.7, 2.5, 304.9),(355.9, 260.8, 0.1),fanger torsk,0,Guide mod torsk,2,0,False,Eel Region,124
+4/17/2019 3:28:28 PM,(-380.5, 2.4, 300.3),(7.3, 308.8, 359.9),Guide mod ål,0,Guide mod ål,2,0,False,Eel Region,125
+4/17/2019 3:28:29 PM,(-386.1, 2.4, 299.2),(22.0, 279.6, 0.0),Guide mod ål,0,Guide mod ål,2,0,False,Eel Region,126
+4/17/2019 3:28:30 PM,(-388.7, 2.5, 299.0),(347.5, 249.3, 0.1),Guide mod ål,0,Guide mod ål,2,0,False,Eel Region,127
+4/17/2019 3:28:31 PM,(-389.9, 2.4, 299.0),(32.4, 279.6, 0.0),Guide mod ål,0,Guide mod ål,2,0,False,Eel Region,128
+4/17/2019 3:28:32 PM,(-390.2, 2.4, 299.0),(36.3, 283.8, 360.0),Guide mod ål,2,Guide mod ål,2,0,False,Eel Region,129
+4/17/2019 3:28:32 PM,(-390.3, 2.4, 299.0),(36.3, 283.8, 360.0),Guide mod ål,0,Guide mod ål,2,0,False,Eel Region,130
+4/17/2019 3:28:33 PM,(-390.4, 2.4, 298.9),(7.2, 231.9, 0.1),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,131
+4/17/2019 3:28:34 PM,(-390.4, 2.5, 298.8),(5.0, 188.6, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,132
+4/17/2019 3:28:35 PM,(-390.4, 2.5, 298.8),(3.0, 194.4, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,133
+4/17/2019 3:28:36 PM,(-390.4, 2.5, 298.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,134
+4/17/2019 3:28:37 PM,(-390.4, 2.5, 298.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,135
+4/17/2019 3:28:38 PM,(-390.4, 2.5, 298.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,136
+4/17/2019 3:28:39 PM,(-390.4, 2.5, 298.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,137
+4/17/2019 3:28:40 PM,(-390.4, 2.5, 298.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,138
+4/17/2019 3:28:41 PM,(-390.4, 2.5, 299.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,139
+4/17/2019 3:28:42 PM,(-392.2, 2.5, 301.3),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,140
+4/17/2019 3:28:43 PM,(-399.4, 2.5, 298.7),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,141
+4/17/2019 3:28:44 PM,(-411.7, 2.5, 289.0),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,142
+4/17/2019 3:28:45 PM,(-425.0, 2.5, 274.7),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,143
+4/17/2019 3:28:46 PM,(-435.2, 2.5, 262.3),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,144
+4/17/2019 3:28:47 PM,(-441.2, 2.5, 254.9),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,145
+4/17/2019 3:28:48 PM,(-445.2, 2.5, 249.7),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,146
+4/17/2019 3:28:49 PM,(-449.8, 2.5, 243.6),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,147
+4/17/2019 3:28:50 PM,(-458.5, 2.5, 232.1),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,148
+4/17/2019 3:28:51 PM,(-470.4, 2.5, 216.4),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,149
+4/17/2019 3:28:52 PM,(-481.2, 2.5, 202.2),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,150
+4/17/2019 3:28:53 PM,(-487.9, 2.5, 193.2),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Eel Region,151
+4/17/2019 3:28:54 PM,(-492.2, 2.5, 187.6),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,No Region,152
+4/17/2019 3:28:55 PM,(-496.2, 2.5, 182.2),(360.0, 209.1, 0.2),fanger ål 1,0,Guide mod ål,2,0,False,Seal Region,153
+4/17/2019 3:28:56 PM,(-503.6, 2.5, 172.4),(360.0, 209.1, 0.2),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,154
+4/17/2019 3:28:57 PM,(-514.9, 2.5, 157.5),(360.0, 209.1, 0.2),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,155
+4/17/2019 3:28:58 PM,(-525.8, 2.5, 141.7),(2.8, 272.8, 0.0),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,156
+4/17/2019 3:28:59 PM,(-534.3, 2.4, 131.7),(13.8, 188.1, 0.2),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,157
+4/17/2019 3:29:00 PM,(-542.7, 2.4, 127.7),(16.3, 52.8, 359.9),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,158
+4/17/2019 3:29:01 PM,(-547.1, 2.4, 121.9),(16.3, 57.1, 359.9),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,159
+4/17/2019 3:29:02 PM,(-545.0, 2.4, 110.9),(7.2, 83.1, 359.9),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,160
+4/17/2019 3:29:03 PM,(-530.4, 2.4, 104.4),(3.8, 40.6, 359.9),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,161
+4/17/2019 3:29:04 PM,(-511.5, 2.4, 102.7),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,162
+4/17/2019 3:29:05 PM,(-496.9, 2.4, 103.4),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,163
+4/17/2019 3:29:06 PM,(-488.2, 2.4, 104.1),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,164
+4/17/2019 3:29:07 PM,(-482.0, 2.4, 104.8),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,165
+4/17/2019 3:29:08 PM,(-473.5, 2.4, 106.0),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,Seal Region,166
+4/17/2019 3:29:09 PM,(-458.2, 2.4, 108.2),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,No Region,167
+4/17/2019 3:29:10 PM,(-438.6, 2.4, 111.1),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,No Region,168
+4/17/2019 3:29:11 PM,(-421.7, 2.4, 113.6),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,No Region,169
+4/17/2019 3:29:12 PM,(-411.5, 2.4, 115.1),(2.9, 84.1, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,No Region,170
+4/17/2019 3:29:13 PM,(-404.9, 2.4, 116.6),(3.2, 114.1, 0.0),man kan se sæler,0,Guide mod ål,2,0,False,No Region,171
+4/17/2019 3:29:14 PM,(-397.7, 2.4, 117.8),(3.2, 114.1, 0.0),man kan se sæler,0,Guide mod ål,2,0,False,No Region,172
+4/17/2019 3:29:15 PM,(-384.5, 2.4, 116.1),(3.3, 80.6, 359.9),man kan se sæler,0,Guide mod ål,2,0,False,No Region,173
+4/17/2019 3:29:16 PM,(-365.7, 2.4, 112.0),(3.8, 85.6, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,EelTrap Region,174
+4/17/2019 3:29:17 PM,(-347.3, 2.4, 109.5),(2.9, 91.8, 360.0),man kan se sæler,0,Guide mod ål,2,0,False,EelTrap Region,175
+4/17/2019 3:29:18 PM,(-335.3, 2.4, 108.4),(4.1, 108.1, 0.0),man kan se sæler,0,Guide mod ål,2,0,False,EelTrap Region,176
+4/17/2019 3:29:19 PM,(-328.0, 2.4, 107.8),(4.1, 106.6, 0.0),man kan se sæler,0,Guide mod ål,2,0,False,EelTrap Region,177
+4/17/2019 3:29:20 PM,(-323.5, 2.4, 107.2),(3.5, 107.1, 0.0),T¢mme åleruse,4,Guide mod ål,2,0,False,EelTrap Region,178
+4/17/2019 3:29:20 PM,(-323.3, 2.4, 107.1),(3.5, 107.1, 0.0),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,179
+4/17/2019 3:29:21 PM,(-321.5, 2.5, 107.0),(0.1, 44.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,180
+4/17/2019 3:29:22 PM,(-320.9, 2.5, 106.9),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,181
+4/17/2019 3:29:23 PM,(-320.6, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,182
+4/17/2019 3:29:24 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,183
+4/17/2019 3:29:25 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,184
+4/17/2019 3:29:26 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,185
+4/17/2019 3:29:27 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,186
+4/17/2019 3:29:28 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,187
+4/17/2019 3:29:29 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,188
+4/17/2019 3:29:30 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),T¢mme åleruse,0,Guide mod ål,2,0,False,EelTrap Region,189
+4/17/2019 3:29:31 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,190
+4/17/2019 3:29:32 PM,(-320.5, 2.5, 106.8),(360.0, 46.6, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,191
+4/17/2019 3:29:33 PM,(-320.5, 2.4, 106.8),(3.8, 82.3, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,192
+4/17/2019 3:29:34 PM,(-320.5, 2.5, 106.8),(3.1, 70.3, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,193
+4/17/2019 3:29:35 PM,(-320.5, 2.5, 106.8),(3.1, 70.3, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,194
+4/17/2019 3:29:36 PM,(-320.5, 2.5, 106.8),(3.1, 70.3, 359.7),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,195
+4/17/2019 3:29:37 PM,(-320.5, 2.5, 106.8),(1.2, 60.3, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,196
+4/17/2019 3:29:38 PM,(-320.5, 2.5, 106.8),(1.2, 60.3, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,197
+4/17/2019 3:29:39 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,198
+4/17/2019 3:29:40 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,199
+4/17/2019 3:29:41 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,200
+4/17/2019 3:29:42 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,201
+4/17/2019 3:29:43 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,202
+4/17/2019 3:29:44 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,203
+4/17/2019 3:29:45 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,204
+4/17/2019 3:29:46 PM,(-320.5, 2.5, 106.8),(0.5, 63.8, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,205
+4/17/2019 3:29:47 PM,(-320.5, 2.5, 106.7),(347.6, 109.8, 0.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,206
+4/17/2019 3:29:48 PM,(-320.5, 2.5, 106.8),(359.4, 76.1, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,207
+4/17/2019 3:29:49 PM,(-320.5, 2.5, 106.8),(359.4, 76.1, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,208
+4/17/2019 3:29:50 PM,(-320.5, 2.5, 106.8),(359.4, 76.1, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,209
+4/17/2019 3:29:51 PM,(-320.5, 2.5, 106.8),(359.4, 76.1, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,210
+4/17/2019 3:29:52 PM,(-320.5, 2.5, 106.7),(349.5, 105.6, 0.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,211
+4/17/2019 3:29:53 PM,(-320.5, 2.5, 106.8),(353.3, 86.1, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,212
+4/17/2019 3:29:54 PM,(-320.5, 2.5, 106.8),(353.3, 86.1, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,213
+4/17/2019 3:29:55 PM,(-320.5, 2.5, 106.8),(353.3, 86.1, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,214
+4/17/2019 3:29:56 PM,(-320.5, 2.5, 106.8),(353.3, 86.1, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,215
+4/17/2019 3:29:57 PM,(-320.5, 2.5, 106.8),(353.3, 86.1, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,216
+4/17/2019 3:29:58 PM,(-320.5, 2.5, 106.8),(353.3, 86.1, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,217
+4/17/2019 3:29:59 PM,(-320.4, 2.4, 106.8),(12.4, 92.8, 360.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,218
+4/17/2019 3:30:00 PM,(-320.6, 2.4, 106.8),(20.7, 329.5, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,219
+4/17/2019 3:30:01 PM,(-320.6, 2.4, 106.8),(18.9, 266.9, 0.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,220
+4/17/2019 3:30:02 PM,(-320.6, 2.4, 106.8),(18.9, 266.9, 0.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,221
+4/17/2019 3:30:03 PM,(-320.6, 2.4, 106.8),(18.9, 266.9, 0.0),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,222
+4/17/2019 3:30:04 PM,(-320.6, 2.5, 106.7),(355.4, 252.3, 0.1),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,223
+4/17/2019 3:30:05 PM,(-320.6, 2.5, 106.7),(0.2, 198.3, 0.2),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,224
+4/17/2019 3:30:06 PM,(-320.6, 2.4, 106.7),(30.6, 203.4, 0.2),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,225
+4/17/2019 3:30:07 PM,(-320.5, 2.4, 106.7),(23.4, 145.4, 0.1),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,226
+4/17/2019 3:30:08 PM,(-320.5, 2.4, 106.8),(17.1, 53.6, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,227
+4/17/2019 3:30:09 PM,(-320.5, 2.4, 106.8),(16.5, 48.3, 359.9),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,228
+4/17/2019 3:30:10 PM,(-320.5, 2.4, 106.8),(3.5, 28.8, 359.8),Guide mod åleruse,0,Guide mod åleruse,2,0,False,EelTrap Region,229
+4/17/2019 3:30:11 PM,(-320.5, 2.4, 106.8),(3.5, 28.8, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,230
+4/17/2019 3:30:12 PM,(-320.5, 2.5, 106.7),(349.0, 115.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,231
+4/17/2019 3:30:13 PM,(-320.5, 2.4, 106.7),(5.1, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,232
+4/17/2019 3:30:14 PM,(-320.5, 2.4, 106.7),(5.2, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,233
+4/17/2019 3:30:15 PM,(-320.5, 2.4, 106.7),(5.2, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,234
+4/17/2019 3:30:16 PM,(-320.5, 2.4, 106.7),(5.2, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,235
+4/17/2019 3:30:17 PM,(-320.5, 2.4, 106.7),(5.2, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,236
+4/17/2019 3:30:18 PM,(-320.5, 2.4, 106.7),(5.2, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,237
+4/17/2019 3:30:19 PM,(-320.5, 2.4, 106.7),(5.2, 111.6, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,238
+4/17/2019 3:30:20 PM,(-320.5, 2.4, 106.7),(9.4, 110.8, 0.9),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,239
+4/17/2019 3:30:21 PM,(-320.4, 2.4, 106.7),(30.2, 113.1, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,240
+4/17/2019 3:30:22 PM,(-320.5, 2.4, 106.7),(8.8, 110.8, 0.0),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,241
+4/17/2019 3:30:23 PM,(-320.5, 2.4, 106.7),(8.8, 110.8, 7.2),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,242
+4/17/2019 3:30:24 PM,(-320.5, 2.4, 106.7),(8.8, 110.8, 0.2),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,243
+4/17/2019 3:30:25 PM,(-320.5, 2.5, 106.7),(352.1, 128.6, 0.1),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,244
+4/17/2019 3:30:26 PM,(-320.5, 2.5, 106.8),(350.8, 81.1, 359.9),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,245
+4/17/2019 3:30:27 PM,(-320.5, 2.5, 106.8),(355.7, 59.4, 359.9),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,246
+4/17/2019 3:30:28 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,247
+4/17/2019 3:30:29 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,248
+4/17/2019 3:30:30 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,249
+4/17/2019 3:30:31 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,250
+4/17/2019 3:30:32 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,251
+4/17/2019 3:30:33 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,252
+4/17/2019 3:30:34 PM,(-320.5, 2.5, 106.8),(351.7, 11.1, 359.8),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,253
+4/17/2019 3:30:35 PM,(-320.6, 2.5, 106.8),(355.3, 335.4, 359.9),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,254
+4/17/2019 3:30:36 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 2 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,255
+4/17/2019 3:30:37 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,256
+4/17/2019 3:30:38 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,257
+4/17/2019 3:30:39 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,258
+4/17/2019 3:30:40 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,259
+4/17/2019 3:30:41 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,260
+4/17/2019 3:30:42 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,261
+4/17/2019 3:30:43 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,262
+4/17/2019 3:30:44 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,263
+4/17/2019 3:30:45 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,264
+4/17/2019 3:30:46 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,265
+4/17/2019 3:30:47 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,266
+4/17/2019 3:30:48 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,267
+4/17/2019 3:30:49 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,268
+4/17/2019 3:30:50 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,269
+4/17/2019 3:30:51 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,270
+4/17/2019 3:30:52 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,271
+4/17/2019 3:30:53 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,272
+4/17/2019 3:30:54 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,273
+4/17/2019 3:30:55 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,274
+4/17/2019 3:30:56 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,275
+4/17/2019 3:30:57 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,276
+4/17/2019 3:30:58 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,277
+4/17/2019 3:30:59 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,278
+4/17/2019 3:31:00 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,279
+4/17/2019 3:31:01 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,280
+4/17/2019 3:31:02 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,281
+4/17/2019 3:31:03 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,282
+4/17/2019 3:31:04 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,283
+4/17/2019 3:31:05 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,284
+4/17/2019 3:31:06 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,285
+4/17/2019 3:31:07 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),ikke alle fisk fanget et minut f¢r slut,0,Guide mod åleruse,2,0,False,EelTrap Region,286
+4/17/2019 3:31:08 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,287
+4/17/2019 3:31:09 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,288
+4/17/2019 3:31:10 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,289
+4/17/2019 3:31:11 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,290
+4/17/2019 3:31:12 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,291
+4/17/2019 3:31:13 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,292
+4/17/2019 3:31:14 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,293
+4/17/2019 3:31:15 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,294
+4/17/2019 3:31:16 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,295
+4/17/2019 3:31:17 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,296
+4/17/2019 3:31:18 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,297
+4/17/2019 3:31:19 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,298
+4/17/2019 3:31:20 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,299
+4/17/2019 3:31:21 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,300
+4/17/2019 3:31:22 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,301
+4/17/2019 3:31:23 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,302
+4/17/2019 3:31:24 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,303
+4/17/2019 3:31:25 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,304
+4/17/2019 3:31:26 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,305
+4/17/2019 3:31:27 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,306
+4/17/2019 3:31:28 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,307
+4/17/2019 3:31:29 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,308
+4/17/2019 3:31:30 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,309
+4/17/2019 3:31:31 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,310
+4/17/2019 3:31:32 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,311
+4/17/2019 3:31:33 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,312
+4/17/2019 3:31:34 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,313
+4/17/2019 3:31:35 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,314
+4/17/2019 3:31:36 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,315
+4/17/2019 3:31:37 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,316
+4/17/2019 3:31:38 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,317
+4/17/2019 3:31:39 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),Guide mod åleruse 3 gang,0,Guide mod åleruse,2,0,False,EelTrap Region,318
+4/17/2019 3:31:40 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),spil skal slutte,0,Guide mod åleruse,2,0,False,EelTrap Region,319
+4/17/2019 3:31:41 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),spil skal slutte,0,Guide mod åleruse,2,0,False,EelTrap Region,320
+4/17/2019 3:31:42 PM,(-320.5, 2.5, 106.8),(357.5, 48.1, 359.9),spil skal slutte,0,Guide mod åleruse,2,0,False,EelTrap Region,321

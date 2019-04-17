@@ -401,7 +401,7 @@ PartnerAnimator PA;
         //Debug.Log("I set the enum to: " + WrongToolVoice);
         LogMaster.WrongToolVoiceline = (int)wrongTool;
         //call the log entry function here inorder not to loose the wrongtool data
-        //if(LogMaster.filePath != null)
+        if(LogMaster.filePath != null)
         {
             logMaster.logEntry(
                 logMaster.player.position,

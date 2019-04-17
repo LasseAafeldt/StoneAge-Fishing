@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15201166, g: 0.14805791, b: 0.14263168, a: 1}
+  m_IndirectSpecularColor: {r: 0.06825459, g: 0.06735468, b: 0.06572689, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24384,6 +24384,7 @@ MonoBehaviour:
   eelCaught: 0
   eelTrapEmptied: 0
   flatFishCaught: 0
+  _audio: {fileID: 0}
 --- !u!82 &1044151179
 AudioSource:
   m_ObjectHideFlags: 0
