@@ -13,30 +13,18 @@ public class PelicanEvent : MonoBehaviour
     Vector3 newPos = new Vector3(0, 0, 0);
     Vector3 forwardRotation = new Vector3(0, 0, 0);
 
-    GameObject partner;
-    PartnerSpeech ps;
+    public AudioSource partnerAudio;
+    public PartnerSpeech ps;
 
     bool orcaMoving = true;
     bool aSoundIsAlreadyPlaying = false;
     bool eventIsStarted = false;
 
     float velocity = 0;
-    // Use this for initialization
-    void Start()
-    {
-        hasHappening = false;
-        orcaMoving = true;
-        aSoundIsAlreadyPlaying = false;
-        eventIsStarted = false;
 
-        partner = GameManager.singleton.partner;
-        ps = partner.GetComponent<PartnerSpeech>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        //if(orcaMoving)
+        if(orcaMoving)
         {
 
             t += velocity * Time.deltaTime;
@@ -77,29 +65,25 @@ public class PelicanEvent : MonoBehaviour
     //old script that that is taken from the previous groups project.... don't fix if it isn't broken...
     public void startOrcaEvent()
     {
+        Debug.Log("THE PELICANS!!! = " + eventIsStarted);
         if (eventIsStarted)
             return;
         eventIsStarted = true;
-        if (partner.GetComponent<AudioSource>().isPlaying)
+        if (partnerAudio.isPlaying)
         {
             aSoundIsAlreadyPlaying = true;
         }
         if (!hasHappening)
         {
+            playTimer.timeLeft += ps.PelicanAppearsSomeSoundIsAlreadyPlaying.length;
+            orcaMoving = true;
+            velocity = velocitySpeed;
             if (aSoundIsAlreadyPlaying)
             {
-                playTimer.timeLeft += ps.PelicanAppearsSomeSoundIsAlreadyPlaying.length;
-                orcaMoving = true;
-                velocity = velocitySpeed;
-
                 ps.PartnerSaysSomething(ps.PelicanAppearsSomeSoundIsAlreadyPlaying);
             }
             else
             {
-                playTimer.timeLeft += ps.PelicanAppearsNoSoundPlaying.length;
-                orcaMoving = true;
-                velocity = velocitySpeed;
-
                 ps.PartnerSaysSomething(ps.PelicanAppearsNoSoundPlaying);
             }                    
         }

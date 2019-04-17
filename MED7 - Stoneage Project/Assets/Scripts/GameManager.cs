@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
     public GameObject boat;
     [HideInInspector]
     public GameObject tribeBoat;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject partner;
     [HideInInspector]
     public GameObject hook;
@@ -98,25 +98,25 @@ public class GameManager : MonoBehaviour {
     // Audio Sources
     AudioSource audio;
     //for change to end scene:
-        bool hasFlint = false;
+    bool hasFlint = false;
 
-        //Awake is always called before any Start functions
-        void Awake()
-        {
-            //Check if instance already exists
-            if (singleton == null)
+    //Awake is always called before any Start functions
+    void Awake()
+    {
+        //Check if instance already exists
+        if (singleton == null)
                 
-                //if not, set instance to this
-                singleton = this;
+            //if not, set instance to this
+            singleton = this;
             
-            //If instance already exists and it's not this:
-            else if (singleton != this)
+        //If instance already exists and it's not this:
+        else if (singleton != this)
                 
-                //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-                Destroy(gameObject);    
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            Destroy(gameObject);    
             
-            //Sets this to not be destroyed when reloading scene
-            DontDestroyOnLoad(gameObject);
+        //Sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad(gameObject);
         CameraContainer = GameObject.FindGameObjectWithTag("Guidance");
         if(GetComponent<LogMaster>() != null)
         {
@@ -127,61 +127,52 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("GameManager object have no logMaster component");
         }
 
-            timer = GameObject.FindGameObjectWithTag("timer");
-            //Debug.Log(boat.gameObject.name); 
-            boat = GameObject.FindGameObjectWithTag("boat");
-            //Debug.Log(boat.gameObject.name);      
-            //bjørnsholm = GameObject.FindGameObjectWithTag("bjørnholm");
-            //Debug.Log(boat.gameObject.name);            
-            tribeBoat = GameObject.FindGameObjectWithTag("tribeBoat");
-            //Debug.Log(tribeBoat.gameObject.name);
-            partner = GameObject.FindGameObjectWithTag("partner");
-            //Debug.Log(partner.gameObject.name);
-            hook = GameObject.FindGameObjectWithTag("hook");
-            //Debug.Log(hook.gameObject.name);
-            eeliron = GameObject.FindGameObjectWithTag("eeliron");
-            //Debug.Log(eeliron.gameObject.name);
-            paddle = GameObject.FindGameObjectWithTag("paddle");
-            //orca = GameObject.FindGameObjectWithTag("orca");
-            //Debug.Log(orca.gameObject.name);
-            PelicanEvent = GameObject.FindGameObjectWithTag("flyingPelican");
-            //Debug.Log(PelicanEvent.gameObject.name);
-            try{
-            PelicanEvent.SetActive(false);
-            }catch{}
+        timer = GameObject.FindGameObjectWithTag("timer");
+        //Debug.Log(boat.gameObject.name); 
+        boat = GameObject.FindGameObjectWithTag("boat");
+        //Debug.Log(boat.gameObject.name);      
+        //bjørnsholm = GameObject.FindGameObjectWithTag("bjørnholm");
+        //Debug.Log(boat.gameObject.name);            
+        tribeBoat = GameObject.FindGameObjectWithTag("tribeBoat");
+        //Debug.Log(tribeBoat.gameObject.name);
+        partner = GameObject.FindGameObjectWithTag("partner");
+        //Debug.Log(partner.gameObject.name);
+        hook = GameObject.FindGameObjectWithTag("hook");
+        //Debug.Log(hook.gameObject.name);
+        eeliron = GameObject.FindGameObjectWithTag("eeliron");
+        //Debug.Log(eeliron.gameObject.name);
+        paddle = GameObject.FindGameObjectWithTag("paddle");
+        //orca = GameObject.FindGameObjectWithTag("orca");
+        //Debug.Log(orca.gameObject.name);
+        PelicanEvent = GameObject.FindGameObjectWithTag("flyingPelican");
+        //Debug.Log(PelicanEvent.gameObject.name);
+        try{
+        PelicanEvent.SetActive(false);
+        }catch{}
 
             
-            currentPillar = boat;
+        currentPillar = boat;
 
-            //what should be turned of initially for the linear condition
+        //what should be turned of initially for the linear condition
            
-            //what should be turned of initially for both condition
-                try{
-                midden.GetComponent<Collider>().enabled = false;
-                pillar1.SetActive(false);
-                pillar2.SetActive(false);
-                pillar3.SetActive(false);
-                pillar4.SetActive(false);
-                pillar5.SetActive(false);
+        //what should be turned of initially for both condition
+            try{
+            midden.GetComponent<Collider>().enabled = false;
+            pillar1.SetActive(false);
+            pillar2.SetActive(false);
+            pillar3.SetActive(false);
+            pillar4.SetActive(false);
+            pillar5.SetActive(false);
 
-                } catch{}
-            audio = GetComponent<AudioSource>();
+            } catch{}
+        audio = GetComponent<AudioSource>();
 
-            Physics.IgnoreLayerCollision(0, 11);
+        Physics.IgnoreLayerCollision(0, 11);
                 
-        }
+    }
     private void Start()
     {
-        canMove = true;
-
-        isCountingTorsk = false;
-        isCountingEel = false;
-        currentTorskAmount = 0;
-        currentEelAmount = 0;
-        currentFlatfishAmount = 0;
-
-        pointingAtInteractable = false;
-
+        
         if (!useMapGuidance)
         {
             map.SetActive(false);
@@ -195,99 +186,24 @@ public class GameManager : MonoBehaviour {
 
     public void AddEel(GameObject eel)
         {
-            //caughtEel.Add(eel);
             caughtTotal.Add(eel);
             currentEelAmount++;
-        //eelCaught = true;
-            //Debug.Log("I caught an eel");
-            AccumulateFish();
-            if(isCountingEel)
-            {
-                Debug.Log(startEelAmount + " - " + currentEelAmount);
-                if(currentEelAmount-startEelAmount==1)
-                {
-                 
-                    isCountingEel=false;
-                }
-            }
-
         }
         public void AddTorsk(GameObject torsk)
         {
-            //caughtTorsk.Add(torsk);
             caughtTotal.Add(torsk);
             currentTorskAmount++;
-        //TorskCaught = true;
-            //Debug.Log("I caught a Torsk");
-            AccumulateFish();
-            if(isCountingTorsk)
-            {
-                if(currentTorskAmount-startTorskAmount==3)
-                {
-                    //partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(partner.GetComponent<PartnerSpeech>().AfterCodCatch, " BYT FISK FOR FLINT");
-                    isCountingTorsk=false;
-                }
-            }
         }
         public void AddFlatFish(GameObject flat)
         {
-            //caughtFlatfish.Add(flat);
             caughtTotal.Add(flat);
             currentFlatfishAmount++;
-        //flatFishCaught = true;
-            AccumulateFish();
-        }
-
-        public void AccumulateFish()
-        {
-            //commented out for debugging
-            //caughtTotal.Clear();
-            //caughtTotal.AddRange(caughtEel);
-            //caughtTotal.AddRange(caughtTorsk);
-            //caughtTotal.AddRange(caughtFlatfish);
         }
 
         public int GetFishCount()
         {
             return caughtTotal.Count;
         }
-
-        //not sure about this one
-        /*public void RemoveAnyFish(int amount)
-        {
-            for (int i = 0; i < amount; i++) 
-            {
-                Destroy(caughtTotal[0].gameObject);
-			    caughtTotal.RemoveAt(0);
-
-            }
-        }
-        public void RemoveEels(int amount)
-        {
-            for (int i = 0; i >amount; i++) 
-            {
-                try
-                {
-                Destroy(caughtFlatfish[0].gameObject);
-			    caughtFlatfish.RemoveAt(0);
-                }
-                catch
-                {
-                }
-
-            }
-            AccumulateFish();
-        }*/
-        public void StartCountingTorsk()
-        {
-            isCountingTorsk=true;
-            startTorskAmount = currentTorskAmount;
-        } 
-        public void StartCountingEel()
-        {
-            isCountingEel=true;
-            startEelAmount = currentEelAmount;
-        } 
 
         void OnEnable()
         {
@@ -296,60 +212,53 @@ public class GameManager : MonoBehaviour {
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             //Debug.Log("i am in end scene");
-            Debug.Log("OnSceneLoaded: " + scene.name); 
+            Debug.Log("OnSceneLoaded: " + scene.name);
             audio.Play();
-            for (int i = 1; i < currentFlatfishAmount+1; i++)
+            for (int i = 1; i < currentFlatfishAmount; i++)
             {
-
-                Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-                foreach (Transform t in trans) {
-                    if (t.gameObject.name == "flatfish_Caught_0"+i) 
-                    {
-                        t.gameObject.SetActive(true);
-                    }
+            Debug.Log("I have a flatfish");
+            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+            foreach (Transform t in trans) {
+                if (t.gameObject.name == "flatfish_Caught_0"+i) 
+                {
+                    t.gameObject.SetActive(true);
                 }
-                
-            }
-            for (int i = 1; i < currentEelAmount+1; i++)
-            {
-
-                Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-                foreach (Transform t in trans) {
-                    if (t.gameObject.name == "eel_Caught_0"+i) 
-                    {
-                        t.gameObject.SetActive(true);
-                    }
-                }
-                
-            }
-            for (int i = 1; i < currentTorskAmount+1; i++)
-            {
-
-                Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-                foreach (Transform t in trans) {
-                    if (t.gameObject.name == "torsk_Caught_0"+i) 
-                    {
-                        t.gameObject.SetActive(true);
-                    }
-                }
-                
-            }
-            /*foreach( GameObject fish in caughtTotal)
-            {
-                Instantiate(fish,new Vector3(-89.575f,3.714f,162.73f), gameObject.transform.rotation);
-            }
-            if(hasFlint)
-            {
-                Instantiate(flint,new Vector3(-89.575f,3.714f,162.73f),gameObject.transform.rotation);
-            }*/
+            }                
         }
-
-        public void PrepareForEndScene(AudioClip clip, bool hasFlint)
+        for (int i = 1; i < currentEelAmount; i++)
         {
-            
-            audio.clip = clip;
-            this.hasFlint = hasFlint;
+            Debug.Log("I have an eel");
+            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+            foreach (Transform t in trans) {
+                if (t.gameObject.name == "eel_Caught_0"+i) 
+                {
+                    t.gameObject.SetActive(true);
+                }
+            }                
         }
+        for (int i = 1; i < currentTorskAmount; i++)
+        {
+            Debug.Log("I have a torsk");
+            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+            foreach (Transform t in trans) {
+                if (t.gameObject.name == "torsk_Caught_0"+i) 
+                {
+                    t.gameObject.SetActive(true);
+                }
+            }                
+        }
+    }
+    /*private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }*/
+
+    public void PrepareForEndScene(AudioClip clip, bool hasFlint)
+    {
+            
+        audio.clip = clip;
+        this.hasFlint = hasFlint;
+    }
 
     public int getTotalFishCaught()
     {
@@ -366,5 +275,16 @@ public class GameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(clip.length);
         CameraContainer.GetComponent<GuidanceSounds>().enabled = false;
+    }
+
+    public void resetFishInBasket()
+    {
+        currentEelAmount = 0;
+        currentFlatfishAmount = 0;
+        currentTorskAmount = 0;
+        foreach (GameObject fish in caughtTotal)
+        {
+            caughtTotal.Remove(fish);
+        }
     }
 }

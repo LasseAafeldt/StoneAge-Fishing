@@ -64,6 +64,14 @@ public class EventCatcher : MonoBehaviour {
             //partnerSpeech.PartnerSaysSomething(partnerSpeech.HomeAgain);
             Debug.Log("player sailed intot the Ertebølle trigger: if you want to end then hand the fish over to the lady");
 		}
+        if (other.tag == "pelicanTrigger")
+        {
+            GameManager.singleton.PelicanEvent.SetActive(true);
+            GameManager.singleton.PelicanEvent.transform.SetParent(null);
+            //remains from old project... don't fix if not broken....
+            GameManager.singleton.PelicanEvent.GetComponentInChildren<PelicanEvent>().startOrcaEvent();
+            //partner says pelican thing
+        }
     }
 
 	void OnTriggerExit(Collider other)
@@ -73,15 +81,7 @@ public class EventCatcher : MonoBehaviour {
         {
             ExitArea();
         }
-        //when exit torsk territory pelican event happens 
-        if(other.tag == "pelicanTrigger")
-        {
-			GameManager.singleton.PelicanEvent.SetActive(true);
-			GameManager.singleton.PelicanEvent.transform.SetParent(null);
-            //remains from old project... don't fix if not broken....
-			GameManager.singleton.PelicanEvent.GetComponentInChildren<PelicanEvent>().startOrcaEvent();
-            //partner says pelican thing
-        }       
+        //when exit torsk territory pelican event happens      
     }
 
 	public void CheckForEnding()
