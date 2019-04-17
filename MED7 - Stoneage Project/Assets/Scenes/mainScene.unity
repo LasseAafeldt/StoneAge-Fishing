@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1475628, g: 0.14377591, b: 0.13857713, a: 1}
+  m_IndirectSpecularColor: {r: 0.15907285, g: 0.15477267, b: 0.14892548, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1484,7 +1484,6 @@ MonoBehaviour:
   fishingArea: 
   FishToSucceed: 7
   OutOfBoundsSoundTimer: 7
-  fishingAreaObject: {fileID: 0}
 --- !u!65 &84974646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10133,6 +10132,10 @@ Prefab:
       propertyPath: m_TagString
       value: map
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9483f532e1121504ab391a4d083e767e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09751ec8ab0a84842a839c5e27a53789, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9483f532e1121504ab391a4d083e767e, type: 3}
   m_IsPrefabAsset: 0
@@ -25024,6 +25027,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 9483f532e1121504ab391a4d083e767e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 09751ec8ab0a84842a839c5e27a53789, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9483f532e1121504ab391a4d083e767e, type: 3}
   m_IsPrefabAsset: 0
@@ -28493,7 +28500,6 @@ MonoBehaviour:
     type: 3}
   afterEmptyingEeltrap: {fileID: 8300000, guid: 9467d96fa2776c4498a1241e0670587e,
     type: 3}
-  areaIsOutOfFish: {fileID: 8300000, guid: 7c2975b8e58ca0b47bf96374ff7dca9d, type: 3}
   OrcaAppears: {fileID: 8300000, guid: c85d0d4892363dd47b09b1fd7953486e, type: 3}
   PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 817d800ecb564ae498ad0444c4e8d4d9,
     type: 3}
@@ -31661,7 +31667,6 @@ MonoBehaviour:
   whileEmptyingEeltrap: {fileID: 8300000, guid: fc26b63771eb66240a381230f78ffca8,
     type: 3}
   afterEmptyingEeltrap: {fileID: 0}
-  areaIsOutOfFish: {fileID: 0}
   OrcaAppears: {fileID: 8300000, guid: c6dde38a1972ff54a9ee8ff7b350f397, type: 3}
   PelicanAppearsNoSoundPlaying: {fileID: 0}
   PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 0}
@@ -32770,7 +32775,6 @@ MonoBehaviour:
   whileFlatfishFihingThird: {fileID: 0}
   whileEmptyingEeltrap: {fileID: 0}
   afterEmptyingEeltrap: {fileID: 0}
-  areaIsOutOfFish: {fileID: 0}
   OrcaAppears: {fileID: 0}
   PelicanAppearsNoSoundPlaying: {fileID: 0}
   PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 0}
