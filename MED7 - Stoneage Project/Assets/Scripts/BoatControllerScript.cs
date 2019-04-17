@@ -20,6 +20,11 @@ public class BoatControllerScript : MonoBehaviour
 
     private bool outOfBounds = false;
 
+    private void Start()
+    {
+        outOfBounds = false;
+        voiceLineReady = true;
+    }
 
     // Update is called once per frame
     void Update()

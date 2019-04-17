@@ -32,8 +32,7 @@ public class LogMaster : MonoBehaviour {
     static int logFileNumber = 0;
     void Start()
     {
-        //fishCaught = FishCaught.None;
-        //wrongTool = WrongTool.None;
+        timesIHaveLogged = 0;
         if (filePath != null)
         {
             //Debug.Log("I should have a file path now...");

@@ -43,6 +43,8 @@ public class GuidanceSounds : MonoBehaviour {
     {
         standardGuidance = true;
         detailedGuidance = false;
+        detailedIndex = 0;
+        startHasPlayed = false;
         timeSinceLastGuidance = 0f;
         areaTimer = 0f;
         //GetComponent<SphereCollider>().radius = triggerRadius;

@@ -41,7 +41,15 @@ public class playTimer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	timeLeft = totalPlayTime;
+        oneMinLeft = true;
+        twoMinLeft = true;
+
+        sixMinLeft = true;
+        fourMinLeft = true;
+
+        endHasCome = false;
+
+        timeLeft = totalPlayTime;
 
 		Vector3 startAngle = new Vector3(startValue,23,3);	
 		Vector3 endAngle = new Vector3(endValue,0,0);

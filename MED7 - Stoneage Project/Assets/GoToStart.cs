@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 public class GoToStart : MonoBehaviour {
 
 	public float totalTime =10;
+    float tempTime;
 	// Use this for initialization
 	void Start () {
-		
+        tempTime = totalTime;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		totalTime = totalTime - Time.deltaTime;
+		tempTime -= Time.deltaTime;
 
-		if(totalTime < 0 && Input.GetButtonDown("Fire1"))
+		if(tempTime < 0 && Input.GetButtonDown("Fire1"))
 		{
 			Debug.Log("go to starrt");
             //LogMaster.shouldBeLogging = true; this enables it too early

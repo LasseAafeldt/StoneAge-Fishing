@@ -30,7 +30,10 @@ public class TribeController : MonoBehaviour {
 
 	void Start()
 	{
-		playerBoat = GameManager.singleton.boat;
+        followPlayer = false;
+        toPosition = false;
+
+    playerBoat = GameManager.singleton.boat;
 		tribeTrigger = GameObject.FindGameObjectWithTag("tribeTrigger");
 		//newPos=pillar.transform.position;
 	}

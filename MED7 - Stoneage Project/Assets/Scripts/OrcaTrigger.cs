@@ -11,6 +11,7 @@ public class OrcaTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        orcaHasBeenActivated = false;
         ps = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
     }
 

@@ -6,25 +6,35 @@ using UnityEngine.SceneManagement;
 public class EventCatcher : MonoBehaviour {
     public PartnerSpeech partnerSpeech;
 
-	bool canFish;
 	public string fishingArea;
 
     [Range(0,10)]
     public int FishToSucceed = 7;
     public float OutOfBoundsSoundTimer = 7f;
 
+    GameObject fishingAreaObject;
+	bool canFish;
     bool firstTimeInTorskArea = true;
 	bool firstTimeInEelArea = true;
-
-    private bool tribeTerritory = false;
-
-    GameObject fishingAreaObject;
 
 	bool hasFlint=false;
 
     bool canPlayTurnAroundSound = true;
+    private bool tribeTerritory = false;
 
-	void OnTriggerEnter(Collider other)
+    private void Start()
+    {
+        canFish = false;
+        firstTimeInTorskArea = true;
+        firstTimeInEelArea = true;
+
+        hasFlint = false;
+
+        canPlayTurnAroundSound = true;
+        tribeTerritory = false;
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.name == "Starting area")
         {
