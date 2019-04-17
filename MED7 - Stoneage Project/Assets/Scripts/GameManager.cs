@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour {
     //Awake is always called before any Start functions
     void Awake()
     {
+        //resetFishInBasket();
         //Check if instance already exists
         if (singleton == null)
                 
@@ -188,6 +189,7 @@ public class GameManager : MonoBehaviour {
         {
             caughtTotal.Add(eel);
             currentEelAmount++;
+        
         }
         public void AddTorsk(GameObject torsk)
         {
@@ -209,23 +211,25 @@ public class GameManager : MonoBehaviour {
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //Debug.Log("i am in end scene");
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        //audio.Play();
+        Debug.Log("after loading i have these fish: Torsk = " + currentTorskAmount + " Eel = " + currentEelAmount + " Flatfish = " + currentFlatfishAmount);
+        for (int i = 1; i <= currentFlatfishAmount; i++)
         {
-            //Debug.Log("i am in end scene");
-            Debug.Log("OnSceneLoaded: " + scene.name);
-            audio.Play();
-            for (int i = 1; i < currentFlatfishAmount; i++)
+        Debug.Log("I have a flatfish");
+        Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in trans)
             {
-            Debug.Log("I have a flatfish");
-            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-            foreach (Transform t in trans) {
                 if (t.gameObject.name == "flatfish_Caught_0"+i) 
                 {
                     t.gameObject.SetActive(true);
                 }
             }                
         }
-        for (int i = 1; i < currentEelAmount; i++)
+        for (int i = 1; i <= currentEelAmount; i++)
         {
             Debug.Log("I have an eel");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
@@ -236,7 +240,7 @@ public class GameManager : MonoBehaviour {
                 }
             }                
         }
-        for (int i = 1; i < currentTorskAmount; i++)
+        for (int i = 1; i <= currentTorskAmount; i++)
         {
             Debug.Log("I have a torsk");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);

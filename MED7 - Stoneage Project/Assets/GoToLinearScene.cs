@@ -9,7 +9,14 @@ public class GoToLinearScene : MonoBehaviour {
 	 public Text loading;
     LogMaster logMaster;
 
-    // Use this for initialization
+    private void Awake()
+    {
+        if(GameObject.Find("Game Manager") != null)
+        {
+            Destroy(GameObject.Find("Game Manager"));
+        }
+    }
+
     void Start () {
 
         logMaster = FindObjectOfType<LogMaster>();
