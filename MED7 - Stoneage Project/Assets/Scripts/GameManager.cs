@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour {
 
     public bool useGuidanceSounds = true;
     public bool useMapGuidance = true;
-    
+
+    public bool debugLogging = true;
+
     //instances in the scene
     [Header("Object references to be used by other scripts")]
     [HideInInspector]

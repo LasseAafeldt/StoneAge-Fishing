@@ -89,8 +89,12 @@ public class LogMaster : MonoBehaviour {
         //Debug.Log("Time: " + timeNow);
 
         directoryPath = Application.persistentDataPath + date;
-        filePath = directoryPath + timeNow + ".txt";
-        //filePath = "testWorking0" + logFileNumber.ToString() + ".txt";
+        if(GameManager.singleton.debugLogging)
+            filePath = directoryPath + timeNow + ".txt";
+        else
+        {
+            filePath = "testWorking0" + logFileNumber.ToString() + ".txt";
+        }
         //Debug.Log("Directory path = " + directoryPath);
         //Debug.Log("File path = " + filePath);
     }
