@@ -7,28 +7,64 @@ using UnityEditor;
 public class PathInspector : Editor
 {
 
+    private bool useWholeDirectory;
+    private bool hasData = true;
+
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
         PathVisualiser path = (PathVisualiser) target;
+        if (!hasData)
+        {
+            EditorGUILayout.LabelField("There is no data", EditorStyles.boldLabel);
+            path.useWholeDirectory = EditorGUILayout.Toggle("Use Whole Directory ",path.useWholeDirectory);
+            if (!path.useWholeDirectory)
+            {
+                EditorGUILayout.LabelField("File selector", EditorStyles.boldLabel);
+                path.logFileNumber = EditorGUILayout.IntSlider("File To be handled ", path.logFileNumber, 0, path.numberOfFilesInDirectory);
+            }
+            if (GUILayout.Button("Retrieve Data"))
+            {
+                path.retrieveData();
+                hasData = true;
+            }
+            return;
+        }
 
-        /*if(GUILayout.Button("Draw Path"))
+        EditorGUILayout.LabelField("Toggle single file or all files", EditorStyles.boldLabel);
+        path.useWholeDirectory = EditorGUILayout.Toggle("Use Whole Directory ", path.useWholeDirectory);
+
+        if (!path.useWholeDirectory)
         {
-            path.ln = path.GetComponent<LineRenderer>();
+            EditorGUILayout.LabelField("File selector", EditorStyles.boldLabel);
+            path.logFileNumber = EditorGUILayout.IntSlider("File number To be handled ",path.logFileNumber, 0, path.numberOfFilesInDirectory-1);
+            //path.logFileNumber = GUILayout.Button()
+            //add arrow buttons on either side of the slider
+        }
+
+        base.OnInspectorGUI();
+
+        if (Application.isPlaying)
+        {
+            if (path.hasData && !path.useWholeDirectory)
+            {
+                EditorGUILayout.LabelField("Emulate player view from file", EditorStyles.boldLabel);
+                path.camIndex = EditorGUILayout.IntSlider("Camera index in file ", path.camIndex, 0, path.getMaxEntriesInFile(path.logFileNumber) - 1);
+                // do setCamera on camIndex value changed
+            }
+            if (GUILayout.Button("Retrieve Data"))
+            {
+                path.retrieveData();
+            }
             if (path.hasData)
-                path.drawpath();
-        }*/
-        if (GUILayout.Button("Retrieve Data"))
-        {
-            path.retrieveData();
-            //EditorGUILayout.Slider("Array Index",path.arrayIndex, 0, path.arrayRange);
-            //want to spawn a slider after having gotten data
+            {
+                if (GUILayout.Button("Reset Data"))
+                {
+                    path.resetData();
+                    Repaint();
+                    hasData = false;
+                }
+            }
         }
-        if (GUILayout.Button("Reset Data"))
-        {
-            path.resetData();
-        }
-        //EditorGUILayout.Slider(path.arrayIndex, 0, path.arrayRange);
     }
 
     void OnInspectorUpdate()
