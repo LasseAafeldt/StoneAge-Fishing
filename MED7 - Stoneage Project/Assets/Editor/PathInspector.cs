@@ -20,7 +20,7 @@ public class PathInspector : Editor
             if (!path.useWholeDirectory)
             {
                 EditorGUILayout.LabelField("File selector", EditorStyles.boldLabel);
-                path.logFileNumber = EditorGUILayout.IntSlider("File To be handled ", path.logFileNumber, 0, path.numberOfFilesInDirectory);
+                path.fileToSelect = EditorGUILayout.IntSlider("File To be handled ", path.fileToSelect, 0, path.numberOfFilesInDirectory);
             }
             if (GUILayout.Button("Retrieve Data"))
             {
@@ -36,7 +36,8 @@ public class PathInspector : Editor
         if (!path.useWholeDirectory)
         {
             EditorGUILayout.LabelField("File selector", EditorStyles.boldLabel);
-            path.logFileNumber = EditorGUILayout.IntSlider("File number To be handled ",path.logFileNumber, 0, path.numberOfFilesInDirectory-1);
+            path.fileToSelect = EditorGUILayout.IntSlider("File number To be handled ",path.fileToSelect, 0, path.numberOfFilesInDirectory-1);
+            //path.positionToLookAt = EditorGUILayout.IntSlider("Camera view array idex ", path.positionToLookAt, 0, path. - 1);
             //path.logFileNumber = GUILayout.Button()
             //add arrow buttons on either side of the slider
         }
@@ -46,9 +47,9 @@ public class PathInspector : Editor
         if (Application.isPlaying)
         {
             if (path.hasData && !path.useWholeDirectory)
-            {
-                EditorGUILayout.LabelField("Emulate player view from file", EditorStyles.boldLabel);
-                path.camIndex = EditorGUILayout.IntSlider("Camera index in file ", path.camIndex, 0, path.getMaxEntriesInFile(path.logFileNumber) - 1);
+            {                
+                EditorGUILayout.LabelField("Select cameraview to look at", EditorStyles.boldLabel);
+                path.positionToLookAt = EditorGUILayout.IntSlider("Camera index in file ", path.positionToLookAt, 0, path.getMaxEntriesInFile(path.fileToSelect) - 1);
                 // do setCamera on camIndex value changed
             }
             if (GUILayout.Button("Retrieve Data"))

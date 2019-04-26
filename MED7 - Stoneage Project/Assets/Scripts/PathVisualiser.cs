@@ -14,7 +14,7 @@ public class PathVisualiser : MonoBehaviour {
     [Header("File stuff")]
     public string pasteDirectoryPath;
     [HideInInspector]
-    public int logFileNumber;
+    private int logFileNumber;
     [HideInInspector]
     public int numberOfFilesInDirectory;
 
@@ -34,7 +34,7 @@ public class PathVisualiser : MonoBehaviour {
     [HideInInspector]
     public Camera camToMove;
     [HideInInspector]
-    public int camIndex;
+    private int camIndex;
 
     [HideInInspector]
     public bool hasData = false;
@@ -48,6 +48,12 @@ public class PathVisualiser : MonoBehaviour {
 
     #endregion
 
+    public delegate void ChangeFileToHandle(int _fileToHandle);
+    public static event ChangeFileToHandle OnChangeFileToHandle;
+
+    public delegate void ChangePositionToLookAt(int _posToLookAt);
+    public static event ChangePositionToLookAt OnPosToLookAtChanged;
+
     private void Start()
     {
         positions = new List<Vector3>();
@@ -60,7 +66,49 @@ public class PathVisualiser : MonoBehaviour {
         camToMove = Camera.main;
         camIndex = 0;
         //setDirectory();
+        OnChangeFileToHandle += drawpath;
+        OnPosToLookAtChanged += setCamera;
     }
+
+
+    public int fileToSelect
+    {
+        get
+        {
+            return logFileNumber;
+        }
+
+        set
+        {
+            if (logFileNumber == value)
+                return;
+
+            logFileNumber = value;
+
+            if (OnChangeFileToHandle != null)
+                OnChangeFileToHandle(logFileNumber);
+        }
+    }
+
+    public int positionToLookAt
+    {
+        get
+        {
+            return camIndex;
+        }
+
+        set
+        {
+            if (camIndex == value)
+                return;
+
+            camIndex = value;
+
+            if (OnPosToLookAtChanged != null)
+                OnPosToLookAtChanged(camIndex);
+        }
+    }
+
 
     public void retrieveData()
     {
@@ -91,6 +139,14 @@ public class PathVisualiser : MonoBehaviour {
         numberOfFilesInDirectory = 2;
     }
 
+    private void resetPathDrawn()
+    {
+        foreach (LineRenderer rend in lineRenderers)
+        {
+            rend.positionCount = 0;
+        }
+    } 
+
     public void setDirectory()
     {
         fileNames.Clear();
@@ -106,6 +162,7 @@ public class PathVisualiser : MonoBehaviour {
             LogFile newLog = new LogFile();
             logFiles.Add(newLog);
             GameObject empty = new GameObject();
+            empty.layer = LayerMask.NameToLayer("analysis");
             empty.AddComponent<LineRenderer>();
             empty.transform.SetParent(lineParent.transform);
             lineRenderers.Add(empty.GetComponent<LineRenderer>());
@@ -118,14 +175,21 @@ public class PathVisualiser : MonoBehaviour {
     {
         if (logFiles[logFileNumber] == null || !Application.isPlaying)
             return;
+        Debug.Log("I am starting to set camera!");
         LogFile file = logFiles[logFileNumber];
         Vector3 pos = file.positions[index];
+        Debug.Log("I have assigned the desired position to local varible");
         Quaternion lookAt = Quaternion.Euler(file.rotations[index].x, file.rotations[index].y, file.rotations[index].z);
+        Debug.Log("I have created a quaternion that should hopefully work");
         camToMove.transform.SetPositionAndRotation(pos, lookAt);
+        Debug.Log("I have called cam set position and rotation");
     }
 
     public void drawpath(int fileNumber)
     {
+        if (!hasData)
+            return;
+        resetPathDrawn();
         Debug.Log("Starting to draw path...");
         //do stuff that are same for all LineRenderes here
         foreach (LineRenderer rend in lineRenderers)
@@ -224,6 +288,8 @@ public class PathVisualiser : MonoBehaviour {
             }
             workingFile++;
         }
+        if (files[0].positions.Count > 0)
+            hasData = true;
     }
 
     public int getMaxEntriesInFile(int fileNumber)

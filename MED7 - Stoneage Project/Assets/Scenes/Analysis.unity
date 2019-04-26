@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,8 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useWholeDirectory: 1
-  pasteDirectoryPath: C:\Users\super\Desktop\TestNow
-  logFileNumber: 0
+  pasteDirectoryPath: C:\Users\Lasse\Desktop\ThisTest
   numberOfFilesInDirectory: 0
   singleFileColor:
     serializedVersion: 2
@@ -452,7 +451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1433741580}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: lineParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +523,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
