@@ -54,6 +54,9 @@ public class PathVisualiser : MonoBehaviour {
     public delegate void ChangePositionToLookAt(int _posToLookAt);
     public static event ChangePositionToLookAt OnPosToLookAtChanged;
 
+    //public delegate void ChangeAmountOfFilesToUse(bool _useAllDirectory);
+    //public static event ChangeAmountOfFilesToUse OnAmountOfFilesToUseChanged;
+
     private void Start()
     {
         positions = new List<Vector3>();
@@ -68,6 +71,7 @@ public class PathVisualiser : MonoBehaviour {
         //setDirectory();
         OnChangeFileToHandle += drawpath;
         OnPosToLookAtChanged += setCamera;
+        //OnAmountOfFilesToUseChanged += drawpath;
     }
 
 
@@ -109,6 +113,24 @@ public class PathVisualiser : MonoBehaviour {
         }
     }
 
+    /*public bool useAllFiles
+    {
+        get
+        {
+            return useWholeDirectory;
+        }
+
+        set
+        {
+            if (useWholeDirectory == value)
+                return;
+
+            useWholeDirectory = value;
+
+            if (OnAmountOfFilesToUseChanged != null)
+                OnAmountOfFilesToUseChanged(useWholeDirectory);
+        }
+    }*/
 
     public void retrieveData()
     {
@@ -249,7 +271,9 @@ public class PathVisualiser : MonoBehaviour {
             {
                 string lin = line.Replace("(", "").Replace(")", "");
                 string[] entries = lin.Split(',');
-                //make vector3 and add to list
+
+                // read  and store all the log data
+                #region read and store position data
                 float posX;
                 float posY;
                 float posZ;
@@ -267,7 +291,9 @@ public class PathVisualiser : MonoBehaviour {
                     //Console.WriteLine($"Unable to parse '{entries[1]}'");
                     Debug.Log("Unable to parse position");
                 }
+                #endregion
 
+                #region read and store camera rotation data
                 float rotX;
                 float rotY;
                 float rotZ;
@@ -277,7 +303,6 @@ public class PathVisualiser : MonoBehaviour {
                     rotY = float.Parse(entries[5]);
                     rotZ = float.Parse(entries[6]);
                     Vector3 newRotation = new Vector3(rotX, rotY, rotZ);
-                    //rotations.Add(newPosition);
                     files[workingFile].rotations.Add(newRotation);
                 }
                 catch (FormatException)
@@ -285,11 +310,84 @@ public class PathVisualiser : MonoBehaviour {
                     //Console.WriteLine($"Unable to parse '{entries[1]}'");
                     Debug.Log("Unable to parse Rotation");
                 }
+                #endregion
+
+                #region read and store last played voicline
+                string voiceline = entries[7];
+                files[workingFile].lastVoicelines.Add(voiceline);
+                #endregion
+
+                #region read and store type of fish event
+                int eventType;
+                try
+                {
+                    eventType = int.Parse(entries[8]);
+                }
+                catch
+                {
+                    Debug.Log("Unable to parse type of fish event");
+                    eventType = 0;
+                }
+                files[workingFile].typeOfFishEvents.Add(eventType);
+                #endregion
+
+                #region read and store last guidance sound
+                string lastGuidance = entries[9];
+                files[workingFile].lastGuidanceSounds.Add(lastGuidance);
+                #endregion
+
+                #region read and store times fished nowhere
+                int timesFishNowhere;
+                try
+                {
+                    timesFishNowhere = int.Parse(entries[10]);
+                }
+                catch
+                {
+                    Debug.Log("Unable to parse times fished nowhere");
+                    timesFishNowhere = 0;
+                }
+                files[workingFile].timesFishedNowhere.Add(timesFishNowhere);
+                #endregion
+
+                #region read and store type of wrong tool event
+                int wrongToolEvent;
+                try
+                {
+                    wrongToolEvent = int.Parse(entries[11]);
+                }
+                catch
+                {
+                    Debug.Log("Unable to parse wrong tool event");
+                    wrongToolEvent = 0;
+                }
+                files[workingFile].typeOfWrongToolEvent.Add(wrongToolEvent);
+                #endregion
+
+                #region read and store map is active
+                bool mapIsActive;
+                try
+                {
+                    mapIsActive = bool.Parse(entries[12]);
+                }
+                catch
+                {
+                    Debug.Log("Unable to parse map is active");
+                    mapIsActive = false;
+                }
+                files[workingFile].mapIsActive.Add(mapIsActive);
+                #endregion
+
+                #region read and store acive region
+                string activeRegion = entries[13];
+                files[workingFile].activeRegion.Add(activeRegion);
+                #endregion
             }
             workingFile++;
         }
         if (files[0].positions.Count > 0)
             hasData = true;
+        Debug.Log("Finished loading the data from all files");
     }
 
     public int getMaxEntriesInFile(int fileNumber)
@@ -304,5 +402,11 @@ public class PathVisualiser : MonoBehaviour {
             entries = 2;
         }
         return entries;
+    }
+
+    public void placeGuidanceMarkers()
+    {
+        //place either sphere markers or gui markers at specified location.
+        //give marker a code for which place is guided towards.
     }
 }

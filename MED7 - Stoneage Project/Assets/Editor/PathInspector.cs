@@ -13,6 +13,7 @@ public class PathInspector : Editor
     public override void OnInspectorGUI()
     {
         PathVisualiser path = (PathVisualiser) target;
+        #region If no data is availible
         if (!hasData)
         {
             EditorGUILayout.LabelField("There is no data", EditorStyles.boldLabel);
@@ -20,7 +21,17 @@ public class PathInspector : Editor
             if (!path.useWholeDirectory)
             {
                 EditorGUILayout.LabelField("File selector", EditorStyles.boldLabel);
-                path.fileToSelect = EditorGUILayout.IntSlider("File To be handled ", path.fileToSelect, 0, path.numberOfFilesInDirectory);
+                EditorGUILayout.BeginHorizontal();
+                if (GUILayout.Button("down"))
+                {
+                    path.fileToSelect--;
+                }
+                path.fileToSelect = EditorGUILayout.IntSlider("File number To be handled ", path.fileToSelect, 0, path.numberOfFilesInDirectory - 1);
+                if (GUILayout.Button("up"))
+                {
+                    path.fileToSelect++;
+                }
+                EditorGUILayout.EndHorizontal();
             }
             if (GUILayout.Button("Retrieve Data"))
             {
@@ -29,6 +40,7 @@ public class PathInspector : Editor
             }
             return;
         }
+        #endregion
 
         EditorGUILayout.LabelField("Toggle single file or all files", EditorStyles.boldLabel);
         path.useWholeDirectory = EditorGUILayout.Toggle("Use Whole Directory ", path.useWholeDirectory);
@@ -36,10 +48,17 @@ public class PathInspector : Editor
         if (!path.useWholeDirectory)
         {
             EditorGUILayout.LabelField("File selector", EditorStyles.boldLabel);
+            EditorGUILayout.BeginHorizontal();
+            if (GUILayout.Button("down"))
+            {
+                path.fileToSelect--;
+            }
             path.fileToSelect = EditorGUILayout.IntSlider("File number To be handled ",path.fileToSelect, 0, path.numberOfFilesInDirectory-1);
-            //path.positionToLookAt = EditorGUILayout.IntSlider("Camera view array idex ", path.positionToLookAt, 0, path. - 1);
-            //path.logFileNumber = GUILayout.Button()
-            //add arrow buttons on either side of the slider
+            if (GUILayout.Button("up"))
+            {
+                path.fileToSelect++;
+            }
+            EditorGUILayout.EndHorizontal();
         }
 
         base.OnInspectorGUI();
@@ -47,10 +66,19 @@ public class PathInspector : Editor
         if (Application.isPlaying)
         {
             if (path.hasData && !path.useWholeDirectory)
-            {                
+            {
                 EditorGUILayout.LabelField("Select cameraview to look at", EditorStyles.boldLabel);
+                EditorGUILayout.BeginHorizontal();
+                if (GUILayout.Button("down"))
+                {
+                    path.positionToLookAt--;
+                }
                 path.positionToLookAt = EditorGUILayout.IntSlider("Camera index in file ", path.positionToLookAt, 0, path.getMaxEntriesInFile(path.fileToSelect) - 1);
-                // do setCamera on camIndex value changed
+                if (GUILayout.Button("Up"))
+                {
+                    path.positionToLookAt++;
+                }
+                EditorGUILayout.EndHorizontal();
             }
             if (GUILayout.Button("Retrieve Data"))
             {
