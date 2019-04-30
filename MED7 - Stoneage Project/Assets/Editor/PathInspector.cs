@@ -6,7 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(PathVisualiser))]
 public class PathInspector : Editor
 {
-
+    //private int cameraHieght = 0;
     private bool useWholeDirectory;
     private bool hasData = true;
 
@@ -59,6 +59,10 @@ public class PathInspector : Editor
                 path.fileToSelect++;
             }
             EditorGUILayout.EndHorizontal();
+            /*if(GUILayout.Button("Indicate guidance"))
+            {
+                path.placeGuidanceMarkers(path.fileToSelect);
+            }*/
         }
 
         base.OnInspectorGUI();
@@ -80,6 +84,7 @@ public class PathInspector : Editor
                 }
                 EditorGUILayout.EndHorizontal();
             }
+            //cameraHieght = EditorGUILayout.IntSlider("Scene cam hight ", cameraHieght, 0, 500);
             if (GUILayout.Button("Retrieve Data"))
             {
                 path.retrieveData();
@@ -93,11 +98,30 @@ public class PathInspector : Editor
                     hasData = false;
                 }
             }
+            if(GUILayout.Button("Set sceneview camera"))
+            {
+                MoveSceneViewCamera();
+            }
         }
     }
 
     void OnInspectorUpdate()
     {
         Repaint();
+    }
+
+    static public void MoveSceneViewCamera()
+    {
+        //secen cam pos piv: (0.0, -140.0, 300.0)
+        //float x = 204.0f; float y = 92.0f; float width = 822.0f; float height = 367.0f;
+        //Rect position = new Rect(x,y,width,height);
+        Vector3 position = new Vector3(0f, -140f, 300);
+        Vector3 rotation = new Vector3(90, 0, 0);
+        SceneView.lastActiveSceneView.pivot = position;
+        //SceneView.lastActiveSceneView.position = position;
+        SceneView.lastActiveSceneView.rotation = Quaternion.Euler(rotation);
+        SceneView.lastActiveSceneView.Repaint();
+        //Debug.Log("secen cam pos piv: " + SceneView.lastActiveSceneView.pivot);
+        //Debug.Log("secen cam pos: " + SceneView.lastActiveSceneView.position);
     }
 }

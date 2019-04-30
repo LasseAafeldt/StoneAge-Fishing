@@ -30,6 +30,30 @@ public class PathVisualiser : MonoBehaviour {
     [Range(1,5)]
     public float lineWidth;
 
+    [Header("Guidance indicators")]
+    public GameObject guidanceSoundIndicator;
+    public GameObject mapActivatedIndicator;
+    [ColorUsage(false)]
+    public Color guideToTorsk;
+    [ColorUsage(false)]
+    public Color guideToEel;
+    [ColorUsage(false)]
+    public Color guideToEeltrap;
+    [ColorUsage(false)]
+    public Color guideToFlatfish;
+    [ColorUsage(false)]
+    public Color mapActiveColor;
+    [SerializeField]
+    private Material indiMatTorsk;
+    [SerializeField]
+    private Material indiMatEel;
+    [SerializeField]
+    private Material indiMatEeltrap;
+    [SerializeField]
+    private Material indiMatFlatfish;
+    [SerializeField]
+    private Material indiMatMap;
+
     [Header("Game view camera")]
     [HideInInspector]
     public Camera camToMove;
@@ -54,9 +78,6 @@ public class PathVisualiser : MonoBehaviour {
     public delegate void ChangePositionToLookAt(int _posToLookAt);
     public static event ChangePositionToLookAt OnPosToLookAtChanged;
 
-    //public delegate void ChangeAmountOfFilesToUse(bool _useAllDirectory);
-    //public static event ChangeAmountOfFilesToUse OnAmountOfFilesToUseChanged;
-
     private void Start()
     {
         positions = new List<Vector3>();
@@ -71,7 +92,6 @@ public class PathVisualiser : MonoBehaviour {
         //setDirectory();
         OnChangeFileToHandle += drawpath;
         OnPosToLookAtChanged += setCamera;
-        //OnAmountOfFilesToUseChanged += drawpath;
     }
 
 
@@ -113,25 +133,6 @@ public class PathVisualiser : MonoBehaviour {
         }
     }
 
-    /*public bool useAllFiles
-    {
-        get
-        {
-            return useWholeDirectory;
-        }
-
-        set
-        {
-            if (useWholeDirectory == value)
-                return;
-
-            useWholeDirectory = value;
-
-            if (OnAmountOfFilesToUseChanged != null)
-                OnAmountOfFilesToUseChanged(useWholeDirectory);
-        }
-    }*/
-
     public void retrieveData()
     {
         resetData();
@@ -163,9 +164,11 @@ public class PathVisualiser : MonoBehaviour {
 
     private void resetPathDrawn()
     {
-        foreach (LineRenderer rend in lineRenderers)
+        lineRenderers.Clear();
+        for (int i = 0; i < lineParent.transform.childCount; i++)
         {
-            rend.positionCount = 0;
+            GameObject child = lineParent.transform.GetChild(i).gameObject;
+            Destroy(child);
         }
     } 
 
@@ -183,11 +186,7 @@ public class PathVisualiser : MonoBehaviour {
             fileNames.Add(entry);
             LogFile newLog = new LogFile();
             logFiles.Add(newLog);
-            GameObject empty = new GameObject();
-            empty.layer = LayerMask.NameToLayer("analysis");
-            empty.AddComponent<LineRenderer>();
-            empty.transform.SetParent(lineParent.transform);
-            lineRenderers.Add(empty.GetComponent<LineRenderer>());
+            
         }
         Debug.Log("Files in directory: " + amountOfFiles);
         numberOfFilesInDirectory = amountOfFiles;
@@ -212,6 +211,15 @@ public class PathVisualiser : MonoBehaviour {
         if (!hasData)
             return;
         resetPathDrawn();
+        string[] fileEntries = Directory.GetFiles(directoryPath);
+        foreach (string entry in fileEntries)
+        {
+            GameObject empty = new GameObject();
+            empty.layer = LayerMask.NameToLayer("analysis");
+            empty.AddComponent<LineRenderer>();
+            empty.transform.SetParent(lineParent.transform);
+            lineRenderers.Add(empty.GetComponent<LineRenderer>());
+        }
         Debug.Log("Starting to draw path...");
         //do stuff that are same for all LineRenderes here
         foreach (LineRenderer rend in lineRenderers)
@@ -249,6 +257,7 @@ public class PathVisualiser : MonoBehaviour {
                 rend.SetPositions(logFiles[fileNumber].positions.ToArray());
                 rend.colorGradient = singleFileColor;
             }
+            placeGuidanceMarkers(fileNumber);
         }
     }
 
@@ -404,9 +413,83 @@ public class PathVisualiser : MonoBehaviour {
         return entries;
     }
 
-    public void placeGuidanceMarkers()
+    public void placeGuidanceMarkers(int file)
     {
-        //place either sphere markers or gui markers at specified location.
+        //make sound makers
+        List<string> _lastGuidanceSound = logFiles[file].lastGuidanceSounds;
+        List<Vector3> positions = logFiles[file].positions;
+        //find positions of where a new guidance sound is played
+        List<int> soundPosistions = new List<int>();
+        string tempSound = "";
+        int workingPosition = 0;
+        foreach (string sound in _lastGuidanceSound)
+        {
+            if (!sound.Equals(tempSound))
+            {
+                //Debug.Log("A new guidance sound was discovered");
+                soundPosistions.Add(workingPosition);
+            }
+            tempSound = sound;
+            workingPosition++;
+        }
+        //draw indication
         //give marker a code for which place is guided towards.
+        foreach (int position in soundPosistions)
+        {
+            Vector3 newpos = new Vector3(positions[position].x, 3, positions[position].z);
+            GameObject indicator = GameObject.Instantiate(guidanceSoundIndicator, newpos, Quaternion.identity, lineParent.transform);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            //rend.sharedMaterial = indicationMaterial;
+            if (_lastGuidanceSound[position].Contains("torsk") || _lastGuidanceSound[position].Contains("Torsk"))
+            {
+                rend.sharedMaterial = indiMatTorsk;
+                rend.sharedMaterial.color = guideToTorsk;
+            }
+            if (_lastGuidanceSound[position].Equals("Guide mod ål") || _lastGuidanceSound[position].Contains("Ål "))
+            {
+                rend.sharedMaterial = indiMatEel;
+                rend.sharedMaterial.color = guideToEel;
+            }
+            if (_lastGuidanceSound[position].Contains("åleruse"))
+            {
+                rend.sharedMaterial = indiMatEeltrap;
+                rend.sharedMaterial.color = guideToEeltrap;
+            }
+            if (_lastGuidanceSound[position].Contains("r¢dspætte"))
+            {
+                rend.sharedMaterial = indiMatFlatfish;
+                rend.sharedMaterial.color = guideToFlatfish;
+            }
+        }
+
+        //make map markers
+        List<bool> _mapActivated = logFiles[file].mapIsActive;
+        List<int> mapActivedPositions = new List<int>();
+        bool tempMap = false;
+        int workingPositionMap = 0;
+        //determine the positions where the map becomes active
+        foreach (bool map in _mapActivated)
+        {
+            //if the value is different from the previous value
+            if (!map.Equals(tempMap))
+            {
+                //if this change is to true then add the position to the list
+                if(map == true)
+                {
+                    mapActivedPositions.Add(workingPosition);
+                }
+            }
+            tempMap = map;
+            workingPositionMap++;
+        }
+        //instatiate marker for map
+        foreach (int position in mapActivedPositions)
+        {
+            Vector3 newpos = new Vector3(positions[position].x, 3, positions[position].z);
+            GameObject indicator = GameObject.Instantiate(mapActivatedIndicator, newpos, Quaternion.identity, lineParent.transform);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            rend.sharedMaterial = indiMatMap;
+            rend.sharedMaterial.color = mapActiveColor;
+        }
     }
 }
