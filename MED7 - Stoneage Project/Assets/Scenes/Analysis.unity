@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -294,8 +294,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useWholeDirectory: 1
-  pasteDirectoryPath: C:\Users\super\Desktop\TestNow
+  pasteDirectoryPath: C:\Users\Lasse\Desktop\Test Logs\com.MED10Sound.demo
   numberOfFilesInDirectory: 0
+  filePath: 
   singleFileColor:
     serializedVersion: 2
     key0: {r: 0, g: 1, b: 0, a: 1}
@@ -358,7 +359,8 @@ MonoBehaviour:
   lineWidth: 2
   guidanceSoundIndicator: {fileID: 1159976494592116, guid: 04a8660735b21fc4e9e98a9af9206569,
     type: 2}
-  mapActivatedIndicator: {fileID: 0}
+  mapActivatedIndicator: {fileID: 1159976494592116, guid: 04a8660735b21fc4e9e98a9af9206569,
+    type: 2}
   guideToTorsk: {r: 1, g: 0.98470926, b: 0, a: 1}
   guideToEel: {r: 1, g: 0.65059185, b: 0, a: 0}
   guideToEeltrap: {r: 0, g: 0.7918868, b: 1, a: 1}

@@ -4,6 +4,31 @@ using System;
 using UnityEngine;
 using System.Linq;
 using System.IO;
+using UnityEditor;
+
+public class ReadOnlyAttribute : PropertyAttribute
+{
+
+}
+
+[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
+public class ReadOnlyDrawer : PropertyDrawer
+{
+    public override float GetPropertyHeight(SerializedProperty property,
+                                            GUIContent label)
+    {
+        return EditorGUI.GetPropertyHeight(property, label, true);
+    }
+
+    public override void OnGUI(Rect position,
+                               SerializedProperty property,
+                               GUIContent label)
+    {
+        GUI.enabled = false;
+        EditorGUI.PropertyField(position, property, label, true);
+        GUI.enabled = true;
+    }
+}
 
 public class PathVisualiser : MonoBehaviour {
     #region Global Variables
@@ -19,7 +44,8 @@ public class PathVisualiser : MonoBehaviour {
     public int numberOfFilesInDirectory;
 
     //[SerializeField]
-    private string filePath;
+    [ReadOnly]
+    public string filePath;
     private string directoryPath;
 
 
@@ -108,6 +134,7 @@ public class PathVisualiser : MonoBehaviour {
                 return;
 
             logFileNumber = value;
+            filePath = fileNames[logFileNumber];
 
             if (OnChangeFileToHandle != null)
                 OnChangeFileToHandle(logFileNumber);
@@ -174,13 +201,36 @@ public class PathVisualiser : MonoBehaviour {
 
     public void setDirectory()
     {
+        List<string> fileList = new List<string>();
+        List<string> subFolders = new List<string>();
         fileNames.Clear();
         logFiles.Clear();
+        fileList.Clear();
+        subFolders.Clear();
         int amountOfFiles = 0;
         //directoryPath = @"C:\Users\Lasse\Desktop\ThisTest";
         directoryPath = @pasteDirectoryPath;
-        string[] fileEntries = Directory.GetFiles(directoryPath);
-        foreach (string entry in fileEntries)
+
+        string[] subdirectories = Directory.GetDirectories(directoryPath);
+        foreach (string folder in subdirectories)
+        {
+            subFolders.Add(folder);
+            string[] subDir = Directory.GetDirectories(folder);
+            foreach (string subFold in subDir)
+            {
+                subFolders.Add(subFold);
+            }
+        }
+
+        foreach (string subfolder in subFolders)
+        {
+            string[] fileEntries = Directory.GetFiles(subfolder);
+            foreach (string file in fileEntries)
+            {
+                fileList.Add(file);
+            }
+        }
+        foreach (string entry in fileList)
         {
             amountOfFiles++;
             fileNames.Add(entry);
@@ -211,8 +261,8 @@ public class PathVisualiser : MonoBehaviour {
         if (!hasData)
             return;
         resetPathDrawn();
-        string[] fileEntries = Directory.GetFiles(directoryPath);
-        foreach (string entry in fileEntries)
+        //string[] fileEntries = Directory.GetFiles(directoryPath);
+        foreach (string entry in fileNames)
         {
             GameObject empty = new GameObject();
             empty.layer = LayerMask.NameToLayer("analysis");
