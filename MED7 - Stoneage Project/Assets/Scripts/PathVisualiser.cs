@@ -104,8 +104,8 @@ public class PathVisualiser : MonoBehaviour {
     [HideInInspector]
     public bool hasData = false;
 
-    List<Vector3> positions;
-    List<Vector3> rotations;
+    //List<Vector3> positions;
+    //List<Vector3> rotations;
     List<string> fileNames;
     List<LogFile> logFiles;
     List<LineRenderer> lineRenderers;
@@ -121,8 +121,8 @@ public class PathVisualiser : MonoBehaviour {
 
     private void Start()
     {
-        positions = new List<Vector3>();
-        rotations = new List<Vector3>();
+        //positions = new List<Vector3>();
+        //rotations = new List<Vector3>();
         fileNames = new List<string>();
         logFiles = new List<LogFile>();
         lineRenderers = new List<LineRenderer>();
@@ -186,8 +186,8 @@ public class PathVisualiser : MonoBehaviour {
 
     public void resetData()
     {
-        positions.Clear();
-        rotations.Clear();
+        //positions.Clear();
+        //rotations.Clear();
         fileNames.Clear();
         logFiles.Clear();
         foreach (LineRenderer rend in lineRenderers)
@@ -578,6 +578,7 @@ public class PathVisualiser : MonoBehaviour {
     {
         //get the different fish events
         List<int> fishEvents = logFiles[file].typeOfFishEvents;
+        List<Vector3> positions = logFiles[file].positions;
         List<int> caughtTorsk = new List<int>();
         List<int> caughtEel = new List<int>();
         List<int> caughtFlatfish = new List<int>();
@@ -599,10 +600,13 @@ public class PathVisualiser : MonoBehaviour {
         Debug.Log("fish caught: Torsk = " + caughtTorsk.Count + " Eel = " + caughtEel.Count + " Flatfish = " + caughtFlatfish.Count);
         //Draw indicators for fish caught
         int workingFish = 1;
+
         foreach (int fish in caughtTorsk)
         {
+            Debug.Log("position Torsk: "+ fish);
+            Debug.Log("length: " + caughtTorsk.Count);
             Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
-            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            GameObject indicator = GameObject.Instantiate(FishIndicatorObject, newpos, Quaternion.identity, lineParent.transform);
             Renderer rend = indicator.GetComponent<Renderer>();
             if(workingFish == 1)
             {
@@ -624,8 +628,10 @@ public class PathVisualiser : MonoBehaviour {
         workingFish = 1;
         foreach (int fish in caughtEel)
         {
+            Debug.Log("position eel: " + fish);
+            Debug.Log("length: " + caughtEel.Count);
             Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
-            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            GameObject indicator = GameObject.Instantiate(FishIndicatorObject, newpos, Quaternion.identity, lineParent.transform);
             Renderer rend = indicator.GetComponent<Renderer>();
             if (workingFish == 1)
             {
@@ -647,8 +653,10 @@ public class PathVisualiser : MonoBehaviour {
         workingFish = 1;
         foreach (int fish in caughtFlatfish)
         {
+            Debug.Log("position flatfish: " + fish);
+            Debug.Log("length: " + caughtFlatfish.Count);
             Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
-            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            GameObject indicator = GameObject.Instantiate(FishIndicatorObject, newpos, Quaternion.identity, lineParent.transform);
             Renderer rend = indicator.GetComponent<Renderer>();
             if (workingFish == 1)
             {
@@ -670,8 +678,10 @@ public class PathVisualiser : MonoBehaviour {
         workingFish = 1;
         foreach (int fish in caughtEeltrap)
         {
+            Debug.Log("position eeltrap: " + fish);
+            Debug.Log("length: " + caughtEeltrap.Count);
             Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
-            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            GameObject indicator = GameObject.Instantiate(FishIndicatorObject, newpos, Quaternion.identity, lineParent.transform);
             Renderer rend = indicator.GetComponent<Renderer>();
             if (workingFish == 1)
             {

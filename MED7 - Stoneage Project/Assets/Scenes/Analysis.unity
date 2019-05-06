@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,6 +200,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &69459776
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -12.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4194117670271932, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04a8660735b21fc4e9e98a9af9206569, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &289925742
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useWholeDirectory: 1
-  pasteDirectoryPath: C:\Users\super\Desktop\TestNow\Test Logs\com.MED10Sound.demo
+  pasteDirectoryPath: C:\Users\Lasse\Desktop\Test Logs\com.MED10Sound.demo
   numberOfFilesInDirectory: 0
   filePath: 
   singleFileColor:
@@ -357,9 +399,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   lineMaterial: {fileID: 2100000, guid: 38412b8846c2c6d439b4dd50e50008ea, type: 2}
   lineWidth: 2
-  guidanceSoundIndicator: {fileID: 1159976494592116, guid: 04a8660735b21fc4e9e98a9af9206569,
-    type: 2}
-  mapActivatedIndicator: {fileID: 1159976494592116, guid: 04a8660735b21fc4e9e98a9af9206569,
+  IndicatorObject: {fileID: 1159976494592116, guid: 04a8660735b21fc4e9e98a9af9206569,
     type: 2}
   guideToTorsk: {r: 1, g: 0.98470926, b: 0, a: 1}
   guideToEel: {r: 1, g: 0.65059185, b: 0, a: 0}
@@ -371,6 +411,14 @@ MonoBehaviour:
   indiMatEeltrap: {fileID: 2100000, guid: 78f27ce2429122a4e8e106b4c669230e, type: 2}
   indiMatFlatfish: {fileID: 2100000, guid: 2a61b016f9601cd45945b398399a57c5, type: 2}
   indiMatMap: {fileID: 2100000, guid: 3c03b1815153e5d4bae1a72165ca2579, type: 2}
+  FishIndicatorObject: {fileID: 1155917252467014, guid: dbfe8bbaa1c2247409ac3661a9b4866d,
+    type: 2}
+  Fish1Color: {r: 0, g: 0, b: 0, a: 0}
+  Fish2Color: {r: 0, g: 0, b: 0, a: 0}
+  Fish3Color: {r: 0, g: 0, b: 0, a: 0}
+  fish1Mat: {fileID: 2100000, guid: 181180f19957d09468c160980527be57, type: 2}
+  fish2Mat: {fileID: 2100000, guid: 9e0aa484dff364845a70417be525d9b9, type: 2}
+  fish3Mat: {fileID: 2100000, guid: f6671b0eddfca9843b983eef52bceeed, type: 2}
   camToMove: {fileID: 0}
   hasData: 1
 --- !u!4 &632108198
