@@ -202,32 +202,28 @@ public class GuidanceSounds : MonoBehaviour {
             //Debug.Log("Playing detail area sund Torsk");
             //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToTorsk));
             partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
-            //setLastGuidanceSound(partnerSpeech.DetailClosestToTorsk);
-            //last guidance sound is set in randomDetailedSound() now
+            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
         }
         if (inArea == "EelArea" && !GameManager.singleton.eelCaught)
         {
             //Debug.Log("Playing detail area sund Eel");
             //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToEel));
             partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
-            //setLastGuidanceSound(partnerSpeech.DetailClosestToEel);
-            //last guidance sound is set in randomDetailedSound() now
+            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
         }
         if (inArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
         {
             //Debug.Log("Playing detail area sund EelTrap");
             //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToEeltrap));
             partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
-            //setLastGuidanceSound(partnerSpeech.DetailClosestToEeltrap);
-            //last guidance sound is set in randomDetailedSound() now
+            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
         }
         if (inArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
         {
             //Debug.Log("Playing detail area sund Flatfish");
             //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToFlatfish));
             partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
-            //setLastGuidanceSound(partnerSpeech.DetailClosestToFlatfish);
-            //last guidance sound is set in randomDetailedSound() now
+            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
         }
         updateArea(closestArea);
     }
@@ -292,6 +288,7 @@ public class GuidanceSounds : MonoBehaviour {
             detailedIndex = clipArray.Length - 1;
         }
         AudioClip clipToPlay = clipArray[detailedIndex];
+        //setLastGuidanceSound(clipArray[detailedIndex]);
         Debug.Log("detailed guide array index is at: " + detailedIndex);
         detailedIndex++;
         return clipToPlay;

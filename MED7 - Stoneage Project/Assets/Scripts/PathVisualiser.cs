@@ -57,8 +57,8 @@ public class PathVisualiser : MonoBehaviour {
     public float lineWidth;
 
     [Header("Guidance indicators")]
-    public GameObject guidanceSoundIndicator;
-    public GameObject mapActivatedIndicator;
+    public GameObject IndicatorObject;
+    //public GameObject mapActivatedIndicator;
     [ColorUsage(false)]
     public Color guideToTorsk;
     [ColorUsage(false)]
@@ -79,6 +79,21 @@ public class PathVisualiser : MonoBehaviour {
     private Material indiMatFlatfish;
     [SerializeField]
     private Material indiMatMap;
+
+    [Header("Fish caught indicators")]
+    public GameObject FishIndicatorObject;
+    [ColorUsage(false)]
+    public Color Fish1Color;
+    [ColorUsage(false)]
+    public Color Fish2Color;
+    [ColorUsage(false)]
+    public Color Fish3Color;
+    [SerializeField]
+    private Material fish1Mat;
+    [SerializeField]
+    private Material fish2Mat;
+    [SerializeField]
+    private Material fish3Mat;
 
     [Header("Game view camera")]
     [HideInInspector]
@@ -308,6 +323,7 @@ public class PathVisualiser : MonoBehaviour {
                 rend.colorGradient = singleFileColor;
             }
             placeGuidanceMarkers(fileNumber);
+            placeFishingMarkers(fileNumber);
         }
     }
 
@@ -317,7 +333,7 @@ public class PathVisualiser : MonoBehaviour {
         Debug.Log("Starting to load all files...");
         foreach (string file in fileNames)
         {
-            Debug.Log("File number: " + workingFile);
+            Debug.Log("File Index: " + workingFile);
             List<string> lines = new List<string>();
             if (File.Exists(file))
                 lines = File.ReadAllLines(file).ToList();
@@ -487,28 +503,32 @@ public class PathVisualiser : MonoBehaviour {
         foreach (int position in soundPosistions)
         {
             Vector3 newpos = new Vector3(positions[position].x, 3, positions[position].z);
-            GameObject indicator = GameObject.Instantiate(guidanceSoundIndicator, newpos, Quaternion.identity, lineParent.transform);
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
             Renderer rend = indicator.GetComponent<Renderer>();
             //rend.sharedMaterial = indicationMaterial;
-            if (_lastGuidanceSound[position].Contains("torsk") || _lastGuidanceSound[position].Contains("Torsk"))
+            if (_lastGuidanceSound[position].Contains("torsk") || _lastGuidanceSound[position].Contains("Torsk "))
             {
                 rend.sharedMaterial = indiMatTorsk;
                 rend.sharedMaterial.color = guideToTorsk;
+                //Debug.Log("Sound: " + _lastGuidanceSound[position]);
             }
             if (_lastGuidanceSound[position].Equals("Guide mod ål") || _lastGuidanceSound[position].Contains("Ål "))
             {
                 rend.sharedMaterial = indiMatEel;
                 rend.sharedMaterial.color = guideToEel;
+                //Debug.Log("Sound: " + _lastGuidanceSound[position]);
             }
-            if (_lastGuidanceSound[position].Contains("åleruse"))
+            if (_lastGuidanceSound[position].Contains("Guide mod åleruse"))
             {
                 rend.sharedMaterial = indiMatEeltrap;
                 rend.sharedMaterial.color = guideToEeltrap;
+                //Debug.Log("Sound: " + _lastGuidanceSound[position]);
             }
-            if (_lastGuidanceSound[position].Contains("r¢dspætte"))
+            if (_lastGuidanceSound[position].Contains("guide mod r¢dspætter") || _lastGuidanceSound[position].Contains("r¢dspætte "))
             {
                 rend.sharedMaterial = indiMatFlatfish;
                 rend.sharedMaterial.color = guideToFlatfish;
+                //Debug.Log("Sound: " + _lastGuidanceSound[position]);
             }
         }
 
@@ -520,26 +540,156 @@ public class PathVisualiser : MonoBehaviour {
         //determine the positions where the map becomes active
         foreach (bool map in _mapActivated)
         {
+            //Debug.Log("checking each mapIsActive Log in file");
             //if the value is different from the previous value
             if (!map.Equals(tempMap))
             {
+                Debug.Log("A change in map status occured. Map = " + map);
                 //if this change is to true then add the position to the list
                 if(map == true)
                 {
-                    mapActivedPositions.Add(workingPosition);
+                    mapActivedPositions.Add(workingPositionMap);
                 }
             }
             tempMap = map;
             workingPositionMap++;
         }
         //instatiate marker for map
+        //Debug.Log("I fisnished loading in all the times map was activated");
         foreach (int position in mapActivedPositions)
         {
+           // Debug.Log("I started drawing the MAPpositions");
+            //Debug.Log("pos: " + position);
+            //Debug.Log("length: " + positions.Count);
             Vector3 newpos = new Vector3(positions[position].x, 3, positions[position].z);
-            GameObject indicator = GameObject.Instantiate(mapActivatedIndicator, newpos, Quaternion.identity, lineParent.transform);
+            //Debug.Log("attempting to instantiate");
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            //Debug.Log("Getting the rendere");
             Renderer rend = indicator.GetComponent<Renderer>();
+            //Debug.Log("setting rendere material");
             rend.sharedMaterial = indiMatMap;
+            //Debug.Log("Setting material color");
             rend.sharedMaterial.color = mapActiveColor;
+            //Debug.Log("next loop");
         }
+    }
+
+    public void placeFishingMarkers(int file)
+    {
+        //get the different fish events
+        List<int> fishEvents = logFiles[file].typeOfFishEvents;
+        List<int> caughtTorsk = new List<int>();
+        List<int> caughtEel = new List<int>();
+        List<int> caughtFlatfish = new List<int>();
+        List<int> caughtEeltrap = new List<int>();
+        int lineNumber = 1;
+        foreach (int _event in fishEvents)
+        {
+            if (_event == 1)
+                caughtTorsk.Add(lineNumber);
+            if (_event == 2)
+                caughtEel.Add(lineNumber);
+            if (_event == 3)
+                caughtFlatfish.Add(lineNumber);
+            if (_event == 4)
+                caughtEeltrap.Add(lineNumber);
+
+            lineNumber++;
+        }
+        Debug.Log("fish caught: Torsk = " + caughtTorsk.Count + " Eel = " + caughtEel.Count + " Flatfish = " + caughtFlatfish.Count);
+        //Draw indicators for fish caught
+        int workingFish = 1;
+        foreach (int fish in caughtTorsk)
+        {
+            Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            if(workingFish == 1)
+            {
+                rend.sharedMaterial = fish1Mat;
+                rend.sharedMaterial.color = Fish1Color;
+            }
+            if (workingFish == 2)
+            {
+                rend.sharedMaterial = fish2Mat;
+                rend.sharedMaterial.color = Fish2Color;
+            }
+            if (workingFish == 3)
+            {
+                rend.sharedMaterial = fish3Mat;
+                rend.sharedMaterial.color = Fish3Color;
+            }
+            workingFish++;
+        }
+        workingFish = 1;
+        foreach (int fish in caughtEel)
+        {
+            Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            if (workingFish == 1)
+            {
+                rend.sharedMaterial = fish1Mat;
+                rend.sharedMaterial.color = Fish1Color;
+            }
+            if (workingFish == 2)
+            {
+                rend.sharedMaterial = fish2Mat;
+                rend.sharedMaterial.color = Fish2Color;
+            }
+            if (workingFish == 3)
+            {
+                rend.sharedMaterial = fish3Mat;
+                rend.sharedMaterial.color = Fish3Color;
+            }
+            workingFish++;
+        }
+        workingFish = 1;
+        foreach (int fish in caughtFlatfish)
+        {
+            Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            if (workingFish == 1)
+            {
+                rend.sharedMaterial = fish1Mat;
+                rend.sharedMaterial.color = Fish1Color;
+            }
+            if (workingFish == 2)
+            {
+                rend.sharedMaterial = fish2Mat;
+                rend.sharedMaterial.color = Fish2Color;
+            }
+            if (workingFish == 3)
+            {
+                rend.sharedMaterial = fish3Mat;
+                rend.sharedMaterial.color = Fish3Color;
+            }
+            workingFish++;
+        }
+        workingFish = 1;
+        foreach (int fish in caughtEeltrap)
+        {
+            Vector3 newpos = new Vector3(positions[fish].x, 3, positions[fish].z);
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            if (workingFish == 1)
+            {
+                rend.sharedMaterial = fish1Mat;
+                rend.sharedMaterial.color = Fish1Color;
+            }
+            if (workingFish == 2)
+            {
+                rend.sharedMaterial = fish2Mat;
+                rend.sharedMaterial.color = Fish2Color;
+            }
+            if (workingFish == 3)
+            {
+                rend.sharedMaterial = fish3Mat;
+                rend.sharedMaterial.color = Fish3Color;
+            }
+            workingFish++;
+        }
+
     }
 }
