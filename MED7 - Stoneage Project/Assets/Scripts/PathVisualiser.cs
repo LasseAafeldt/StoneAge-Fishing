@@ -69,6 +69,9 @@ public class PathVisualiser : MonoBehaviour {
     public Color guideToFlatfish;
     [ColorUsage(false)]
     public Color mapActiveColor;
+    [ColorUsage(false)]
+    public Color mapDeactiveColor;
+
     [SerializeField]
     private Material indiMatTorsk;
     [SerializeField]
@@ -79,6 +82,8 @@ public class PathVisualiser : MonoBehaviour {
     private Material indiMatFlatfish;
     [SerializeField]
     private Material indiMatMap;
+    [SerializeField]
+    private Material indiMatMapDeactive;
 
     [Header("Fish caught indicators")]
     public GameObject FishIndicatorObject;
@@ -482,6 +487,7 @@ public class PathVisualiser : MonoBehaviour {
     public void placeGuidanceMarkers(int file)
     {
         //make sound makers
+        #region Sound markers
         List<string> _lastGuidanceSound = logFiles[file].lastGuidanceSounds;
         List<Vector3> positions = logFiles[file].positions;
         //find positions of where a new guidance sound is played
@@ -531,10 +537,12 @@ public class PathVisualiser : MonoBehaviour {
                 //Debug.Log("Sound: " + _lastGuidanceSound[position]);
             }
         }
+        #endregion
 
         //make map markers
         List<bool> _mapActivated = logFiles[file].mapIsActive;
         List<int> mapActivedPositions = new List<int>();
+        List<int> mapDeactivatedPos = new List<int>();
         bool tempMap = false;
         int workingPositionMap = 0;
         //determine the positions where the map becomes active
@@ -546,9 +554,13 @@ public class PathVisualiser : MonoBehaviour {
             {
                 Debug.Log("A change in map status occured. Map = " + map);
                 //if this change is to true then add the position to the list
-                if(map == true)
+                if(map.Equals(true))
                 {
                     mapActivedPositions.Add(workingPositionMap);
+                }
+                if(map.Equals(false))
+                {
+                    mapDeactivatedPos.Add(workingPositionMap);
                 }
             }
             tempMap = map;
@@ -558,19 +570,24 @@ public class PathVisualiser : MonoBehaviour {
         //Debug.Log("I fisnished loading in all the times map was activated");
         foreach (int position in mapActivedPositions)
         {
-           // Debug.Log("I started drawing the MAPpositions");
-            //Debug.Log("pos: " + position);
-            //Debug.Log("length: " + positions.Count);
             Vector3 newpos = new Vector3(positions[position].x, 3, positions[position].z);
-            //Debug.Log("attempting to instantiate");
             GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
-            //Debug.Log("Getting the rendere");
             Renderer rend = indicator.GetComponent<Renderer>();
-            //Debug.Log("setting rendere material");
             rend.sharedMaterial = indiMatMap;
-            //Debug.Log("Setting material color");
             rend.sharedMaterial.color = mapActiveColor;
-            //Debug.Log("next loop");
+        }
+        foreach (int position in mapDeactivatedPos)
+        {
+            float offsetDistance = 10f;
+            Vector3 travelDir = positions[position+1] - positions[position];
+            Vector2 perpen = Vector2.Perpendicular(new Vector2(travelDir.x, travelDir.z));
+            Vector3 offset = new Vector3(perpen.x, travelDir.y, perpen.y);
+            Vector3 newpos = new Vector3(positions[position].x, 3, positions[position].z);
+            GameObject indicator = GameObject.Instantiate(IndicatorObject, newpos, Quaternion.identity, lineParent.transform);
+            indicator.transform.Translate(offset.normalized * offsetDistance, Space.Self);
+            Renderer rend = indicator.GetComponent<Renderer>();
+            rend.sharedMaterial = indiMatMapDeactive;
+            rend.sharedMaterial.color = mapDeactiveColor;
         }
     }
 
