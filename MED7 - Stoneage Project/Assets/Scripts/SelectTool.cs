@@ -93,19 +93,24 @@ PartnerAnimator PA;
 			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
 			{
                 EC.startFishing(tool);
-                if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
+                if (GameManager.singleton.boat.GetComponent<EventCatcher>()
+                    .fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
                 {
                     return;                  
                 }
 				HideTool();
 				PA.HookAnimation();
                 //Debug.Log("Player is fishing torsk now, hopefully the sound is playing while the animation happens");
+
+                #region partner say something depending on which number of torsk is caught
                 if (firstFishingTorsk)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingFirst);
                     firstFishingTorsk = false;
                     secondFishingTorsk = true;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -116,6 +121,8 @@ PartnerAnimator PA;
                     secondFishingTorsk = false;
                     thirdFishingTorsk = true;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -125,13 +132,16 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingThird);
                     thirdFishingTorsk = false;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
                     Debug.Log("player has fished torsk 3 times now");
                     return;
                 }
-			}
-			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
+                #endregion
+            }
+            else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
                 //no fish here
                 notEnoughFishHere();
@@ -169,12 +179,16 @@ PartnerAnimator PA;
                 HideTool();
 				PA.EelironAnimation();
                 //Debug.Log("Player is fishing eel now, hopefully the sound is playing while the animation happens");
+
+                #region partner says something depending on which number of eel is caught
                 if (firstFishingEel)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingFirst);
                     firstFishingEel = false;
                     secondFishingEel = true;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Eel;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -185,6 +199,8 @@ PartnerAnimator PA;
                     secondFishingEel = false;
                     thirdFishingEel = true;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Eel;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -194,11 +210,14 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingThird);
                     thirdFishingEel = false;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Eel;
                     setFishCaughtInt(fishCaught);
                     Debug.Log("player has fished eel 3 times now");
                     return;
                 }
+                #endregion
             }
             else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "FlatfishArea")
             {
@@ -210,12 +229,16 @@ PartnerAnimator PA;
                 HideTool();
                 PA.EelironAnimation();
                 //Debug.Log("Player is fishing Flatfish now, hopefully the sound is playing while the animation happens");
+
+                #region partner says something depending on which number of flatfish is caught
                 if (firstFishingFlatfish)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingFirst);
                     firstFishingFlatfish = false;
                     secondFishingFlatfish = true;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Flatfish;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -226,6 +249,8 @@ PartnerAnimator PA;
                     secondFishingFlatfish = false;
                     thirdFishingFlatfish = true;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Flatfish;
                     setFishCaughtInt(fishCaught);
                     return;
@@ -235,13 +260,16 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingThird);
                     thirdFishingFlatfish = false;
                     //EC.startFishing(tool);
+
+                    //for log data
                     fishCaught = FishCaught.Flatfish;
                     setFishCaughtInt(fishCaught);
                     Debug.Log("player has fished Flatfish 3 times now");
                     return;
                 }
+                #endregion
             }
-			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
+            else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
 			{
                 //no fish here
                 notEnoughFishHere();
@@ -263,6 +291,7 @@ PartnerAnimator PA;
                 }
 			}			
 		}
+        #region Activate and deactivate the map
         else if (tag == "map")
         {
             if (GameManager.singleton.map.activeSelf == true)
@@ -270,6 +299,7 @@ PartnerAnimator PA;
                 GameManager.singleton.map.SetActive(false);
                 GameManager.singleton.mapOnCam.SetActive(true);
 
+                //for log data
                 logMaster.logEntry(
                     logMaster.player.position,
                     logMaster.player.rotation.eulerAngles,
@@ -286,6 +316,7 @@ PartnerAnimator PA;
                 GameManager.singleton.map.SetActive(true);
                 GameManager.singleton.mapOnCam.SetActive(false);
 
+                //for log data
                 logMaster.logEntry(
                     logMaster.player.position,
                     logMaster.player.rotation.eulerAngles,
@@ -301,21 +332,24 @@ PartnerAnimator PA;
             tool = tag;
             //play animation
         }
+        #endregion
 
         //setWrongToolVoicelineInt(WrongTool.None);
         //admit to fish with the selected tool
         //EC.startFishing(tool);
     }
 
-    #region empty basket 
-    //PA.BasketAnimation is apparently what empties the basket and adds fish to the basket, or well it makes it somehow
-        // transition to a function in PartnerAnimator called BasketAniDone() which takes care of adding and instanciating the fish.
+    #region empty eeltrap 
+    //PA.BasketAnimation is apparently what empties the basket and adds fish to the basket, or well it makes it 
+    //somehow transition to a function in PartnerAnimator called BasketAniDone() which takes care of 
+    //adding and instanciating the fish.
     public void EmptyBasket()
 	{
 		if(tag =="emptyBasket")
 		{
             GameManager.singleton.canMove = false;
             //Debug.Log("I can't move now");
+
 			PA.BasketAnimation();
             Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEmptyingEeltrap);
@@ -323,11 +357,14 @@ PartnerAnimator PA;
             eelTrapEmptied = true;
 			//Debug.Log("emptying basket for test");
 			GetComponent<Collider>().enabled=false;
+
+            //for log data
             fishCaught = FishCaught.EeltrapEmptied;
             setFishCaughtInt(fishCaught);
 
         }
 	}
+    #endregion
 
     public void EndGame()
     {
@@ -368,7 +405,6 @@ PartnerAnimator PA;
         }
     }
 
-    #endregion
     void HideTool()
 	{
 		//disable collider to not select it again and disable mesh renderer to make it invisible

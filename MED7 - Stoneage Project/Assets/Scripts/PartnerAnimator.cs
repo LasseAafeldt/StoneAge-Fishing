@@ -122,7 +122,7 @@ public class PartnerAnimator : MonoBehaviour {
 		anim.SetBool("isRowing", state);
 	}
 
-
+    //NOTE here
 	public void HookAniDone(){
 		GameManager.singleton.hook.GetComponent<SelectTool>().ShowTool();
 		GameManager.singleton.paddle.SetActive(true);
@@ -132,8 +132,10 @@ public class PartnerAnimator : MonoBehaviour {
 		{
 			codCaught();
 			PutTorskInBasket(1);
+
             //tosk area has now been used once
             GameManager.singleton.TorskCaught = true;
+
             //maybe do reset of guidance timer here????
             guidance.resetGuidanceTimers();
         } else {
@@ -261,7 +263,7 @@ public class PartnerAnimator : MonoBehaviour {
 			//GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().FirstTimeCod);
 		}
 		
-		//instatiate a fish in the boay
+		//instatiate a fish in the boat
 		for (int i = 1; i < amount+1; i++)
 		{
 
@@ -270,6 +272,7 @@ public class PartnerAnimator : MonoBehaviour {
 				if (t.gameObject.name == "torsk_Caught_0"+i) 
 				{
 					currentFish = t.gameObject;
+                    //loop through all torsk in basket and make amount visible
 					currentFish.SetActive(true);
                     basketSound.Play();
                     Debug.Log(currentFish);
@@ -296,7 +299,7 @@ public class PartnerAnimator : MonoBehaviour {
 			//GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().FirstTimeEel);
 		}
 		
-		//instatiate a fish in the boay
+		//instatiate a fish in the boat
 		for (int i = 1; i < amount+1; i++)
 		{
 			

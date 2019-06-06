@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15626022, g: 0.15211305, b: 0.14645916, a: 1}
+  m_IndirectSpecularColor: {r: 0.068253055, g: 0.0673531, b: 0.06572576, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24332,7 +24332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   useGuidanceSounds: 0
-  useMapGuidance: 0
+  useMapGuidance: 1
   debugLogging: 1
   CameraContainer: {fileID: 0}
   logMaster: {fileID: 0}

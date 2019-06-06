@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 //main scene needs to have a LogMaster component on this... doesn't need in other scenes
 public class GameManager : MonoBehaviour {
 
+    // DISCLAIMER!!! catching fish is handled in PartnerAnimator  -keywords: fishcaught, fish caught, 
+
     public static GameManager singleton = null;
     //Static instance of GameManager which allows it to be accessed by any other script.                            
     //Current level number, expressed in game as "Day 1".
@@ -192,18 +194,21 @@ public class GameManager : MonoBehaviour {
         {
             caughtTotal.Add(eel);
             currentEelAmount++;
-        
-        }
+        Debug.Log("I now have " + currentEelAmount + " eel in the basket");
+
+    }
         public void AddTorsk(GameObject torsk)
         {
             caughtTotal.Add(torsk);
             currentTorskAmount++;
+            Debug.Log("I now have " + currentTorskAmount + " torsk in the basket");
         }
         public void AddFlatFish(GameObject flat)
         {
             caughtTotal.Add(flat);
             currentFlatfishAmount++;
-        }
+        Debug.Log("I now have " + currentFlatfishAmount + " flatfish in the basket");
+    }
 
         public int GetFishCount()
         {
