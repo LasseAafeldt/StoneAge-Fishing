@@ -188,8 +188,20 @@ public class GameManager : MonoBehaviour {
         {
             StartCoroutine(makeSureStartSoundPlays(guide.StartingSoundGoFishing));
         }
+        if (debugLogging)
+        {
+            Debug.LogWarning("check if Debug loggin is enabled in GameManager, which means that if built to a phone it wont log correct");
+        }
     }
 
+    private void Update()
+    {
+        //temp:
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Can move: " + canMove);
+        }
+    }
     public void AddEel(GameObject eel)
         {
             caughtTotal.Add(eel);

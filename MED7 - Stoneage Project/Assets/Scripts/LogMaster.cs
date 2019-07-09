@@ -85,18 +85,15 @@ public class LogMaster : MonoBehaviour {
         //filePath = Application.persistentDataPath + "/" + System.DateTime.Now.ToString() + ".txt";
         string date = System.DateTime.Today.ToShortDateString();
         string timeNow = System.DateTime.UtcNow.ToLongTimeString();
-        //Debug.Log("Date: " + date);
-        //Debug.Log("Time: " + timeNow);
 
         directoryPath = Application.persistentDataPath + date;
-        if(GameManager.singleton.debugLogging)
+        /*if(!GameManager.singleton.debugLogging)
             filePath = directoryPath + timeNow + ".txt";
         else
         {
             filePath = "testWorking0" + logFileNumber.ToString() + ".txt";
-        }
-        //Debug.Log("Directory path = " + directoryPath);
-        //Debug.Log("File path = " + filePath);
+        }*/
+        filePath = "testWorking0" + logFileNumber.ToString() + ".txt";
     }
 
     //Called in GoToLinearScene
@@ -131,7 +128,7 @@ public class LogMaster : MonoBehaviour {
     //every second if file is not already in use...                     Done            (in this script)
     public void logEntry(Vector3 _PlayerPos, Vector3 _PlayerLookRotation, string _LastVoiceline, int _TypeOfFishCaught, string _LastGuidanceSound, int _TimesFishedNowhere, int _TypeOfWrongTool, bool _MapActive, string activeRegion)
     {
-        Debug.Log("the file is being written in now...");
+        //Debug.Log("the file is being written in now...");
         //write the log stuff...
         //remember system.DateTime first
         string dateAndTime = System.DateTime.Now.ToString() + seperator;
@@ -162,7 +159,7 @@ public class LogMaster : MonoBehaviour {
             
             SW.WriteLine(dateAndTime + _playerPos + _playerLookRotation + _lastVoiceline + _typeOfFishCaught + _lastGuidanceSound + _timesFishedNowhere + _typeOfWrongTool + _mapActive + _activeRegion + seperator + timesIHaveLogged.ToString());
             timesIHaveLogged++;
-            Debug.Log("writing in the file has been completed");            
+            //Debug.Log("writing in the file has been completed");            
         }
     }
 
@@ -203,7 +200,7 @@ public class LogMaster : MonoBehaviour {
                 WrongToolVoiceline,
                 mapOnCamera.activeSelf,
                 BoatControllerScript.currentlyInRegion);
-            Debug.Log("An entry is made in the log file...");
+            //Debug.Log("An entry is made in the log file...");
         }
     }
 
