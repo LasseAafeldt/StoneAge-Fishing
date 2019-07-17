@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.068253055, g: 0.0673531, b: 0.06572576, a: 1}
+  m_IndirectSpecularColor: {r: 0.16152242, g: 0.15708739, b: 0.15107787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24355,9 +24355,6 @@ MonoBehaviour:
   aniTorch: {fileID: 128914759}
   aniEelIron: {fileID: 1617939650}
   paddle: {fileID: 0}
-  currentTorskAmount: 0
-  currentEelAmount: 0
-  currentFlatfishAmount: 0
   pointingAtInteractable: 0
   Islinear: 0
   torskArea:
@@ -28099,6 +28096,8 @@ MonoBehaviour:
   guidance: {fileID: 1052138933}
   EelsInTrap: 3
   FlatFishInTrap: 1
+  eeltrap: {fileID: 647167067}
+  eelTrapRange: 10
   basketSound: {fileID: 252470514}
 --- !u!82 &1204856324
 AudioSource:

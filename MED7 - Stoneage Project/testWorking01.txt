@@ -1,0 +1,309 @@
+7/17/2019 2:01:49 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spil slutter efter bekræftelse,0,,0,0,False,Starting Region,0
+7/17/2019 2:01:50 PM,(-97.3, 2.5, 198.4),(356.5, 10.4, 359.8),spillet start,0,,0,0,False,Starting Region,1
+7/17/2019 2:01:51 PM,(-97.8, 2.5, 200.1),(357.6, 16.9, 359.8),spillet start,0,,0,0,False,Starting Region,2
+7/17/2019 2:01:52 PM,(-97.4, 2.5, 204.2),(357.7, 16.6, 359.8),spillet start,0,,0,0,False,Starting Region,3
+7/17/2019 2:01:53 PM,(-95.9, 2.5, 213.9),(357.7, 16.6, 359.8),spillet start,0,,0,0,False,Starting Region,4
+7/17/2019 2:01:54 PM,(-93.2, 2.5, 231.0),(357.7, 16.6, 359.8),spillet start,0,,0,0,False,No Region,5
+7/17/2019 2:01:55 PM,(-90.4, 2.5, 250.5),(358.6, 21.3, 359.8),spillet start,0,,0,0,False,No Region,6
+7/17/2019 2:01:56 PM,(-87.9, 2.5, 265.0),(359.6, 24.3, 359.8),spillet start,0,,0,0,False,No Region,7
+7/17/2019 2:01:57 PM,(-86.1, 2.5, 273.5),(359.6, 24.3, 359.8),spillet start,0,,0,0,False,No Region,8
+7/17/2019 2:01:58 PM,(-84.6, 2.5, 279.5),(359.6, 24.3, 359.8),spillet start,0,,0,0,False,No Region,9
+7/17/2019 2:01:59 PM,(-82.2, 2.5, 288.0),(359.9, 22.3, 359.8),spillet start,0,,0,0,False,No Region,10
+7/17/2019 2:02:00 PM,(-77.8, 2.5, 303.2),(0.0, 21.6, 359.8),spillet start,0,,0,0,False,No Region,11
+7/17/2019 2:02:01 PM,(-72.2, 2.5, 322.3),(0.4, 21.1, 359.8),spillet start,0,,0,0,False,No Region,12
+7/17/2019 2:02:02 PM,(-67.5, 2.5, 338.3),(0.6, 20.3, 359.8),spillet start,0,,0,0,False,Torsk Region,13
+7/17/2019 2:02:03 PM,(-64.6, 2.5, 347.9),(1.0, 21.6, 359.8),spillet start,0,,0,0,False,Torsk Region,14
+7/17/2019 2:02:04 PM,(-62.8, 2.5, 354.3),(1.0, 21.8, 359.8),spillet start,0,,0,0,False,Torsk Region,15
+7/17/2019 2:02:05 PM,(-60.7, 2.5, 361.4),(1.0, 21.8, 359.8),spillet start,0,,0,0,False,Torsk Region,16
+7/17/2019 2:02:06 PM,(-56.8, 2.5, 374.6),(1.2, 20.3, 359.8),spillet start,0,,0,0,False,Torsk Region,17
+7/17/2019 2:02:07 PM,(-52.9, 2.5, 388.0),(42.5, 4.7, 359.8),spillet start,0,,0,0,False,Torsk Region,18
+7/17/2019 2:02:08 PM,(-52.5, 2.5, 389.5),(42.5, 4.7, 359.8),fanger torsk,1,,0,0,False,Torsk Region,19
+7/17/2019 2:02:08 PM,(-51.4, 2.5, 393.1),(42.5, 4.7, 359.8),fanger torsk,0,,0,0,False,Torsk Region,20
+7/17/2019 2:02:09 PM,(-50.9, 2.5, 394.9),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,21
+7/17/2019 2:02:10 PM,(-50.7, 2.5, 395.6),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,22
+7/17/2019 2:02:11 PM,(-50.6, 2.5, 395.8),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,23
+7/17/2019 2:02:12 PM,(-50.6, 2.5, 395.9),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,24
+7/17/2019 2:02:13 PM,(-50.5, 2.5, 396.0),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,25
+7/17/2019 2:02:14 PM,(-50.5, 2.5, 396.0),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,26
+7/17/2019 2:02:15 PM,(-50.5, 2.5, 396.0),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,27
+7/17/2019 2:02:16 PM,(-50.5, 2.5, 396.0),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,28
+7/17/2019 2:02:17 PM,(-50.5, 2.5, 396.0),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,29
+7/17/2019 2:02:18 PM,(-50.5, 2.5, 396.0),(29.5, 13.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,30
+7/17/2019 2:02:19 PM,(-50.6, 2.5, 396.0),(40.8, 7.0, 359.8),fanger torsk,0,,0,0,False,Torsk Region,31
+7/17/2019 2:02:20 PM,(-50.6, 2.5, 396.0),(43.1, 4.2, 359.8),fanger torsk 2,1,,0,0,False,Torsk Region,32
+7/17/2019 2:02:20 PM,(-50.5, 2.5, 395.9),(18.0, 65.6, 359.9),fanger torsk 2,0,,0,0,False,Torsk Region,33
+7/17/2019 2:02:21 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,34
+7/17/2019 2:02:22 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,35
+7/17/2019 2:02:23 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,36
+7/17/2019 2:02:24 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,37
+7/17/2019 2:02:25 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,38
+7/17/2019 2:02:26 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,39
+7/17/2019 2:02:27 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,40
+7/17/2019 2:02:28 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,41
+7/17/2019 2:02:29 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,42
+7/17/2019 2:02:30 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,43
+7/17/2019 2:02:31 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,44
+7/17/2019 2:02:33 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,45
+7/17/2019 2:02:34 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,46
+7/17/2019 2:02:35 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,47
+7/17/2019 2:02:53 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,48
+7/17/2019 2:02:54 PM,(-50.5, 2.5, 396.0),(21.0, 24.3, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,49
+7/17/2019 2:02:55 PM,(-50.6, 2.4, 396.0),(45.9, 2.7, 359.8),fanger torsk 3,1,,0,0,False,Torsk Region,50
+7/17/2019 2:02:55 PM,(-50.6, 2.4, 396.0),(45.9, 2.7, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,51
+7/17/2019 2:02:56 PM,(-50.5, 2.5, 396.0),(16.3, 32.0, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,52
+7/17/2019 2:02:57 PM,(-50.5, 2.5, 396.0),(16.3, 32.0, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,53
+7/17/2019 2:02:58 PM,(-50.6, 2.5, 395.9),(8.4, 304.8, 359.9),fanger torsk 3,0,,0,0,False,Torsk Region,54
+7/17/2019 2:02:59 PM,(-50.6, 2.5, 395.8),(0.9, 201.1, 0.2),fanger torsk 3,0,,0,0,False,Torsk Region,55
+7/17/2019 2:03:00 PM,(-50.6, 2.5, 395.9),(12.6, 304.8, 359.9),fanger torsk 3,0,,0,0,False,Torsk Region,56
+7/17/2019 2:03:01 PM,(-50.5, 2.5, 395.8),(24.0, 106.9, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,57
+7/17/2019 2:03:02 PM,(-50.5, 2.5, 395.9),(14.4, 77.1, 359.9),fanger torsk 3,0,,0,0,False,Torsk Region,58
+7/17/2019 2:03:03 PM,(-51.1, 2.5, 399.7),(5.3, 105.1, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,59
+7/17/2019 2:03:04 PM,(-45.7, 2.5, 408.7),(6.2, 117.6, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,60
+7/17/2019 2:03:05 PM,(-39.7, 2.5, 414.1),(4.3, 136.1, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,61
+7/17/2019 2:03:06 PM,(-34.1, 2.5, 416.1),(4.1, 140.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,62
+7/17/2019 2:03:07 PM,(-27.5, 2.6, 414.5),(3.7, 137.1, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,63
+7/17/2019 2:03:08 PM,(-16.2, 2.6, 406.9),(3.1, 129.1, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,64
+7/17/2019 2:03:09 PM,(-1.2, 2.6, 394.7),(2.6, 104.1, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,65
+7/17/2019 2:03:10 PM,(13.5, 2.6, 384.0),(2.6, 103.6, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,66
+7/17/2019 2:03:11 PM,(23.4, 2.6, 378.1),(2.6, 103.6, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,67
+7/17/2019 2:03:12 PM,(29.8, 2.6, 374.9),(2.6, 103.6, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,68
+7/17/2019 2:03:13 PM,(35.8, 2.6, 372.3),(2.3, 102.6, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,69
+7/17/2019 2:03:14 PM,(46.9, 2.6, 368.0),(2.2, 101.8, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,70
+7/17/2019 2:03:15 PM,(64.2, 2.6, 361.7),(2.2, 101.1, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,71
+7/17/2019 2:03:16 PM,(82.4, 2.6, 355.3),(2.1, 100.8, 0.0),fanger torsk 3,0,,0,0,False,No Region,72
+7/17/2019 2:03:17 PM,(95.3, 2.6, 350.9),(2.1, 100.8, 0.0),fanger torsk 3,0,,0,0,False,No Region,73
+7/17/2019 2:03:18 PM,(102.9, 2.6, 348.3),(1.8, 100.6, 0.0),fanger torsk 3,0,,0,0,False,No Region,74
+7/17/2019 2:03:19 PM,(108.8, 2.6, 346.3),(1.8, 100.6, 0.0),fanger torsk 3,0,,0,0,False,No Region,75
+7/17/2019 2:03:20 PM,(118.2, 2.6, 343.2),(1.8, 100.3, 0.0),fanger torsk 3,0,,0,0,False,Orca Region,76
+7/17/2019 2:03:21 PM,(134.2, 2.6, 337.9),(1.8, 100.3, 0.0),fanger torsk 3,0,,0,0,False,Orca Region,77
+7/17/2019 2:03:22 PM,(153.1, 2.6, 331.7),(1.8, 100.3, 0.0),pelikaner men der bliver ikke sagt noget,0,,0,0,False,Orca Region,78
+7/17/2019 2:03:23 PM,(168.3, 2.6, 327.7),(4.2, 153.9, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,Orca Region,79
+7/17/2019 2:03:24 PM,(177.3, 2.6, 325.0),(4.1, 143.4, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,Orca Region,80
+7/17/2019 2:03:25 PM,(182.8, 2.6, 322.0),(3.6, 143.4, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,Orca Region,81
+7/17/2019 2:03:26 PM,(188.8, 2.6, 316.5),(3.5, 143.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,Orca Region,82
+7/17/2019 2:03:27 PM,(199.2, 2.6, 305.7),(3.5, 143.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,No Region,83
+7/17/2019 2:03:28 PM,(212.8, 2.6, 291.4),(3.5, 143.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,No Region,84
+7/17/2019 2:03:29 PM,(224.7, 2.6, 278.7),(2.9, 148.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,85
+7/17/2019 2:03:30 PM,(232.2, 2.6, 271.1),(2.9, 148.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,86
+7/17/2019 2:03:31 PM,(236.7, 2.6, 265.9),(2.7, 148.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,87
+7/17/2019 2:03:32 PM,(241.2, 2.6, 260.6),(2.6, 151.1, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,88
+7/17/2019 2:03:33 PM,(249.2, 2.6, 250.4),(2.6, 153.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,89
+7/17/2019 2:03:34 PM,(260.1, 2.6, 234.8),(2.6, 153.6, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,90
+7/17/2019 2:03:35 PM,(268.5, 2.6, 222.6),(41.2, 136.2, 0.1),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,91
+7/17/2019 2:03:36 PM,(271.6, 2.6, 218.1),(39.8, 149.2, 0.2),pelikaner men der bliver ikke sagt noget,0,,0,0,False,FlatFish Region,92
+7/17/2019 2:03:37 PM,(271.7, 2.6, 217.9),(39.8, 149.2, 0.2),fanger r¢dspætte 1,3,,0,0,False,FlatFish Region,93
+7/17/2019 2:03:37 PM,(272.7, 2.6, 216.5),(11.3, 166.6, 0.1),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,94
+7/17/2019 2:03:38 PM,(273.1, 2.6, 215.9),(11.3, 166.6, 0.1),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,95
+7/17/2019 2:03:39 PM,(273.2, 2.6, 215.6),(11.3, 166.6, 0.1),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,96
+7/17/2019 2:03:40 PM,(273.3, 2.6, 215.6),(11.3, 166.6, 0.1),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,97
+7/17/2019 2:03:41 PM,(273.3, 2.6, 215.5),(30.0, 154.4, 0.1),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,98
+7/17/2019 2:03:42 PM,(273.3, 2.6, 215.5),(34.3, 153.7, 0.2),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,99
+7/17/2019 2:03:43 PM,(273.3, 2.6, 215.5),(34.3, 153.7, 0.2),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,100
+7/17/2019 2:03:44 PM,(273.3, 2.6, 215.5),(34.4, 153.7, 0.2),fanger r¢dspætte 1,0,,0,0,False,FlatFish Region,101
+7/17/2019 2:03:45 PM,(273.3, 2.6, 215.5),(41.1, 152.5, 0.2),fanger r¢dspætte 2,3,,0,0,False,FlatFish Region,102
+7/17/2019 2:03:45 PM,(273.3, 2.6, 215.5),(17.6, 174.9, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,103
+7/17/2019 2:03:46 PM,(273.3, 2.6, 215.5),(17.6, 174.1, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,104
+7/17/2019 2:03:47 PM,(273.3, 2.6, 215.5),(17.6, 174.1, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,105
+7/17/2019 2:03:48 PM,(273.3, 2.6, 215.5),(17.6, 174.1, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,106
+7/17/2019 2:03:49 PM,(273.3, 2.6, 215.5),(17.6, 174.1, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,107
+7/17/2019 2:03:50 PM,(273.3, 2.6, 215.5),(18.5, 173.1, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,108
+7/17/2019 2:03:51 PM,(273.3, 2.6, 215.5),(20.2, 170.9, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,109
+7/17/2019 2:03:52 PM,(273.3, 2.6, 215.5),(38.1, 152.4, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,110
+7/17/2019 2:03:53 PM,(273.3, 2.6, 215.5),(41.9, 152.5, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,111
+7/17/2019 2:03:54 PM,(273.3, 2.6, 215.5),(42.8, 151.7, 0.2),fanger r¢dspætte 2,0,,0,0,False,FlatFish Region,112
+7/17/2019 2:03:55 PM,(273.3, 2.6, 215.5),(42.8, 151.7, 0.2),fanger r¢dspætte 3,3,,0,0,False,FlatFish Region,113
+7/17/2019 2:03:55 PM,(273.3, 2.6, 215.5),(35.0, 155.9, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,114
+7/17/2019 2:03:56 PM,(273.3, 2.6, 215.5),(12.5, 189.9, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,115
+7/17/2019 2:03:57 PM,(273.3, 2.6, 215.5),(13.2, 198.1, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,116
+7/17/2019 2:03:58 PM,(273.3, 2.6, 215.5),(12.5, 199.1, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,117
+7/17/2019 2:03:59 PM,(273.3, 2.6, 215.5),(12.5, 199.1, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,118
+7/17/2019 2:04:00 PM,(273.3, 2.6, 215.5),(12.6, 175.1, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,119
+7/17/2019 2:04:01 PM,(273.3, 2.6, 215.5),(12.4, 172.4, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,120
+7/17/2019 2:04:02 PM,(273.3, 2.6, 215.5),(12.4, 172.4, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,121
+7/17/2019 2:04:03 PM,(273.3, 2.6, 215.5),(12.4, 172.4, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,122
+7/17/2019 2:04:04 PM,(273.3, 2.6, 215.5),(12.4, 172.4, 0.2),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,123
+7/17/2019 2:04:05 PM,(274.5, 2.6, 215.8),(6.1, 288.1, 360.0),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,124
+7/17/2019 2:04:06 PM,(280.0, 2.6, 205.5),(6.1, 288.1, 360.0),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,125
+7/17/2019 2:04:07 PM,(277.7, 2.6, 192.9),(6.1, 328.3, 359.9),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,126
+7/17/2019 2:04:08 PM,(272.9, 2.6, 185.4),(6.4, 342.6, 359.9),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,127
+7/17/2019 2:04:09 PM,(269.2, 2.6, 183.1),(6.2, 9.3, 359.8),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,128
+7/17/2019 2:04:10 PM,(266.5, 2.7, 187.2),(2.4, 24.1, 359.8),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,129
+7/17/2019 2:04:11 PM,(260.5, 2.7, 199.9),(356.7, 260.3, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,130
+7/17/2019 2:04:12 PM,(252.5, 2.7, 218.1),(356.7, 260.3, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,131
+7/17/2019 2:04:13 PM,(240.8, 2.7, 230.5),(356.7, 260.3, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,132
+7/17/2019 2:04:14 PM,(232.4, 2.7, 236.3),(356.7, 260.3, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,133
+7/17/2019 2:04:15 PM,(226.3, 2.7, 238.6),(356.9, 259.6, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,134
+7/17/2019 2:04:16 PM,(219.6, 2.7, 239.1),(356.9, 259.6, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,135
+7/17/2019 2:04:17 PM,(206.6, 2.7, 238.8),(357.0, 257.1, 0.1),fanger r¢dspætte 3,0,,0,0,False,FlatFish Region,136
+7/17/2019 2:04:18 PM,(187.5, 2.7, 237.7),(357.1, 256.1, 0.1),fanger r¢dspætte 3,0,,0,0,False,No Region,137
+7/17/2019 2:04:19 PM,(168.9, 2.7, 235.9),(357.1, 256.1, 0.1),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,138
+7/17/2019 2:04:20 PM,(156.6, 2.7, 234.7),(357.1, 255.3, 0.1),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,139
+7/17/2019 2:04:21 PM,(149.1, 2.7, 233.9),(357.2, 254.3, 0.1),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,140
+7/17/2019 2:04:22 PM,(142.8, 2.7, 233.2),(357.3, 253.1, 0.1),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,141
+7/17/2019 2:04:23 PM,(131.9, 2.7, 231.5),(356.7, 265.3, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,142
+7/17/2019 2:04:24 PM,(114.4, 2.7, 228.0),(355.6, 271.8, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,143
+7/17/2019 2:04:25 PM,(95.1, 2.7, 224.5),(355.4, 273.6, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,144
+7/17/2019 2:04:26 PM,(80.8, 2.7, 222.8),(355.4, 273.6, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,145
+7/17/2019 2:04:27 PM,(72.3, 2.7, 222.1),(355.4, 273.6, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,146
+7/17/2019 2:04:28 PM,(66.1, 2.7, 221.6),(355.4, 273.6, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,147
+7/17/2019 2:04:29 PM,(57.0, 2.7, 221.1),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,148
+7/17/2019 2:04:30 PM,(40.8, 2.7, 220.3),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,Pelican Region,149
+7/17/2019 2:04:31 PM,(21.0, 2.7, 219.3),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,No Region,150
+7/17/2019 2:04:32 PM,(4.6, 2.7, 218.4),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,No Region,151
+7/17/2019 2:04:33 PM,(-5.1, 2.7, 217.9),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,No Region,152
+7/17/2019 2:04:34 PM,(-11.7, 2.7, 217.6),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,No Region,153
+7/17/2019 2:04:35 PM,(-19.3, 2.7, 217.2),(355.4, 268.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,No Region,154
+7/17/2019 2:04:36 PM,(-33.5, 2.7, 216.5),(355.4, 266.1, 0.0),fanger r¢dspætte 3,0,,0,0,False,No Region,155
+7/17/2019 2:04:37 PM,(-53.0, 2.7, 215.5),(355.5, 263.3, 0.0),når man sejler tilbage til mædding,0,,0,0,False,No Region,156
+7/17/2019 2:04:38 PM,(-71.0, 2.7, 214.6),(355.9, 259.6, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,157
+7/17/2019 2:04:39 PM,(-82.4, 2.7, 214.2),(356.0, 255.6, 0.1),når man sejler tilbage til mædding,0,,0,0,False,Starting Region,158
+7/17/2019 2:04:40 PM,(-89.5, 2.7, 213.7),(356.0, 255.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,Starting Region,159
+7/17/2019 2:04:41 PM,(-96.1, 2.7, 213.0),(356.0, 255.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,Starting Region,160
+7/17/2019 2:04:42 PM,(-108.1, 2.7, 211.5),(356.5, 251.1, 0.1),når man sejler tilbage til mædding,0,,0,0,False,Starting Region,161
+7/17/2019 2:04:43 PM,(-126.5, 2.7, 208.9),(356.7, 249.6, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,162
+7/17/2019 2:04:44 PM,(-145.4, 2.8, 205.2),(357.0, 245.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,163
+7/17/2019 2:04:45 PM,(-158.4, 2.8, 202.3),(356.6, 248.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,164
+7/17/2019 2:04:46 PM,(-166.1, 2.8, 200.3),(356.4, 250.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,165
+7/17/2019 2:04:47 PM,(-172.0, 2.8, 198.6),(356.4, 250.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,166
+7/17/2019 2:04:48 PM,(-181.7, 2.8, 195.6),(356.4, 250.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,167
+7/17/2019 2:04:49 PM,(-198.1, 2.8, 190.6),(356.4, 250.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,168
+7/17/2019 2:04:50 PM,(-217.0, 2.8, 184.7),(356.4, 250.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,169
+7/17/2019 2:04:51 PM,(-231.8, 2.8, 180.5),(356.2, 237.6, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,170
+7/17/2019 2:04:52 PM,(-240.5, 2.8, 177.9),(356.6, 234.8, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,171
+7/17/2019 2:04:53 PM,(-246.5, 2.8, 175.7),(355.3, 226.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,172
+7/17/2019 2:04:54 PM,(-253.7, 2.8, 171.6),(355.3, 226.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,No Region,173
+7/17/2019 2:04:55 PM,(-266.1, 2.8, 162.6),(355.3, 226.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,EelTrap Region,174
+7/17/2019 2:04:56 PM,(-282.0, 2.8, 150.9),(356.2, 213.3, 0.1),når man sejler tilbage til mædding,0,,0,0,False,EelTrap Region,175
+7/17/2019 2:04:57 PM,(-296.5, 2.8, 141.1),(357.7, 183.1, 0.2),når man sejler tilbage til mædding,0,,0,0,False,EelTrap Region,176
+7/17/2019 2:04:58 PM,(-305.2, 2.8, 134.4),(358.2, 157.1, 0.1),når man sejler tilbage til mædding,0,,0,0,False,EelTrap Region,177
+7/17/2019 2:04:59 PM,(-309.7, 2.8, 128.9),(357.7, 164.1, 0.1),når man sejler tilbage til mædding,0,,0,0,False,EelTrap Region,178
+7/17/2019 2:05:00 PM,(-311.0, 2.8, 123.2),(3.3, 167.1, 0.1),når man sejler tilbage til mædding,0,,0,0,False,EelTrap Region,179
+7/17/2019 2:05:01 PM,(-311.2, 2.8, 120.6),(4.0, 166.4, 0.1),T¢mme åleruse,4,,0,0,False,EelTrap Region,180
+7/17/2019 2:05:01 PM,(-311.3, 2.8, 120.3),(4.0, 166.4, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,181
+7/17/2019 2:05:02 PM,(-311.4, 2.8, 119.2),(3.7, 166.6, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,182
+7/17/2019 2:05:03 PM,(-311.3, 2.8, 118.9),(1.7, 237.6, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,183
+7/17/2019 2:05:04 PM,(-308.7, 2.8, 115.6),(5.6, 294.3, 360.0),T¢mme åleruse,0,,0,0,False,EelTrap Region,184
+7/17/2019 2:05:05 PM,(-308.5, 2.8, 109.8),(5.6, 294.6, 360.0),T¢mme åleruse,0,,0,0,False,EelTrap Region,185
+7/17/2019 2:05:06 PM,(-312.1, 2.8, 105.7),(6.0, 308.3, 359.9),T¢mme åleruse,0,,0,0,False,EelTrap Region,186
+7/17/2019 2:05:07 PM,(-322.6, 2.8, 104.3),(6.4, 321.6, 359.9),T¢mme åleruse,0,,0,0,False,EelTrap Region,187
+7/17/2019 2:05:08 PM,(-339.7, 2.8, 108.5),(6.1, 332.1, 359.9),T¢mme åleruse,0,,0,0,False,EelTrap Region,188
+7/17/2019 2:05:09 PM,(-356.6, 2.8, 117.8),(5.5, 334.8, 359.9),åleruse tømme,0,,0,0,False,EelTrap Region,189
+7/17/2019 2:05:10 PM,(-367.6, 2.9, 126.5),(5.5, 334.8, 359.9),åleruse tømme,0,,0,0,False,No Region,190
+7/17/2019 2:05:11 PM,(-373.3, 2.9, 132.4),(5.5, 334.8, 359.9),åleruse tømme,0,,0,0,False,No Region,191
+7/17/2019 2:05:12 PM,(-377.0, 2.9, 137.3),(5.4, 335.6, 359.9),åleruse tømme,0,,0,0,False,No Region,192
+7/17/2019 2:05:13 PM,(-382.1, 2.9, 144.9),(4.5, 342.8, 359.9),åleruse tømme,0,,0,0,False,No Region,193
+7/17/2019 2:05:14 PM,(-389.6, 2.9, 159.4),(4.5, 342.8, 359.9),åleruse tømme,0,,0,0,False,No Region,194
+7/17/2019 2:05:15 PM,(-397.9, 2.9, 177.4),(4.6, 338.8, 359.9),åleruse tømme,0,,0,0,False,Eel Region,195
+7/17/2019 2:05:16 PM,(-404.7, 2.9, 192.2),(4.7, 351.1, 359.8),åleruse tømme,0,,0,0,False,Eel Region,196
+7/17/2019 2:05:17 PM,(-409.1, 2.9, 200.9),(4.5, 1.3, 359.8),åleruse tømme,0,,0,0,False,Eel Region,197
+7/17/2019 2:05:18 PM,(-411.7, 2.9, 206.9),(4.5, 1.3, 359.8),åleruse tømme,0,,0,0,False,Eel Region,198
+7/17/2019 2:18:02 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spil slutter efter bekræftelse,0,,0,0,False,Starting Region,0
+7/17/2019 2:18:03 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,1
+7/17/2019 2:18:04 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,2
+7/17/2019 2:18:05 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,3
+7/17/2019 2:18:06 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,4
+7/17/2019 2:18:07 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,5
+7/17/2019 2:18:08 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,6
+7/17/2019 2:18:09 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,7
+7/17/2019 2:18:10 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),spillet start,0,,0,0,False,Starting Region,8
+7/17/2019 2:18:11 PM,(-97.5, 2.5, 199.4),(1.4, 11.8, 359.8),spillet start,0,,0,0,False,Starting Region,9
+7/17/2019 2:18:12 PM,(-97.4, 2.5, 205.8),(1.5, 15.6, 359.8),spillet start,0,,0,0,False,Starting Region,10
+7/17/2019 2:18:13 PM,(-95.6, 2.5, 220.2),(1.5, 15.6, 359.8),spillet start,0,,0,0,False,No Region,11
+7/17/2019 2:18:14 PM,(-93.1, 2.5, 239.6),(2.1, 19.1, 359.8),spillet start,0,,0,0,False,No Region,12
+7/17/2019 2:18:15 PM,(-90.3, 2.5, 256.5),(2.1, 19.3, 359.8),spillet start,0,,0,0,False,No Region,13
+7/17/2019 2:18:16 PM,(-88.7, 2.5, 266.8),(2.1, 24.3, 359.8),spillet start,0,,0,0,False,No Region,14
+7/17/2019 2:18:17 PM,(-87.3, 2.5, 273.5),(2.1, 24.3, 359.8),spillet start,0,,0,0,False,No Region,15
+7/17/2019 2:18:18 PM,(-85.4, 2.5, 280.3),(2.2, 24.3, 359.8),spillet start,0,,0,0,False,No Region,16
+7/17/2019 2:18:19 PM,(-81.7, 2.5, 293.0),(2.8, 23.1, 359.8),spillet start,0,,0,0,False,No Region,17
+7/17/2019 2:18:20 PM,(-76.2, 2.5, 311.3),(2.8, 23.1, 359.8),spillet start,0,,0,0,False,No Region,18
+7/17/2019 2:18:21 PM,(-70.8, 2.5, 329.2),(2.8, 20.8, 359.8),spillet start,0,,0,0,False,No Region,19
+7/17/2019 2:18:22 PM,(-67.3, 2.5, 341.0),(2.8, 20.8, 359.8),spillet start,0,,0,0,False,Torsk Region,20
+7/17/2019 2:18:23 PM,(-65.2, 2.5, 348.1),(2.8, 20.8, 359.8),spillet start,0,,0,0,False,Torsk Region,21
+7/17/2019 2:18:24 PM,(-63.3, 2.5, 354.2),(2.8, 20.8, 359.8),spillet start,0,,0,0,False,Torsk Region,22
+7/17/2019 2:18:25 PM,(-60.1, 2.5, 364.9),(2.8, 21.1, 359.8),spillet start,0,,0,0,False,Torsk Region,23
+7/17/2019 2:18:26 PM,(-55.0, 2.5, 382.1),(2.8, 21.1, 359.8),spillet start,0,,0,0,False,Torsk Region,24
+7/17/2019 2:18:27 PM,(-50.4, 2.5, 397.5),(33.5, 21.7, 359.8),spillet start,0,,0,0,False,Torsk Region,25
+7/17/2019 2:18:28 PM,(-48.9, 2.5, 402.6),(41.1, 5.0, 359.8),fanger torsk,1,,0,0,False,Torsk Region,26
+7/17/2019 2:18:28 PM,(-48.6, 2.5, 403.4),(40.7, 5.0, 359.8),fanger torsk,0,,0,0,False,Torsk Region,27
+7/17/2019 2:18:29 PM,(-48.0, 2.5, 405.6),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,28
+7/17/2019 2:18:30 PM,(-47.7, 2.5, 406.4),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,29
+7/17/2019 2:18:31 PM,(-47.6, 2.5, 406.7),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,30
+7/17/2019 2:18:32 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,31
+7/17/2019 2:18:33 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,32
+7/17/2019 2:18:34 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,33
+7/17/2019 2:18:35 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk,0,,0,0,False,Torsk Region,34
+7/17/2019 2:18:36 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,1,,0,0,False,Torsk Region,35
+7/17/2019 2:18:36 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,36
+7/17/2019 2:18:37 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,37
+7/17/2019 2:18:38 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,38
+7/17/2019 2:18:39 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,39
+7/17/2019 2:18:40 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,40
+7/17/2019 2:18:41 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,41
+7/17/2019 2:18:42 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,42
+7/17/2019 2:18:43 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,43
+7/17/2019 2:18:44 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,44
+7/17/2019 2:18:45 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,45
+7/17/2019 2:18:46 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 2,0,,0,0,False,Torsk Region,46
+7/17/2019 2:18:46 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,1,,0,0,False,Torsk Region,47
+7/17/2019 2:18:47 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,48
+7/17/2019 2:18:48 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,49
+7/17/2019 2:18:49 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,50
+7/17/2019 2:18:50 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,51
+7/17/2019 2:18:51 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,52
+7/17/2019 2:18:52 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,53
+7/17/2019 2:18:53 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,54
+7/17/2019 2:18:54 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,55
+7/17/2019 2:18:55 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,56
+7/17/2019 2:18:56 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,57
+7/17/2019 2:18:57 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,58
+7/17/2019 2:18:58 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,59
+7/17/2019 2:18:59 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,60
+7/17/2019 2:19:00 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,61
+7/17/2019 2:19:01 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,62
+7/17/2019 2:19:02 PM,(-47.6, 2.5, 406.8),(40.4, 4.5, 359.8),fanger torsk 3,0,,0,0,False,Torsk Region,63
+7/17/2019 2:19:03 PM,(-47.5, 2.4, 406.8),(74.7, 53.7, 359.6),fanger torsk 3,0,,0,0,False,Torsk Region,64
+7/17/2019 2:19:04 PM,(-45.5, 2.5, 407.8),(14.1, 250.6, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,65
+7/17/2019 2:19:05 PM,(-44.8, 2.5, 418.4),(13.0, 286.1, 360.0),fanger torsk 3,0,,0,0,False,Torsk Region,66
+7/17/2019 2:19:06 PM,(-47.6, 2.5, 427.3),(8.7, 265.9, 0.0),fanger torsk 3,0,,0,0,False,Torsk Region,67
+7/17/2019 2:19:07 PM,(-51.1, 2.5, 432.9),(8.1, 254.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,68
+7/17/2019 2:19:08 PM,(-56.1, 2.5, 435.9),(8.0, 254.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,69
+7/17/2019 2:19:09 PM,(-67.0, 2.6, 436.9),(5.9, 233.1, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,70
+7/17/2019 2:19:10 PM,(-84.9, 2.6, 435.2),(5.7, 220.1, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,71
+7/17/2019 2:19:11 PM,(-103.3, 2.6, 429.1),(5.7, 218.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,72
+7/17/2019 2:19:12 PM,(-115.8, 2.6, 422.9),(5.7, 218.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,73
+7/17/2019 2:19:13 PM,(-122.6, 2.6, 418.4),(5.7, 218.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,74
+7/17/2019 2:19:14 PM,(-127.3, 2.6, 414.4),(5.7, 218.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,75
+7/17/2019 2:19:15 PM,(-134.0, 2.6, 407.9),(5.7, 218.9, 0.1),fanger torsk 3,0,,0,0,False,Torsk Region,76
+7/17/2019 2:19:16 PM,(-145.8, 2.6, 396.5),(3.7, 201.6, 0.2),fanger torsk 3,0,,0,0,False,No Region,77
+7/17/2019 2:19:17 PM,(-158.9, 2.6, 381.5),(2.5, 194.9, 0.2),fanger torsk 3,0,,0,0,False,No Region,78
+7/17/2019 2:19:18 PM,(-168.3, 2.6, 368.3),(2.3, 195.4, 0.2),fanger torsk 3,0,,0,0,False,No Region,79
+7/17/2019 2:19:19 PM,(-173.0, 2.6, 360.1),(1.9, 198.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,80
+7/17/2019 2:19:20 PM,(-175.9, 2.6, 354.4),(1.9, 198.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,81
+7/17/2019 2:19:21 PM,(-179.0, 2.6, 347.3),(1.9, 198.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,82
+7/17/2019 2:19:22 PM,(-184.7, 2.6, 333.9),(1.9, 198.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,83
+7/17/2019 2:19:23 PM,(-192.3, 2.6, 315.9),(1.9, 198.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,84
+7/17/2019 2:19:24 PM,(-199.2, 2.6, 299.4),(1.9, 198.6, 0.2),fanger torsk 3,0,,0,0,False,No Region,85
+7/17/2019 2:19:25 PM,(-203.5, 2.6, 289.1),(1.8, 200.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,86
+7/17/2019 2:19:26 PM,(-206.3, 2.6, 282.6),(1.0, 202.8, 0.2),fanger torsk 3,0,,0,0,False,No Region,87
+7/17/2019 2:19:27 PM,(-208.8, 2.6, 276.4),(0.6, 203.8, 0.2),fanger torsk 3,0,,0,0,False,No Region,88
+7/17/2019 2:19:28 PM,(-213.6, 2.6, 265.0),(0.3, 206.3, 0.2),fanger torsk 3,0,,0,0,False,No Region,89
+7/17/2019 2:19:29 PM,(-220.9, 2.6, 247.7),(0.3, 206.3, 0.2),fanger torsk 3,0,,0,0,False,No Region,90
+7/17/2019 2:19:30 PM,(-228.3, 2.6, 230.1),(0.1, 211.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,91
+7/17/2019 2:19:31 PM,(-233.3, 2.6, 218.1),(0.1, 211.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,92
+7/17/2019 2:19:32 PM,(-236.4, 2.6, 210.8),(0.1, 211.1, 0.2),fanger torsk 3,0,,0,0,False,No Region,93
+7/17/2019 2:19:33 PM,(-238.7, 2.6, 205.1),(359.8, 212.8, 0.1),fanger torsk 3,0,,0,0,False,No Region,94
+7/17/2019 2:19:34 PM,(-242.9, 2.6, 195.6),(359.7, 214.6, 0.1),fanger torsk 3,0,,0,0,False,No Region,95
+7/17/2019 2:19:35 PM,(-250.4, 2.6, 180.0),(359.3, 219.3, 0.1),fanger torsk 3,0,,0,0,False,No Region,96
+7/17/2019 2:19:36 PM,(-259.4, 2.6, 162.3),(359.4, 222.8, 0.1),fanger torsk 3,0,,0,0,False,No Region,97
+7/17/2019 2:19:37 PM,(-267.2, 2.6, 149.4),(359.4, 222.8, 0.1),fanger torsk 3,0,,0,0,False,EelTrap Region,98
+7/17/2019 2:19:38 PM,(-271.7, 2.6, 141.7),(358.8, 232.8, 0.1),fanger torsk 3,0,,0,0,False,EelTrap Region,99
+7/17/2019 2:19:39 PM,(-275.1, 2.6, 136.4),(358.8, 232.8, 0.1),fanger torsk 3,0,,0,0,False,EelTrap Region,100
+7/17/2019 2:19:40 PM,(-280.8, 2.7, 130.0),(358.6, 234.1, 0.1),fanger torsk 3,0,,0,0,False,EelTrap Region,101
+7/17/2019 2:19:41 PM,(-291.7, 2.7, 119.0),(358.6, 232.8, 0.1),fanger torsk 3,0,,0,0,False,EelTrap Region,102
+7/17/2019 2:19:42 PM,(-296.7, 2.6, 114.3),(7.6, 265.1, 0.0),fanger torsk 3,0,,0,0,False,EelTrap Region,103
+7/17/2019 2:19:43 PM,(-299.1, 2.6, 111.5),(8.0, 209.4, 0.2),fanger torsk 3,0,,0,0,False,EelTrap Region,104
+7/17/2019 2:19:44 PM,(-300.2, 2.6, 110.7),(6.9, 214.1, 0.1),T¢mme åleruse,4,,0,0,False,EelTrap Region,105
+7/17/2019 2:19:44 PM,(-300.8, 2.6, 110.4),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,106
+7/17/2019 2:19:45 PM,(-301.4, 2.6, 109.9),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,107
+7/17/2019 2:19:46 PM,(-301.6, 2.6, 109.8),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,108
+7/17/2019 2:19:47 PM,(-301.7, 2.6, 109.7),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,109

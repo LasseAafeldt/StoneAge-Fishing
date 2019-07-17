@@ -67,9 +67,9 @@ public class GameManager : MonoBehaviour {
     int startTorskAmount;
     bool isCountingEel = false;
     int startEelAmount;
-    public int currentTorskAmount=0;
-    public int currentEelAmount=0;
-    public int currentFlatfishAmount=0;
+    //public int currentTorskAmount=0;
+    //public int currentEelAmount=0;
+    //public int currentFlatfishAmount=0;
 
     public bool pointingAtInteractable = false;
 
@@ -84,10 +84,14 @@ public class GameManager : MonoBehaviour {
     public GameObject midden;
 
 
-    List<GameObject> caughtTotal = new List<GameObject>();
-    List<GameObject> caughtEel = new List<GameObject>();
-    List<GameObject> caughtTorsk =new List<GameObject>();
-    List<GameObject> caughtFlatfish =new List<GameObject>();
+    //List<GameObject> caughtTotal = new List<GameObject>();
+    int caughtTotal = 0;
+    //List<GameObject> caughtEel = new List<GameObject>();
+    int caughtEel = 0;
+    //List<GameObject> caughtTorsk =new List<GameObject>();
+    int caughtTorsk = 0;
+    //List<GameObject> caughtFlatfish =new List<GameObject>();
+    int caughtFlatfish = 0;
 
     //hidden bools for if fish has been caught in their area
     [HideInInspector]
@@ -194,50 +198,68 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private void Update()
+    /*private void Update()
     {
         //temp:
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Can move: " + canMove);
         }
+    }*/
+    public void AddEel(int _amount)
+    {
+        //caughtTotal.Add(eel);
+        //currentEelAmount++;
+        caughtEel+= _amount;
+        Debug.Log("I now have " + caughtEel + " eel in the basket");
     }
-    public void AddEel(GameObject eel)
-        {
-            caughtTotal.Add(eel);
-            currentEelAmount++;
-        Debug.Log("I now have " + currentEelAmount + " eel in the basket");
-
-    }
-        public void AddTorsk(GameObject torsk)
-        {
-            caughtTotal.Add(torsk);
-            currentTorskAmount++;
-            Debug.Log("I now have " + currentTorskAmount + " torsk in the basket");
-        }
-        public void AddFlatFish(GameObject flat)
-        {
-            caughtTotal.Add(flat);
-            currentFlatfishAmount++;
-        Debug.Log("I now have " + currentFlatfishAmount + " flatfish in the basket");
+    public int getEelAmount()
+    {
+        return caughtEel;
     }
 
-        public int GetFishCount()
-        {
-            return caughtTotal.Count;
-        }
+    public void AddTorsk(int _amount)
+    {
+        //caughtTotal.Add(torsk);
+        //currentTorskAmount++;
+        caughtTorsk += _amount;
+        Debug.Log("I now have " + caughtTorsk + " torsk in the basket");
+    }
+    public int getTorskAmount()
+    {
+        return caughtTorsk;
+    }
 
-        void OnEnable()
-        {
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
+    public void AddFlatFish(int _amount)
+    {
+        //caughtTotal.Add(flat);
+        //currentFlatfishAmount++;
+        caughtFlatfish += _amount;
+        Debug.Log("I now have " + caughtFlatfish + " flatfish in the basket");
+    }
+    public int getFlatfishAmount()
+    {
+        return caughtFlatfish;
+    }
+
+    public int GetFishCount()
+    {
+        caughtTotal = caughtTorsk+caughtFlatfish+caughtEel;
+        return caughtTotal;
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //Debug.Log("i am in end scene");
         Debug.Log("OnSceneLoaded: " + scene.name);
         //audio.Play();
-        Debug.Log("after loading i have these fish: Torsk = " + currentTorskAmount + " Eel = " + currentEelAmount + " Flatfish = " + currentFlatfishAmount);
-        for (int i = 1; i <= currentFlatfishAmount; i++)
+        Debug.Log("after loading i have these fish: Torsk = " + caughtTorsk + " Eel = " + caughtEel 
+            + " Flatfish = " + caughtFlatfish);
+        for (int i = 1; i <= caughtFlatfish; i++)
         {
         Debug.Log("I have a flatfish");
         Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
@@ -249,7 +271,7 @@ public class GameManager : MonoBehaviour {
                 }
             }                
         }
-        for (int i = 1; i <= currentEelAmount; i++)
+        for (int i = 1; i <= caughtEel; i++)
         {
             Debug.Log("I have an eel");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
@@ -260,7 +282,7 @@ public class GameManager : MonoBehaviour {
                 }
             }                
         }
-        for (int i = 1; i <= currentTorskAmount; i++)
+        for (int i = 1; i <= caughtTorsk; i++)
         {
             Debug.Log("I have a torsk");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
@@ -288,10 +310,7 @@ public class GameManager : MonoBehaviour {
     {
         int totalFish = 0;
 
-        foreach (GameObject fish in caughtTotal)
-        {
-            totalFish++;
-        }
+        totalFish = GetFishCount();
         return totalFish;
     }
 
@@ -303,12 +322,9 @@ public class GameManager : MonoBehaviour {
 
     public void resetFishInBasket()
     {
-        currentEelAmount = 0;
-        currentFlatfishAmount = 0;
-        currentTorskAmount = 0;
-        foreach (GameObject fish in caughtTotal)
-        {
-            caughtTotal.Remove(fish);
-        }
+        caughtEel = 0;
+        caughtFlatfish = 0;
+        caughtTorsk = 0;
+        caughtTotal = 0;
     }
 }

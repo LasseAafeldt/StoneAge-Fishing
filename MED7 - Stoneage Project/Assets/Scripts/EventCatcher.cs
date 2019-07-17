@@ -158,7 +158,7 @@ public class EventCatcher : MonoBehaviour {
 		GameManager.singleton.tradingObject.GetComponent<Collider>().enabled = false;
 	}
 
-	public void TradeFishForFlint()
+	/*public void TradeFishForFlint()
 	{
 		Debug.Log("you want to trade" + GameManager.singleton.currentEelAmount);
 		if(GameManager.singleton.currentEelAmount >= 4)
@@ -190,7 +190,7 @@ public class EventCatcher : MonoBehaviour {
 			DisableTrading();
 		}
 
-	}
+	}*/
 
 	public bool GetHasFlint()
 	{

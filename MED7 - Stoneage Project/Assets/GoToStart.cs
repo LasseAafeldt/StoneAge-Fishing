@@ -20,7 +20,7 @@ public class GoToStart : MonoBehaviour {
 
 		if(tempTime < 0 && Input.GetButtonDown("Fire1"))
 		{
-			Debug.Log("go to starrt");
+			Debug.Log("go to start");
             GameManager.singleton.resetFishInBasket();
             //LogMaster.shouldBeLogging = true; this enables it too early
             //StartCoroutine(waitWithDestroy(2f));
