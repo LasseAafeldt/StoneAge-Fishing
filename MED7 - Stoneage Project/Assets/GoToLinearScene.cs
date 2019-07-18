@@ -33,6 +33,9 @@ public class GoToLinearScene : MonoBehaviour {
 
     IEnumerator delayLoadScene()
     {
+        FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        fade.fadeOut();
+        yield return new WaitForSeconds(1f);
         yield return new WaitForSeconds(0.5f);
         LogMaster.shouldBeLogging = true;
         SceneManager.LoadScene("mainScene", LoadSceneMode.Single);

@@ -422,6 +422,9 @@ PartnerAnimator PA;
     IEnumerator waitforAudioToLoadEndScene(AudioClip clip)
     {
         yield return new WaitForSeconds(clip.length);
+        FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        fade.fadeOut();
+        yield return new WaitForSeconds(2f);
         EC.CheckForEnding();
     }
 

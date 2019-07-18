@@ -58,10 +58,6 @@ public class EventCatcher : MonoBehaviour {
         //when you go back to ertebølle midden to retrieve tool
 		if(other.tag == "ertebølle")
 		{
-            //change scene
-            //CheckForEnding();
-            //Debug.Log("I have sailed into the collider which previously caused the game to load the endscene");
-            //partnerSpeech.PartnerSaysSomething(partnerSpeech.HomeAgain);
             Debug.Log("player sailed intot the Ertebølle trigger: if you want to end then hand the fish over to the lady");
 		}
         if (other.tag == "pelicanTrigger")

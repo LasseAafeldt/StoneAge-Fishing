@@ -307,3 +307,10 @@
 7/17/2019 2:19:45 PM,(-301.4, 2.6, 109.9),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,107
 7/17/2019 2:19:46 PM,(-301.6, 2.6, 109.8),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,108
 7/17/2019 2:19:47 PM,(-301.7, 2.6, 109.7),(6.9, 214.1, 0.1),T¢mme åleruse,0,,0,0,False,EelTrap Region,109
+7/18/2019 12:04:08 PM,(-97.3, 2.5, 198.4),(360.0, 359.1, 359.8),,0,,0,0,False,No Region,0
+7/18/2019 12:04:09 PM,(-97.2, 2.5, 198.4),(352.6, 37.1, 359.9),spillet start,0,,0,0,False,Starting Region,1
+7/18/2019 12:04:10 PM,(-97.2, 2.5, 198.4),(352.6, 37.1, 359.9),spillet start,0,,0,0,False,Starting Region,2
+7/18/2019 12:04:11 PM,(-97.3, 2.5, 198.4),(355.2, 6.9, 359.8),spillet start,0,,0,0,False,Starting Region,3
+7/18/2019 12:04:12 PM,(-97.3, 2.5, 198.3),(1.1, 229.8, 0.1),spillet start,0,,0,0,False,Starting Region,4
+7/18/2019 12:04:13 PM,(-97.3, 2.5, 198.3),(1.1, 229.8, 0.1),spillet start,0,,0,0,False,Starting Region,5
+7/18/2019 12:04:14 PM,(-97.3, 2.5, 198.3),(1.1, 229.8, 0.1),spillet start,0,,0,0,False,Starting Region,6

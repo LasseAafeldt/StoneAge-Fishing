@@ -122,21 +122,14 @@ public class playTimer : MonoBehaviour {
         //wait till audio is done
         partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerEnd);
         yield return new WaitForSeconds(clip.length);
+        //Debug.Log("time has run out, and audio is done playing");
+        FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        fade.fadeOut();
+        yield return new WaitForSeconds(2f);
         // change scene
-        Debug.Log("time has run out, and audio is done playing");
-        //did not make it back in time
-        //if (GameManager.singleton.GetFishCount() >= 7)
-        //{
-            GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
-        //}
-        //else
-        //{
-        //    Debug.Log("time has run out and player did not have enough fish");
-        //    /*GameManager.singleton.PrepareForEndScene(
-        //        GameManager.singleton.partner.GetComponent<PartnerSpeech>().Outcome2Emergent,
-        //        GameManager.singleton.boat.GetComponent<EventCatcher>().GetHasFlint());*/
-        //    SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
-        //}
+        
+        GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
+        
     }
 
 	public float GetTimeSpent()

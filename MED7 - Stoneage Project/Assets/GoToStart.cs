@@ -25,11 +25,13 @@ public class GoToStart : MonoBehaviour {
             //LogMaster.shouldBeLogging = true; this enables it too early
             //StartCoroutine(waitWithDestroy(2f));
             //Destroy(GameObject.Find("Game Manager"));
-            StartCoroutine(waitWithDestroy(1f));
+            StartCoroutine(waitWithDestroy(2f));
 		}
 	}
     IEnumerator waitWithDestroy(float wait)
     {
+        FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        fade.fadeOut();
         yield return new WaitForSeconds(wait);
 		Destroy(GameObject.Find("Game Manager"));
         SceneManager.LoadScene("start", LoadSceneMode.Single);

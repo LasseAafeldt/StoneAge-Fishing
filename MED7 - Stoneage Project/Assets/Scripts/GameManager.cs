@@ -198,14 +198,6 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    /*private void Update()
-    {
-        //temp:
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Can move: " + canMove);
-        }
-    }*/
     public void AddEel(int _amount)
     {
         //caughtTotal.Add(eel);
