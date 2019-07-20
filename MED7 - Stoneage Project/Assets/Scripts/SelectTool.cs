@@ -389,20 +389,23 @@ PartnerAnimator PA;
 
     public void notEnoughFishHere()
     {
+        //for log
         timesFishedNowhereTotal++;
-        if(timesFishedNoWhere >= partnerSpeech.noFishHere.Length)
-        {
-            if(GameManager.singleton.useGuidanceSounds)
-                guidance.playGuidanceSound();
-            timesFishedNoWhere = 0;
-            return;
-        }
-        if(timesFishedNoWhere < partnerSpeech.noFishHere.Length)
+
+        //functionallity
+        if (timesFishedNoWhere < partnerSpeech.noFishHere.Length)
         {
             Debug.Log("no fish here array: " + timesFishedNoWhere + " also this: " + partnerSpeech.noFishHere.Length);
             partnerSpeech.PartnerSaysSomething(partnerSpeech.noFishHere[timesFishedNoWhere]);
             timesFishedNoWhere++;
         }
+        if (timesFishedNoWhere >= partnerSpeech.noFishHere.Length)
+        {
+            if(GameManager.singleton.useGuidanceSounds)
+                guidance.playGuidanceSound();
+            timesFishedNoWhere = 0;
+        }
+        
     }
 
     void HideTool()

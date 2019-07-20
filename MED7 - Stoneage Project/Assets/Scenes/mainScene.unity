@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15905747, g: 0.1547918, b: 0.14895484, a: 1}
+  m_IndirectSpecularColor: {r: 0.15853631, g: 0.15426677, b: 0.14845505, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -535,7 +535,7 @@ Prefab:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
@@ -575,42 +575,42 @@ Prefab:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e8f9b9366c7c1419550c9efef0e598, type: 2}
@@ -11217,7 +11217,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 12100000, guid: 8541d94808d5849d8bfa480259334205, type: 2}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -24444,7 +24444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  useGuidanceSounds: 0
+  useGuidanceSounds: 1
   useMapGuidance: 1
   debugLogging: 1
   CameraContainer: {fileID: 0}
@@ -30561,7 +30561,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

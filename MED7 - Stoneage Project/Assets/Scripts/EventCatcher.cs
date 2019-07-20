@@ -113,38 +113,8 @@ public class EventCatcher : MonoBehaviour {
 		//Debug.Log("trying to fish");
 		if(canFish)
 		{
-			if(fishingArea == "TorskArea")
-			{
-				if (tool == "hook")
-				{
-					Debug.Log("caugth a torsk");
-                    //LogMaster logMaster = GameManager.singleton.logMaster;
-                    //Debug.Log(logMaster.mapOnCamera.activeSelf);
-					//instatiate a fish in the boay
-					//Instantiate(torsk,transform.position, transform.rotation);
-					//remove a fish from the ocean
-					fishingAreaObject.GetComponent<FishContent>().RemoveFish();
-				}
-				else
-				{
-
-				}
-
-			}
-			if(tool == "eeliron" && fishingArea == "EelArea")
-			{
-				Debug.Log("caugth a eel");
-				//instatiate a fish in the boay
-				//Instantiate(eel,transform.position, transform.rotation);
-				//remove a fish from the ocean
-				fishingAreaObject.GetComponent<FishContent>().RemoveFish();
-			}
-			else
-			{
-				//partner should make a comment
-			}
-			
-		}
+            fishingAreaObject.GetComponent<FishContent>().RemoveFish();            
+        }
 
 	}
 

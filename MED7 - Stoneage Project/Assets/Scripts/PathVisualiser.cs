@@ -6,7 +6,7 @@ using System.Linq;
 using System.IO;
 using UnityEditor;
 
-public class ReadOnlyAttribute : PropertyAttribute
+/*public class ReadOnlyAttribute : PropertyAttribute
 {
 
 }
@@ -28,7 +28,7 @@ public class ReadOnlyDrawer : PropertyDrawer
         EditorGUI.PropertyField(position, property, label, true);
         GUI.enabled = true;
     }
-}
+}*/
 
 public class PathVisualiser : MonoBehaviour {
     #region Global Variables
@@ -44,7 +44,7 @@ public class PathVisualiser : MonoBehaviour {
     public int numberOfFilesInDirectory;
 
     //[SerializeField]
-    [ReadOnly]
+    //[ReadOnly]
     public string filePath;
     private string directoryPath;
 
