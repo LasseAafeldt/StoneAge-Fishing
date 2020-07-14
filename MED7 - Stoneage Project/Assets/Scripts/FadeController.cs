@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FadeController : MonoBehaviour {
+
     Animator animator;
 
     private void Start()
@@ -10,7 +9,6 @@ public class FadeController : MonoBehaviour {
         try
         {
             animator = GetComponentInChildren<Animator>();
-            //Debug.Log("anim = " + animator);
         }
         catch
         {
@@ -20,6 +18,16 @@ public class FadeController : MonoBehaviour {
 
     public void fadeOut()
     {
-        animator.SetTrigger("FadeOut");
+        animator?.SetTrigger("FadeOut");
+    }
+
+    public void InstantFadeOut()
+    {
+        animator?.SetTrigger("InstantFadeOut");
+    }
+
+    public void InstantFadeIn()
+    {
+        animator?.SetTrigger("InstantFadeIn");
     }
 }
