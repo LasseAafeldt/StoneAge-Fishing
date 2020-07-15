@@ -44,7 +44,7 @@ public class EventCatcher : MonoBehaviour {
 		{
 			GameManager.singleton.partner.GetComponent<PartnerSpeech>().PartnerSaysSomething(
 				GameManager.singleton.partner.GetComponent<PartnerSpeech>().NoFurther);
-            Debug.Log("player is hitting the boundry of the map and No Further sound is played");
+            //Debug.Log("player is hitting the boundry of the map and No Further sound is played");
             canPlayTurnAroundSound = false;
             StartCoroutine(outOfBoundsSoundDelay(OutOfBoundsSoundTimer));
 		}
@@ -53,12 +53,12 @@ public class EventCatcher : MonoBehaviour {
             canFish = true;
 			fishingArea = other.tag;
 			fishingAreaObject = other.gameObject;
-			Debug.Log("you are now in the "+fishingArea);			
+			//Debug.Log("you are now in the "+fishingArea);			
 		}
         //when you go back to ertebølle midden to retrieve tool
 		if(other.tag == "ertebølle")
 		{
-            Debug.Log("player sailed intot the Ertebølle trigger: if you want to end then hand the fish over to the lady");
+            //Debug.Log("player sailed into the Ertebølle trigger: if you want to end then hand the fish over to the lady");
 		}
         if (other.tag == "pelicanTrigger")
         {
@@ -85,7 +85,7 @@ public class EventCatcher : MonoBehaviour {
 		if(GameManager.singleton.GetFishCount() >= FishToSucceed)
 			{
             //enough fish 7
-            Debug.Log("Good ending");
+            //Debug.Log("Good ending");
 				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().GoodEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
 				
@@ -93,7 +93,7 @@ public class EventCatcher : MonoBehaviour {
 			else 
 			{
             //not enough fish 7
-            Debug.Log("Bad ending");
+            //Debug.Log("Bad ending");
             GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().BadEnding, hasFlint);
 				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}

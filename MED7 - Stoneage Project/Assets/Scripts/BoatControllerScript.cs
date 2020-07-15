@@ -1,22 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BoatControllerScript : MonoBehaviour
 {
 
     public static string currentlyInRegion = "No Region";
 
-    public float speed = 15f;
-    public float rotationSpeed = 0.1f;
-    public float rotationDeadzone = 5f;
+    public float speed = 15f, rotationSpeed = 0.1f, rotationDeadzone = 5f, accelerationAmount = 0.05f, rowingFrequency = 0.44f;
     public Collider[] ignoreCollision;
 
     bool voiceLineReady = true;
 
-    float verticalInput;
-    float horizontalInput;
-    float steerFactor;
+    float verticalInput, horizontalInput, steerFactor, acceleration;
 
     private bool outOfBounds = false;
 
@@ -26,7 +20,6 @@ public class BoatControllerScript : MonoBehaviour
         voiceLineReady = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.singleton.canMove)
@@ -50,13 +43,18 @@ public class BoatControllerScript : MonoBehaviour
 
         if (Input.GetButton("Fire1") && !outOfBounds)
         {
-            float sinusoid = (Mathf.Sin(Time.time) + 1) / 2;
-            if (sinusoid < 0.2f)
+            //float sinusoid = (Mathf.Sin(Time.time) + 1.0f / 2.0f);
+            float sinusoid = (Mathf.Sin(2.0f * Mathf.PI * rowingFrequency * Time.time) + 1.0f / 2.0f); // Asin(2 * PI * Frequency * time) + phase
+            if (sinusoid < 0.25f)
             {
-                sinusoid = 0.2f;
+                sinusoid = 0.25f;
             }
 
+            if (acceleration < 1.0f)
+                acceleration += accelerationAmount;
+
             #region Linear stuff
+
             /*
             if (Vector3.Distance(GameManager.singleton.currentPillar.transform.position, transform.position) > 150)
 			{
@@ -98,16 +96,17 @@ public class BoatControllerScript : MonoBehaviour
 			
 			}
             */
+
             #endregion
 
             if (!GameManager.singleton.pointingAtInteractable)
             {
 
-
                 if (GameManager.singleton.partner.GetComponent<PartnerAnimator>().anim.GetBool("isRowing"))
                 {
                     //Debug.Log("Im going forwards");
-                    GetComponent<Rigidbody>().AddForce(transform.forward * speed * sinusoid * Time.deltaTime);
+                    GetComponent<Rigidbody>()
+                        .AddForce((transform.forward * speed * sinusoid * Time.deltaTime) * acceleration);
                 }
 
                 float rotationAngle = Vector3.Angle(transform.forward, Camera.main.transform.forward);
@@ -115,10 +114,13 @@ public class BoatControllerScript : MonoBehaviour
                 if (rotationAngle > rotationDeadzone)
                 {
 
-                    Vector3 newDir = Vector3.RotateTowards(transform.forward, new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), rotationAngle, 0.0f);
+                    Vector3 newDir = Vector3.RotateTowards(transform.forward,
+                        new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), rotationAngle,
+                        0.0f);
 
                     // calculate the Quaternion for the rotation
-                    Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(newDir), rotationSpeed * Time.deltaTime);
+                    Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(newDir),
+                        rotationSpeed * Time.deltaTime);
                     //Quaternion rot = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(newDir), rotationSpeed * Time.deltaTime);
 
                     //Apply the rotation 
@@ -126,8 +128,11 @@ public class BoatControllerScript : MonoBehaviour
 
                 }
             }
+
             //Debug.Log(Vector3.Angle(transform.forward, Camera.main.transform.forward));
         }
+        else
+            acceleration = accelerationAmount;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -149,7 +154,7 @@ public class BoatControllerScript : MonoBehaviour
     void setCurrentRegion(GameObject region)
     {
         currentlyInRegion = region.name;
-        Debug.Log("Current region is now: " + currentlyInRegion);
+        //Debug.Log("Current region is now: " + currentlyInRegion);
     }
 
     public string getCurrentRegion()
