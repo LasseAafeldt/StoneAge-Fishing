@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1597848, g: 0.15546268, b: 0.14957005, a: 1}
+  m_IndirectSpecularColor: {r: 0.15808827, g: 0.15384766, b: 0.14807454, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7056,7 +7056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.21
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7084,15 +7084,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.0841
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.0841
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -312.641
+      objectReference: {fileID: 0}
+    - target: {fileID: 400038, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0841
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d1d0c305869ec47858ee33c51f7b2b, type: 3}
@@ -26171,6 +26175,7 @@ GameObject:
   - component: {fileID: 1044151178}
   - component: {fileID: 1044151179}
   - component: {fileID: 1044151180}
+  - component: {fileID: 1044151181}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -26360,7 +26365,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044151176}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3709d45cc447ecb4ba50aa9712e1197d, type: 3}
   m_Name: 
@@ -26368,6 +26373,22 @@ MonoBehaviour:
   seperator: ','
   player: {fileID: 534669905}
   mapOnCamera: {fileID: 2107282128}
+--- !u!114 &1044151181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044151176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ada83c6649d53c4c85da1c28f106bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usePhoneAccelerator: 0
+  useCameraRotation: 1
+  useBoatMovement: 0
+  timeOut: 30
 --- !u!1 &1052138929
 GameObject:
   m_ObjectHideFlags: 0

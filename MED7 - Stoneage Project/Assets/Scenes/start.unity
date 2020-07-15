@@ -1193,6 +1193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1629500449}
   - component: {fileID: 1629500450}
+  - component: {fileID: 1629500451}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1222,7 +1223,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629500448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3709d45cc447ecb4ba50aa9712e1197d, type: 3}
   m_Name: 
@@ -1230,6 +1231,22 @@ MonoBehaviour:
   seperator: ','
   player: {fileID: 1629500449}
   mapOnCamera: {fileID: 0}
+--- !u!114 &1629500451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629500448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ada83c6649d53c4c85da1c28f106bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usePhoneAccelerator: 0
+  useCameraRotation: 1
+  useBoatMovement: 0
+  timeOut: 30
 --- !u!1 &1771196336
 GameObject:
   m_ObjectHideFlags: 0
