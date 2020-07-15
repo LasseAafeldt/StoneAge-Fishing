@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("GameManager object have no logMaster component");
+            //Debug.LogError("GameManager object have no logMaster component");
         }
 
         timer = GameObject.FindGameObjectWithTag("timer");
