@@ -21,6 +21,11 @@ public class FadeController : MonoBehaviour {
         animator?.SetTrigger("FadeOut");
     }
 
+    public void fadeIn()
+    {
+        animator?.SetTrigger("FadeIn");
+    }
+
     public void InstantFadeOut()
     {
         animator?.SetTrigger("InstantFadeOut");
