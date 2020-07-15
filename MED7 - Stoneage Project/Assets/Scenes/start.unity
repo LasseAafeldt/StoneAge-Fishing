@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1550084410}
     m_Modifications:
+    - target: {fileID: 1764978153116850, guid: 24e8f9b9366c7c1419550c9efef0e598, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114422270741206492, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_Color.a
@@ -136,8 +140,13 @@ PrefabInstance:
     - target: {fileID: 223230435542650870, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_RenderMode
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 223230435542650870, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1550084415}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_RootOrder
@@ -156,27 +165,27 @@ PrefabInstance:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.0002868036
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.007909192
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0013748726
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.99996775
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
@@ -186,22 +195,22 @@ PrefabInstance:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 556
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 438
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
@@ -226,27 +235,27 @@ PrefabInstance:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0
+      value: 0.32254255
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 0.32262
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 0.32254258
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e8f9b9366c7c1419550c9efef0e598, type: 3}
