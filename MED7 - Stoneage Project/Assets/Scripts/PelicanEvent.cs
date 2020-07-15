@@ -65,7 +65,7 @@ public class PelicanEvent : MonoBehaviour
     //old script that that is taken from the previous groups project.... don't fix if it isn't broken...
     public void startOrcaEvent()
     {
-        Debug.Log("THE PELICANS!!! = " + eventIsStarted);
+        //Debug.Log("THE PELICANS!!! = " + eventIsStarted);
         if (eventIsStarted)
             return;
         eventIsStarted = true;

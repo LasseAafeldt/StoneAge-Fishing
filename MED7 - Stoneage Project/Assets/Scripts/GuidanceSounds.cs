@@ -97,7 +97,7 @@ public class GuidanceSounds : MonoBehaviour {
     {
         if(checkDistance() == null)
         {
-            Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
+            //Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
         //reset the timer
@@ -108,14 +108,14 @@ public class GuidanceSounds : MonoBehaviour {
         //don't play the first sound again if they are still closest to the same area.
         if (closestArea.tag == inArea)
         {
-            Debug.Log("Closest area is unchanged");
+            //Debug.Log("Closest area is unchanged");
             lvl1GuidanceSound = false;
             //change which guidance timer to use
             detailedGuidance = true;
             standardGuidance = false;
             detailedAreaSound();
         }
-        Debug.Log("Closest area: " + closestArea);
+        //Debug.Log("Closest area: " + closestArea);
         //check which area is the closest
         if(closestArea.tag == "TorskArea" && lvl1GuidanceSound && !GameManager.singleton.TorskCaught)
         {
@@ -247,12 +247,12 @@ public class GuidanceSounds : MonoBehaviour {
     {
         if (standardGuidance)
         {
-            Debug.Log("voiceclip is altering Standard guidance timer");
+            //Debug.Log("voiceclip is altering Standard guidance timer");
             timeSinceLastGuidance -= clipTime;
         }
         if (detailedGuidance)
         {
-            Debug.Log("voiceclip is altering Detailed guidance timer");
+            //Debug.Log("voiceclip is altering Detailed guidance timer");
             areaTimer -= clipTime;
         }
     }

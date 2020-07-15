@@ -55,6 +55,6 @@ public class retunToMiddenSound : MonoBehaviour {
     {
         yield return new WaitForSeconds(20f);
         canPlaySound = true;
-        Debug.Log("Can play sound is now true....................");
+        //Debug.Log("Can play sound is now true....................");
     }
 }
