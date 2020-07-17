@@ -150,7 +150,7 @@ PartnerAnimator PA;
 			{
                 //wrong tool
                 setWrongToolVoicelineInt(WrongTool.NoIron4Cod);
-                Debug.Log("this is not the tool to use for eel or flatfish");
+                //Debug.Log("this is not the tool to use for eel or flatfish");
                 if (wrongToolOneHook)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron);
@@ -165,7 +165,7 @@ PartnerAnimator PA;
 		}
 		else if (tag == "eeliron")
 		{
-			Debug.Log("selected eeliron");
+			//Debug.Log("selected eeliron");
 			tool = tag;
 			//play animation
 
@@ -278,7 +278,7 @@ PartnerAnimator PA;
 			{
                 //wrong tool
                 setWrongToolVoicelineInt(WrongTool.NoHook4Eel);
-                Debug.Log("This is not the tool to use for cod");
+                //Debug.Log("This is not the tool to use for cod");
                 if (wrongToolOneSpear == true)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook);

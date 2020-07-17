@@ -23,7 +23,7 @@ public class FishContent : MonoBehaviour {
 			//Debug.Break();
 			fish[0].gameObject.SetActive(false);
 			fish.RemoveAt(0);
-			Debug.Log("number of fish in area " +fish.Count);
+			//Debug.Log("number of fish in area " +fish.Count);
 		}
         else if(fish.Count <= 0)
         {
