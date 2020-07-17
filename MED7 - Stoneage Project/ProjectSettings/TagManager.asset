@@ -37,6 +37,7 @@ TagManager:
   - EndGame
   - Guidance
   - map
+  - EelTrapArea
   layers:
   - Default
   - TransparentFX

@@ -29,8 +29,16 @@ namespace Assets.Scripts.IdleManager
                 boatRigidBody = GameObject.FindGameObjectWithTag("boat")?.GetComponent<Rigidbody>();
         }
 
+        void OnEnable()
+        {
+            mainCam = Camera.main;
+        }
+
         void FixedUpdate()
         {
+            if (mainCam == null)
+                return;
+
             if (useCameraRotation)
             {
                 Controller(mainCam.transform.rotation != prevRot ? 1 : 0);

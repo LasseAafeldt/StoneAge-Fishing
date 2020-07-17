@@ -44,7 +44,7 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("hookFishing");
         GameManager.singleton.canMove = false;
-        Debug.Log("I can't move anymore");
+        //Debug.Log("I can't move anymore");
 		GameManager.singleton.paddle.SetActive(false);
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position - 0.75f*transform.up;
 	}
@@ -55,7 +55,7 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.aniEelIron.SetActive(true);
 		GameManager.singleton.aniTorch.SetActive(true);
         GameManager.singleton.canMove = false;
-        Debug.Log("I can't move anymore");
+        //Debug.Log("I can't move anymore");
     }
 
 	public void BasketAnimation()
@@ -96,14 +96,14 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("eelCaught");
         GameManager.singleton.canMove = true;
-        Debug.Log("I can move again");
+        //Debug.Log("I can move again");
     }
 
 	public void noCatch()
 	{
 		anim.SetTrigger("noCatch");
         GameManager.singleton.canMove = true;
-        Debug.Log("I can move again");
+        //Debug.Log("I can move again");
     }
 	public void pointLeft(bool state)
 	{
@@ -129,7 +129,7 @@ public class PartnerAnimator : MonoBehaviour {
 	public void HookAniDone(){
 		GameManager.singleton.hook.GetComponent<SelectTool>().ShowTool();
 		GameManager.singleton.paddle.SetActive(true);
-		Debug.Log("Hook ani done");
+		//Debug.Log("Hook ani done");
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position + 0.75f*transform.up;
 		if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCanFish())
 		{
@@ -163,7 +163,7 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.paddle.SetActive(true);
 		GameManager.singleton.aniEelIron.SetActive(false);
 		GameManager.singleton.aniTorch.SetActive(false);
-		Debug.Log("iron ani done");
+		//Debug.Log("iron ani done");
 		if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCanFish())
 		{
 			eelCaught();
@@ -201,27 +201,27 @@ public class PartnerAnimator : MonoBehaviour {
 	public void BasketAniDone(){
 		bool basketFull = true;
 
-        Debug.Log("Test");
+        //Debug.Log("Test");
 		if (basketFull)
 		{
 			trapFull();
 
-			Debug.Log("putting fish in basket");
+			//Debug.Log("putting fish in basket");
 			//PutEelInBasket();
 			PutEelInBasket(EelsInTrap);
 						
-			Debug.Log("putting fish in basket");
+			//Debug.Log("putting fish in basket");
 			//PutEelInBasket();
 			PutFlatFishInBasket(FlatFishInTrap);
 			
-			Debug.Log("Trap Full");
+			//Debug.Log("Trap Full");
 			basketFull = false;
 
             guidance.resetGuidanceTimers();
             GameManager.singleton.eelTrapEmptied = true;
 
             GameManager.singleton.canMove = true;
-            Debug.Log("i can move again");
+            //Debug.Log("i can move again");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.afterEmptyingEeltrap);
         } else {
 			trapEmpty();
@@ -318,7 +318,7 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish.SetActive(true);
                     basketSound.Play();
                     //Debug.Log(currentFish);
-					Debug.Log("add "+ currentFish +" eel to basket");
+					//Debug.Log("add "+ currentFish +" eel to basket");
                 }
 			}		    
 		}

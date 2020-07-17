@@ -163,7 +163,7 @@ public class PartnerSpeech : MonoBehaviour {
 			if(!queuedAudio.Contains(clip) && audio.clip.name != clip.name)
 			{
 				queuedAudio.Add(clip);
-				Debug.Log(audio.clip.name + " audio - clip " + clip.name);
+				//Debug.Log(audio.clip.name + " audio - clip " + clip.name);
                 //amountOfVoiceLinesPlayed++;
 			}
 

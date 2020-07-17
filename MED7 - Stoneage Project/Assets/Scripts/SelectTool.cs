@@ -86,7 +86,7 @@ PartnerAnimator PA;
 		//selecting which tool to use 
 		if(tag == "hook")
 		{
-			Debug.Log("selected hook");
+			//Debug.Log("selected hook");
 			tool = tag;
 			//play animation
 
