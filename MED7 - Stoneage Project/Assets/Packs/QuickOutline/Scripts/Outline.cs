@@ -274,20 +274,4 @@ public class Outline : MonoBehaviour {
         break;
     }
   }
-
-  public void onFocus(){
-
-    OutlineMode = Outline.Mode.OutlineAll;
-    OutlineColor = Color.yellow;
-    OutlineWidth = 10f;
-
-  }
-
-    public void Not_onFocus(){
-
-    OutlineMode = Outline.Mode.OutlineHidden;
-    OutlineColor = Color.yellow;
-    OutlineWidth = 0f;
-
-  }
 }
