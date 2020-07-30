@@ -26,7 +26,7 @@ public class LogMaster : MonoBehaviour {
     //call GuidanceSounds.latestGuideSound to get last guidance sound
     //call SelectTool.timesFishedNowhereTotal to get total times fished nowhere
     public static int WrongToolVoiceline = 0; //set in SelectTool
-    public GameObject mapOnCamera;
+    public bool mapOnCamera;
     #endregion
 
     static int logFileNumber = 0;
@@ -65,7 +65,7 @@ public class LogMaster : MonoBehaviour {
                             GuidanceSounds.lastGuidanceSound,
                             SelectTool.timesFishedNowhereTotal,
                             LogMaster.WrongToolVoiceline,
-                            mapOnCamera.activeSelf,
+                            mapOnCamera = false,
                             BoatControllerScript.currentlyInRegion);
 
                         Debug.Log("An entry is made in the log file...");
@@ -128,6 +128,10 @@ public class LogMaster : MonoBehaviour {
     //every second if file is not already in use...                     Done            (in this script)
     public void logEntry(Vector3 _PlayerPos, Vector3 _PlayerLookRotation, string _LastVoiceline, int _TypeOfFishCaught, string _LastGuidanceSound, int _TimesFishedNowhere, int _TypeOfWrongTool, bool _MapActive, string activeRegion)
     {
+        if(filePath == null)
+        {
+            return;
+        }
         //Debug.Log("the file is being written in now...");
         //write the log stuff...
         //remember system.DateTime first
@@ -198,7 +202,7 @@ public class LogMaster : MonoBehaviour {
                 GuidanceSounds.lastGuidanceSound,
                 SelectTool.timesFishedNowhereTotal,
                 WrongToolVoiceline,
-                mapOnCamera.activeSelf,
+                mapOnCamera = false,
                 BoatControllerScript.currentlyInRegion);
             //Debug.Log("An entry is made in the log file...");
         }

@@ -29,6 +29,9 @@ public bool IsTribeBasket;
 
     private static int timesFishedNoWhere;
 
+    private Transform mapCameraPos;
+    private Transform mapOriginalPos;
+
 EventCatcher EC;
 PartnerAnimator PA;
     PartnerSpeech partnerSpeech;
@@ -80,6 +83,10 @@ PartnerAnimator PA;
         }
 		catch{}
         timesFishedNoWhere = 0;
+
+        //find the map positions
+        mapCameraPos = GameObject.Find("CameraMap").transform;
+        mapOriginalPos = GameObject.Find("OriginalMapPos").transform;
     }
 	
 	public void Select(){
@@ -291,13 +298,16 @@ PartnerAnimator PA;
                 }
 			}			
 		}
-        #region Activate and deactivate the map
+        #region Switch map positon
         else if (tag == "map")
         {
-            if (GameManager.singleton.map.activeSelf == true)
+            Vector3 currentMapPosition = transform.position;
+
+            //swap from original pos to cam pos
+            if(currentMapPosition == mapOriginalPos.position)
             {
-                GameManager.singleton.map.SetActive(false);
-                GameManager.singleton.mapOnCam.SetActive(true);
+                transform.position = mapCameraPos.position;
+                transform.rotation = mapCameraPos.rotation;
 
                 //for log data
                 logMaster.logEntry(
@@ -308,13 +318,14 @@ PartnerAnimator PA;
                     GuidanceSounds.lastGuidanceSound,
                     SelectTool.timesFishedNowhereTotal,
                     LogMaster.WrongToolVoiceline,
-                    logMaster.mapOnCamera.activeSelf,
+                    logMaster.mapOnCamera = true,
                     BoatControllerScript.currentlyInRegion);
             }
-            else
+            else //change post to original pos
             {
-                GameManager.singleton.map.SetActive(true);
-                GameManager.singleton.mapOnCam.SetActive(false);
+                Debug.Log("IM here");
+                transform.position = mapOriginalPos.position;
+                transform.rotation = mapOriginalPos.rotation;
 
                 //for log data
                 logMaster.logEntry(
@@ -325,12 +336,12 @@ PartnerAnimator PA;
                     GuidanceSounds.lastGuidanceSound,
                     SelectTool.timesFishedNowhereTotal,
                     LogMaster.WrongToolVoiceline,
-                    logMaster.mapOnCamera.activeSelf,
+                    logMaster.mapOnCamera = false,
                     BoatControllerScript.currentlyInRegion);
             }
+
             Debug.Log("selected map");
             tool = tag;
-            //play animation
         }
         #endregion
 
@@ -454,7 +465,7 @@ PartnerAnimator PA;
                 GuidanceSounds.lastGuidanceSound,
                 timesFishedNowhereTotal,
                 LogMaster.WrongToolVoiceline,
-                logMaster.mapOnCamera.activeSelf,
+                logMaster.mapOnCamera = false,
                 BoatControllerScript.currentlyInRegion);
             //Debug.Log("An entry is made in the log file...");
         }
@@ -474,7 +485,7 @@ PartnerAnimator PA;
                 GuidanceSounds.lastGuidanceSound,
                 timesFishedNowhereTotal,
                 LogMaster.WrongToolVoiceline,
-                logMaster.mapOnCamera.activeSelf,
+                logMaster.mapOnCamera = false,
                 BoatControllerScript.currentlyInRegion);
             //Debug.Log("An entry is made in the log file...");
         }
