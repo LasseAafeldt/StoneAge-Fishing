@@ -57,7 +57,7 @@ public class PartnerSpeech : MonoBehaviour {
 
     [Header(" sounds")]
     public AudioClip[] noFishHere;
-    public Text speech;
+    //public Text speech;
 	List<AudioClip> queuedAudio = new List<AudioClip>();
 	List<string> queuedText = new List<string>();
 
@@ -120,7 +120,7 @@ public class PartnerSpeech : MonoBehaviour {
 		{
 			GetComponent<PartnerAnimator>().StartTalking();
 			audio.clip = clip;
-			speech.text = writtenLine;
+			//speech.text = writtenLine;
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
@@ -148,7 +148,7 @@ public class PartnerSpeech : MonoBehaviour {
 				GetComponent<PartnerAnimator>().StartTalking();
 			}
 			audio.clip = clip;
-			speech.text = writtenLine;
+			//speech.text = writtenLine;
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);

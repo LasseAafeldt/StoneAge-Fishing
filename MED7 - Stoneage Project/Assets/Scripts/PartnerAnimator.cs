@@ -44,7 +44,7 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("hookFishing");
         GameManager.singleton.canMove = false;
-        //Debug.Log("I can't move anymore");
+        Debug.Log("I can't move anymore");
 		GameManager.singleton.paddle.SetActive(false);
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position - 0.75f*transform.up;
 	}
@@ -55,7 +55,7 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.aniEelIron.SetActive(true);
 		GameManager.singleton.aniTorch.SetActive(true);
         GameManager.singleton.canMove = false;
-        //Debug.Log("I can't move anymore");
+        Debug.Log("I can't move anymore");
     }
 
 	public void BasketAnimation()
@@ -96,14 +96,14 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("eelCaught");
         GameManager.singleton.canMove = true;
-        //Debug.Log("I can move again");
+        Debug.Log("I can move again");
     }
 
 	public void noCatch()
 	{
 		anim.SetTrigger("noCatch");
         GameManager.singleton.canMove = true;
-        //Debug.Log("I can move again");
+        Debug.Log("I can move again");
     }
 	public void pointLeft(bool state)
 	{
@@ -123,6 +123,7 @@ public class PartnerAnimator : MonoBehaviour {
 	public void paddleAnimation(bool state){
         //Debug.Log("I am paddling...");
 		anim.SetBool("isRowing", state);
+        GameManager.singleton.paddle.SetActive(state);
 	}
 
     //NOTE here
@@ -221,7 +222,7 @@ public class PartnerAnimator : MonoBehaviour {
             GameManager.singleton.eelTrapEmptied = true;
 
             GameManager.singleton.canMove = true;
-            //Debug.Log("i can move again");
+            Debug.Log("i can move again");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.afterEmptyingEeltrap);
         } else {
 			trapEmpty();

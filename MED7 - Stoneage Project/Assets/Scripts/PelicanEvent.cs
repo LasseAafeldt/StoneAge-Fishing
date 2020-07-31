@@ -47,7 +47,7 @@ public class PelicanEvent : MonoBehaviour
                 //Debug.Log(newPos);
                 //Debug.DrawRay(transform.position, (newPos-transform.position)*100, Color.red, 1);
                 forwardRotation = newPos - transform.position;
-                transform.forward = -forwardRotation;
+                //transform.forward = -forwardRotation;
                 
                 transform.position = newPos;
 

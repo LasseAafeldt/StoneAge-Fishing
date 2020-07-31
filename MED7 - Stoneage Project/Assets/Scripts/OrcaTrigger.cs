@@ -31,6 +31,7 @@ public class OrcaTrigger : MonoBehaviour {
         playTimer.timeLeft += playAnimation.length + 0.5f;
         orca.SetActive(true); //gør gameobjected aktivt
         GameManager.singleton.canMove = false;
+        Debug.Log("I can't move anymore");
         //reset the paddle animation
         GameManager.singleton.partner.GetComponent<PartnerAnimator>().paddleAnimation(false);
 
@@ -45,6 +46,7 @@ public class OrcaTrigger : MonoBehaviour {
     {
         yield return new WaitForSeconds(clipLength);
         GameManager.singleton.canMove = true;
+        Debug.Log("I can move now");
         StartCoroutine(waitForOrcaAnimation(playAnimation.length));
     }
     IEnumerator waitForOrcaAnimation(float clipLength)

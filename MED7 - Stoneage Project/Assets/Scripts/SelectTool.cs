@@ -359,7 +359,7 @@ PartnerAnimator PA;
 		if(tag =="emptyBasket")
 		{
             GameManager.singleton.canMove = false;
-            //Debug.Log("I can't move now");
+            Debug.Log("I can't move now");
 
 			PA.BasketAnimation();
             Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");

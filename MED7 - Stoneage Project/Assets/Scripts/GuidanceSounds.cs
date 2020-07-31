@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class GuidanceSounds : MonoBehaviour {
-    public PartnerSpeech voiceLines;
+    //public PartnerSpeech voiceLines;
     [HideInInspector]
     //public float triggerRadius = 150; //this is not used anymore except to activate the start sound
 

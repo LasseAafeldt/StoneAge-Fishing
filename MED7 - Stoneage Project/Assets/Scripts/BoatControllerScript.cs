@@ -44,7 +44,7 @@ public class BoatControllerScript : MonoBehaviour
         if (Input.GetButton("Fire1") && !outOfBounds)
         {
             //float sinusoid = (Mathf.Sin(Time.time) + 1.0f / 2.0f);
-            float sinusoid = (Mathf.Sin(2.0f * Mathf.PI * rowingFrequency * Time.time) + 1.0f / 2.0f); // Asin(2 * PI * Frequency * time) + phase
+            float sinusoid = (Mathf.Sin(2.0f * Mathf.PI * rowingFrequency * Time.time) + 1); // Asin(2 * PI * Frequency * time) + phase
             if (sinusoid < 0.25f)
             {
                 sinusoid = 0.25f;
