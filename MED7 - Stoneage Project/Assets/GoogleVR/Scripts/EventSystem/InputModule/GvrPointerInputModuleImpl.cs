@@ -258,8 +258,9 @@ public class GvrPointerInputModuleImpl {
         if (isPointerActiveAndAvailable) {
           Pointer.OnPointerExit(previousObject);
         }
-        isPointerHovering = false;
-      }
+        isPointerHovering = false; Debug.Log("exited active object");
+                GameManager.singleton.pointingAtInteractable = false;
+            }
 
       if (currentObject != null) {
         if (isPointerActiveAndAvailable) {
