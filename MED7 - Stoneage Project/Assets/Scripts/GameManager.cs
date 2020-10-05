@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour {
         tribeBoat = GameObject.FindGameObjectWithTag("tribeBoat");
         //Debug.Log(tribeBoat.gameObject.name);
         partner = GameObject.FindGameObjectWithTag("partner");
-        Debug.Log("partner: "+partner.gameObject.name);
+        //Debug.Log("partner: "+partner.gameObject.name);
         hook = GameObject.FindGameObjectWithTag("hook");
         //Debug.Log(hook.gameObject.name);
         eeliron = GameObject.FindGameObjectWithTag("eeliron");
@@ -286,10 +286,10 @@ public class GameManager : MonoBehaviour {
             }                
         }
     }
-    /*private void OnDisable()
+    private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }*/
+    }
 
     public void PrepareForEndScene(AudioClip clip, bool hasFlint)
     {
