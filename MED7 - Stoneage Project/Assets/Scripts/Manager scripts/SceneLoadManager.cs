@@ -5,6 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadManager : MonoBehaviour
 {
+    private bool _readyForNextScene = false;
+
+
+    private void Start()
+    {
+        VideoControls vidControls = GameObject.FindObjectOfType<VideoControls>();
+        //Debug.Log("We have the vid controller:     " + vidControls.name);
+        if(vidControls != null)
+            vidControls.VideoHasEnded += OnVideoEnd;
+    }
+    public bool ReadyForNextScene {
+        get { return _readyForNextScene; }
+        private set{_readyForNextScene = value;}
+    }
 
     /// <summary>
     /// Load scene with specific index.
@@ -12,7 +26,7 @@ public class SceneLoadManager : MonoBehaviour
     /// <param name="sceneIndex"></param>
     public void ChangeScene(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex);
+        StartCoroutine(LoadScene(sceneIndex));
     }
 
     /// <summary>
@@ -20,12 +34,11 @@ public class SceneLoadManager : MonoBehaviour
     /// </summary>
     public void ChangeScene()
     {
-        int currentIndex = SceneManager.GetActiveScene().buildIndex;
         int loadIndex;
 
-        if(SceneManager.sceneCountInBuildSettings > currentIndex)
+        if(SceneManager.sceneCountInBuildSettings > CurrentSceneIndex())
         {
-            loadIndex = currentIndex + 1;
+            loadIndex = CurrentSceneIndex() + 1;
         }
         else
         {
@@ -33,7 +46,21 @@ public class SceneLoadManager : MonoBehaviour
             loadIndex = 0;
         }
         StartCoroutine(LoadScene(loadIndex));
-        //SceneManager.LoadScene(loadIndex);
+    }
+
+    public void ChangeSceneAsync()
+    {
+        int currentScene = CurrentSceneIndex();
+        //Debug.Log("Scene index = " + currentScene);
+        int sceneIndexToLoad = currentScene +1;
+
+        //Debug.Log("Scene count = " + SceneManager.sceneCountInBuildSettings);
+        if(sceneIndexToLoad > SceneManager.sceneCountInBuildSettings-1)
+        {
+            sceneIndexToLoad = 0;
+        }
+        //Debug.Log("Index to load = " + sceneIndexToLoad);
+        StartCoroutine(AsyncLoadScene(sceneIndexToLoad));
     }
 
     IEnumerator LoadScene(int index)
@@ -44,11 +71,48 @@ public class SceneLoadManager : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    //yield return new WaitForSeconds(clip.length);
-    //FadeController fade = GameObject.FindObjectOfType<FadeController>();
-    //fade.fadeOut();
-    //    yield return new WaitForSeconds(2f);
-    //EC.CheckForEnding();
+    IEnumerator AsyncLoadScene(int index)
+    {
+        FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        fade.fadeOut();
+        yield return new WaitForSeconds(2f);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index, LoadSceneMode.Single);
 
+        asyncLoad.allowSceneActivation = false;
+        while (!asyncLoad.isDone)
+        {
+            if(!ReadyForNextScene)
+                Debug.Log("<color=red> Ready for next scene = " + ReadyForNextScene + "</color>");
+            else
+                Debug.Log("<color=green> Ready for next scene = " + ReadyForNextScene + "</color>");
 
+            //wait for ready signal
+            if (ReadyForNextScene)
+            {
+                asyncLoad.allowSceneActivation = true;
+                //Debug.Log("<color=blue> Should activate </color>");
+            }
+            yield return null;
+        }
+    }
+
+    private int CurrentSceneIndex()
+    {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        return currentIndex;
+    }
+
+    private void OnVideoEnd()
+    {
+        //Debug.Log("<color=green> Vidoe has ended </color>");
+        ReadyForNextScene = true;
+    }
+
+    private void OnDisable()
+    {
+        VideoControls vidControls = GameObject.FindObjectOfType<VideoControls>();
+        //Debug.Log("We have the vid controller:     " + vidControls.name);
+        if (vidControls != null)
+            vidControls.VideoHasEnded -= OnVideoEnd;
+    }
 }
