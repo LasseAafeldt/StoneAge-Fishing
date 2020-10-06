@@ -72,7 +72,8 @@ PartnerAnimator PA;
         secondFishingFlatfish = false;
         thirdFishingFlatfish = false;
 
-    EC = GameManager.singleton.boat.GetComponent<EventCatcher>();
+       
+       EC = GameManager.singleton.boat?.GetComponent<EventCatcher>();
 		try
 		{
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
@@ -85,8 +86,8 @@ PartnerAnimator PA;
         timesFishedNoWhere = 0;
 
         //find the map positions
-        mapCameraPos = GameObject.Find("CameraMap").transform;
-        mapOriginalPos = GameObject.Find("OriginalMapPos").transform;
+        mapCameraPos = GameObject.Find("CameraMap")?.transform;
+        mapOriginalPos = GameObject.Find("OriginalMapPos")?.transform;
     }
 	
 	public void Select(){
@@ -490,4 +491,6 @@ PartnerAnimator PA;
             //Debug.Log("An entry is made in the log file...");
         }
     }
+
+
 }

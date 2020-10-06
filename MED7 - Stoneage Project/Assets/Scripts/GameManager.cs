@@ -319,4 +319,10 @@ public class GameManager : MonoBehaviour {
         caughtTorsk = 0;
         caughtTotal = 0;
     }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
 }
