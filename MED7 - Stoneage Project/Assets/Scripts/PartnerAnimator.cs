@@ -20,15 +20,8 @@ public class PartnerAnimator : MonoBehaviour {
 
 	GameObject mostRecentFish;
 
-	bool firstTimeEel =true;
-	bool firstTimeCod =true;
-	bool firstTimeFlatfish =true;
-
 	// Use this for initialization
 	void Start () {
-        firstTimeEel = true;
-        firstTimeCod = true;
-        firstTimeFlatfish = true;
 
         anim = GetComponent<Animator>();
 		boat = GameManager.singleton.spawnPoint;
@@ -223,7 +216,7 @@ public class PartnerAnimator : MonoBehaviour {
 
             GameManager.singleton.canMove = true;
             Debug.Log("i can move again");
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.afterEmptyingEeltrap);
+            //partnerSpeech.PartnerSaysSomething(partnerSpeech.afterEmptyingEeltrap);
         } else {
 			trapEmpty();
 			Debug.Log("Trap Empty");
@@ -236,11 +229,6 @@ public class PartnerAnimator : MonoBehaviour {
         GameManager.singleton.AddFlatFish(amount);
         Debug.Log("flatfish count updated. Flatfish caught = " + GameManager.singleton.getFlatfishAmount());
 
-		if(!GameManager.singleton.Islinear && firstTimeFlatfish && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
-		{
-			firstTimeFlatfish = false;
-			//GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().FirstTimeFlatFish);
-		}
 		//instatiate a fish in the boay
         GameObject currentFish=null;
         Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
@@ -268,12 +256,6 @@ public class PartnerAnimator : MonoBehaviour {
         GameManager.singleton.AddTorsk(amount);
         Debug.Log("torsk count updated. Torsk caught = " + GameManager.singleton.getTorskAmount());
 
-		if(!GameManager.singleton.Islinear && firstTimeCod  && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
-		{
-			firstTimeCod = false;
-			//GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().FirstTimeCod);
-		}
-
         //instatiate a fish in the boat
         GameObject currentFish = null;
         Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
@@ -300,12 +282,6 @@ public class PartnerAnimator : MonoBehaviour {
         int fishToInstanciate = amount + GameManager.singleton.getEelAmount();
         GameManager.singleton.AddEel(amount);
         Debug.Log("eel count updated. Eels caught = " + GameManager.singleton.getEelAmount());
-
-		if(!GameManager.singleton.Islinear && firstTimeEel  && !GameManager.singleton.tribeBoat.GetComponent<TribeController>().GetFollowPlayer())
-		{
-			firstTimeEel = false;
-			//GetComponent<PartnerSpeech>().PartnerSaysSomething(GetComponent<PartnerSpeech>().FirstTimeEel);
-		}
 
         //instatiate a fish in the boat
         GameObject currentFish = null;
