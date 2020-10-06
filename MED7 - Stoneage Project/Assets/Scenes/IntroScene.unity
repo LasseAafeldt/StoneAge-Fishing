@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15967321, g: 0.155339, b: 0.14947203, a: 1}
+  m_IndirectSpecularColor: {r: 0.069035485, g: 0.0681394, b: 0.06648943, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18308,7 +18308,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1173608719}
           m_MethodName: ChangeScene
-          m_Mode: 3
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
