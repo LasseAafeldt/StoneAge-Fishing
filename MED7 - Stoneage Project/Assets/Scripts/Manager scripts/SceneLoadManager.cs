@@ -21,15 +21,34 @@ public class SceneLoadManager : MonoBehaviour
     public void ChangeScene()
     {
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int loadIndex;
 
         if(SceneManager.sceneCountInBuildSettings > currentIndex)
         {
-            SceneManager.LoadScene(currentIndex + 1);
+            loadIndex = currentIndex + 1;
         }
         else
         {
-            SceneManager.LoadScene(0);
+
+            loadIndex = 0;
         }
+        StartCoroutine(LoadScene(loadIndex));
+        //SceneManager.LoadScene(loadIndex);
     }
+
+    IEnumerator LoadScene(int index)
+    {
+        FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        fade.fadeOut();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(index);
+    }
+
+    //yield return new WaitForSeconds(clip.length);
+    //FadeController fade = GameObject.FindObjectOfType<FadeController>();
+    //fade.fadeOut();
+    //    yield return new WaitForSeconds(2f);
+    //EC.CheckForEnding();
+
 
 }

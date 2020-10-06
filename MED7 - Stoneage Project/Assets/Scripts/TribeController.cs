@@ -40,8 +40,9 @@ public class TribeController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//Movement();
-		//TestSteer();
+        //Movement();
+        //TestSteer();
+        Debug.Log(name);
 		playerPos = playerBoat.transform.position;
 
 		leftSideOfBoat  = new Vector3(playerPos.x-5,playerPos.y,playerPos.z);
