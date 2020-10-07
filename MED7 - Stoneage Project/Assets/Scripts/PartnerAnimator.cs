@@ -10,21 +10,21 @@ public class PartnerAnimator : MonoBehaviour {
 
     public PartnerSpeech partnerSpeech;
     public GuidanceSounds guidance;
-    public int EelsInTrap = 3;
-    public int FlatFishInTrap = 1;
     public Transform eeltrap;
     public float eelTrapRange = 10f;
     public AudioSource basketSound;
 
-    GameObject boat;
-
-	GameObject mostRecentFish;
+    private FishStoreAmount eelTrapFishStorage;
+    private int _eelsInTrap;
+    private int _flatFishInTrap;
 
 	// Use this for initialization
 	void Start () {
 
         anim = GetComponent<Animator>();
-		boat = GameManager.singleton.spawnPoint;
+        eelTrapFishStorage = eeltrap.GetComponent<FishStoreAmount>();
+        _eelsInTrap = eelTrapFishStorage.EelAmount;
+        _flatFishInTrap = eelTrapFishStorage.FlatfishlAmount;
 	}
 	
 	// Update is called once per frame
@@ -177,7 +177,9 @@ public class PartnerAnimator : MonoBehaviour {
 
 		} else {
 			noCatch();
-            /*//temp fix while using flaring animotion for emptying eeltrap
+            /*//temp fix while using flaring animotion for emptying 
+             * 
+             * trap
             float dist = Vector3.Distance(transform.position, eeltrap.position);
             if(dist < eelTrapRange)
             {
@@ -202,11 +204,11 @@ public class PartnerAnimator : MonoBehaviour {
 
 			//Debug.Log("putting fish in basket");
 			//PutEelInBasket();
-			PutEelInBasket(EelsInTrap);
+			PutEelInBasket(_eelsInTrap);
 						
 			//Debug.Log("putting fish in basket");
 			//PutEelInBasket();
-			PutFlatFishInBasket(FlatFishInTrap);
+			PutFlatFishInBasket(_flatFishInTrap);
 			
 			//Debug.Log("Trap Full");
 			basketFull = false;

@@ -103,15 +103,6 @@ public class playTimer : MonoBehaviour {
         transform.eulerAngles = new Vector3(currentAngle.x, 23, 3);
     }
 
-    void EnableMiddenCollider()
-    {
-        if (Input.GetKey("m"))
-        {
-            Debug.Log("midden");
-            GameManager.singleton.midden.GetComponent<Collider>().enabled = true;
-        }
-    }
-
     IEnumerator RunOutOfTime(AudioClip clip)
     {
         if (guide.isPlaying)
@@ -139,45 +130,44 @@ public class playTimer : MonoBehaviour {
 
     void IfNotLinear()
     {
-        if (!GameManager.singleton.Islinear)
-        {
+        
 
-            /*if (timeSpent <= 0.75 && sixMinLeft)
-            {
-                sixMinLeft = false;
-                GameManager.singleton.partner.
-                    GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().WeNeedFish);
-                GameManager.singleton.partner.
-                    GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().StartofGameEmergent);
-            }*/
-            if (timeSpent <= 0.5 && fourMinLeft)
-            {
-                fourMinLeft = false;
-                /*GameManager.singleton.partner.
-                    GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().DarkSoon);*/
-            }
-            //when there is two minutes left
-            if (timeSpent <= 0.4 && twoMinLeft)
-            {
-                twoMinLeft = false;
-                //GameManager.singleton.partner.
-                    //GetComponent<PartnerSpeech>().PartnerSaysSomething(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time2MinLeft);
-                GameManager.singleton.midden.GetComponent<Collider>().enabled = true;
-            }
-            //when there is one minutes left
-            if (timeSpent <= 0.2 && oneMinLeft)
-            {
-                oneMinLeft = false;
-                /*GameManager.singleton.partner.
-                    GetComponent<PartnerSpeech>().PartnerSaysSomething(
-                    GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time1MinLeft);*/
-                partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerLow);
-                Debug.Log("Game is playing sound: 1 minute sound");
-            }
+        /*if (timeSpent <= 0.75 && sixMinLeft)
+        {
+            sixMinLeft = false;
+            GameManager.singleton.partner.
+                GetComponent<PartnerSpeech>().PartnerSaysSomething(
+                GameManager.singleton.partner.GetComponent<PartnerSpeech>().WeNeedFish);
+            GameManager.singleton.partner.
+                GetComponent<PartnerSpeech>().PartnerSaysSomething(
+                GameManager.singleton.partner.GetComponent<PartnerSpeech>().StartofGameEmergent);
+        }*/
+        if (timeSpent <= 0.5 && fourMinLeft)
+        {
+            fourMinLeft = false;
+            /*GameManager.singleton.partner.
+                GetComponent<PartnerSpeech>().PartnerSaysSomething(
+                GameManager.singleton.partner.GetComponent<PartnerSpeech>().DarkSoon);*/
         }
+        //when there is two minutes left
+        if (timeSpent <= 0.4 && twoMinLeft)
+        {
+            twoMinLeft = false;
+            //GameManager.singleton.partner.
+                //GetComponent<PartnerSpeech>().PartnerSaysSomething(GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time2MinLeft);
+            //GameManager.singleton.midden.GetComponent<Collider>().enabled = true;
+        }
+        //when there is one minutes left
+        if (timeSpent <= 0.2 && oneMinLeft)
+        {
+            oneMinLeft = false;
+            /*GameManager.singleton.partner.
+                GetComponent<PartnerSpeech>().PartnerSaysSomething(
+                GameManager.singleton.partner.GetComponent<PartnerSpeech>().Time1MinLeft);*/
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerLow);
+            Debug.Log("Game is playing sound: 1 minute sound");
+        }
+        
     }
     IEnumerator waitForSoundToEnd(AudioClip clip)
     {

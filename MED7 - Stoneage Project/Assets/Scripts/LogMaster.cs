@@ -220,6 +220,7 @@ public class LogMaster : MonoBehaviour {
         }
         catch (IOException ex)
         {
+            Debug.LogError(ex.Data);
             Locked = true;
         }
         return Locked;

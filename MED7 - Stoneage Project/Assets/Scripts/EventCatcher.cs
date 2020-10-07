@@ -9,29 +9,24 @@ public class EventCatcher : MonoBehaviour {
 	public string fishingArea;
 
     [Range(0,10)]
-    public int FishToSucceed = 7;
     public float OutOfBoundsSoundTimer = 7f;
 
     public GameObject fishingAreaObject;
-	bool canFish;
-    bool firstTimeInTorskArea = true;
-	bool firstTimeInEelArea = true;
 
-	bool hasFlint=false;
+    private int _fishToSucceed;
 
-    bool canPlayTurnAroundSound = true;
-    private bool tribeTerritory = false;
+	private bool canFish;
+    private bool hasFlint =false;
+    private bool canPlayTurnAroundSound = true;
 
     private void Start()
     {
+        _fishToSucceed = GameManager.singleton.FishWinAmount;
         canFish = false;
-        firstTimeInTorskArea = true;
-        firstTimeInEelArea = true;
 
         hasFlint = false;
 
         canPlayTurnAroundSound = true;
-        tribeTerritory = false;
     }
 
     void OnTriggerEnter(Collider other)
@@ -82,7 +77,7 @@ public class EventCatcher : MonoBehaviour {
 
 	public void CheckForEnding()
 	{
-		if(GameManager.singleton.GetFishCount() >= FishToSucceed)
+		if(GameManager.singleton.GetFishCount() >= _fishToSucceed)
 			{
             //enough fish 7
             //Debug.Log("Good ending");
