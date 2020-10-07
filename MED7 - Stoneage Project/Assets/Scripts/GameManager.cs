@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour {
 
     public bool debugLogging = true;
 
+    [SerializeField] private int _fishWinamount;
+    public int FishWinAmount { get { return _fishWinamount; } }
+
     //instances in the scene
     [Header("Object references to be used by other scripts")]
     [HideInInspector]
@@ -31,19 +34,17 @@ public class GameManager : MonoBehaviour {
     public GameObject timer;
     [HideInInspector]
     public GameObject boat;
-    [HideInInspector]
-    public GameObject tribeBoat;
-    //[HideInInspector]
+
     public GameObject partner;
+
     [HideInInspector]
     public GameObject hook;
     [HideInInspector]
     public GameObject eeliron;
-    //public GameObject orca;
-    //public GameObject bjørnsholm;
     [HideInInspector]
     public GameObject PelicanEvent;
     [HideInInspector]
+
     public GameObject spawnPoint;
     public PartnerSpeech guide;
     public GameObject map;
@@ -62,36 +63,11 @@ public class GameManager : MonoBehaviour {
     public GameObject aniEelIron;
     public GameObject paddle;
 
-    //linear stuff
-    bool isCountingTorsk = false;
-    int startTorskAmount;
-    bool isCountingEel = false;
-    int startEelAmount;
-    //public int currentTorskAmount=0;
-    //public int currentEelAmount=0;
-    //public int currentFlatfishAmount=0;
-
+    [HideInInspector]
     public bool pointingAtInteractable = false;
-
-    [Header("Linear stuff that is probably not used either")]
-    public bool Islinear;
-    public List<GameObject> torskArea, eelArea, flatFishArea = new List<GameObject>();
-    public GameObject trading;
-    public GameObject pillar1,pillar2,pillar3,pillar4,pillar5, currentPillar;
-
-    public GameObject torskTerritory, torskTerritory2, eelTerritory, tribeTerritory;
-    public GameObject basket,tribeBasket;
-    public GameObject midden;
-
-
-    //List<GameObject> caughtTotal = new List<GameObject>();
-    int caughtTotal = 0;
-    //List<GameObject> caughtEel = new List<GameObject>();
-    int caughtEel = 0;
-    //List<GameObject> caughtTorsk =new List<GameObject>();
-    int caughtTorsk = 0;
-    //List<GameObject> caughtFlatfish =new List<GameObject>();
-    int caughtFlatfish = 0;
+    // Audio Sources
+    [HideInInspector]
+    public AudioSource _audio;
 
     //hidden bools for if fish has been caught in their area
     [HideInInspector]
@@ -103,11 +79,13 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public bool flatFishCaught = false;
 
-    // Audio Sources
-    [HideInInspector]
-    public AudioSource _audio;
+    private int caughtTotal = 0;
+    private int caughtEel = 0;
+    private int caughtTorsk = 0;
+    private int caughtFlatfish = 0;
+    
     //for change to end scene:
-    bool hasFlint = false;
+    private bool hasFlint = false;
 
     //Awake is always called before any Start functions
     void Awake()
@@ -138,43 +116,17 @@ public class GameManager : MonoBehaviour {
         }
 
         timer = GameObject.FindGameObjectWithTag("timer");
-        //Debug.Log(boat.gameObject.name); 
-        boat = GameObject.FindGameObjectWithTag("boat");
-        //Debug.Log(boat.gameObject.name);      
-        //bjørnsholm = GameObject.FindGameObjectWithTag("bjørnholm");
-        //Debug.Log(boat.gameObject.name);            
-        tribeBoat = GameObject.FindGameObjectWithTag("tribeBoat");
-        //Debug.Log(tribeBoat.gameObject.name);
+        boat = GameObject.FindGameObjectWithTag("boat");        
         partner = GameObject.FindGameObjectWithTag("partner");
-        //Debug.Log("partner: "+partner.gameObject.name);
         hook = GameObject.FindGameObjectWithTag("hook");
-        //Debug.Log(hook.gameObject.name);
         eeliron = GameObject.FindGameObjectWithTag("eeliron");
-        //Debug.Log(eeliron.gameObject.name);
         paddle = GameObject.FindGameObjectWithTag("paddle");
-        //orca = GameObject.FindGameObjectWithTag("orca");
-        //Debug.Log(orca.gameObject.name);
         PelicanEvent = GameObject.FindGameObjectWithTag("flyingPelican");
-        //Debug.Log(PelicanEvent.gameObject.name);
-        try{
-        PelicanEvent.SetActive(false);
+        try
+        {
+            PelicanEvent.SetActive(false);
         }catch{}
 
-            
-        currentPillar = boat;
-
-        //what should be turned of initially for the linear condition
-           
-        //what should be turned of initially for both condition
-            try{
-            midden.GetComponent<Collider>().enabled = false;
-            pillar1.SetActive(false);
-            pillar2.SetActive(false);
-            pillar3.SetActive(false);
-            pillar4.SetActive(false);
-            pillar5.SetActive(false);
-
-            } catch{}
         _audio = GetComponent<AudioSource>();
 
         Physics.IgnoreLayerCollision(0, 11);
@@ -296,14 +248,6 @@ public class GameManager : MonoBehaviour {
             
         _audio.clip = clip;
         this.hasFlint = hasFlint;
-    }
-
-    public int getTotalFishCaught()
-    {
-        int totalFish = 0;
-
-        totalFish = GetFishCount();
-        return totalFish;
     }
 
     IEnumerator makeSureStartSoundPlays(AudioClip clip)

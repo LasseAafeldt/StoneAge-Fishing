@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15070996, g: 0.14679804, b: 0.14144573, a: 1}
+  m_IndirectSpecularColor: {r: 0.15071014, g: 0.1467965, b: 0.14144409, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2058,7 +2058,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partnerSpeech: {fileID: 0}
   fishingArea: 
-  FishToSucceed: 7
   OutOfBoundsSoundTimer: 7
   fishingAreaObject: {fileID: 0}
 --- !u!65 &84974646
@@ -22209,6 +22208,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.34, y: 4.8, z: 6.5}
   m_Center: {x: 0, y: 0, z: -1.54}
+--- !u!114 &647167071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647167066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8340e7803662e145800771513531949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eelAmount: 2
+  _flatfishAmount: 1
+  _torskAmount: 0
 --- !u!1 &653915177
 GameObject:
   m_ObjectHideFlags: 0
@@ -25660,7 +25674,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partnerSpeech: {fileID: 0}
   fishingArea: 
-  FishToSucceed: 7
   OutOfBoundsSoundTimer: 7
   fishingAreaObject: {fileID: 0}
 --- !u!65 &863727088
@@ -27438,10 +27451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  partnerSpeech: {fileID: 0}
+  partnerSpeech: {fileID: 948130991}
   guidance: {fileID: 1052138933}
-  EelsInTrap: 3
-  FlatFishInTrap: 1
   eeltrap: {fileID: 647167067}
   eelTrapRange: 10
   basketSound: {fileID: 252470514}
@@ -29101,8 +29112,6 @@ MonoBehaviour:
   anim: {fileID: 0}
   partnerSpeech: {fileID: 1005321608}
   guidance: {fileID: 1052138933}
-  EelsInTrap: 3
-  FlatFishInTrap: 1
   eeltrap: {fileID: 647167067}
   eelTrapRange: 10
   basketSound: {fileID: 848671140}
@@ -30901,11 +30910,11 @@ MonoBehaviour:
   useGuidanceSounds: 1
   useMapGuidance: 1
   debugLogging: 1
+  _fishWinamount: 3
   CameraContainer: {fileID: 0}
   logMaster: {fileID: 0}
   timer: {fileID: 0}
   boat: {fileID: 0}
-  tribeBoat: {fileID: 0}
   partner: {fileID: 948130987}
   hook: {fileID: 0}
   eeliron: {fileID: 0}
@@ -30923,33 +30932,11 @@ MonoBehaviour:
   aniEelIron: {fileID: 463925754}
   paddle: {fileID: 71503795}
   pointingAtInteractable: 0
-  Islinear: 0
-  torskArea:
-  - {fileID: 372945721}
-  eelArea:
-  - {fileID: 1976311271}
-  - {fileID: 2047598641}
-  flatFishArea:
-  - {fileID: 1616307264}
-  trading: {fileID: 2054955761}
-  pillar1: {fileID: 0}
-  pillar2: {fileID: 0}
-  pillar3: {fileID: 0}
-  pillar4: {fileID: 0}
-  pillar5: {fileID: 0}
-  currentPillar: {fileID: 0}
-  torskTerritory: {fileID: 653915177}
-  torskTerritory2: {fileID: 1073569316}
-  eelTerritory: {fileID: 534313150}
-  tribeTerritory: {fileID: 1488709177}
-  basket: {fileID: 0}
-  tribeBasket: {fileID: 1008707520}
-  midden: {fileID: 83509190}
+  _audio: {fileID: 0}
   TorskCaught: 0
   eelCaught: 0
   eelTrapEmptied: 0
   flatFishCaught: 0
-  _audio: {fileID: 0}
 --- !u!82 &1044151179
 AudioSource:
   m_ObjectHideFlags: 0
