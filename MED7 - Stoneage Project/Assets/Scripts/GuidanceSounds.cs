@@ -4,21 +4,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class GuidanceSounds : MonoBehaviour {
-    //public PartnerSpeech voiceLines;
-    [HideInInspector]
-    //public float triggerRadius = 150; //this is not used anymore except to activate the start sound
 
     [Header("Trigger areas")]
-    public Collider Torsk;
-    public Collider eel;
-    public Collider eelTrap;
-    public Collider flatFish;
-    public Collider start;
+    [SerializeField] private Collider Torsk;
+    [SerializeField] private Collider eel;
+    [SerializeField] private Collider eelTrap;
+    [SerializeField] private Collider flatFish;
+    [SerializeField] private Collider start;
 
     public static float timeSinceLastGuidance;
-    public float guidanceTimerThreshold = 35f;
+    [SerializeField] private float guidanceTimerThreshold = 35f;
+
     public static float areaTimer;
-    public float areaTimerThreshold = 20f;
+    [SerializeField] private float areaTimerThreshold = 20f;
 
     public static string lastGuidanceSound;
 
