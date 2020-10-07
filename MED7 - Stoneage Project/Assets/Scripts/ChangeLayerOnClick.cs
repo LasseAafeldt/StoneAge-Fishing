@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckLayerOnClick : MonoBehaviour
+public class ChangeLayerOnClick : MonoBehaviour
 {
     [SerializeField] private int maxClicks = 1;
 
@@ -13,13 +13,13 @@ public class CheckLayerOnClick : MonoBehaviour
         currentClicks++;
         if (currentClicks >=maxClicks)
         {
-
+            ChangeLayer();
         }
     }
 
     private void ChangeLayer()
     {
-        gameObject.layer = "default";
+        gameObject.layer = 0;
     }
 
 

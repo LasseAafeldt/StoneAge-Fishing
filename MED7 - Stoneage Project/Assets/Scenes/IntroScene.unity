@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16070023, g: 0.15633458, b: 0.15037894, a: 1}
+  m_IndirectSpecularColor: {r: 0.15814015, g: 0.15389547, b: 0.14809704, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18586,6 +18586,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1060581148}
+          m_MethodName: CountUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -18656,6 +18667,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.1291962, z: 1.7246494}
   m_Center: {x: -0.000015823463, y: 2.2168941, z: -3.6376698}
+--- !u!114 &1060581148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060581140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c5c87eec691f64d91c4e6f2069c166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxClicks: 1
 --- !u!1 &1075187553
 GameObject:
   m_ObjectHideFlags: 0
