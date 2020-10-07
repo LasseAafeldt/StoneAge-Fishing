@@ -15,6 +15,7 @@ public class ChangeLayerOnClick : MonoBehaviour
         {
             ChangeLayer();
         }
+        StartCoroutine(CountDownAfterPeriod(15));
     }
 
     private void ChangeLayer()
@@ -22,5 +23,10 @@ public class ChangeLayerOnClick : MonoBehaviour
         gameObject.layer = 0;
     }
 
+    IEnumerator CountDownAfterPeriod(float yieldTime)
+    {
+        yield return new WaitForSeconds(yieldTime);
+        currentClicks--;
+    }
 
 }
