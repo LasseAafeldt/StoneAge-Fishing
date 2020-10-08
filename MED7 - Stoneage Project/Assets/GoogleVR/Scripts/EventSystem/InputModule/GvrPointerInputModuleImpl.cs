@@ -251,16 +251,24 @@ public class GvrPointerInputModuleImpl {
       if (isPointerActiveAndAvailable) {
         Pointer.OnPointerHover(CurrentEventData.pointerCurrentRaycast, isInteractive);
       }
-    } else {
-      // If the object's don't match or the hovering object has been destroyed
-      // then the pointer has exited.
-      if (previousObject != null || (currentObject == null && isPointerHovering)) {
-        if (isPointerActiveAndAvailable) {
-          Pointer.OnPointerExit(previousObject);
-        }
-        isPointerHovering = false; Debug.Log("exited active object");
-                GameManager.singleton.pointingAtInteractable = false;
+    }
+    else
+    {
+        // If the object's don't match or the hovering object has been destroyed
+        // then the pointer has exited.
+        if (previousObject != null || (currentObject == null && isPointerHovering))
+        {
+            if (isPointerActiveAndAvailable)
+            {
+                Pointer.OnPointerExit(previousObject);
             }
+            isPointerHovering = false; Debug.Log("exited active object");
+                if (GameManager.singleton != null)
+                {
+                    GameManager.singleton.pointingAtInteractable = false;
+                }
+
+        }
 
       if (currentObject != null) {
         if (isPointerActiveAndAvailable) {

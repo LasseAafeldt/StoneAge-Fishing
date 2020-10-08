@@ -7,9 +7,15 @@ public class GoToStart : MonoBehaviour {
 
 	public float totalTime =10;
     float tempTime;
-    // Use this for initialization
-    //GameManager gameManager;
-	void Start () {
+
+    ISceneManager sceneManager;
+
+    private void Awake()
+    {
+        sceneManager = GetComponent<ISceneManager>();
+    }
+
+    void Start () {
         tempTime = totalTime;
         //gameManager = GameManager.singleton;
 	}
@@ -25,7 +31,7 @@ public class GoToStart : MonoBehaviour {
             //LogMaster.shouldBeLogging = true; this enables it too early
             //StartCoroutine(waitWithDestroy(2f));
             //Destroy(GameObject.Find("Game Manager"));
-            StartCoroutine(waitWithDestroy(2f));
+            sceneManager.ChangeScene(0);  //StartCoroutine(waitWithDestroy(2f));
 		}
 	}
     IEnumerator waitWithDestroy(float wait)

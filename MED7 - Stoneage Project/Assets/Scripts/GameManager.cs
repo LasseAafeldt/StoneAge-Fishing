@@ -96,7 +96,13 @@ public class GameManager : MonoBehaviour {
                 
             //if not, set instance to this
             singleton = this;
-            
+
+        else if (singleton != null && SceneManager.GetActiveScene().name == "mainScene" ) // if we are in the main scene we want to replace the current singleton with the main scene's game manager
+        {
+
+            Destroy(singleton.gameObject);
+            singleton = this;
+        }
         //If instance already exists and it's not this:
         else if (singleton != this)
                 

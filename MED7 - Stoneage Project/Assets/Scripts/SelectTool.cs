@@ -72,10 +72,13 @@ PartnerAnimator PA;
         secondFishingFlatfish = false;
         thirdFishingFlatfish = false;
 
-       
-       EC = GameManager.singleton.boat?.GetComponent<EventCatcher>();
+        if (GameManager.singleton != null)
+        {
+            
+        }
 		try
 		{
+            EC = GameManager.singleton.boat.GetComponent<EventCatcher>();
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
             partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
             guidance = GameManager.singleton.CameraContainer.GetComponent<GuidanceSounds>();
