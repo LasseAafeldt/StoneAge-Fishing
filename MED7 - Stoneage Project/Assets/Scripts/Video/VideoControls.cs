@@ -12,20 +12,25 @@ public class VideoControls : MonoBehaviour
     public delegate void VideoEnd();
     public event VideoEnd VideoHasEnded;
 
+    private void Awake()
+    {
+        _vidPlayer = GetComponent<VideoPlayer>();
+    }
 
     private void Start()
     {
-        _vidPlayer = GetComponent<VideoPlayer>();
         _vidPlayer.loopPointReached += OnVideoEnd;
     }
 
 
     public void OnVideoEnd(VideoPlayer videoPlayer)
     {
+        Debug.Log("entered OnvideoEnd");
         if (!hasEndEvent) return;
         //do an event
         if (VideoHasEnded != null)
         {
+            Debug.Log("Invoke VideoHasEnded");
             VideoHasEnded.Invoke();
         }
 

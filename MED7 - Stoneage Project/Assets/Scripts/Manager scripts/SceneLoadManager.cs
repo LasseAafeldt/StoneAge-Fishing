@@ -7,11 +7,9 @@ public class SceneLoadManager : MonoBehaviour
 {
     private bool _readyForNextScene = false;
 
-
+    [SerializeField] private VideoControls vidControls;
     private void Start()
     {
-        VideoControls vidControls = GameObject.FindObjectOfType<VideoControls>();
-        //Debug.Log("We have the vid controller:     " + vidControls.name);
         if(vidControls != null)
             vidControls.VideoHasEnded += OnVideoEnd;
     }
@@ -104,7 +102,7 @@ public class SceneLoadManager : MonoBehaviour
 
     private void OnVideoEnd()
     {
-        //Debug.Log("<color=green> Vidoe has ended </color>");
+        Debug.Log("<color=green> Vidoe has ended </color>");
         ReadyForNextScene = true;
     }
 
