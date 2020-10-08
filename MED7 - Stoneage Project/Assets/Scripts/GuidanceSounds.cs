@@ -12,11 +12,19 @@ public class GuidanceSounds : MonoBehaviour {
     [SerializeField] private Collider flatFish;
     [SerializeField] private Collider start;
 
+    [Header("Thresholds")]
     public static float timeSinceLastGuidance;
     [SerializeField] private float guidanceTimerThreshold = 35f;
 
     public static float areaTimer;
     [SerializeField] private float areaTimerThreshold = 20f;
+
+    [SerializeField] private float farDistanceGuideExclude = 200f;
+    private float maxAnglethreshold = 180f; //from vector2.Angle calls
+
+    [Header("Weights")]
+    [SerializeField] private float weightForAngle = 1f;
+    [SerializeField] private float weightForDistance = 1f;
 
     [SerializeField] private List<AreaDataContainer> fishAreaDatas;
 
@@ -33,7 +41,7 @@ public class GuidanceSounds : MonoBehaviour {
     public static bool startHasPlayed = false;
 
     PartnerSpeech partnerSpeech;
-    Transform playerPos;
+    Transform player;
     private int numberToExclude;
 
 
@@ -53,18 +61,24 @@ public class GuidanceSounds : MonoBehaviour {
         GetComponent<SphereCollider>().isTrigger = true;
         GetComponent<Rigidbody>().useGravity = false;
 
-        playerPos = GameManager.singleton.boat.transform;
+        player = GameManager.singleton.boat.transform;
         partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
 
         fishAreaDatas = new List<AreaDataContainer>();
+        AddAreaContainerDefualtData(fishAreaDatas);
     }
 
     private void AddAreaContainerDefualtData(List<AreaDataContainer> mlist)
     {
-        AreaDataContainer torsk = new AreaDataContainer();
-        torsk.name = "Torsk area";
-        torsk.distanceFromPlayer = 999999f;
-        torsk.horizontalAngleFromLookDirection = 0f;
+        AreaDataContainer Mtorsk = new AreaDataContainer("Torsk area", Torsk.gameObject, Torsk.transform.position, 0f,0f, farDistanceGuideExclude, maxAnglethreshold,weightForDistance,weightForAngle);
+        AreaDataContainer Mflatfish = new AreaDataContainer("Flatfish area", flatFish.gameObject, flatFish.transform.position, 0f, 0f, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer Meel = new AreaDataContainer("Eel area", eel.gameObject, eel.transform.position, 0f, 0f, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer MeelTrap = new AreaDataContainer("Eeltrap area", eelTrap.gameObject, eelTrap.transform.position, 0f, 0f,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
+
+        mlist.Add(Mtorsk);
+        mlist.Add(Mflatfish);
+        mlist.Add(Meel);
+        mlist.Add(MeelTrap);
     }
 
     private void FixedUpdate()
@@ -162,36 +176,93 @@ public class GuidanceSounds : MonoBehaviour {
     //chooses an area to give guidance towards
     private void ChooseBestAreaToGuideTowards()
     {
-
+        UpdateFishAreaData();
         GameObject closestArea = GetclosestArea();
+        if(closestArea == null) //closest area also checks wether a fish of the area has already been caught
+        {
+            _currentBestAreaToGuideTowards = null;
+            return;
+        }
 
-        //_currentBestAreaToGuideTowards = ;
+        //do something with proximity???
+
+
+        //TODO: something used to disable guiding possibility when a fish from the place had been caught
+        //check if something still does that, and make sure the new max guiding dist doesn't scew shit up.
+        _currentBestAreaToGuideTowards = GetAreaWithLowestScore();
     }
 
+    private void UpdateFishAreaData()
+    {
+        foreach (AreaDataContainer fishArea in fishAreaDatas)
+        {
+            Vector2 horizontalFishAreaPos = new Vector2(fishArea.position.x, fishArea.position.z);
+            fishArea.distanceFromPlayer = GetDistanceFromPlayer(horizontalFishAreaPos);
+            fishArea.horizontalAngleFromLookDirection = GetHorizontalAnglefromPlayer(horizontalFishAreaPos);
+        }
+    }
+
+    private GameObject GetAreaWithLowestScore()
+    {
+        float lowestScore = 999;
+        GameObject lowestScoreArea = null;
+        foreach (AreaDataContainer fishArea in fishAreaDatas)
+        {
+            if (lowestScore > fishArea.GetScore())
+            {
+                lowestScore = fishArea.GetScore();
+                lowestScoreArea = fishArea.gObject;
+            }
+            return lowestScoreArea;
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Returns horizontal distance from the player to the target.
+    /// </summary>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    private float GetDistanceFromPlayer(Vector2 target)
+    {
+        Vector2 playerPosition = new Vector2(player.position.x, player.position.z);
+        float distance = Vector2.Distance(playerPosition, target);
+        return distance;
+    }
+
+    /// <summary>
+    /// Returns the horizontal angle between the player and the target.
+    /// </summary>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    private float GetHorizontalAnglefromPlayer(Vector2 target)
+    {
+        Vector2 playerPosition = new Vector2(player.position.x, player.position.z);
+        float angle = Vector2.Angle(playerPosition, target);
+        return angle;
+    }
+    
 
     private GameObject GetclosestArea()
     {
         GameObject closestArea = null;
-        float shortestDistance = 9999999;
-        if (shortestDistance > Vector3.Distance(playerPos.position, Torsk.transform.position) && !GameManager.singleton.TorskCaught)
+        float shortestDistance = 9999999f;
+
+        foreach (AreaDataContainer fishArea in fishAreaDatas)
         {
-            shortestDistance = Vector3.Distance(playerPos.position, Torsk.transform.position);
-            closestArea = Torsk.gameObject;
-        }
-        if (shortestDistance > Vector3.Distance(playerPos.position, eel.transform.position) && !GameManager.singleton.eelCaught)
-        {
-            shortestDistance = Vector3.Distance(playerPos.position, eel.transform.position);
-            closestArea = eel.gameObject;
-        }
-        if (shortestDistance > Vector3.Distance(playerPos.position, eelTrap.transform.position) && !GameManager.singleton.eelTrapEmptied)
-        {
-            shortestDistance = Vector3.Distance(playerPos.position, eelTrap.transform.position);
-            closestArea = eelTrap.gameObject;
-        }
-        if (shortestDistance > Vector3.Distance(playerPos.position, flatFish.transform.position) && !GameManager.singleton.flatFishCaught)
-        {
-            shortestDistance = Vector3.Distance(playerPos.position, flatFish.transform.position);
-            closestArea = flatFish.gameObject;
+            if (fishArea.name.Equals("Torsk area") && GameManager.singleton.TorskCaught)
+                continue;
+            if (fishArea.name.Equals("Flatfish area") && GameManager.singleton.flatFishCaught)
+                continue;
+            if (fishArea.name.Equals("Eel area") && GameManager.singleton.eelCaught)
+                continue;
+            if (fishArea.name.Equals("Eeltrap area") && GameManager.singleton.eelTrapEmptied)
+                continue;
+            if(shortestDistance > fishArea.distanceFromPlayer)
+            {
+                shortestDistance = fishArea.distanceFromPlayer;
+                closestArea = fishArea.gObject;
+            }
         }
         return closestArea;
     }
@@ -316,5 +387,12 @@ public class GuidanceSounds : MonoBehaviour {
     {
         detailedIndex = 0;
         Debug.Log("Detailed array index has been reset");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        //Gizmos.draw
+        //TODO: draw circle gizmo for max range before it is no longer possible to get guided to the location.
     }
 }
