@@ -134,7 +134,7 @@ public class PartnerAnimator : MonoBehaviour {
             GameManager.singleton.TorskCaught = true;
 
             //maybe do reset of guidance timer here????
-            guidance.resetGuidanceTimers();
+            guidance.ResetGuidanceTimers();
         } else {
 			noCatch();
 		}
@@ -166,13 +166,13 @@ public class PartnerAnimator : MonoBehaviour {
 				
 				PutEelInBasket(1);
                 GameManager.singleton.eelCaught = true;
-                guidance.resetGuidanceTimers();
+                guidance.ResetGuidanceTimers();
 			}
 			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCurrentFishingArea().tag == "FlatfishArea")
 			{
 				PutFlatFishInBasket(1);
                 GameManager.singleton.flatFishCaught = true;
-                guidance.resetGuidanceTimers();
+                guidance.ResetGuidanceTimers();
 			}
 
 		} else {
@@ -213,7 +213,7 @@ public class PartnerAnimator : MonoBehaviour {
 			//Debug.Log("Trap Full");
 			basketFull = false;
 
-            guidance.resetGuidanceTimers();
+            guidance.ResetGuidanceTimers();
             GameManager.singleton.eelTrapEmptied = true;
 
             GameManager.singleton.canMove = true;

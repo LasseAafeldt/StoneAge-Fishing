@@ -18,20 +18,24 @@ public class GuidanceSounds : MonoBehaviour {
     public static float areaTimer;
     [SerializeField] private float areaTimerThreshold = 20f;
 
+    [SerializeField] private List<AreaDataContainer> fishAreaDatas;
+
     public static string lastGuidanceSound;
 
     public static bool standardGuidance = true;
     public static bool detailedGuidance = false;
 
-    string inArea = "none";
+    string SelectedArea = "none";
     string previousArea = "different none";
-    GameObject closestArea;
+    //GameObject closestArea;
+    private GameObject _currentBestAreaToGuideTowards;
 
     public static bool startHasPlayed = false;
 
     PartnerSpeech partnerSpeech;
     Transform playerPos;
     private int numberToExclude;
+
 
     private static int detailedIndex = 0;
 
@@ -50,26 +54,35 @@ public class GuidanceSounds : MonoBehaviour {
         GetComponent<Rigidbody>().useGravity = false;
 
         playerPos = GameManager.singleton.boat.transform;
-        partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();        
+        partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
+
+        fishAreaDatas = new List<AreaDataContainer>();
+    }
+
+    private void AddAreaContainerDefualtData(List<AreaDataContainer> mlist)
+    {
+        AreaDataContainer torsk = new AreaDataContainer();
+        torsk.name = "Torsk area";
+        torsk.distanceFromPlayer = 999999f;
+        torsk.horizontalAngleFromLookDirection = 0f;
     }
 
     private void FixedUpdate()
     {
-        updateGuidanceTimers();
+        UpdateGuidanceTimers();
     }
     
-    void updateGuidanceTimers()
+    void UpdateGuidanceTimers()
     {
         if (timeSinceLastGuidance >= guidanceTimerThreshold)
         {
-            playGuidanceSound();
+            PlayGuidanceSound();
         }
-        //Debug.Log("Previous area: " + previousArea + " = Current area: " + inArea);
         if (detailedGuidance)
         {
             if (areaTimer > areaTimerThreshold)
             {
-                detailedAreaSound();
+                DetailedAreaSound();
             }
             areaTimer += Time.deltaTime;
         }
@@ -91,76 +104,86 @@ public class GuidanceSounds : MonoBehaviour {
         }
     }
 
-    public void playGuidanceSound()
+    public void PlayGuidanceSound()
     {
-        if(checkDistance() == null)
+        ChooseBestAreaToGuideTowards();
+        if(_currentBestAreaToGuideTowards == null)
         {
             //Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
         //reset the timer
         timeSinceLastGuidance = 0f;
-        closestArea = checkDistance();
 
         bool lvl1GuidanceSound = true;
         //don't play the first sound again if they are still closest to the same area.
-        if (closestArea.tag == inArea)
+        if (_currentBestAreaToGuideTowards.tag == SelectedArea)
         {
             //Debug.Log("Closest area is unchanged");
             lvl1GuidanceSound = false;
             //change which guidance timer to use
             detailedGuidance = true;
             standardGuidance = false;
-            detailedAreaSound();
+            DetailedAreaSound();
         }
-        //Debug.Log("Closest area: " + closestArea);
+
         //check which area is the closest
-        if(closestArea.tag == "TorskArea" && lvl1GuidanceSound && !GameManager.singleton.TorskCaught)
+        if(_currentBestAreaToGuideTowards.tag == "TorskArea" && lvl1GuidanceSound && !GameManager.singleton.TorskCaught)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToTorsk);
-            setLastGuidanceSound(partnerSpeech.ClosestToTorsk);
+            SetLastGuidanceSound(partnerSpeech.ClosestToTorsk);
         }
-        if (closestArea.tag == "EelArea" && lvl1GuidanceSound && !GameManager.singleton.eelCaught)
+        if (_currentBestAreaToGuideTowards.tag == "EelArea" && lvl1GuidanceSound && !GameManager.singleton.eelCaught)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEel);
-            setLastGuidanceSound(partnerSpeech.ClosestToEel);
+            SetLastGuidanceSound(partnerSpeech.ClosestToEel);
         }
-        if (closestArea.tag == "emptyBasket" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
+        if (_currentBestAreaToGuideTowards.tag == "emptyBasket" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEeltrap);
-            setLastGuidanceSound(partnerSpeech.ClosestToEeltrap);
+            SetLastGuidanceSound(partnerSpeech.ClosestToEeltrap);
         }
-        if (closestArea.tag == "FlatfishArea" && lvl1GuidanceSound && !GameManager.singleton.flatFishCaught)
+        if (_currentBestAreaToGuideTowards.tag == "FlatfishArea" && lvl1GuidanceSound && !GameManager.singleton.flatFishCaught)
         {
             //Debug.Log("the flatfish area is over there... Sound is suppose to play");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToFlatfish);
-            setLastGuidanceSound(partnerSpeech.ClosestToFlatfish);
+            SetLastGuidanceSound(partnerSpeech.ClosestToFlatfish);
         }
 
-        updateArea(closestArea);
+        UpdateArea(_currentBestAreaToGuideTowards);
     }
 
-    void updateArea(GameObject area)
+    void UpdateArea(GameObject area)
     {
-        previousArea = inArea;
-        inArea = area.tag;
+        previousArea = SelectedArea;
+        SelectedArea = area.tag;
     }
 
-    GameObject checkDistance()
+    //chooses an area to give guidance towards
+    private void ChooseBestAreaToGuideTowards()
+    {
+
+        GameObject closestArea = GetclosestArea();
+
+        //_currentBestAreaToGuideTowards = ;
+    }
+
+
+    private GameObject GetclosestArea()
     {
         GameObject closestArea = null;
         float shortestDistance = 9999999;
-        if(shortestDistance > Vector3.Distance(playerPos.position, Torsk.transform.position) && !GameManager.singleton.TorskCaught)
+        if (shortestDistance > Vector3.Distance(playerPos.position, Torsk.transform.position) && !GameManager.singleton.TorskCaught)
         {
             shortestDistance = Vector3.Distance(playerPos.position, Torsk.transform.position);
             closestArea = Torsk.gameObject;
         }
-        if(shortestDistance > Vector3.Distance(playerPos.position, eel.transform.position) && !GameManager.singleton.eelCaught)
+        if (shortestDistance > Vector3.Distance(playerPos.position, eel.transform.position) && !GameManager.singleton.eelCaught)
         {
             shortestDistance = Vector3.Distance(playerPos.position, eel.transform.position);
             closestArea = eel.gameObject;
         }
-        if(shortestDistance > Vector3.Distance(playerPos.position, eelTrap.transform.position) && !GameManager.singleton.eelTrapEmptied)
+        if (shortestDistance > Vector3.Distance(playerPos.position, eelTrap.transform.position) && !GameManager.singleton.eelTrapEmptied)
         {
             shortestDistance = Vector3.Distance(playerPos.position, eelTrap.transform.position);
             closestArea = eelTrap.gameObject;
@@ -170,23 +193,22 @@ public class GuidanceSounds : MonoBehaviour {
             shortestDistance = Vector3.Distance(playerPos.position, flatFish.transform.position);
             closestArea = flatFish.gameObject;
         }
-
         return closestArea;
     }
 
-    void detailedAreaSound()
+    void DetailedAreaSound()
     {
-        if (checkDistance() == null)
+        ChooseBestAreaToGuideTowards();
+        if (_currentBestAreaToGuideTowards == null)
         {
             Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
         //reset the timer
         areaTimer = 0f;
-        closestArea = checkDistance();
 
         //reset which guidance timer to use
-        if (closestArea.tag != inArea)
+        if (_currentBestAreaToGuideTowards.tag != SelectedArea)
         {
             Debug.Log("Closest area is new");
             //change which guidance timer to use
@@ -195,43 +217,39 @@ public class GuidanceSounds : MonoBehaviour {
             resetDetailedIndex();
             return;
         }
-        if(inArea == "TorskArea" && !GameManager.singleton.TorskCaught)
+        if(SelectedArea == "TorskArea" && !GameManager.singleton.TorskCaught)
         {
-            //Debug.Log("Playing detail area sund Torsk");
-            //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToTorsk));
-            partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
-            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
+            partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
+            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
         }
-        if (inArea == "EelArea" && !GameManager.singleton.eelCaught)
+        if (SelectedArea == "EelArea" && !GameManager.singleton.eelCaught)
         {
-            //Debug.Log("Playing detail area sund Eel");
-            //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToEel));
-            partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
-            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
+            partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
+            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
         }
-        if (inArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
+        if (SelectedArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
         {
-            //Debug.Log("Playing detail area sund EelTrap");
-            //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToEeltrap));
-            partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
-            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
+            partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
+            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
         }
-        if (inArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
+        if (SelectedArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
         {
-            //Debug.Log("Playing detail area sund Flatfish");
-            //partnerSpeech.PartnerSaysSomething(randomDetailedSound(partnerSpeech.DetailClosestToFlatfish));
-            partnerSpeech.PartnerSaysSomething(detailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
-            setLastGuidanceSound(detailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
+            partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
+            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
         }
-        updateArea(closestArea);
+        UpdateArea(_currentBestAreaToGuideTowards);
     }
 
-    void setLastGuidanceSound(AudioClip clip)
+    /// <summary>
+    /// Sets the last played guidance sound for logging purposes
+    /// </summary>
+    /// <param name="clip"></param>
+    void SetLastGuidanceSound(AudioClip clip)
     {
         lastGuidanceSound = clip.name;
     }
 
-    public void resetGuidanceTimers()
+    public void ResetGuidanceTimers()
     {
         //reset is called in PartnerAnimator when a fish is caught
         standardGuidance = true;
@@ -241,21 +259,23 @@ public class GuidanceSounds : MonoBehaviour {
         areaTimer = 0f;
     }
 
-    public void addVoiceTimeToActiveTimer(float clipTime)
+    /// <summary>
+    /// adds time from a played voiceline to the guidance interval timer(s)
+    /// </summary>
+    /// <param name="clipTime"></param>
+    public void AddVoiceTimeToActiveTimer(float clipTime)
     {
         if (standardGuidance)
         {
-            //Debug.Log("voiceclip is altering Standard guidance timer");
             timeSinceLastGuidance -= clipTime;
         }
         if (detailedGuidance)
         {
-            //Debug.Log("voiceclip is altering Detailed guidance timer");
             areaTimer -= clipTime;
         }
     }
 
-    AudioClip randomDetailedSound(AudioClip[] clipArray)
+    AudioClip RandomDetailedSound(AudioClip[] clipArray)
     {
         List<int> numbersToChooseFrom = new List<int> { };
         for (int i = 0; i < clipArray.Length; i++)
@@ -272,13 +292,13 @@ public class GuidanceSounds : MonoBehaviour {
         int randomIndex = Random.Range(0, numbersToChooseFrom.Count);
         int randomNumber = numbersToChooseFrom[randomIndex];
         //Debug.Log("index that have been chosen for the audioclip array: " + randomNumber);
-        setLastGuidanceSound(clipArray[randomNumber]);
+        SetLastGuidanceSound(clipArray[randomNumber]);
         //exclude number here for next time
         numberToExclude = randomNumber;
         return clipArray[randomNumber];
     }
 
-    AudioClip detailedArrayInOrderSound(AudioClip[] clipArray)
+    AudioClip DetailedArrayInOrderSound(AudioClip[] clipArray)
     {
         //make sure does not go out of range
         if(detailedIndex >= clipArray.Length - 1)
@@ -296,5 +316,5 @@ public class GuidanceSounds : MonoBehaviour {
     {
         detailedIndex = 0;
         Debug.Log("Detailed array index has been reset");
-    } 
+    }
 }

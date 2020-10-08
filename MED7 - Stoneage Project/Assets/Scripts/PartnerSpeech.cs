@@ -124,7 +124,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.addVoiceTimeToActiveTimer(clip.length);
+            guidance.AddVoiceTimeToActiveTimer(clip.length);
 		}
 
 	}
@@ -152,7 +152,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.addVoiceTimeToActiveTimer(clip.length);
+            guidance.AddVoiceTimeToActiveTimer(clip.length);
         }
 
 	}
@@ -175,7 +175,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.addVoiceTimeToActiveTimer(clip.length);
+            guidance.AddVoiceTimeToActiveTimer(clip.length);
         }
 
 	}
@@ -200,7 +200,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.addVoiceTimeToActiveTimer(clip.length);
+            guidance.AddVoiceTimeToActiveTimer(clip.length);
         }
 
 	}

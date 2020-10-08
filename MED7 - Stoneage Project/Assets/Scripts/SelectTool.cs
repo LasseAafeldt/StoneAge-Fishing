@@ -414,7 +414,7 @@ PartnerAnimator PA;
         if (timesFishedNoWhere >= partnerSpeech.noFishHere.Length)
         {
             if(GameManager.singleton.useGuidanceSounds)
-                guidance.playGuidanceSound();
+                guidance.PlayGuidanceSound();
             timesFishedNoWhere = 0;
         }
         
