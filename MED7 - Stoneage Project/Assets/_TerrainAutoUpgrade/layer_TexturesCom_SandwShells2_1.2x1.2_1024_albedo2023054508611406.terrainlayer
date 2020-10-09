@@ -7,10 +7,10 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: layer_TexturesCom_SandwShells2_1.2x1.2_1024_albedo2023054508611406
-  m_DiffuseTexture: {fileID: 2800000, guid: eb645a111d1c5264a9ad53eedd8a1672, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 219cb87803ddc634ea842b321146258c, type: 3}
   m_NormalMapTexture: {fileID: 0}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 5, y: 5}
+  m_TileSize: {x: 1.1, y: 1.1}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0

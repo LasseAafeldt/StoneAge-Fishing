@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End Scene.unity
     guid: ba7f2360cb7e1324aa2905ef3e46cbec
-  - enabled: 1
-    path: Assets/Scenes/Video Test.unity
-    guid: c0579fd03c6e3124db19369333cde903
   m_configObjects: {}
