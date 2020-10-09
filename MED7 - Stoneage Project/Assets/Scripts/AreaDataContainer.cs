@@ -16,11 +16,10 @@ public class AreaDataContainer
     public float scoreAngleWeight;
     public float guidanceScore {
         get {
-            float angleScore = maxAngleFromPlayer / maxAngleFromPlayer;
-            float distScore = distanceFromPlayer / maxDistFromPlayer;
+            float tempDistScore;
             if (distScore >= 1)
             {
-                distScore *= 1.5f;
+                tempDistScore = distScore * 1.1f;
             }
 
             float totalScore = angleScore * scoreAngleWeight + distScore * scoreDistWeight;
@@ -28,6 +27,19 @@ public class AreaDataContainer
         }
         private set { }
     }
+    public float angleScore {
+        get
+        {
+            return horizontalAngleFromLookDirection / 90;
+        }
+    }
+    public float distScore {
+        get
+        {
+            return distanceFromPlayer / maxDistFromPlayer;
+        }
+    }
+        
 
     public AreaDataContainer(string Mname, GameObject MgameObj, float MmaxDistFromPlayer, float MmaxAngleFromPlayer,
         float MscoreDistWeight, float MscoreAngleWeight)

@@ -26,6 +26,9 @@ public class GuidanceSounds : MonoBehaviour {
     [SerializeField] private float weightForAngle = 1f;
     [SerializeField] private float weightForDistance = 1f;
 
+    [Header("other assignables")]
+    //[SerializeField] private BoxCollider boatForwardTrigger;
+
     [SerializeField] private List<AreaDataContainer> fishAreaDatas;
 
     public static string lastGuidanceSound;
@@ -48,6 +51,7 @@ public class GuidanceSounds : MonoBehaviour {
     private static int detailedIndex = 0;
 
     private Camera _cam;
+    public static bool isSailingTowardsFishArea = false;
 
      // if fish caught in area then disable that area sound for good.
 
@@ -69,8 +73,14 @@ public class GuidanceSounds : MonoBehaviour {
         fishAreaDatas = new List<AreaDataContainer>();
         AddAreaContainerDefualtData(fishAreaDatas);
         _cam = Camera.main;
+        //SetupBoatForwardTrigger();
     }
 
+    private void SetupBoatForwardTrigger()
+    {
+        //boatForwardTrigger.center = new Vector3(0, 0, -farDistanceGuideExclude / 2f);
+        //boatForwardTrigger.size = new Vector3(2f, 100f, farDistanceGuideExclude);
+    }
     private void AddAreaContainerDefualtData(List<AreaDataContainer> mlist)
     {
         AreaDataContainer Mtorsk = new AreaDataContainer("Torsk area", Torsk.gameObject, farDistanceGuideExclude, maxAnglethreshold,weightForDistance,weightForAngle);
@@ -110,16 +120,7 @@ public class GuidanceSounds : MonoBehaviour {
     }
     
     //plays the start sound once
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Regions"))
-            return;
-        if (other.name == start.name && !startHasPlayed)
-        {
-            startHasPlayed = true;
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.StartingSoundGoFishing);
-        }
-    }
+    
 
     public void PlayGuidanceSound()
     {
@@ -198,13 +199,16 @@ public class GuidanceSounds : MonoBehaviour {
         {
             Vector2 horizontalFishAreaPos = new Vector2(fishArea.position.x, fishArea.position.z);
             fishArea.distanceFromPlayer = GetDistanceFromPlayer(horizontalFishAreaPos);
-            fishArea.horizontalAngleFromLookDirection = GetHorizontalAnglefromPlayer(horizontalFishAreaPos);
+
+            fishArea.horizontalAngleFromLookDirection = GetHorizontalAnglefromPlayer(fishArea.position);
+            Debug.Log("<color=red> Area: " + fishArea.name + " guide score: " + fishArea.guidanceScore + "</color>" + 
+                "dist score = " + fishArea.distScore + "  angle score = " + fishArea.angleScore);
         }
     }
 
     private GameObject GetAreaWithLowestScore()
     {
-        float lowestScore = 999;
+        float lowestScore = 99999999;
         GameObject lowestScoreArea = null;
         foreach (AreaDataContainer fishArea in fishAreaDatas)
         {
@@ -221,9 +225,9 @@ public class GuidanceSounds : MonoBehaviour {
                 lowestScore = fishArea.guidanceScore;
                 lowestScoreArea = fishArea.gObject;
             }
-            return lowestScoreArea;
         }
-        return null;
+        Debug.Log("Loweset score = " + lowestScore + " = " + lowestScoreArea.name);
+        return lowestScoreArea;
     }
 
     /// <summary>
@@ -243,10 +247,13 @@ public class GuidanceSounds : MonoBehaviour {
     /// </summary>
     /// <param name="target"></param>
     /// <returns></returns>
-    private float GetHorizontalAnglefromPlayer(Vector2 target)
+    private float GetHorizontalAnglefromPlayer(Vector3 target)
     {
-        Vector2 playerPosition = new Vector2(player.position.x, player.position.z);
-        float angle = Vector2.Angle(playerPosition, target);
+        Vector3 playerToTarget = target - _cam.transform.position;
+        playerToTarget.y = 0;
+        Vector3 viewDir = GetHorizontalViewDirection(_cam);
+        viewDir.y = 0;
+        float angle = Vector3.Angle(playerToTarget, viewDir);
         return angle;
     }
     
@@ -358,7 +365,7 @@ public class GuidanceSounds : MonoBehaviour {
     {
         Vector3 viewDir = cam.transform.forward;
         viewDir.y = cam.transform.position.y;
-        return viewDir;
+        return viewDir * 300;
     }
 
     AudioClip RandomDetailedSound(AudioClip[] clipArray)
@@ -404,23 +411,40 @@ public class GuidanceSounds : MonoBehaviour {
         Debug.Log("Detailed array index has been reset");
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.gameObject.layer == LayerMask.NameToLayer("Regions"))
+            return;
+        if (other.name == start.name && !startHasPlayed)
+        {
+            startHasPlayed = true;
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.StartingSoundGoFishing);
+        }
+    }
+
+    
+
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        //Gizmos.draw
-        //TODO: draw circle gizmo for max range before it is no longer possible to get guided to the location.
-
-        //draw line in view direction
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(_cam.transform.position, GetHorizontalViewDirection(_cam) * 300f);
-
-        //draw line to all fish areas
-        Gizmos.color = Color.gray;
-        foreach (AreaDataContainer fishArea in fishAreaDatas)
+        if (Application.isPlaying)
         {
-            Vector3 tempFishPos = fishArea.position;
-            tempFishPos.y = _cam.transform.position.y;
-            Gizmos.DrawLine(_cam.transform.position, tempFishPos);
+            //draw far distance of when distance score starts getting discarded
+            transform.DrawGizmoDisk(farDistanceGuideExclude, Color.red);
+            
+
+            //draw line in view direction
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(_cam.transform.position, GetHorizontalViewDirection(_cam));
+
+            //draw line to all fish areas
+            Gizmos.color = Color.gray;
+            foreach (AreaDataContainer fishArea in fishAreaDatas)
+            {
+                Vector3 tempFishPos = fishArea.position;
+                tempFishPos.y = _cam.transform.position.y;
+                Gizmos.DrawLine(_cam.transform.position, tempFishPos);
+            }
         }
     }
 }

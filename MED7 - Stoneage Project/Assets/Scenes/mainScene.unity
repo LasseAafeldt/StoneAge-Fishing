@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15948674, g: 0.15516523, b: 0.14927846, a: 1}
+  m_IndirectSpecularColor: {r: 0.1601108, g: 0.15577698, b: 0.14988947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -571,9 +571,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_Name
       value: Eel Container7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -818,6 +826,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1956545836991140, guid: 5b8ae7c49e9210a4ebf952edde933bac, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4606375380529154, guid: 5b8ae7c49e9210a4ebf952edde933bac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1357,6 +1369,14 @@ PrefabInstance:
     - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_Name
       value: Flatfish Container (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8000,7 +8020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 143820916}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Fish areas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10117,9 +10137,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1101317646841426, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_Name
       value: Fish Container1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4605056573712206, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11704,6 +11732,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flatfish Container (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -66.4
@@ -12811,9 +12847,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_Name
       value: Eel Container4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12884,7 +12928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400522076}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: CodArea51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13245,6 +13289,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.6
@@ -14950,6 +15002,14 @@ PrefabInstance:
     - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_Name
       value: Flatfish Container (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16806,7 +16866,7 @@ GameObject:
   - component: {fileID: 549617469}
   - component: {fileID: 549617468}
   - component: {fileID: 549617473}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Trigger area Eel
   m_TagString: EelArea
   m_Icon: {fileID: 0}
@@ -17165,9 +17225,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_Name
       value: Eel Container3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17987,9 +18055,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1101317646841426, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_Name
       value: Fish Container4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4605056573712206, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18519,9 +18595,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_Name
       value: Eel Container5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25505,8 +25589,11 @@ MonoBehaviour:
   eelTrap: {fileID: 647167070}
   flatFish: {fileID: 1816046789}
   start: {fileID: 1891080203}
-  guidanceTimerThreshold: 35
-  areaTimerThreshold: 20
+  guidanceTimerThreshold: 18
+  areaTimerThreshold: 12
+  farDistanceGuideExclude: 250
+  weightForAngle: 1.8
+  weightForDistance: 0.7
 --- !u!54 &1052138934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26675,6 +26762,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flatfish Container (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -64.9
@@ -26995,9 +27090,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1101317646841426, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_Name
       value: Fish Container2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4605056573712206, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27062,6 +27165,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1124868056}
     m_Modifications:
+    - target: {fileID: 1956545836991140, guid: 5b8ae7c49e9210a4ebf952edde933bac, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4606375380529154, guid: 5b8ae7c49e9210a4ebf952edde933bac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -27182,7 +27289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124868056}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Flatfish Ground zero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27319,7 +27426,7 @@ GameObject:
   - component: {fileID: 1128207614}
   - component: {fileID: 1128207613}
   - component: {fileID: 1128207618}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Trigger area Torsk
   m_TagString: TorskArea
   m_Icon: {fileID: 0}
@@ -27627,6 +27734,50 @@ Transform:
   m_Father: {fileID: 1445299555}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 343.854, z: 0}
+--- !u!1 &1144217407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144217408}
+  - component: {fileID: 1144217409}
+  m_Layer: 18
+  m_Name: EelTrap Region (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1144217408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144217407}
+  m_LocalRotation: {x: -0, y: -0.4016191, z: -0, w: -0.9158069}
+  m_LocalPosition: {x: -306.04, y: 1.21, z: 102.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1150893320}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1144217409
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144217407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1144621409
 GameObject:
   m_ObjectHideFlags: 0
@@ -27727,9 +27878,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1101317646841426, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_Name
       value: Fish Container0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4605056573712206, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27811,6 +27970,7 @@ Transform:
   - {fileID: 1816046787}
   - {fileID: 549617467}
   - {fileID: 1572601862}
+  - {fileID: 1144217408}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28487,6 +28647,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1956545836991140, guid: 5b8ae7c49e9210a4ebf952edde933bac, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4606375380529154, guid: 5b8ae7c49e9210a4ebf952edde933bac, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -29609,6 +29773,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5f86aa451f267354db69ad711124f77a, type: 3}
       propertyPath: m_Name
       value: Boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f86aa451f267354db69ad711124f77a, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 5f86aa451f267354db69ad711124f77a, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f86aa451f267354db69ad711124f77a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33813,7 +33985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1549079202}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Eel District 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35566,9 +35738,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_Name
       value: Eel Container6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36874,7 +37054,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 60
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1750164198
 GameObject:
@@ -38126,7 +38306,7 @@ GameObject:
   - component: {fileID: 1816046789}
   - component: {fileID: 1816046788}
   - component: {fileID: 1816046793}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Trigger area Flatfish
   m_TagString: FlatfishArea
   m_Icon: {fileID: 0}
@@ -40023,9 +40203,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1101317646841426, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_Name
       value: Fish Container5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4605056573712206, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40090,9 +40278,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400522076}
     m_Modifications:
+    - target: {fileID: 1101317646841426, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_Name
       value: Fish Container3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140169525265254, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4605056573712206, guid: 406700b748825fd46aa91befbc549dfc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -40311,6 +40507,14 @@ PrefabInstance:
     - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_Name
       value: Flatfish Container (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41000,9 +41204,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1549079202}
     m_Modifications:
+    - target: {fileID: 1622989491528914, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_Name
       value: Eel Container2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924785639055178, guid: a14d4012c04924740852c3b521726a7d, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4374719407695504, guid: a14d4012c04924740852c3b521726a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41127,6 +41339,14 @@ PrefabInstance:
     - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_Name
       value: Flatfish Container (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -42109,6 +42329,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1124868056}
     m_Modifications:
+    - target: {fileID: 1787055055709092, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940046943382842, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4285766188001524, guid: 43e6037b466c45441a990df1670bffa1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33
