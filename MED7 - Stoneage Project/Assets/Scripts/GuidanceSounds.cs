@@ -47,6 +47,8 @@ public class GuidanceSounds : MonoBehaviour {
 
     private static int detailedIndex = 0;
 
+    private Camera _cam;
+
      // if fish caught in area then disable that area sound for good.
 
     private void Start()
@@ -66,14 +68,15 @@ public class GuidanceSounds : MonoBehaviour {
 
         fishAreaDatas = new List<AreaDataContainer>();
         AddAreaContainerDefualtData(fishAreaDatas);
+        _cam = Camera.main;
     }
 
     private void AddAreaContainerDefualtData(List<AreaDataContainer> mlist)
     {
-        AreaDataContainer Mtorsk = new AreaDataContainer("Torsk area", Torsk.gameObject, Torsk.transform.position, 0f,0f, farDistanceGuideExclude, maxAnglethreshold,weightForDistance,weightForAngle);
-        AreaDataContainer Mflatfish = new AreaDataContainer("Flatfish area", flatFish.gameObject, flatFish.transform.position, 0f, 0f, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
-        AreaDataContainer Meel = new AreaDataContainer("Eel area", eel.gameObject, eel.transform.position, 0f, 0f, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
-        AreaDataContainer MeelTrap = new AreaDataContainer("Eeltrap area", eelTrap.gameObject, eelTrap.transform.position, 0f, 0f,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer Mtorsk = new AreaDataContainer("Torsk area", Torsk.gameObject, farDistanceGuideExclude, maxAnglethreshold,weightForDistance,weightForAngle);
+        AreaDataContainer Mflatfish = new AreaDataContainer("Flatfish area", flatFish.gameObject, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer Meel = new AreaDataContainer("Eel area", eel.gameObject, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer MeelTrap = new AreaDataContainer("Eeltrap area", eelTrap.gameObject,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
 
         mlist.Add(Mtorsk);
         mlist.Add(Mflatfish);
@@ -177,18 +180,15 @@ public class GuidanceSounds : MonoBehaviour {
     private void ChooseBestAreaToGuideTowards()
     {
         UpdateFishAreaData();
-        GameObject closestArea = GetclosestArea();
-        if(closestArea == null) //closest area also checks wether a fish of the area has already been caught
-        {
-            _currentBestAreaToGuideTowards = null;
-            return;
-        }
 
-        //do something with proximity???
+        //TODO: do something with proximity???
+        //GameObject closestArea = GetclosestArea();
+        //if(closestArea == null) //closest area also checks wether a fish of the area has already been caught
+        //{
+        //    _currentBestAreaToGuideTowards = null;
+        //    return;
+        //}
 
-
-        //TODO: something used to disable guiding possibility when a fish from the place had been caught
-        //check if something still does that, and make sure the new max guiding dist doesn't scew shit up.
         _currentBestAreaToGuideTowards = GetAreaWithLowestScore();
     }
 
@@ -208,9 +208,17 @@ public class GuidanceSounds : MonoBehaviour {
         GameObject lowestScoreArea = null;
         foreach (AreaDataContainer fishArea in fishAreaDatas)
         {
-            if (lowestScore > fishArea.GetScore())
+            if (fishArea.name.Equals("Torsk area") && GameManager.singleton.TorskCaught)
+                continue;
+            if (fishArea.name.Equals("Flatfish area") && GameManager.singleton.flatFishCaught)
+                continue;
+            if (fishArea.name.Equals("Eel area") && GameManager.singleton.eelCaught)
+                continue;
+            if (fishArea.name.Equals("Eeltrap area") && GameManager.singleton.eelTrapEmptied)
+                continue;
+            if (lowestScore > fishArea.guidanceScore)
             {
-                lowestScore = fishArea.GetScore();
+                lowestScore = fishArea.guidanceScore;
                 lowestScoreArea = fishArea.gObject;
             }
             return lowestScoreArea;
@@ -346,6 +354,13 @@ public class GuidanceSounds : MonoBehaviour {
         }
     }
 
+    public Vector3 GetHorizontalViewDirection(Camera cam)
+    {
+        Vector3 viewDir = cam.transform.forward;
+        viewDir.y = cam.transform.position.y;
+        return viewDir;
+    }
+
     AudioClip RandomDetailedSound(AudioClip[] clipArray)
     {
         List<int> numbersToChooseFrom = new List<int> { };
@@ -394,5 +409,18 @@ public class GuidanceSounds : MonoBehaviour {
         Gizmos.color = Color.red;
         //Gizmos.draw
         //TODO: draw circle gizmo for max range before it is no longer possible to get guided to the location.
+
+        //draw line in view direction
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(_cam.transform.position, GetHorizontalViewDirection(_cam) * 300f);
+
+        //draw line to all fish areas
+        Gizmos.color = Color.gray;
+        foreach (AreaDataContainer fishArea in fishAreaDatas)
+        {
+            Vector3 tempFishPos = fishArea.position;
+            tempFishPos.y = _cam.transform.position.y;
+            Gizmos.DrawLine(_cam.transform.position, tempFishPos);
+        }
     }
 }

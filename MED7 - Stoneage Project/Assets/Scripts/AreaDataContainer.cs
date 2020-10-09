@@ -14,29 +14,47 @@ public class AreaDataContainer
     public float maxAngleFromPlayer;
     public float scoreDistWeight;
     public float scoreAngleWeight;
+    public float guidanceScore {
+        get {
+            float angleScore = maxAngleFromPlayer / maxAngleFromPlayer;
+            float distScore = distanceFromPlayer / maxDistFromPlayer;
+            if (distScore >= 1)
+            {
+                distScore *= 1.5f;
+            }
 
-    public AreaDataContainer(string Mname, GameObject gameObj, Vector3 Mposition, float MdistanceFromPlayer, 
-        float MhorizontalAngleFromLookDirection, float MmaxDistToPlayer, float MmaxAngleFromPlayer,
+            float totalScore = angleScore * scoreAngleWeight + distScore * scoreDistWeight;
+            return totalScore;
+        }
+        private set { }
+    }
+
+    public AreaDataContainer(string Mname, GameObject MgameObj, float MmaxDistFromPlayer, float MmaxAngleFromPlayer,
         float MscoreDistWeight, float MscoreAngleWeight)
     {
         name = Mname;
-        gObject = gameObj;
-        position = Mposition;
-        distanceFromPlayer = MdistanceFromPlayer;
-        horizontalAngleFromLookDirection = MhorizontalAngleFromLookDirection;
-        maxDistFromPlayer = MmaxDistToPlayer;
+        gObject = MgameObj;
+        position = MgameObj.transform.position;
+        distanceFromPlayer = 0f;
+        horizontalAngleFromLookDirection = 0f;
+        maxDistFromPlayer = MmaxDistFromPlayer;
         maxAngleFromPlayer = MmaxAngleFromPlayer;
         scoreDistWeight = MscoreDistWeight;
         scoreAngleWeight = MscoreAngleWeight;
+        guidanceScore = 0f;
     }
 
-    public float GetScore()
-    {
-        float angleScore = maxAngleFromPlayer / maxAngleFromPlayer;
-        float distScore = distanceFromPlayer / maxDistFromPlayer;
+    //public float GetScore()
+    //{
+    //    float angleScore = maxAngleFromPlayer / maxAngleFromPlayer;
+    //    float distScore = distanceFromPlayer / maxDistFromPlayer;
+    //    if(distScore >= 1)
+    //    {
+    //        distScore *= 1.5f;
+    //    }
 
-        float totalScore = angleScore * scoreAngleWeight + distScore * scoreDistWeight;
-        return totalScore;
-    }
+    //    float totalScore = angleScore * scoreAngleWeight + distScore * scoreDistWeight;
+    //    return totalScore;
+    //}
 
 }
