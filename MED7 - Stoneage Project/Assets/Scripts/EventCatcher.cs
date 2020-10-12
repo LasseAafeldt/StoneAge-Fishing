@@ -18,6 +18,8 @@ public class EventCatcher : MonoBehaviour {
 	private bool canFish;
     private bool hasFlint =false;
     private bool canPlayTurnAroundSound = true;
+    private GuidanceSounds guidanceSounds = new GuidanceSounds();//if used for anything else than adding time
+    //to timer then we should get the specific one in the scene instead.
 
     private void Start()
     {
@@ -46,6 +48,9 @@ public class EventCatcher : MonoBehaviour {
 		if(other.tag == "TorskArea" || other.tag == "EelArea" || other.tag == "FlatfishArea")
 		{
             canFish = true;
+            //play can fish sound
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere);
+            guidanceSounds.AddTimeToGuidanceActiveTimer(5f);
 			fishingArea = other.tag;
 			fishingAreaObject = other.gameObject;
 			//Debug.Log("you are now in the "+fishingArea);			

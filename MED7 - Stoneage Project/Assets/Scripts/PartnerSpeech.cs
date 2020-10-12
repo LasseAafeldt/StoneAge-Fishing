@@ -10,7 +10,7 @@ public class PartnerSpeech : MonoBehaviour {
     public static string lastVoiceline;
 
     //for emergent condition
-    [Header("Emergent sounds")]
+    [Header("Sounds")]
 	public AudioClip SealAppearsEmergent;
 	public AudioClip BadEnding;
 	public AudioClip GoodEnding;
@@ -31,6 +31,7 @@ public class PartnerSpeech : MonoBehaviour {
     public AudioClip whileEmptyingEeltrap;
     public AudioClip afterEmptyingEeltrap;
     public AudioClip areaIsOutOfFish;
+    public AudioClip canFishHere;
 
     [Header("Event sounds")]
 	public AudioClip OrcaAppears;
@@ -47,12 +48,16 @@ public class PartnerSpeech : MonoBehaviour {
     [Header("Guidance sounds")]
     public AudioClip ClosestToTorsk;
     public AudioClip[] DetailClosestToTorsk;
+    [Space]
     public AudioClip ClosestToEel;
     public AudioClip[] DetailClosestToEel;
+    [Space]
     public AudioClip ClosestToEeltrap;
     public AudioClip[] DetailClosestToEeltrap;
+    [Space]
     public AudioClip ClosestToFlatfish;
     public AudioClip[] DetailClosestToFlatfish;
+    [Space]
     public AudioClip StartingSoundGoFishing;
 
     [Header(" sounds")]
@@ -124,7 +129,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.AddVoiceTimeToActiveTimer(clip.length);
+            guidance.AddTimeToGuidanceActiveTimer(clip.length);
 		}
 
 	}
@@ -152,7 +157,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.AddVoiceTimeToActiveTimer(clip.length);
+            guidance.AddTimeToGuidanceActiveTimer(clip.length);
         }
 
 	}
@@ -175,7 +180,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.AddVoiceTimeToActiveTimer(clip.length);
+            guidance.AddTimeToGuidanceActiveTimer(clip.length);
         }
 
 	}
@@ -200,7 +205,7 @@ public class PartnerSpeech : MonoBehaviour {
 			audio.Play();
             //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
-            guidance.AddVoiceTimeToActiveTimer(clip.length);
+            guidance.AddTimeToGuidanceActiveTimer(clip.length);
         }
 
 	}
