@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1601108, g: 0.15577698, b: 0.14988947, a: 1}
+  m_IndirectSpecularColor: {r: 0.14502132, g: 0.14133155, b: 0.13625997, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23323,74 +23323,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guidance: {fileID: 1052138933}
-  SealAppearsEmergent: {fileID: 8300000, guid: 844cde352a07fb44fbd0e2c1f9d5c14f, type: 3}
-  BadEnding: {fileID: 8300000, guid: c1d9d27e6b8ac6840a71129143a3502f, type: 3}
-  GoodEnding: {fileID: 8300000, guid: a6f187a6f69570845a40eee6c71e6ea3, type: 3}
-  GameTimerLow: {fileID: 8300000, guid: 2347377f55f87e347aefc0f3f1ef1dfd, type: 3}
-  GameTimerEnd: {fileID: 8300000, guid: 975dbb7123825914ab2c647896e88372, type: 3}
-  HomeAgain: {fileID: 8300000, guid: ae8380c0cd0e33940a2a4de7ec4d7a58, type: 3}
-  confirmEndPlz: {fileID: 8300000, guid: eb064d810e5b15741ac0c13a7e707a0d, type: 3}
-  endIsConfirmed: {fileID: 8300000, guid: 7001fb12ac480e0428fd0451ebfb382d, type: 3}
-  whileEelFishingFirst: {fileID: 8300000, guid: 50bc23dd96b2dd848bf88c207112dff9,
+  SealAppearsEmergent: {fileID: 8300000, guid: 6ad361f3290c82a429e259c951cc0291, type: 3}
+  BadEnding: {fileID: 8300000, guid: 532ef673baaccbd4a9c36baf9096d62d, type: 3}
+  GoodEnding: {fileID: 8300000, guid: 92bc1d88277b72f47a1a9b98a933cb17, type: 3}
+  GameTimerLow: {fileID: 8300000, guid: 3adb817d101116f4d9a1e270c305a822, type: 3}
+  GameTimerEnd: {fileID: 8300000, guid: dca05d39414498740bf4d377bc845cf4, type: 3}
+  HomeAgain: {fileID: 8300000, guid: 0dc09fc78e05a014086ecc4747a05723, type: 3}
+  confirmEndPlz: {fileID: 8300000, guid: 05533bcd25d301d46a64a37532516a50, type: 3}
+  endIsConfirmed: {fileID: 8300000, guid: 7d31c7ca99e0c9941a56f6183f284161, type: 3}
+  whileEelFishingFirst: {fileID: 8300000, guid: 77f5b28d67d5630408d4db54ca0a4849,
     type: 3}
-  whileEelFishingSecond: {fileID: 8300000, guid: f2ca276712f4b6f48b462c359c3bfad9,
+  whileEelFishingSecond: {fileID: 8300000, guid: d015ec871aa648543bb133988c5382d6,
     type: 3}
-  whileEelFishingThird: {fileID: 8300000, guid: eed40fab2ea46174f9642a7c7477a120,
+  whileEelFishingThird: {fileID: 8300000, guid: e0d39da11e8144748afb4a75e417cfd7,
     type: 3}
-  whileTorskFishingFirst: {fileID: 8300000, guid: 25e18e897875fcf48aa965c6497adc8b,
+  whileTorskFishingFirst: {fileID: 8300000, guid: 9a0c5823f567699428c2cd60fac063d6,
     type: 3}
-  whileTorskFishingSecond: {fileID: 8300000, guid: 97be626f01eceb641b4e6fb8a3477091,
+  whileTorskFishingSecond: {fileID: 8300000, guid: 1079ebd0c3acde548a41af0cb6df2932,
     type: 3}
-  whileTorskFishingThird: {fileID: 8300000, guid: 0cc741cc41258fa4383cd982663ac191,
+  whileTorskFishingThird: {fileID: 8300000, guid: bb2a6ff8cd80e4248aa4420633eb4e02,
     type: 3}
-  whileFlatfishFihingFirst: {fileID: 8300000, guid: 1dfd735a10b87c941b0e8a903c72e811,
+  whileFlatfishFihingFirst: {fileID: 8300000, guid: b5c6ee2a117b4ac4b9cbca2492e75627,
     type: 3}
-  whileFlatfishFihingSecond: {fileID: 8300000, guid: 2c36247b92d8ed94fba3c30ba99ed137,
+  whileFlatfishFihingSecond: {fileID: 8300000, guid: 459c40384109ed242aa63bb24499e552,
     type: 3}
-  whileFlatfishFihingThird: {fileID: 8300000, guid: fbe31fb207d83124caacb2a3ee04195a,
+  whileFlatfishFihingThird: {fileID: 8300000, guid: 06740d460b191fd42a94cb517386c841,
     type: 3}
-  whileEmptyingEeltrap: {fileID: 8300000, guid: 79f800d7e145871449ac61e1f52721f2,
+  whileEmptyingEeltrap: {fileID: 8300000, guid: 568b04426f4baa941a5bd21545a8c0b4,
     type: 3}
-  afterEmptyingEeltrap: {fileID: 8300000, guid: 9467d96fa2776c4498a1241e0670587e,
-    type: 3}
+  afterEmptyingEeltrap: {fileID: 0}
   areaIsOutOfFish: {fileID: 8300000, guid: 7c2975b8e58ca0b47bf96374ff7dca9d, type: 3}
-  OrcaAppears: {fileID: 8300000, guid: c85d0d4892363dd47b09b1fd7953486e, type: 3}
-  PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 817d800ecb564ae498ad0444c4e8d4d9,
+  OrcaAppears: {fileID: 8300000, guid: 5d7dc6dd205245b45a7a8aa4da241e13, type: 3}
+  PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 68a8cbc9e0458ae4c863018566fb9385,
     type: 3}
-  PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 8300000, guid: 5a3cbc9fa14bf044980bbfee2463cc4f,
+  PelicanAppearsSomeSoundIsAlreadyPlaying: {fileID: 8300000, guid: e97a49afe1dab2e4a82a62b7f9ceaa48,
     type: 3}
-  NoFurther: {fileID: 8300000, guid: fd95aa3654d42d744a278c0117f848c0, type: 3}
-  NoIron4CodTryHook: {fileID: 8300000, guid: 9848e45b34f87064f9ad6cd441fea87d, type: 3}
-  NoIron4CodTryHook2: {fileID: 8300000, guid: 96dfcaea000fbd842aff1a38c2f7e03a, type: 3}
-  NoHook4EelTryIron: {fileID: 8300000, guid: 071e2fc426e8e3944a2244f74c1d9c04, type: 3}
-  NoHook4EelTryIron2: {fileID: 8300000, guid: 5283acc0619f9a541bd1491dc2316c17, type: 3}
-  ClosestToTorsk: {fileID: 8300000, guid: 91bbb81255d4d28449bb126b116e0e30, type: 3}
+  NoFurther: {fileID: 8300000, guid: df7ea422f2ed81b46aa937ccb874b7bc, type: 3}
+  NoIron4CodTryHook: {fileID: 8300000, guid: d2ec88900589703438e9fa0047db6d06, type: 3}
+  NoIron4CodTryHook2: {fileID: 8300000, guid: ed2c7a757ee6b284ca68f14bce5a8240, type: 3}
+  NoHook4EelTryIron: {fileID: 8300000, guid: f0e7b4f9a3c9d39468c79240a9953713, type: 3}
+  NoHook4EelTryIron2: {fileID: 8300000, guid: ed2c7a757ee6b284ca68f14bce5a8240, type: 3}
+  ClosestToTorsk: {fileID: 8300000, guid: 93ecbb7abdd707b43b04ed18bfe2d15c, type: 3}
   DetailClosestToTorsk:
   - {fileID: 8300000, guid: d430bcba4c793234b8a686c15e97575a, type: 3}
   - {fileID: 8300000, guid: a30c27f261b22324495a03dafed21cb1, type: 3}
   - {fileID: 8300000, guid: f1a8ba4e65c2bcf4fa3d665ac81e8f0f, type: 3}
   - {fileID: 8300000, guid: ecd72a391bc3fc54eb4d6f38c3ddc533, type: 3}
-  ClosestToEel: {fileID: 8300000, guid: 50e64c63e3ae128479bb121aa5a14401, type: 3}
+  ClosestToEel: {fileID: 8300000, guid: acd2981c11852e940a6c7b57c46cb03d, type: 3}
   DetailClosestToEel:
-  - {fileID: 8300000, guid: daee12ba5f63ab543adbe948dc3d2f8f, type: 3}
-  - {fileID: 8300000, guid: 808f80bd36fcec8419be05d536dddb9f, type: 3}
-  - {fileID: 8300000, guid: ed4fe8b4f6595d94782845f69d607345, type: 3}
-  - {fileID: 8300000, guid: 9dd9f37f2841c014c934a1e025162ac8, type: 3}
-  ClosestToEeltrap: {fileID: 8300000, guid: c56cd99cb126bff4cbbb6ce4c4fffc20, type: 3}
+  - {fileID: 8300000, guid: 07a2b283b287d1247886aa689d443a4d, type: 3}
+  - {fileID: 8300000, guid: c73dd8ee444681b42ab433fbba851c80, type: 3}
+  - {fileID: 8300000, guid: 7224bb73908e77b43a1ef1193b399b22, type: 3}
+  - {fileID: 8300000, guid: fa5ff364411d50f42ba3f3d42743ffa4, type: 3}
+  ClosestToEeltrap: {fileID: 8300000, guid: b0f1b2db7ae7f8a4a992e32e809a4f45, type: 3}
   DetailClosestToEeltrap:
-  - {fileID: 8300000, guid: adf5e836c661543439dc212e6257622f, type: 3}
-  - {fileID: 8300000, guid: 46d9f7b66cb9d074590cf591c9fe55de, type: 3}
-  ClosestToFlatfish: {fileID: 8300000, guid: 764e2bd4aae651c419a69eed876579d5, type: 3}
+  - {fileID: 8300000, guid: dd407d108b362a246844546f1a8fee9c, type: 3}
+  - {fileID: 8300000, guid: 322e13466eccce9459f10f3606e16e9c, type: 3}
+  ClosestToFlatfish: {fileID: 8300000, guid: 65697b4253baaf64991ccc78e0b5b3b4, type: 3}
   DetailClosestToFlatfish:
-  - {fileID: 8300000, guid: d3d47b0a6bd42644aa6d8f813a765d68, type: 3}
-  - {fileID: 8300000, guid: 958c88bbee57e40478e77928017705b2, type: 3}
-  StartingSoundGoFishing: {fileID: 8300000, guid: 4632a9c1e21047a43a240e74ca15183c,
+  - {fileID: 8300000, guid: cf93d035d9883a3418dbf538c94cb008, type: 3}
+  - {fileID: 8300000, guid: 66eeb7628ed7ee24182117120b6ed822, type: 3}
+  StartingSoundGoFishing: {fileID: 8300000, guid: 4c9ac29ba4bd35c44a1b07249474d4f4,
     type: 3}
   noFishHere:
-  - {fileID: 8300000, guid: 5e1c0e3a8ea72274a98797dbb65d49c3, type: 3}
-  - {fileID: 8300000, guid: 479495e2063533849a142b07da05c71e, type: 3}
-  - {fileID: 8300000, guid: d77fc61219ea6ca469fc44d53ba7de78, type: 3}
-  - {fileID: 8300000, guid: 8e522c8730fc7744680f8a97c71a4d45, type: 3}
+  - {fileID: 8300000, guid: da88cb2a7a8c9e147a3ff206189c594f, type: 3}
+  - {fileID: 8300000, guid: de60c2f9f4a216048bf98903a1340be0, type: 3}
+  - {fileID: 8300000, guid: 71c48f5c310da1743a5be85c936433c8, type: 3}
+  - {fileID: 8300000, guid: da7505da7958c7a40ac2e2f5344443cb, type: 3}
   - {fileID: 8300000, guid: 7ed28ab261a8f51439f29a96f09d843a, type: 3}
   - {fileID: 8300000, guid: 39667473887a21648be3bda9afd99485, type: 3}
 --- !u!82 &948130992
