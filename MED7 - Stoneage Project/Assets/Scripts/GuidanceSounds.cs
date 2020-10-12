@@ -183,12 +183,6 @@ public class GuidanceSounds : MonoBehaviour {
         UpdateFishAreaData();
 
         //TODO: do something with proximity???
-        //GameObject closestArea = GetclosestArea();
-        //if(closestArea == null) //closest area also checks wether a fish of the area has already been caught
-        //{
-        //    _currentBestAreaToGuideTowards = null;
-        //    return;
-        //}
 
         _currentBestAreaToGuideTowards = GetAreaWithLowestScore();
     }
@@ -348,16 +342,16 @@ public class GuidanceSounds : MonoBehaviour {
     /// <summary>
     /// adds time from a played voiceline to the guidance interval timer(s)
     /// </summary>
-    /// <param name="clipTime"></param>
-    public void AddVoiceTimeToActiveTimer(float clipTime)
+    /// <param name="seconds"></param>
+    public void AddTimeToGuidanceActiveTimer(float seconds)
     {
         if (standardGuidance)
         {
-            timeSinceLastGuidance -= clipTime;
+            timeSinceLastGuidance -= seconds;
         }
         if (detailedGuidance)
         {
-            areaTimer -= clipTime;
+            areaTimer -= seconds;
         }
     }
 

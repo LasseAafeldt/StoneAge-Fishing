@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14502132, g: 0.14133155, b: 0.13625997, a: 1}
+  m_IndirectSpecularColor: {r: 0.15929887, g: 0.15499419, b: 0.14914006, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23353,6 +23353,7 @@ MonoBehaviour:
     type: 3}
   afterEmptyingEeltrap: {fileID: 0}
   areaIsOutOfFish: {fileID: 8300000, guid: 7c2975b8e58ca0b47bf96374ff7dca9d, type: 3}
+  canFishHere: {fileID: 8300000, guid: 295ca520cf3f3b448af3b62a08c5bc97, type: 3}
   OrcaAppears: {fileID: 8300000, guid: 5d7dc6dd205245b45a7a8aa4da241e13, type: 3}
   PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 68a8cbc9e0458ae4c863018566fb9385,
     type: 3}
