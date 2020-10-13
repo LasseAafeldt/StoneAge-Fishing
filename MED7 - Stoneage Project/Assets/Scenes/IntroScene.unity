@@ -5882,7 +5882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2112717017}
   angleLimit: 80
-  oppositeLimit: 160
+  oppositeLimit: 155
 --- !u!114 &313279468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16457,6 +16457,7 @@ MonoBehaviour:
   afterEmptyingEeltrap: {fileID: 8300000, guid: 9467d96fa2776c4498a1241e0670587e,
     type: 3}
   areaIsOutOfFish: {fileID: 8300000, guid: 7c2975b8e58ca0b47bf96374ff7dca9d, type: 3}
+  canFishHere: {fileID: 0}
   OrcaAppears: {fileID: 8300000, guid: c85d0d4892363dd47b09b1fd7953486e, type: 3}
   PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 817d800ecb564ae498ad0444c4e8d4d9,
     type: 3}

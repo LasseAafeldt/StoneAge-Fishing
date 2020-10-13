@@ -33,7 +33,7 @@ public class GuidingArrowManager : MonoBehaviour
                 animation.Activate(arrowPointer.GetGameObject());
 
             if (activator.IsInOppositeDirection())
-                arrowPointer.PointHorinzontalTowards(activator.GetPointingTarget());
+                arrowPointer.PointHorizontalTowards(activator.GetPointingTarget());
             else
                 arrowPointer.PointTowards(activator.GetPointingTarget());
         }   

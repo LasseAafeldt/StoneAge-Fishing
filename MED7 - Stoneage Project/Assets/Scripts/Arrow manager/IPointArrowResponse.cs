@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IPointArrowResponse
 {
     void PointTowards(Transform t);
-    void PointHorinzontalTowards(Transform t);
+    void PointHorizontalTowards(Transform t);
     GameObject GetGameObject();
 }

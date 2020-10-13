@@ -10,6 +10,8 @@ public class PointArrowInCameraPlane : MonoBehaviour, IPointArrowResponse
 
     [SerializeField] private float distanceToCam;
 
+    private Vector3 velocity = Vector3.zero;
+
     private void Awake()
     {
         camera = Camera.main.transform;
@@ -22,19 +24,34 @@ public class PointArrowInCameraPlane : MonoBehaviour, IPointArrowResponse
 
         ProjectOntoCamPlane();
 
-        transform.forward = arrow2target;
+        //transform.forward = arrow2target;
+        SmoothRotate();
     }
 
-   
-
-    public void PointHorinzontalTowards(Transform t)
+    public void PointHorizontalTowards(Transform t)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Horizontal");
+        arrow2target = t.position - transform.position;
+
+        ProjectOntoCamHorizontal();
+
+        //transform.forward = arrow2target;
+        SmoothRotate();
+
+    }
+    private void ProjectOntoCamHorizontal()
+    {
+        arrow2target = Vector3.Project(arrow2target, camera.right);
     }
 
     private void ProjectOntoCamPlane()
     {
         arrow2target = Vector3.ProjectOnPlane(arrow2target, camera.forward);
+    }
+
+    private void SmoothRotate()
+    {
+        transform.forward = Vector3.SmoothDamp(transform.forward, arrow2target, ref velocity, 0.3f);
     }
 
     private void SetZPosition()
