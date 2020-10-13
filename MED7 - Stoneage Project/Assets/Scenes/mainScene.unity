@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15929887, g: 0.15499419, b: 0.14914006, a: 1}
+  m_IndirectSpecularColor: {r: 0.14052731, g: 0.13696942, b: 0.13209584, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ab6281f8b65984cbbcab2f8d718065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerSpeech: {fileID: 0}
+  partnerSpeech: {fileID: 948130991}
   fishingArea: 
   OutOfBoundsSoundTimer: 7
   fishingAreaObject: {fileID: 0}
