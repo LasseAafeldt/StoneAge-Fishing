@@ -23351,8 +23351,9 @@ MonoBehaviour:
     type: 3}
   whileEmptyingEeltrap: {fileID: 8300000, guid: 568b04426f4baa941a5bd21545a8c0b4,
     type: 3}
-  afterEmptyingEeltrap: {fileID: 0}
-  areaIsOutOfFish: {fileID: 8300000, guid: 7c2975b8e58ca0b47bf96374ff7dca9d, type: 3}
+  afterEmptyingEeltrap: {fileID: 8300000, guid: 76fe8cdd84b7fd049ac01bc1e8268597,
+    type: 3}
+  areaIsOutOfFish: {fileID: 8300000, guid: 04c69cdaf0ce5314e878e1d4f02edb2c, type: 3}
   canFishHere: {fileID: 8300000, guid: 295ca520cf3f3b448af3b62a08c5bc97, type: 3}
   OrcaAppears: {fileID: 8300000, guid: 5d7dc6dd205245b45a7a8aa4da241e13, type: 3}
   PelicanAppearsNoSoundPlaying: {fileID: 8300000, guid: 68a8cbc9e0458ae4c863018566fb9385,
@@ -23391,8 +23392,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: de60c2f9f4a216048bf98903a1340be0, type: 3}
   - {fileID: 8300000, guid: 71c48f5c310da1743a5be85c936433c8, type: 3}
   - {fileID: 8300000, guid: da7505da7958c7a40ac2e2f5344443cb, type: 3}
-  - {fileID: 8300000, guid: 7ed28ab261a8f51439f29a96f09d843a, type: 3}
-  - {fileID: 8300000, guid: 39667473887a21648be3bda9afd99485, type: 3}
+  - {fileID: 8300000, guid: 59fe5c370b4d19242bdc4e293d9c02c6, type: 3}
+  - {fileID: 8300000, guid: a13f392f08a4c8c47b8006f7c9745476, type: 3}
 --- !u!82 &948130992
 AudioSource:
   m_ObjectHideFlags: 0
