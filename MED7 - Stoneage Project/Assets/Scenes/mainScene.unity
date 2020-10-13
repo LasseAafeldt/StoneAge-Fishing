@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14052731, g: 0.13696942, b: 0.13209584, a: 1}
+  m_IndirectSpecularColor: {r: 0.15929887, g: 0.15499419, b: 0.14914006, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23367,10 +23367,10 @@ MonoBehaviour:
   NoHook4EelTryIron2: {fileID: 8300000, guid: ed2c7a757ee6b284ca68f14bce5a8240, type: 3}
   ClosestToTorsk: {fileID: 8300000, guid: 93ecbb7abdd707b43b04ed18bfe2d15c, type: 3}
   DetailClosestToTorsk:
-  - {fileID: 8300000, guid: d430bcba4c793234b8a686c15e97575a, type: 3}
-  - {fileID: 8300000, guid: a30c27f261b22324495a03dafed21cb1, type: 3}
-  - {fileID: 8300000, guid: f1a8ba4e65c2bcf4fa3d665ac81e8f0f, type: 3}
-  - {fileID: 8300000, guid: ecd72a391bc3fc54eb4d6f38c3ddc533, type: 3}
+  - {fileID: 8300000, guid: 0b4a08fe5adf65f43a6177f1b19c5361, type: 3}
+  - {fileID: 8300000, guid: df5c8be77b41af64fbeaf870baa6b48a, type: 3}
+  - {fileID: 8300000, guid: 4a4f56aa8a46a3045bcfec2b75bb700d, type: 3}
+  - {fileID: 8300000, guid: b5feab59baec2f04f951cc93a9a04d96, type: 3}
   ClosestToEel: {fileID: 8300000, guid: acd2981c11852e940a6c7b57c46cb03d, type: 3}
   DetailClosestToEel:
   - {fileID: 8300000, guid: 07a2b283b287d1247886aa689d443a4d, type: 3}
