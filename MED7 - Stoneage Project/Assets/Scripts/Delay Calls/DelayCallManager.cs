@@ -46,6 +46,10 @@ public class DelayCallManager : MonoBehaviour
     {
         delayResponse.Fire();
     }
+    public void CancelRepeat()
+    {
+        CancelInvoke();
+    }
 
     private IEnumerator CoroutineDelay(float delay)
     {
