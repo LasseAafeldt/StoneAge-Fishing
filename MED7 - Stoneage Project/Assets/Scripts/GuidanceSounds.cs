@@ -300,22 +300,18 @@ public class GuidanceSounds : MonoBehaviour {
         if(SelectedArea == "TorskArea" && !GameManager.singleton.TorskCaught)
         {
             partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
-            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToTorsk));
         }
         if (SelectedArea == "EelArea" && !GameManager.singleton.eelCaught)
         {
             partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
-            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
         }
         if (SelectedArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
         {
             partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
-            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
         }
         if (SelectedArea == "FlatfishArea" && !GameManager.singleton.flatFishCaught)
         {
             partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
-            SetLastGuidanceSound(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToFlatfish));
         }
         UpdateArea(_currentBestAreaToGuideTowards);
     }
@@ -388,9 +384,9 @@ public class GuidanceSounds : MonoBehaviour {
     AudioClip DetailedArrayInOrderSound(AudioClip[] clipArray)
     {
         //make sure does not go out of range
-        if(detailedIndex >= clipArray.Length - 1)
+        if(detailedIndex > clipArray.Length - 1)
         {
-            detailedIndex = clipArray.Length - 1;
+            detailedIndex = 0; //makes sure the detailed guidance loops
         }
         AudioClip clipToPlay = clipArray[detailedIndex];
         //setLastGuidanceSound(clipArray[detailedIndex]);
