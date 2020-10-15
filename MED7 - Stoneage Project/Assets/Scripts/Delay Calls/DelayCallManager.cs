@@ -8,6 +8,9 @@ public class DelayCallManager : MonoBehaviour
     public bool triggerOnStart;
     public bool onlyCallOnce;
 
+    public bool repeatCall;
+    [SerializeField] float repeatSeconds;
+
     private bool callable = true;
 
     private IDelay delayResponse;
@@ -21,7 +24,10 @@ public class DelayCallManager : MonoBehaviour
     {
         if (triggerOnStart)
         {
-            CallWithDelay();
+            if (repeatCall)
+                InvokeRepeating("RepeatCall", delaySeconds, repeatSeconds);
+            else
+                CallWithDelay();
         }
     }
 
@@ -34,6 +40,11 @@ public class DelayCallManager : MonoBehaviour
                 callable = false;
         }
         
+    }
+
+    private void RepeatCall()
+    {
+        delayResponse.Fire();
     }
 
     private IEnumerator CoroutineDelay(float delay)

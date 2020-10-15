@@ -526,7 +526,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.307e-42, y: 1.04e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 3.73e-43, y: -0.000000001253964, z: 8.32e-43, w: 9.46e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1164,7 +1164,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 4.8391076e+30, z: 1.7247627e+25, w: 3878.9658}
+  m_BoundingSphereOverride: {x: NaN, y: -0.000000002548827, z: 8.32e-43, w: 1.024e-42}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1267,7 +1267,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.03
-  far clip plane: 520
+  far clip plane: 840
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -3948,6 +3948,8 @@ MonoBehaviour:
   delaySeconds: 0.3
   triggerOnStart: 1
   onlyCallOnce: 1
+  repeatCall: 0
+  repeatSeconds: 0
 --- !u!4 &1741279627
 Transform:
   m_ObjectHideFlags: 0
@@ -4037,7 +4039,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 4.8391076e+30, z: 1.7247627e+25, w: 3878.9658}
+  m_BoundingSphereOverride: {x: NaN, y: -0.00000000269997, z: 8.32e-43, w: 4.19e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

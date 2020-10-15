@@ -5,7 +5,7 @@ public class BoatControllerScript : MonoBehaviour
 
     public static string currentlyInRegion = "No Region";
 
-    public float speed = 15f, rotationSpeed = 0.1f, rotationDeadzone = 5f, accelerationAmount = 0.05f, rowingFrequency = 0.44f;
+    public float speed = 15f, rotationSpeed = 0.1f, rotationDeadzone = 5f, accelerationAmount = 0.05f, accelerationDeadzone = 90f, rowingFrequency = 0.44f;
     public Collider[] ignoreCollision;
 
     bool voiceLineReady = true;
@@ -101,15 +101,14 @@ public class BoatControllerScript : MonoBehaviour
 
             if (!GameManager.singleton.pointingAtInteractable)
             {
+                float rotationAngle = Vector3.Angle(transform.forward, Camera.main.transform.forward);
 
-                if (GameManager.singleton.partner.GetComponent<PartnerAnimator>().anim.GetBool("isRowing"))
+                if (GameManager.singleton.partner.GetComponent<PartnerAnimator>().anim.GetBool("isRowing") && rotationAngle < accelerationDeadzone)
                 {
                     //Debug.Log("Im going forwards");
                     GetComponent<Rigidbody>()
                         .AddForce((transform.forward * speed * sinusoid * Time.deltaTime) * acceleration);
                 }
-
-                float rotationAngle = Vector3.Angle(transform.forward, Camera.main.transform.forward);
 
                 if (rotationAngle > rotationDeadzone)
                 {
@@ -118,6 +117,8 @@ public class BoatControllerScript : MonoBehaviour
                         0.0f);
 
                     // calculate the Quaternion for the rotation
+                    float deltaAngle = Quaternion.Angle(transform.rotation, Quaternion.LookRotation(newDir));
+
                     Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(newDir),
                        rotationSpeed * Time.deltaTime);
 
