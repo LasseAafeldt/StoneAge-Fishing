@@ -43,16 +43,16 @@ PartnerAnimator PA;
     static bool wrongToolOneHook = true;
     static bool wrongToolOneSpear = true;
 
-    private bool endGame = false;
-    private bool firstFishingTorsk = true;
-    private bool secondFishingTorsk = false;
-    private bool thirdFishingTorsk = false;
-    private bool firstFishingEel = true;
-    private bool secondFishingEel = false;
-    private bool thirdFishingEel = false;
-    private bool firstFishingFlatfish = true;
-    private bool secondFishingFlatfish = false;
-    private bool thirdFishingFlatfish = false;
+    private static bool endGame = false;
+    public static bool firstFishingTorsk = true;
+    private static bool secondFishingTorsk = false;
+    private static bool thirdFishingTorsk = false;
+    public static bool firstFishingEel = true;
+    private static bool secondFishingEel = false;
+    private static bool thirdFishingEel = false;
+    public static bool firstFishingFlatfish = true;
+    private static bool secondFishingFlatfish = false;
+    private static bool thirdFishingFlatfish = false;
     // Use this for initialization
     void Start () {
         eelTrapEmptied = false;
