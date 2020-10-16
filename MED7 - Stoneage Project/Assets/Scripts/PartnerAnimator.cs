@@ -8,6 +8,9 @@ public class PartnerAnimator : MonoBehaviour {
     [HideInInspector]
 	public Animator anim;
 
+    public delegate void FishPutInBasket();
+    public static event FishPutInBasket FishPutInBasketEvent;
+
     public PartnerSpeech partnerSpeech;
     public GuidanceSounds guidance;
     public Transform eeltrap;
@@ -242,6 +245,7 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
                     basketSound.Play();
+                    InvokeFishPutInBasketEvent();
                     //Debug.Log(currentFish);
                     Debug.Log("add " + currentFish + " Flatfish to basket");
                 }
@@ -270,6 +274,7 @@ public class PartnerAnimator : MonoBehaviour {
                     //loop through all torsk in basket and make amount visible
 					currentFish.SetActive(true);
                     basketSound.Play();
+                    InvokeFishPutInBasketEvent();
                     //Debug.Log(currentFish);
                     Debug.Log("add " + currentFish + " torsk to basket");
                     //GameManager.singleton.AddTorsk(currentFish);
@@ -296,6 +301,7 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
                     basketSound.Play();
+                    InvokeFishPutInBasketEvent();
                     //Debug.Log(currentFish);
 					//Debug.Log("add "+ currentFish +" eel to basket");
                 }
@@ -311,5 +317,14 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.aniTorch.SetActive(false);
 	}
 
+    private static void InvokeFishPutInBasketEvent()
+    {
+        //Debug.Log("<color=green> I'm supposed to diable some fish now </color>");
+
+        if (FishPutInBasketEvent != null)
+        {
+            FishPutInBasketEvent.Invoke();
+        }
+    }
 
 }

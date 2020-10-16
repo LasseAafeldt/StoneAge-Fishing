@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EventCatcher : MonoBehaviour {
     public PartnerSpeech partnerSpeech;
 
-	public string fishingArea;
+	public static string fishingArea;
 
     [Range(0,10)]
     public float OutOfBoundsSoundTimer = 7f;

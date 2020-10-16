@@ -101,7 +101,7 @@ PartnerAnimator PA;
 			tool = tag;
 			//play animation
 
-			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
+			if (EventCatcher.fishingArea == "TorskArea")
 			{
                 EC.startFishing(tool);
                 if (GameManager.singleton.boat.GetComponent<EventCatcher>()
@@ -152,7 +152,7 @@ PartnerAnimator PA;
                 }
                 #endregion
             }
-            else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
+            else if(EventCatcher.fishingArea == "")
 			{
                 //no fish here
                 notEnoughFishHere();
@@ -180,7 +180,7 @@ PartnerAnimator PA;
 			tool = tag;
 			//play animation
 
-			if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "EelArea")
+			if (EventCatcher.fishingArea == "EelArea")
 			{
                 EC.startFishing(tool);
                 if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
@@ -230,7 +230,7 @@ PartnerAnimator PA;
                 }
                 #endregion
             }
-            else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "FlatfishArea")
+            else if(EventCatcher.fishingArea == "FlatfishArea")
             {
                 EC.startFishing(tool);
                 if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
@@ -280,12 +280,12 @@ PartnerAnimator PA;
                 }
                 #endregion
             }
-            else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "")
+            else if(EventCatcher.fishingArea == "")
 			{
                 //no fish here
                 notEnoughFishHere();
 			}
-			else if(GameManager.singleton.boat.GetComponent<EventCatcher>().fishingArea == "TorskArea")
+			else if(EventCatcher.fishingArea == "TorskArea")
 			{
                 //wrong tool
                 setWrongToolVoicelineInt(WrongTool.NoHook4Eel);
