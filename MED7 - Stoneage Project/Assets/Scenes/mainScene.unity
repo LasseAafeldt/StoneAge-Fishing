@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13461545, g: 0.13121527, b: 0.12659451, a: 1}
+  m_IndirectSpecularColor: {r: 0.14721718, g: 0.14346144, b: 0.13828826, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1444,7 +1444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerSpeech: {fileID: 948130991}
-  fishingArea: 
   OutOfBoundsSoundTimer: 7
   fishingAreaObject: {fileID: 0}
 --- !u!65 &84974646
@@ -10184,9 +10183,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400522076}
+  - component: {fileID: 400522077}
   m_Layer: 18
   m_Name: CodArea51
-  m_TagString: Untagged
+  m_TagString: TorskArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10212,6 +10212,20 @@ Transform:
   m_Father: {fileID: 143820916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400522077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400522075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b42af87f49809746aa34d763ff6813b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeInChildren: {fileID: 0}
+  fractionToRemovePerFishCaught: 3
 --- !u!1 &405076279
 GameObject:
   m_ObjectHideFlags: 0
@@ -19851,9 +19865,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1124868056}
+  - component: {fileID: 1124868057}
   m_Layer: 18
   m_Name: Flatfish Ground zero
-  m_TagString: Untagged
+  m_TagString: FlatfishArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19880,6 +19895,20 @@ Transform:
   m_Father: {fileID: 143820916}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1124868057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124868055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b42af87f49809746aa34d763ff6813b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeInChildren: {fileID: 0}
+  fractionToRemovePerFishCaught: 3
 --- !u!1 &1128207611
 GameObject:
   m_ObjectHideFlags: 0
@@ -24208,9 +24237,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1549079202}
+  - component: {fileID: 1549079203}
   m_Layer: 18
   m_Name: Eel District 9
-  m_TagString: Untagged
+  m_TagString: EelArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24237,6 +24267,20 @@ Transform:
   m_Father: {fileID: 143820916}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549079203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549079201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b42af87f49809746aa34d763ff6813b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeInChildren: {fileID: 0}
+  fractionToRemovePerFishCaught: 3
 --- !u!1 &1550893409
 GameObject:
   m_ObjectHideFlags: 0
