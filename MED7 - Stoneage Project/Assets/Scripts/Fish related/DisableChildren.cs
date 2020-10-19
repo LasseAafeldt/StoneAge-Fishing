@@ -5,10 +5,12 @@ using UnityEngine;
 public class DisableChildren : MonoBehaviour
 {
     [SerializeField] private AcitivateFish typeInChildren;
-    [SerializeField] private int fractionToRemovePerFishCaught = 3;
+    [SerializeField] private int fractionToRemovePerFishCaught = 4;
     private int amountOfChildren;
+    int amountToRemove;
     private AcitivateFish[] acitivateFish;
     private Queue<AcitivateFish> queChildren = new Queue<AcitivateFish>();
+
 
     private void Start()
     {
@@ -19,12 +21,13 @@ public class DisableChildren : MonoBehaviour
             queChildren.Enqueue(child);
         }
         PartnerAnimator.FishPutInBasketEvent += OnFishCaught;
+        Debug.Log("current fish: " + amountOfChildren);
+        amountToRemove = Mathf.FloorToInt(amountOfChildren / fractionToRemovePerFishCaught);
     }
 
-    private void DisableFish(int fractionToRemove)
+    private void DisableFish()
     {
-        //calculate a third
-        int amountToRemove = Mathf.FloorToInt(amountOfChildren / fractionToRemove);
+
         for (int i = 0; i < amountToRemove; i++)
         {
             if (queChildren.Count == 0)
@@ -32,6 +35,7 @@ public class DisableChildren : MonoBehaviour
             AcitivateFish child = queChildren.Dequeue(); //removes and returns object
             child.gameObject.SetActive(false);
         }
+        Debug.Log("current fish: " + queChildren.Count);
     }
 
     private void OnFishCaught()
@@ -39,7 +43,13 @@ public class DisableChildren : MonoBehaviour
         //make sure only to disable fish in the area the player is in
         if (gameObject.tag.Equals(EventCatcher.fishingArea))
         {
-            DisableFish(fractionToRemovePerFishCaught);
+            DisableFish();
         }
+    }
+
+    private void OnDisable()
+    {
+        PartnerAnimator.FishPutInBasketEvent -= OnFishCaught;
+
     }
 }

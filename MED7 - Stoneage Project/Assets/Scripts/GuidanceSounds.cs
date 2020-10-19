@@ -390,7 +390,6 @@ public class GuidanceSounds : MonoBehaviour {
         }
         AudioClip clipToPlay = clipArray[detailedIndex];
         //setLastGuidanceSound(clipArray[detailedIndex]);
-        Debug.Log("detailed guide array index is at: " + detailedIndex);
         detailedIndex++;
         return clipToPlay;
     }
@@ -398,7 +397,6 @@ public class GuidanceSounds : MonoBehaviour {
     void resetDetailedIndex()
     {
         detailedIndex = 0;
-        Debug.Log("Detailed array index has been reset");
     }
 
     private void OnTriggerEnter(Collider other)

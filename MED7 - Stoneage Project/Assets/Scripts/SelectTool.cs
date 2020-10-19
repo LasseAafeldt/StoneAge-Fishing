@@ -147,7 +147,6 @@ PartnerAnimator PA;
                     //for log data
                     fishCaught = FishCaught.Torsk;
                     setFishCaughtInt(fishCaught);
-                    Debug.Log("player has fished torsk 3 times now");
                     return;
                 }
                 #endregion
@@ -363,10 +362,8 @@ PartnerAnimator PA;
 		if(tag =="emptyBasket")
 		{
             GameManager.singleton.canMove = false;
-            Debug.Log("I can't move now");
 
 			PA.BasketAnimation();
-            Debug.Log("empty eeltrap animation has just been called so lets play the saound aswell");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEmptyingEeltrap);
 
             eelTrapEmptied = true;
@@ -387,14 +384,12 @@ PartnerAnimator PA;
         {
             if (endGame)
             {
-                Debug.Log("Player is moving on to end scene");
                 partnerSpeech.PartnerSaysSomething(partnerSpeech.endIsConfirmed);
                 //waiting to load end scene till the audioclip is done playing
                 StartCoroutine(waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed));
                 //EC.CheckForEnding();
                 return;
             }
-            Debug.Log("player is attempting to end game");
             //play voiceline "are you sure you want to end"
             partnerSpeech.PartnerSaysSomething(partnerSpeech.confirmEndPlz);
             endGame = true;
@@ -410,7 +405,6 @@ PartnerAnimator PA;
         //functionallity
         if (timesFishedNoWhere < partnerSpeech.noFishHere.Length)
         {
-            Debug.Log("no fish here array: " + timesFishedNoWhere + " also this: " + partnerSpeech.noFishHere.Length);
             partnerSpeech.PartnerSaysSomething(partnerSpeech.noFishHere[timesFishedNoWhere]);
             timesFishedNoWhere++;
         }
@@ -450,7 +444,6 @@ PartnerAnimator PA;
     {
         yield return new WaitForSeconds(15);
         endGame = false;
-        Debug.Log("endgame was reset");
     }
 
     void setWrongToolVoicelineInt(WrongTool WrongToolVoice)
@@ -471,7 +464,6 @@ PartnerAnimator PA;
                 LogMaster.WrongToolVoiceline,
                 logMaster.mapOnCamera = false,
                 BoatControllerScript.currentlyInRegion);
-            //Debug.Log("An entry is made in the log file...");
         }
     }
 
@@ -491,7 +483,6 @@ PartnerAnimator PA;
                 LogMaster.WrongToolVoiceline,
                 logMaster.mapOnCamera = false,
                 BoatControllerScript.currentlyInRegion);
-            //Debug.Log("An entry is made in the log file...");
         }
     }
 
