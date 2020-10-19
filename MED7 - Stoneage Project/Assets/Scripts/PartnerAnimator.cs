@@ -28,7 +28,7 @@ public class PartnerAnimator : MonoBehaviour {
         eelTrapFishStorage = eeltrap.GetComponent<FishStoreAmount>();
         _eelsInTrap = eelTrapFishStorage.EelAmount;
         _flatFishInTrap = eelTrapFishStorage.FlatfishlAmount;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -40,7 +40,7 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("hookFishing");
         GameManager.singleton.canMove = false;
-        Debug.Log("I can't move anymore");
+        //Debug.Log("I can't move anymore");
 		GameManager.singleton.paddle.SetActive(false);
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position - 0.75f*transform.up;
 	}
@@ -51,7 +51,7 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.aniEelIron.SetActive(true);
 		GameManager.singleton.aniTorch.SetActive(true);
         GameManager.singleton.canMove = false;
-        Debug.Log("I can't move anymore");
+        //Debug.Log("I can't move anymore");
     }
 
 	public void BasketAnimation()
@@ -85,21 +85,18 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("codCaught");
         GameManager.singleton.canMove = true;
-        Debug.Log("I can move again");
 	}
 
 	public void eelCaught()
 	{
 		anim.SetTrigger("eelCaught");
         GameManager.singleton.canMove = true;
-        Debug.Log("I can move again");
     }
 
 	public void noCatch()
 	{
 		anim.SetTrigger("noCatch");
         GameManager.singleton.canMove = true;
-        Debug.Log("I can move again");
     }
 	public void pointLeft(bool state)
 	{
@@ -117,7 +114,6 @@ public class PartnerAnimator : MonoBehaviour {
 	}
 
 	public void paddleAnimation(bool state){
-        //Debug.Log("I am paddling...");
 		anim.SetBool("isRowing", state);
         GameManager.singleton.paddle.SetActive(state);
 	}
@@ -126,7 +122,6 @@ public class PartnerAnimator : MonoBehaviour {
 	public void HookAniDone(){
 		GameManager.singleton.hook.GetComponent<SelectTool>().ShowTool();
 		GameManager.singleton.paddle.SetActive(true);
-		//Debug.Log("Hook ani done");
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position + 0.75f*transform.up;
 		if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCanFish())
 		{
@@ -160,7 +155,6 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.paddle.SetActive(true);
 		GameManager.singleton.aniEelIron.SetActive(false);
 		GameManager.singleton.aniTorch.SetActive(false);
-		//Debug.Log("iron ani done");
 		if(GameManager.singleton.boat.GetComponent<EventCatcher>().GetCanFish())
 		{
 			eelCaught();
@@ -205,26 +199,19 @@ public class PartnerAnimator : MonoBehaviour {
 		{
 			trapFull();
 
-			//Debug.Log("putting fish in basket");
-			//PutEelInBasket();
 			PutEelInBasket(_eelsInTrap);
 						
-			//Debug.Log("putting fish in basket");
-			//PutEelInBasket();
 			PutFlatFishInBasket(_flatFishInTrap);
 			
-			//Debug.Log("Trap Full");
 			basketFull = false;
 
             guidance.ResetGuidanceTimers();
             GameManager.singleton.eelTrapEmptied = true;
 
             GameManager.singleton.canMove = true;
-            Debug.Log("i can move again");
-            //partnerSpeech.PartnerSaysSomething(partnerSpeech.afterEmptyingEeltrap);
+
         } else {
 			trapEmpty();
-			Debug.Log("Trap Empty");
 		}
 
 	}
@@ -232,7 +219,6 @@ public class PartnerAnimator : MonoBehaviour {
 	{
         int fishToInstanciate = amount + GameManager.singleton.getFlatfishAmount();
         GameManager.singleton.AddFlatFish(amount);
-        Debug.Log("flatfish count updated. Flatfish caught = " + GameManager.singleton.getFlatfishAmount());
 
 		//instatiate a fish in the boay
         GameObject currentFish=null;
@@ -244,23 +230,16 @@ public class PartnerAnimator : MonoBehaviour {
 				{
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
-                    basketSound.Play();
-                    InvokeFishPutInBasketEvent();
-                    //Debug.Log(currentFish);
-                    Debug.Log("add " + currentFish + " Flatfish to basket");
                 }
-			}					    
+			}
         }
-		//GameManager.singleton.AddFlatFish(mostRecentFish);
-		//mostRecentFish = Instantiate(GameManager.singleton.flatFish,boat.transform.position+ new Vector3(0,1,0), boat.transform.rotation, boat.transform);
-		
-		
-	}
+        basketSound.Play();
+        InvokeFishPutInBasketEvent();
+    }
 	public void PutTorskInBasket(int amount)
 	{
         int fishToInstanciate = amount + GameManager.singleton.getTorskAmount();
         GameManager.singleton.AddTorsk(amount);
-        Debug.Log("torsk count updated. Torsk caught = " + GameManager.singleton.getTorskAmount());
 
         //instatiate a fish in the boat
         GameObject currentFish = null;
@@ -273,22 +252,17 @@ public class PartnerAnimator : MonoBehaviour {
 					currentFish = t.gameObject;
                     //loop through all torsk in basket and make amount visible
 					currentFish.SetActive(true);
-                    basketSound.Play();
-                    InvokeFishPutInBasketEvent();
-                    //Debug.Log(currentFish);
-                    Debug.Log("add " + currentFish + " torsk to basket");
-                    //GameManager.singleton.AddTorsk(currentFish);
                 }
 			}
         }
-		//GameManager.singleton.AddTorsk(mostRecentFish);
-		//mostRecentFish = Instantiate(GameManager.singleton.torsk,boat.transform.position+ new Vector3(0,1,0), boat.transform.rotation, boat.transform);
-	}
+        basketSound.Play();
+        InvokeFishPutInBasketEvent();
+    }
 	public void PutEelInBasket(int amount)
 	{
         int fishToInstanciate = amount + GameManager.singleton.getEelAmount();
         GameManager.singleton.AddEel(amount);
-        Debug.Log("eel count updated. Eels caught = " + GameManager.singleton.getEelAmount());
+     
 
         //instatiate a fish in the boat
         GameObject currentFish = null;
@@ -300,16 +274,12 @@ public class PartnerAnimator : MonoBehaviour {
 				{
 					currentFish = t.gameObject;
 					currentFish.SetActive(true);
-                    basketSound.Play();
-                    InvokeFishPutInBasketEvent();
-                    //Debug.Log(currentFish);
-					//Debug.Log("add "+ currentFish +" eel to basket");
                 }
 			}		    
 		}
-		//mostRecentFish = Instantiate(GameManager.singleton.eel,boat.transform.position + new Vector3(0,1,0), boat.transform.rotation, boat.transform);
-		
-	}
+        basketSound.Play();
+        InvokeFishPutInBasketEvent();
+    }
 	void ResetToolOnGuide()
 	{
 		GameManager.singleton.paddle.SetActive(true);
@@ -320,7 +290,7 @@ public class PartnerAnimator : MonoBehaviour {
     private static void InvokeFishPutInBasketEvent()
     {
         //Debug.Log("<color=green> I'm supposed to diable some fish now </color>");
-
+        
         if (FishPutInBasketEvent != null)
         {
             FishPutInBasketEvent.Invoke();

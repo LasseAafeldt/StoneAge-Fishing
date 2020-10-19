@@ -26,6 +26,7 @@ public class AcitivateFish : MonoBehaviour {
         //Debug.Log(" nr = " + 1 * Time.deltaTime + "       nr = " + 2 * Time.deltaTime);
         fadeIn = false;
         fadeOut = false;
+        activateChild();
 }
 
     private void Update()

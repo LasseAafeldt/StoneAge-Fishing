@@ -24,7 +24,7 @@ public class AverageFishPosition : MonoBehaviour {
         //isInRange = true;
         foreach (AcitivateFish fishsSpawner in fishContainers)
         {
-            fishsSpawner.activateChild();
+            //fishsSpawner.activateChild();
         }
         //Debug.Log("This is the camera collider hitting me");
     }
@@ -38,7 +38,7 @@ public class AverageFishPosition : MonoBehaviour {
         //isInRange = false;
         foreach (AcitivateFish fishsSpawner in fishContainers)
         {
-            fishsSpawner.deactivateChild();
+            //fishsSpawner.deactivateChild();
         }
     }
 
