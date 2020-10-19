@@ -29,6 +29,7 @@ public class ActivityManager : MonoBehaviour, IHandleActivity
 
         tracker = GetComponent<ITrackActivity>();
         ActivityQueContainer.InstantiateQue(queSizeSeconds * checksPerSecond);
+        sceneLoad = new SceneLoadManager();
     }
 
     private void Start()
