@@ -21,7 +21,6 @@ public class DisableChildren : MonoBehaviour
             queChildren.Enqueue(child);
         }
         PartnerAnimator.FishPutInBasketEvent += OnFishCaught;
-        Debug.Log("current fish: " + amountOfChildren);
         amountToRemove = Mathf.FloorToInt(amountOfChildren / fractionToRemovePerFishCaught);
     }
 
