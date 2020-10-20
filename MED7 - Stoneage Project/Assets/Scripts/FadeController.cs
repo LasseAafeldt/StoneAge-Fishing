@@ -18,7 +18,8 @@ public class FadeController : MonoBehaviour {
             Debug.LogError("Camera could not find an Canvasgroup in children");
         }
 
-        InstantFadeIn();
+        InstantFadeOut();
+        fadeIn();
     }
 
     public void fadeOut()

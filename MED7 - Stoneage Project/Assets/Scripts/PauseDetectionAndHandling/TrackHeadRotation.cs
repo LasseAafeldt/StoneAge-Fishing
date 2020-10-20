@@ -13,11 +13,9 @@ public class TrackHeadRotation : MonoBehaviour, ITrackActivity
         {
             if (que.ToArray()[i] == false)
             {
-                Debug.Log("Active is true");
                 return true;
             }
         }
-        Debug.Log("Active is false");
 
         return false;
     }

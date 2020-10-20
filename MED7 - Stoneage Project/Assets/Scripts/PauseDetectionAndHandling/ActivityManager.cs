@@ -69,7 +69,6 @@ public class ActivityManager : MonoBehaviour, IHandleActivity
     void CheckIsActive()
     {
         tracker.UpdateTracking(queSizeSeconds, checksPerSecond, container);
-        Debug.Log("Counter");
         playerIsActive = tracker.GetIsActive(container.activityQue);
     }
 

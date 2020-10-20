@@ -25,13 +25,11 @@ public class TrackButtonInput : MonoBehaviour, ITrackActivity
 
     private void SetIsActiveTrue()
     {
-        Debug.Log("button was pressed");
         isActive = true;
     }
 
     public bool GetIsActive(Queue<bool> que)
     {
-        Debug.Log("isactive is " + isActive);
         return isActive;
     }
 
