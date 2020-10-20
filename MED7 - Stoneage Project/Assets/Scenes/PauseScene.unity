@@ -298,27 +298,27 @@ PrefabInstance:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000000042278723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.98111117
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000021442865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.19344488
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
@@ -343,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
@@ -353,32 +353,32 @@ PrefabInstance:
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 441
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 438
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
@@ -389,6 +389,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 225708812824631226, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858616221498646824, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.275
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e8f9b9366c7c1419550c9efef0e598, type: 3}
@@ -697,6 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb179fc0ca1858946bcd227f1947108a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationTime: 2
 --- !u!114 &1586283037
 MonoBehaviour:
   m_ObjectHideFlags: 0

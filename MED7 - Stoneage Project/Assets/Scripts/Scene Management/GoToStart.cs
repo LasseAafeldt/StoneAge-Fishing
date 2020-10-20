@@ -8,11 +8,11 @@ public class GoToStart : MonoBehaviour {
 	public float totalTime =10;
     float tempTime;
 
-    ISceneManager sceneManager;
+    SceneLoadManager sceneManager;
 
     private void Awake()
     {
-        sceneManager = GetComponent<ISceneManager>();
+        sceneManager = GetComponent<SceneLoadManager>();
     }
 
     void Start () {

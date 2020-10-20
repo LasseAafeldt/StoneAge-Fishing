@@ -24,6 +24,7 @@ public class FadeController : MonoBehaviour {
 
     public void fadeOut()
     {
+        Debug.Log("fading out");
         StartCoroutine(InterpolateAlpha(1, 0, animationTime));
     }
 
