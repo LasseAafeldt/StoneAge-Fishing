@@ -115,6 +115,7 @@ public class playTimer : MonoBehaviour {
         yield return new WaitForSeconds(clip.length);
         //Debug.Log("time has run out, and audio is done playing");
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        Debug.Log("RunOutOfTime calls fade out");
         fade.fadeOut();
         yield return new WaitForSeconds(2f);
         // change scene

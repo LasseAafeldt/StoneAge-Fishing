@@ -24,13 +24,21 @@ public class FadeController : MonoBehaviour {
 
     public void fadeOut()
     {
-        Debug.Log("fading out");
-        StartCoroutine(InterpolateAlpha(1, 0, animationTime));
+        Debug.Log("alpha: " + canvas.alpha);
+        if (canvas.alpha <= .1)
+        {
+            StartCoroutine(InterpolateAlpha(1, 0, animationTime));
+        }
+
     }
 
     public void fadeIn()
     {
-        StartCoroutine(InterpolateAlpha(0, 1, animationTime));
+        if (canvas.alpha !=0)
+        {
+            StartCoroutine(InterpolateAlpha(0, 1, animationTime));
+        }
+
     }
 
     public void InstantFadeOut()

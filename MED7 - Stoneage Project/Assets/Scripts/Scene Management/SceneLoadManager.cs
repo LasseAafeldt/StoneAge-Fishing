@@ -65,6 +65,7 @@ public class SceneLoadManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        Debug.Log("LoadScene calls fade out");
         fade.fadeOut();
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(index);
@@ -72,6 +73,7 @@ public class SceneLoadManager : MonoBehaviour
 
     IEnumerator AsyncLoadScene(int index)
     {
+        Debug.Log("AsyncLoadScene calls fade out");
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
         fade.fadeOut();
         yield return new WaitForSeconds(2f);
@@ -80,10 +82,10 @@ public class SceneLoadManager : MonoBehaviour
         asyncLoad.allowSceneActivation = false;
         while (!asyncLoad.isDone)
         {
-            if(!ReadyForNextScene)
-                Debug.Log("<color=red> Ready for next scene = " + ReadyForNextScene + "</color>");
-            else
-                Debug.Log("<color=green> Ready for next scene = " + ReadyForNextScene + "</color>");
+            //if(!ReadyForNextScene)
+            //    Debug.Log("<color=red> Ready for next scene = " + ReadyForNextScene + "</color>");
+            //else
+            //    Debug.Log("<color=green> Ready for next scene = " + ReadyForNextScene + "</color>");
 
             //wait for ready signal
             if (ReadyForNextScene)

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   queSizeSeconds: 10
   checksPerSecond: 3
+  defaultQueValue: 0
+  triggerOnActivity: 0
 --- !u!114 &2696376047585626890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,4 +60,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02542d3808a2fff419dcc25b2d0bffdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thresholdAnglePerSecond: 2
+  thresholdAnglePerSecond: 0.1

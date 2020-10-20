@@ -37,6 +37,7 @@ public class GoToStart : MonoBehaviour {
     IEnumerator waitWithDestroy(float wait)
     {
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
+        Debug.Log("waitWithDestroy calls fade out");
         fade.fadeOut();
         yield return new WaitForSeconds(wait);
 		Destroy(GameObject.Find("Game Manager"));
