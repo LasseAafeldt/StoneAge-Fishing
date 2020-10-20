@@ -14,6 +14,7 @@ public class AreaDataContainer
     public float maxAngleFromPlayer;
     public float scoreDistWeight;
     public float scoreAngleWeight;
+    public bool canAreaBeSeen = true;
     public float guidanceScore {
         get {
             float tempDistScore;
