@@ -124,14 +124,15 @@ public class GuidanceSounds : MonoBehaviour {
 
     public void PlayGuidanceSound()
     {
+        //reset the timer
+        timeSinceLastGuidance = 0f;
+
         ChooseBestAreaToGuideTowards();
         if(_currentBestAreaToGuideTowards == null)
         {
             //Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
-        //reset the timer
-        timeSinceLastGuidance = 0f;
 
         bool lvl1GuidanceSound = true;
         //don't play the first sound again if they are still closest to the same area.
@@ -220,7 +221,7 @@ public class GuidanceSounds : MonoBehaviour {
                 lowestScoreArea = fishArea.gObject;
             }
         }
-        Debug.Log("Loweset score = " + lowestScore + " = " + lowestScoreArea.name);
+        
         return lowestScoreArea;
     }
 
@@ -278,14 +279,15 @@ public class GuidanceSounds : MonoBehaviour {
 
     void DetailedAreaSound()
     {
+        //reset the timer
+        areaTimer = 0f;
+
         ChooseBestAreaToGuideTowards();
         if (_currentBestAreaToGuideTowards == null)
         {
             Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
-        //reset the timer
-        areaTimer = 0f;
 
         //reset which guidance timer to use
         if (_currentBestAreaToGuideTowards.tag != SelectedArea)

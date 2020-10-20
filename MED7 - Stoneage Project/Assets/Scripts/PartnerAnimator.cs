@@ -35,7 +35,6 @@ public class PartnerAnimator : MonoBehaviour {
 		
 	}
 
-
 	public void HookAnimation()
 	{
 		anim.SetTrigger("hookFishing");
