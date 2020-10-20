@@ -6,15 +6,27 @@ public class TrackHeadRotation : MonoBehaviour, ITrackActivity
 {
     [SerializeField] private float thresholdAnglePerSecond = 2;
 
-    Queue<bool> activityQue = ActivityQueContainer.activityQue;
+    Queue<bool> activityQue;
+
+    private void Start()
+    {
+        activityQue = ActivityQueContainer.activityQue;
+    }
 
     public bool GetIsActive()
     {
+
         for (int i = activityQue.Count - 1; i >= 0; i--)
         {
             if (activityQue.ToArray()[i] == false)
+            {
+                Debug.Log("Active is true");
                 return true;
+            }
+
         }
+        Debug.Log("Active is false");
+
         return false;
     }
 

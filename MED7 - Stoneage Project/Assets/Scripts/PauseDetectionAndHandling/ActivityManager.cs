@@ -26,16 +26,15 @@ public class ActivityManager : MonoBehaviour, IHandleActivity
         {
             Destroy(gameObject);
         }
-
         tracker = GetComponent<ITrackActivity>();
         ActivityQueContainer.InstantiateQue(queSizeSeconds * checksPerSecond);
-        sceneLoad = new SceneLoadManager();
+        sceneLoad = FindObjectOfType<SceneLoadManager>();
     }
 
     private void Start()
     {
-        InvokeRepeating("CheckIsActive", 1, 1 / checksPerSecond);
-        
+        InvokeRepeating("CheckIsActive", 1, 1f / checksPerSecond);
+        playerIsActive = true;
     }
 
     private void FixedUpdate()
@@ -43,6 +42,7 @@ public class ActivityManager : MonoBehaviour, IHandleActivity
         if(!playerIsActive && SceneManager.GetActiveScene().buildIndex != 
             SceneManager.sceneCountInBuildSettings - 1)
         {
+            Debug.Log("indext to load = " + (SceneManager.sceneCountInBuildSettings - 1));
             OnEnterPause();
         }
         else if(playerIsActive && SceneManager.GetActiveScene().buildIndex == 
@@ -64,6 +64,7 @@ public class ActivityManager : MonoBehaviour, IHandleActivity
     void CheckIsActive()
     {
         tracker.UpdateTracking(queSizeSeconds, checksPerSecond);
+        Debug.Log("Counter");
         playerIsActive = tracker.GetIsActive();
     }
 }
