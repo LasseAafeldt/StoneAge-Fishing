@@ -76,17 +76,12 @@ public class GuidanceSounds : MonoBehaviour {
         //SetupBoatForwardTrigger();
     }
 
-    private void SetupBoatForwardTrigger()
-    {
-        //boatForwardTrigger.center = new Vector3(0, 0, -farDistanceGuideExclude / 2f);
-        //boatForwardTrigger.size = new Vector3(2f, 100f, farDistanceGuideExclude);
-    }
     private void AddAreaContainerDefualtData(List<AreaDataContainer> mlist)
     {
         AreaDataContainer Mtorsk = new AreaDataContainer("Torsk area", Torsk.gameObject, farDistanceGuideExclude, maxAnglethreshold,weightForDistance,weightForAngle);
         AreaDataContainer Mflatfish = new AreaDataContainer("Flatfish area", flatFish.gameObject, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
         AreaDataContainer Meel = new AreaDataContainer("Eel area", eel.gameObject, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
-        AreaDataContainer MeelTrap = new AreaDataContainer("Eeltrap area", eelTrap.gameObject,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer MeelTrap = new AreaDataContainer("EelTrap Region", eelTrap.gameObject,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
 
         mlist.Add(Mtorsk);
         mlist.Add(Mflatfish);
@@ -157,7 +152,7 @@ public class GuidanceSounds : MonoBehaviour {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEel);
             SetLastGuidanceSound(partnerSpeech.ClosestToEel);
         }
-        if (_currentBestAreaToGuideTowards.tag == "emptyBasket" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
+        if (_currentBestAreaToGuideTowards.tag == "EelTrapArea" && lvl1GuidanceSound && !GameManager.singleton.eelTrapEmptied)
         {
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToEeltrap);
             SetLastGuidanceSound(partnerSpeech.ClosestToEeltrap);
@@ -183,9 +178,45 @@ public class GuidanceSounds : MonoBehaviour {
     {
         UpdateFishAreaData();
 
-        //TODO: do something with proximity???
-
         _currentBestAreaToGuideTowards = GetAreaWithLowestScore();
+        //check if any unseen areas have not bee fished in.
+        //if(_currentBestAreaToGuideTowards == null)
+        //{
+        //    Debug.Log("This doesn't happen!!");
+        //    _currentBestAreaToGuideTowards = CheckUnseenAreas();
+        //}
+    }
+
+    private GameObject CheckUnseenAreas()
+    {
+        Debug.Log("Checking unseen areas");
+        float lowestScore = 99999999;
+        GameObject lowestScoreArea = null;
+        foreach (AreaDataContainer fishArea in fishAreaDatas)
+        {
+            //check only unseen areas
+            if (fishArea.canAreaBeSeen)
+                continue;
+            //check if area has already been fished in
+            if (fishArea.name.Equals("Torsk area") && GameManager.singleton.TorskCaught )
+                continue;
+            if (fishArea.name.Equals("Flatfish area") && GameManager.singleton.flatFishCaught)
+                continue;
+            if (fishArea.name.Equals("Eel area") && GameManager.singleton.eelCaught)
+                continue;
+            if (fishArea.name.Equals("EelTrap Region (1)") && GameManager.singleton.eelTrapEmptied)
+                continue;
+
+            if (lowestScore > fishArea.guidanceScore && !fishArea.canAreaBeSeen)
+            {
+                lowestScore = fishArea.guidanceScore;
+                lowestScoreArea = fishArea.gObject;
+            }
+        }
+        Debug.Log("unseen area with lowest score = " + lowestScoreArea?.name);
+        //TODO: some more tests... detailed sounds are not said currently if the last area remaining can't be seen
+
+        return lowestScoreArea;
     }
 
     private void UpdateFishAreaData()
@@ -196,8 +227,22 @@ public class GuidanceSounds : MonoBehaviour {
             fishArea.distanceFromPlayer = GetDistanceFromPlayer(horizontalFishAreaPos);
 
             fishArea.horizontalAngleFromLookDirection = GetHorizontalAnglefromPlayer(fishArea.position);
-            Debug.Log("<color=red> Area: " + fishArea.name + " guide score: " + fishArea.guidanceScore + "</color>" + 
-                "dist score = " + fishArea.distScore + "  angle score = " + fishArea.angleScore);
+            //Debug.Log("<color=red> Area: " + fishArea.name + " guide score: " + fishArea.guidanceScore + "</color>" + 
+            //"dist score = " + fishArea.distScore + "  angle score = " + fishArea.angleScore);
+            
+
+            Vector3 dir = fishArea.position - transform.position;
+            //if true then we hit something
+            if(Physics.Raycast(transform.position, dir.normalized, dir.magnitude, 
+                1 << LayerMask.NameToLayer("GuidanceRayBlocker")))
+            {
+                fishArea.canAreaBeSeen = false;
+            }
+            else
+            {
+                fishArea.canAreaBeSeen = true;
+            }
+            Debug.Log(fishArea.name + "can be seen = " + fishArea.canAreaBeSeen);
         }
     }
 
@@ -213,15 +258,20 @@ public class GuidanceSounds : MonoBehaviour {
                 continue;
             if (fishArea.name.Equals("Eel area") && GameManager.singleton.eelCaught)
                 continue;
-            if (fishArea.name.Equals("Eeltrap area") && GameManager.singleton.eelTrapEmptied)
+            if (fishArea.name.Equals("EelTrap Region (1)") && GameManager.singleton.eelTrapEmptied)
                 continue;
-            if (lowestScore > fishArea.guidanceScore)
+
+            if (lowestScore > fishArea.guidanceScore && fishArea.canAreaBeSeen)
             {
                 lowestScore = fishArea.guidanceScore;
                 lowestScoreArea = fishArea.gObject;
             }
         }
-        
+        Debug.Log("Area with lowest score = " + lowestScoreArea?.name);
+        if(lowestScoreArea == null)
+        {
+            return CheckUnseenAreas();
+        }
         return lowestScoreArea;
     }
 
@@ -266,7 +316,7 @@ public class GuidanceSounds : MonoBehaviour {
                 continue;
             if (fishArea.name.Equals("Eel area") && GameManager.singleton.eelCaught)
                 continue;
-            if (fishArea.name.Equals("Eeltrap area") && GameManager.singleton.eelTrapEmptied)
+            if (fishArea.name.Equals("EelTrap Region (1)") && GameManager.singleton.eelTrapEmptied)
                 continue;
             if(shortestDistance > fishArea.distanceFromPlayer)
             {
@@ -307,7 +357,7 @@ public class GuidanceSounds : MonoBehaviour {
         {
             partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEel));
         }
-        if (SelectedArea == "emptyBasket" && !GameManager.singleton.eelTrapEmptied)
+        if (SelectedArea == "EelTrapArea" && !GameManager.singleton.eelTrapEmptied)
         {
             partnerSpeech.PartnerSaysSomething(DetailedArrayInOrderSound(partnerSpeech.DetailClosestToEeltrap));
         }
