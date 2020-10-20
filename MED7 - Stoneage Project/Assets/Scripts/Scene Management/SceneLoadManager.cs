@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoadManager : MonoBehaviour, ISceneManager
+public class SceneLoadManager : MonoBehaviour
 {
     private bool _readyForNextScene = false;
 
@@ -22,15 +22,15 @@ public class SceneLoadManager : MonoBehaviour, ISceneManager
     /// Load scene with specific index.
     /// </summary>
     /// <param name="sceneIndex"></param>
-    public void ChangeScene(int sceneIndex)
+    public void ChangeScene(int sceneIndex, float delay= 0)
     {
-        StartCoroutine(LoadScene(sceneIndex));
+        StartCoroutine(LoadScene(sceneIndex, delay));
     }
 
     /// <summary>
     /// Load the next scene from the build index.
     /// </summary>
-    public void ChangeScene()
+    public void ChangeScene(float delay = 0)
     {
         int loadIndex;
 
@@ -43,7 +43,7 @@ public class SceneLoadManager : MonoBehaviour, ISceneManager
 
             loadIndex = 0;
         }
-        StartCoroutine(LoadScene(loadIndex));
+        StartCoroutine(LoadScene(loadIndex, delay));
     }
 
     public void ChangeSceneAsync()
@@ -61,8 +61,9 @@ public class SceneLoadManager : MonoBehaviour, ISceneManager
         StartCoroutine(AsyncLoadScene(sceneIndexToLoad));
     }
 
-    IEnumerator LoadScene(int index)
+    IEnumerator LoadScene(int index, float delay)
     {
+        yield return new WaitForSeconds(delay);
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
         fade.fadeOut();
         yield return new WaitForSeconds(2f);

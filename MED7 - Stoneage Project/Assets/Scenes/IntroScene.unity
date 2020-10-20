@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06825832, g: 0.06736056, b: 0.06574252, a: 1}
+  m_IndirectSpecularColor: {r: 0.1600168, g: 0.15570524, b: 0.14981082, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9419,10 +9419,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 95324288146537862, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114422270741206492, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224175890010962908, guid: 24e8f9b9366c7c1419550c9efef0e598,
         type: 3}
@@ -9513,6 +9518,71 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858616221498646824, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858616221498646824, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858616221498646824, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228478490734348452, guid: 24e8f9b9366c7c1419550c9efef0e598,
+        type: 3}
+      propertyPath: m_text
+      value: Loading...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e8f9b9366c7c1419550c9efef0e598, type: 3}
@@ -24698,6 +24768,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7803912253260574458, guid: 9cab657c8d274014abf8455284915929,
+        type: 3}
+      propertyPath: defaultQueValue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cab657c8d274014abf8455284915929, type: 3}
 --- !u!1 &1497194183
@@ -25029,6 +25104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb179fc0ca1858946bcd227f1947108a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationTime: 2
 --- !u!124 &1522761236
 Behaviour:
   m_ObjectHideFlags: 0

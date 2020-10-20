@@ -94,7 +94,7 @@ public class EventCatcher : MonoBehaviour {
             //enough fish 7
             //Debug.Log("Good ending");
 				GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().GoodEnding, hasFlint);
-				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
+				//SceneManager.LoadScene("End Scene", LoadSceneMode.Single);
 				
 			}
 			else 
@@ -102,7 +102,7 @@ public class EventCatcher : MonoBehaviour {
             //not enough fish 7
             //Debug.Log("Bad ending");
             GameManager.singleton.PrepareForEndScene(GameManager.singleton.partner.GetComponent<PartnerSpeech>().BadEnding, hasFlint);
-				SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
+				//SceneManager.LoadScene("End Scene", LoadSceneMode.Single);				
 			}
         LogMaster.shouldBeLogging = false;
         //GameManager.singleton.logMaster.enabled = false;

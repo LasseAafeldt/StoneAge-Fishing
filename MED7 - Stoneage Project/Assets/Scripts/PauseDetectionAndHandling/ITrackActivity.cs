@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface ITrackActivity
 {
-    bool GetIsActive();
-    void UpdateTracking(int length, int time);
+    bool GetIsActive(Queue<bool> que);
+    void UpdateTracking(int length, int time, ActivityQueContainer container);
 }

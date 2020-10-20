@@ -1,38 +1,56 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class FadeController : MonoBehaviour {
 
-    Animator animator;
+    CanvasGroup canvas;
+    [SerializeField] private float animationTime=2;
 
     private void Start()
     {
         try
         {
-            animator = GetComponentInChildren<Animator>();
+            canvas = GetComponentInChildren<CanvasGroup>();
         }
         catch
         {
-            Debug.LogError("Camera could not find an Animator in children");
+            Debug.LogError("Camera could not find an Canvasgroup in children");
         }
+
+        InstantFadeIn();
     }
 
     public void fadeOut()
     {
-        animator?.SetTrigger("FadeOut");
+        StartCoroutine(InterpolateAlpha(1, 0, animationTime));
     }
 
     public void fadeIn()
     {
-        animator?.SetTrigger("FadeIn");
+        StartCoroutine(InterpolateAlpha(0, 1, animationTime));
     }
 
     public void InstantFadeOut()
     {
-        animator?.SetTrigger("InstantFadeOut");
+        canvas.alpha = 1;
     }
 
     public void InstantFadeIn()
     {
-        animator?.SetTrigger("InstantFadeIn");
+        canvas.alpha = 0;
+    }
+
+    private IEnumerator InterpolateAlpha(float from, float to, float totalDuration)
+    {
+        float currentDuration = totalDuration;
+
+        while (currentDuration > 0)
+        {
+            float t = currentDuration / totalDuration;
+            canvas.alpha = Mathf.SmoothStep(from, to, t);
+            currentDuration -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

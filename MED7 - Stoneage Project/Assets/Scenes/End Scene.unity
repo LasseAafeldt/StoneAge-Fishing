@@ -526,7 +526,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -8.817764}
+  m_BoundingSphereOverride: {x: 9.3e-43, y: 3.59e-43, z: 0, w: 3.0370942e-15}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1164,7 +1164,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -6.701599, z: 5.44e-43, w: 1.05e-43}
+  m_BoundingSphereOverride: {x: NaN, y: 5.2233353, z: 9.3e-43, w: 4.19e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2667,6 +2667,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7803912253260574458, guid: 9cab657c8d274014abf8455284915929,
+        type: 3}
+      propertyPath: defaultQueValue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cab657c8d274014abf8455284915929, type: 3}
 --- !u!1 &1216423893
@@ -4108,7 +4113,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.1562e-41, y: 1.04e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: NaN, y: 4.566288, z: 9.3e-43, w: 6.43e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

@@ -386,7 +386,7 @@ PartnerAnimator PA;
             {
                 partnerSpeech.PartnerSaysSomething(partnerSpeech.endIsConfirmed);
                 //waiting to load end scene till the audioclip is done playing
-                StartCoroutine(waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed));
+                waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed);
                 //EC.CheckForEnding();
                 return;
             }
@@ -431,12 +431,9 @@ PartnerAnimator PA;
 		GetComponentInChildren<MeshRenderer>().enabled = true;
 	}
 
-    IEnumerator waitforAudioToLoadEndScene(AudioClip clip)
+    private void waitforAudioToLoadEndScene(AudioClip clip)
     {
-        yield return new WaitForSeconds(clip.length);
-        FadeController fade = GameObject.FindObjectOfType<FadeController>();
-        fade.fadeOut();
-        yield return new WaitForSeconds(2f);
+        Object.FindObjectOfType<SceneLoadManager>().ChangeScene(clip.length);
         EC.CheckForEnding();
     }
 

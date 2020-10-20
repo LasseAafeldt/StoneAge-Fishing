@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ActivityQueContainer
+public class ActivityQueContainer
 {
-    public static Queue<bool> activityQue;
-    public static Quaternion lastRead;
+    public Queue<bool> activityQue;
+    public Quaternion lastRead;
 
-    public static void InstantiateQue(int queLength)
+    public void InstantiateQue(int queLength, bool value)
     {
         activityQue = new Queue<bool>(queLength);
         for (int i = 0; i < activityQue.Count; i++)
         {
-            activityQue.Enqueue(false);
+            activityQue.Enqueue(value);
         }
     }
 

@@ -6,50 +6,44 @@ public class TrackHeadRotation : MonoBehaviour, ITrackActivity
 {
     [SerializeField] private float thresholdAnglePerSecond = 2;
 
-    Queue<bool> activityQue;
 
-    private void Start()
+    public bool GetIsActive(Queue<bool> que)
     {
-        activityQue = ActivityQueContainer.activityQue;
-    }
-
-    public bool GetIsActive()
-    {
-
-        for (int i = activityQue.Count - 1; i >= 0; i--)
+        for (int i = que.Count - 1; i >= 0; i--)
         {
-            if (activityQue.ToArray()[i] == false)
+            if (que.ToArray()[i] == false)
             {
                 Debug.Log("Active is true");
                 return true;
             }
-
         }
         Debug.Log("Active is false");
 
         return false;
     }
 
-    public void UpdateTracking(int queSizeSeconds, int checksPerSecond)
+    public void UpdateTracking(int queSizeSeconds, int checksPerSecond, ActivityQueContainer container)
     {
+        Queue<bool> que = container.activityQue;
+
         Quaternion currentRead = GvrVRHelpers.GetHeadRotation();
         //makes sure that we don't overflow the que
-        if (activityQue.Count >= queSizeSeconds * checksPerSecond)
+        if (que.Count >= queSizeSeconds * checksPerSecond)
         {
-            activityQue.Dequeue();
+            que.Dequeue();
         }
-        if(ActivityQueContainer.lastRead == null)
-            activityQue.Enqueue(false);
+        if(container.lastRead == null)
+            que.Enqueue(false);
 
-        if(Quaternion.Angle(ActivityQueContainer.lastRead, currentRead)>= thresholdAnglePerSecond / checksPerSecond)
+        if(Quaternion.Angle(container.lastRead, currentRead)>= thresholdAnglePerSecond / checksPerSecond)
         {
-            activityQue.Enqueue(false);
+            que.Enqueue(false);
         }
         else
         {
-            activityQue.Enqueue(true);
+            que.Enqueue(true);
         }
 
-        ActivityQueContainer.lastRead = currentRead;
+        container.lastRead = currentRead;
     }
 }

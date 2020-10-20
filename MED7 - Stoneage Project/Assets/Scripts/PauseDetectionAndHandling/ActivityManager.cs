@@ -7,64 +7,71 @@ public class ActivityManager : MonoBehaviour, IHandleActivity
 {
     [SerializeField] private int queSizeSeconds = 15;
     [SerializeField] private int checksPerSecond = 3;
+    [SerializeField] private bool defaultQueValue; //false
+    [SerializeField] private bool triggerOnActivity; //true
+
+    private bool canChangeScene= true;
+
+    private ActivityQueContainer container;
 
     private ITrackActivity tracker;
     private bool playerIsActive;
     private SceneLoadManager sceneLoad;
 
-    public static ActivityManager instance = null;
-
     private void Awake()
     {
-        //make sure ther are only one of these in a scene as the values of the que 
-        //would be wrong double logged otherwise
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
+        container = new ActivityQueContainer();
+        container.InstantiateQue(queSizeSeconds * checksPerSecond, defaultQueValue);
+        
+
         tracker = GetComponent<ITrackActivity>();
-        ActivityQueContainer.InstantiateQue(queSizeSeconds * checksPerSecond);
         sceneLoad = FindObjectOfType<SceneLoadManager>();
     }
 
     private void Start()
     {
         InvokeRepeating("CheckIsActive", 1, 1f / checksPerSecond);
-        playerIsActive = true;
+        playerIsActive = defaultQueValue;
     }
 
     private void FixedUpdate()
     {
-        if(!playerIsActive && SceneManager.GetActiveScene().buildIndex != 
-            SceneManager.sceneCountInBuildSettings - 1)
+        if(!playerIsActive && !triggerOnActivity)
         {
-            Debug.Log("indext to load = " + (SceneManager.sceneCountInBuildSettings - 1));
             OnEnterPause();
         }
-        else if(playerIsActive && SceneManager.GetActiveScene().buildIndex == 
-            SceneManager.sceneCountInBuildSettings - 1)
+        else if(playerIsActive && triggerOnActivity)
         {
             ONExitPause();
         }
     }
     public void OnEnterPause()
     {
-        sceneLoad.ChangeScene(SceneManager.sceneCountInBuildSettings - 1);
+        if (SceneManager.GetActiveScene().buildIndex != SceneManager.sceneCountInBuildSettings - 1 &&
+            canChangeScene)
+        {
+            sceneLoad.ChangeScene(SceneManager.sceneCountInBuildSettings - 1);
+            canChangeScene = false;
+        }
     }
 
     public void ONExitPause()
     {
-        sceneLoad.ChangeScene(0);
+        if (SceneManager.GetActiveScene().buildIndex != 0
+            && canChangeScene)
+        {
+            sceneLoad.ChangeScene(0);
+            canChangeScene = false;
+        }
+
     }
 
     void CheckIsActive()
     {
-        tracker.UpdateTracking(queSizeSeconds, checksPerSecond);
+        tracker.UpdateTracking(queSizeSeconds, checksPerSecond, container);
         Debug.Log("Counter");
-        playerIsActive = tracker.GetIsActive();
+        playerIsActive = tracker.GetIsActive(container.activityQue);
     }
+
+
 }
