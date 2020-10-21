@@ -135,14 +135,8 @@ namespace UnityStandardAssets.Water
             // Render reflection if needed
             if (mode >= WaterMode.Reflective)
             {
-
-                //Debug.Log("WATER REFLECT");
-
                 if (cam.stereoEnabled)
                 {
-
-                    //Debug.Log("WATER CAM STEREO ON");
-
                     if (cam.stereoTargetEye == StereoTargetEyeMask.Both || cam.stereoTargetEye == StereoTargetEyeMask.Left)
                     {
                         // RIGHT EYE!
@@ -150,9 +144,7 @@ namespace UnityStandardAssets.Water
                         Matrix4x4 projectionMatrix = cam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right);
 
                         RenderReflection(reflectionCamera, m_ReflectionTextureRightEye, eyePos, cam.transform.rotation, projectionMatrix);
-                        //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex1", m_ReflectionTexture1);
 
-                        //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex0", getRightEyeTexture());
                         GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex0", m_ReflectionTextureRightEye);
                     }
 
@@ -163,8 +155,6 @@ namespace UnityStandardAssets.Water
                         Matrix4x4 projectionMatrix = cam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Left);
 
                         RenderReflection(reflectionCamera, m_ReflectionTextureLeftEye, eyePos, cam.transform.rotation, projectionMatrix);
-                        //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex0", m_ReflectionTexture0);
-                        //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex1", getLeftEyeTexture());
 
                         GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex1", m_ReflectionTextureLeftEye);
                     }
@@ -173,12 +163,8 @@ namespace UnityStandardAssets.Water
                 {
                     // EDITOR!
                     RenderReflection(reflectionCamera, m_ReflectionTextureRightEye, cam.transform.position, cam.transform.rotation, cam.projectionMatrix);
-                    //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex1", m_ReflectionTexture1);
 
-                    //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex0", getRightEyeTexture());
                     GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex0", m_ReflectionTextureRightEye);
-                    //GetComponent<Renderer>().sharedMaterial.SetTexture("_ReflectionTex1", m_ReflectionTexture1);
-
                 }
             }
 

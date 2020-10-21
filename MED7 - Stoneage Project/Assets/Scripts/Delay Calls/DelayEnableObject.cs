@@ -14,7 +14,6 @@ public class DelayEnableObject : MonoBehaviour, IDelay
 
     public void Fire()
     {
-        Debug.Log("enable "+disabledObject.name);
         disabledObject.SetActive(true);
     }
 

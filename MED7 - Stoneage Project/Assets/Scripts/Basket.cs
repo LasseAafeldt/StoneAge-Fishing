@@ -21,7 +21,6 @@ public class Basket : MonoBehaviour {
 	public void DestroyBasket()
 	{
 		isDestroyed=true;
-		Debug.Log("basket destroyed");
 
 		GetComponent<Collider>().enabled = false;
 

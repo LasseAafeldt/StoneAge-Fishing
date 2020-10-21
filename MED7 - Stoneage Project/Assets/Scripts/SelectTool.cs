@@ -32,11 +32,10 @@ public bool IsTribeBasket;
     private Transform mapCameraPos;
     private Transform mapOriginalPos;
 
-EventCatcher EC;
-PartnerAnimator PA;
+    EventCatcher EC;
+    PartnerAnimator PA;
     PartnerSpeech partnerSpeech;
     GuidanceSounds guidance;
-    LogMaster logMaster;
 
 	string tool ="";
 
@@ -53,7 +52,7 @@ PartnerAnimator PA;
     public static bool firstFishingFlatfish = true;
     private static bool secondFishingFlatfish = false;
     private static bool thirdFishingFlatfish = false;
-    // Use this for initialization
+
     void Start () {
         eelTrapEmptied = false;
         timesFishedNowhereTotal = 0;
@@ -82,22 +81,15 @@ PartnerAnimator PA;
 			PA = GameManager.singleton.partner.GetComponent<PartnerAnimator>();
             partnerSpeech = GameManager.singleton.partner.GetComponent<PartnerSpeech>();
             guidance = GameManager.singleton.CameraContainer.GetComponent<GuidanceSounds>();
-            logMaster = GameManager.singleton.logMaster;
-
         }
 		catch{}
         timesFishedNoWhere = 0;
-
-        //find the map positions
-        mapCameraPos = GameObject.Find("CameraMap")?.transform;
-        mapOriginalPos = GameObject.Find("OriginalMapPos")?.transform;
     }
 	
 	public void Select(){
 		//selecting which tool to use 
 		if(tag == "hook")
 		{
-			//Debug.Log("selected hook");
 			tool = tag;
 			//play animation
 
@@ -111,7 +103,6 @@ PartnerAnimator PA;
                 }
 				HideTool();
 				PA.HookAnimation();
-                //Debug.Log("Player is fishing torsk now, hopefully the sound is playing while the animation happens");
 
                 #region partner say something depending on which number of torsk is caught
                 if (firstFishingTorsk)
@@ -119,11 +110,6 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingFirst);
                     firstFishingTorsk = false;
                     secondFishingTorsk = true;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Torsk;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 if (secondFishingTorsk)
@@ -131,22 +117,12 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingSecond);
                     secondFishingTorsk = false;
                     thirdFishingTorsk = true;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Torsk;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 if (thirdFishingTorsk)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileTorskFishingThird);
                     thirdFishingTorsk = false;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Torsk;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 #endregion
@@ -159,8 +135,6 @@ PartnerAnimator PA;
 			else
 			{
                 //wrong tool
-                setWrongToolVoicelineInt(WrongTool.NoIron4Cod);
-                //Debug.Log("this is not the tool to use for eel or flatfish");
                 if (wrongToolOneHook)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron);
@@ -175,7 +149,6 @@ PartnerAnimator PA;
 		}
 		else if (tag == "eeliron")
 		{
-			//Debug.Log("selected eeliron");
 			tool = tag;
 			//play animation
 
@@ -188,7 +161,6 @@ PartnerAnimator PA;
                 }
                 HideTool();
 				PA.EelironAnimation();
-                //Debug.Log("Player is fishing eel now, hopefully the sound is playing while the animation happens");
 
                 #region partner says something depending on which number of eel is caught
                 if (firstFishingEel)
@@ -196,11 +168,6 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingFirst);
                     firstFishingEel = false;
                     secondFishingEel = true;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Eel;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 if (secondFishingEel)
@@ -208,23 +175,12 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingSecond);
                     secondFishingEel = false;
                     thirdFishingEel = true;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Eel;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 if (thirdFishingEel)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEelFishingThird);
                     thirdFishingEel = false;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Eel;
-                    setFishCaughtInt(fishCaught);
-                    Debug.Log("player has fished eel 3 times now");
                     return;
                 }
                 #endregion
@@ -238,7 +194,6 @@ PartnerAnimator PA;
                 }
                 HideTool();
                 PA.EelironAnimation();
-                //Debug.Log("Player is fishing Flatfish now, hopefully the sound is playing while the animation happens");
 
                 #region partner says something depending on which number of flatfish is caught
                 if (firstFishingFlatfish)
@@ -246,11 +201,6 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingFirst);
                     firstFishingFlatfish = false;
                     secondFishingFlatfish = true;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Flatfish;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 if (secondFishingFlatfish)
@@ -258,23 +208,12 @@ PartnerAnimator PA;
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingSecond);
                     secondFishingFlatfish = false;
                     thirdFishingFlatfish = true;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Flatfish;
-                    setFishCaughtInt(fishCaught);
                     return;
                 }
                 if (thirdFishingFlatfish)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.whileFlatfishFihingThird);
                     thirdFishingFlatfish = false;
-                    //EC.startFishing(tool);
-
-                    //for log data
-                    fishCaught = FishCaught.Flatfish;
-                    setFishCaughtInt(fishCaught);
-                    Debug.Log("player has fished Flatfish 3 times now");
                     return;
                 }
                 #endregion
@@ -287,8 +226,6 @@ PartnerAnimator PA;
 			else if(EventCatcher.fishingArea == "TorskArea")
 			{
                 //wrong tool
-                setWrongToolVoicelineInt(WrongTool.NoHook4Eel);
-                //Debug.Log("This is not the tool to use for cod");
                 if (wrongToolOneSpear == true)
                 {
                     partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook);
@@ -301,56 +238,6 @@ PartnerAnimator PA;
                 }
 			}			
 		}
-        #region Switch map positon
-        else if (tag == "map")
-        {
-            Vector3 currentMapPosition = transform.position;
-
-            //swap from original pos to cam pos
-            if(currentMapPosition == mapOriginalPos.position)
-            {
-                transform.position = mapCameraPos.position;
-                transform.rotation = mapCameraPos.rotation;
-
-                //for log data
-                logMaster.logEntry(
-                    logMaster.player.position,
-                    logMaster.player.rotation.eulerAngles,
-                    PartnerSpeech.lastVoiceline,
-                    LogMaster.TypeOfFishCaught,
-                    GuidanceSounds.lastGuidanceSound,
-                    SelectTool.timesFishedNowhereTotal,
-                    LogMaster.WrongToolVoiceline,
-                    logMaster.mapOnCamera = true,
-                    BoatControllerScript.currentlyInRegion);
-            }
-            else //change post to original pos
-            {
-                Debug.Log("IM here");
-                transform.position = mapOriginalPos.position;
-                transform.rotation = mapOriginalPos.rotation;
-
-                //for log data
-                logMaster.logEntry(
-                    logMaster.player.position,
-                    logMaster.player.rotation.eulerAngles,
-                    PartnerSpeech.lastVoiceline,
-                    LogMaster.TypeOfFishCaught,
-                    GuidanceSounds.lastGuidanceSound,
-                    SelectTool.timesFishedNowhereTotal,
-                    LogMaster.WrongToolVoiceline,
-                    logMaster.mapOnCamera = false,
-                    BoatControllerScript.currentlyInRegion);
-            }
-
-            Debug.Log("selected map");
-            tool = tag;
-        }
-        #endregion
-
-        //setWrongToolVoicelineInt(WrongTool.None);
-        //admit to fish with the selected tool
-        //EC.startFishing(tool);
     }
 
     #region empty eeltrap 
@@ -367,13 +254,7 @@ PartnerAnimator PA;
             partnerSpeech.PartnerSaysSomething(partnerSpeech.whileEmptyingEeltrap);
 
             eelTrapEmptied = true;
-			//Debug.Log("emptying basket for test");
 			GetComponent<Collider>().enabled=false;
-
-            //for log data
-            fishCaught = FishCaught.EeltrapEmptied;
-            setFishCaughtInt(fishCaught);
-
         }
 	}
     #endregion
@@ -387,7 +268,6 @@ PartnerAnimator PA;
                 partnerSpeech.PartnerSaysSomething(partnerSpeech.endIsConfirmed);
                 //waiting to load end scene till the audioclip is done playing
                 waitforAudioToLoadEndScene(partnerSpeech.endIsConfirmed);
-                //EC.CheckForEnding();
                 return;
             }
             //play voiceline "are you sure you want to end"
@@ -442,46 +322,4 @@ PartnerAnimator PA;
         yield return new WaitForSeconds(15);
         endGame = false;
     }
-
-    void setWrongToolVoicelineInt(WrongTool WrongToolVoice)
-    {
-        wrongTool = WrongToolVoice;
-        //Debug.Log("I set the enum to: " + WrongToolVoice);
-        LogMaster.WrongToolVoiceline = (int)wrongTool;
-        //call the log entry function here inorder not to loose the wrongtool data
-        if(LogMaster.filePath != null)
-        {
-            logMaster.logEntry(
-                logMaster.player.position,
-                logMaster.player.rotation.eulerAngles,
-                PartnerSpeech.lastVoiceline,
-                LogMaster.TypeOfFishCaught,
-                GuidanceSounds.lastGuidanceSound,
-                timesFishedNowhereTotal,
-                LogMaster.WrongToolVoiceline,
-                logMaster.mapOnCamera = false,
-                BoatControllerScript.currentlyInRegion);
-        }
-    }
-
-    void setFishCaughtInt(FishCaught _fishcaught)
-    {
-        LogMaster.TypeOfFishCaught = (int)_fishcaught;
-        //call logEntry function here inorder not to loose data
-        if (LogMaster.filePath != null)
-        {
-            logMaster.logEntry(
-                logMaster.player.position,
-                logMaster.player.rotation.eulerAngles,
-                PartnerSpeech.lastVoiceline,
-                LogMaster.TypeOfFishCaught,
-                GuidanceSounds.lastGuidanceSound,
-                timesFishedNowhereTotal,
-                LogMaster.WrongToolVoiceline,
-                logMaster.mapOnCamera = false,
-                BoatControllerScript.currentlyInRegion);
-        }
-    }
-
-
 }

@@ -77,11 +77,9 @@ public class PartnerSpeech : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-
+        
 		if (!audio.isPlaying && !donePlaying)
         {
-            //Debug.Log(audio.clip.name);
-            //audioSource.Play();
 			donePlaying = true;
 			GetComponent<PartnerAnimator>().StopTalking();	
 			
@@ -141,8 +139,6 @@ public class PartnerSpeech : MonoBehaviour {
 			{
 				queuedAudio.Add(clip);
 				queuedText.Add(writtenLine);
-								Debug.Log(audio.clip.name + " audio - clip " + clip.name);
-                //amountOfVoiceLinesPlayed++;
 			}
 
 		}
@@ -153,9 +149,7 @@ public class PartnerSpeech : MonoBehaviour {
 				GetComponent<PartnerAnimator>().StartTalking();
 			}
 			audio.clip = clip;
-			//speech.text = writtenLine;
 			audio.Play();
-            //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
             guidance.AddTimeToGuidanceActiveTimer(clip.length);
         }
@@ -168,8 +162,6 @@ public class PartnerSpeech : MonoBehaviour {
 			if(!queuedAudio.Contains(clip) && audio.clip.name != clip.name)
 			{
 				queuedAudio.Add(clip);
-				//Debug.Log(audio.clip.name + " audio - clip " + clip.name);
-                //amountOfVoiceLinesPlayed++;
 			}
 
 		}
@@ -178,7 +170,6 @@ public class PartnerSpeech : MonoBehaviour {
 			GetComponent<PartnerAnimator>().StartTalking();
 			audio.clip = clip;
 			audio.Play();
-            //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
             guidance.AddTimeToGuidanceActiveTimer(clip.length);
         }
@@ -191,8 +182,6 @@ public class PartnerSpeech : MonoBehaviour {
 			if(!queuedAudio.Contains(clip) && audio.clip.name != clip.name)
 			{
 				queuedAudio.Add(clip);
-				Debug.Log(audio.clip.name + " audio1 - clip " + clip.name);
-                //amountOfVoiceLinesPlayed++;
 			}
 		}
 		else
@@ -203,7 +192,6 @@ public class PartnerSpeech : MonoBehaviour {
 			}
 			audio.clip = clip;
 			audio.Play();
-            //amountOfVoiceLinesPlayed++;
             setLastPlayedVoiceline(clip);
             guidance.AddTimeToGuidanceActiveTimer(clip.length);
         }

@@ -7,39 +7,11 @@ public class AverageFishPosition : MonoBehaviour {
     public List<AcitivateFish> fishContainers = new List<AcitivateFish>();
 
     public Collider camContainerCollider;
-    //bool isInRange = false;
 
     private void Start()
     {
         //set the position to an everage of all the fish spawner objects' position the belong to this area.
         transform.position = averagePosition();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other != camContainerCollider)
-        {
-            return;
-        }
-        //isInRange = true;
-        foreach (AcitivateFish fishsSpawner in fishContainers)
-        {
-            //fishsSpawner.activateChild();
-        }
-        //Debug.Log("This is the camera collider hitting me");
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other != camContainerCollider)
-        {
-            return;
-        }
-        //isInRange = false;
-        foreach (AcitivateFish fishsSpawner in fishContainers)
-        {
-            //fishsSpawner.deactivateChild();
-        }
     }
 
     Vector3 averagePosition()
@@ -58,9 +30,4 @@ public class AverageFishPosition : MonoBehaviour {
         }
         return new Vector3(x / fishContainers.Count, y / fishContainers.Count, z / fishContainers.Count);
     }
-
-    /*public bool getIsInRange()
-    {
-        return isInRange;
-    }*/
 }

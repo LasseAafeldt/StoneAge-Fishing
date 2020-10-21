@@ -43,11 +43,7 @@ public class PelicanEvent : MonoBehaviour
                     + 2 * (1 - t) * t * middle.transform.position
                     + Mathf.Pow(t, 2) * end.transform.position;
 
-                //Debug.Log(transform.position);
-                //Debug.Log(newPos);
-                //Debug.DrawRay(transform.position, (newPos-transform.position)*100, Color.red, 1);
                 forwardRotation = newPos - transform.position;
-                //transform.forward = -forwardRotation;
                 
                 transform.position = newPos;
 
@@ -65,7 +61,6 @@ public class PelicanEvent : MonoBehaviour
     //old script that that is taken from the previous groups project.... don't fix if it isn't broken...
     public void startOrcaEvent()
     {
-        //Debug.Log("THE PELICANS!!! = " + eventIsStarted);
         if (eventIsStarted)
             return;
         eventIsStarted = true;

@@ -39,7 +39,6 @@ public class PartnerAnimator : MonoBehaviour {
 	{
 		anim.SetTrigger("hookFishing");
         GameManager.singleton.canMove = false;
-        //Debug.Log("I can't move anymore");
 		GameManager.singleton.paddle.SetActive(false);
 		GameManager.singleton.partner.transform.position = GameManager.singleton.partner.transform.position - 0.75f*transform.up;
 	}
@@ -50,7 +49,6 @@ public class PartnerAnimator : MonoBehaviour {
 		GameManager.singleton.aniEelIron.SetActive(true);
 		GameManager.singleton.aniTorch.SetActive(true);
         GameManager.singleton.canMove = false;
-        //Debug.Log("I can't move anymore");
     }
 
 	public void BasketAnimation()
@@ -193,7 +191,6 @@ public class PartnerAnimator : MonoBehaviour {
 	public void BasketAniDone(){
 		bool basketFull = true;
 
-        //Debug.Log("Test");
 		if (basketFull)
 		{
 			trapFull();
@@ -287,9 +284,7 @@ public class PartnerAnimator : MonoBehaviour {
 	}
 
     private static void InvokeFishPutInBasketEvent()
-    {
-        //Debug.Log("<color=green> I'm supposed to diable some fish now </color>");
-        
+    {        
         if (FishPutInBasketEvent != null)
         {
             FishPutInBasketEvent.Invoke();

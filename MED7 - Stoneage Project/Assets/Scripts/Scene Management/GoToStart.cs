@@ -17,27 +17,20 @@ public class GoToStart : MonoBehaviour {
 
     void Start () {
         tempTime = totalTime;
-        //gameManager = GameManager.singleton;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		tempTime -= Time.deltaTime;
 
 		if(tempTime < 0 && Input.GetButtonDown("Fire1"))
 		{
-			Debug.Log("go to start");
             GameManager.singleton.resetFishInBasket();
-            //LogMaster.shouldBeLogging = true; this enables it too early
-            //StartCoroutine(waitWithDestroy(2f));
-            //Destroy(GameObject.Find("Game Manager"));
-            sceneManager.ChangeScene(0);  //StartCoroutine(waitWithDestroy(2f));
+            sceneManager.ChangeScene(0);
 		}
 	}
     IEnumerator waitWithDestroy(float wait)
     {
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
-        Debug.Log("waitWithDestroy calls fade out");
         fade.fadeOut();
         yield return new WaitForSeconds(wait);
 		Destroy(GameObject.Find("Game Manager"));

@@ -30,7 +30,6 @@ public class PointArrowInCameraPlane : MonoBehaviour, IPointArrowResponse
 
     public void PointHorizontalTowards(Transform t)
     {
-        Debug.Log("Horizontal");
         arrow2target = t.position - transform.position;
 
         ProjectOntoCamHorizontal();

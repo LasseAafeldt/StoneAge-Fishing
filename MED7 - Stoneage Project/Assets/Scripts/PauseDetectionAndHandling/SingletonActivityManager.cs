@@ -37,7 +37,6 @@ public class SingletonActivityManager : MonoBehaviour, IHandleActivity
         if (!playerIsActive && SceneManager.GetActiveScene().buildIndex !=
             SceneManager.sceneCountInBuildSettings - 1)
         {
-            Debug.Log("indext to load = " + (SceneManager.sceneCountInBuildSettings - 1));
             OnEnterPause();
         }
         else if (playerIsActive && SceneManager.GetActiveScene().buildIndex ==
@@ -55,13 +54,4 @@ public class SingletonActivityManager : MonoBehaviour, IHandleActivity
     {
         sceneLoad.ChangeScene(0);
     }
-
-    //void CheckIsActive()
-    //{
-    //    tracker.UpdateTracking(queSizeSeconds, checksPerSecond, );
-    //    Debug.Log("Counter");
-    //    playerIsActive = tracker.GetIsActive();
-    //}
-
-
 }

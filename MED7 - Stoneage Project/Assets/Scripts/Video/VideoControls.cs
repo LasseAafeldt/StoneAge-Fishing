@@ -25,12 +25,10 @@ public class VideoControls : MonoBehaviour
 
     public void OnVideoEnd(VideoPlayer videoPlayer)
     {
-        Debug.Log("entered OnvideoEnd");
         if (!hasEndEvent) return;
         //do an event
         if (VideoHasEnded != null)
         {
-            Debug.Log("Invoke VideoHasEnded");
             VideoHasEnded.Invoke();
         }
 

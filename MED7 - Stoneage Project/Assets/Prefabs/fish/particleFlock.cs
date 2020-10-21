@@ -41,8 +41,6 @@ public class particleFlock : MonoBehaviour {
             if (Vector3.Distance(fishParticles[i].position, fishParticleEmitter.transform.position) > neighbourDistance)
             {
                fishParticles[i].velocity = -(fishParticles[i].velocity+fishParticles[i].animatedVelocity);
-
-                Debug.Log(fishParticles[i].velocity);
             }
         }
 
