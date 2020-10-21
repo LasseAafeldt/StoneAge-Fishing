@@ -155,7 +155,7 @@ public class PartnerSpeech : MonoBehaviour {
         }
 
 	}
-	public void PartnerSaysSomething(AudioClip clip)
+	public void PartnerSaysSomething(AudioClip clip, bool canBeQueued =true)
 	{
 		if(audio.isPlaying)
 		{
@@ -168,28 +168,6 @@ public class PartnerSpeech : MonoBehaviour {
 		else
 		{
 			GetComponent<PartnerAnimator>().StartTalking();
-			audio.clip = clip;
-			audio.Play();
-            setLastPlayedVoiceline(clip);
-            guidance.AddTimeToGuidanceActiveTimer(clip.length);
-        }
-
-	}
-	public void PartnerSaysSomething(AudioClip clip, bool animation)
-	{
-		if(audio.isPlaying)
-		{
-			if(!queuedAudio.Contains(clip) && audio.clip.name != clip.name)
-			{
-				queuedAudio.Add(clip);
-			}
-		}
-		else
-		{
-			if (animation)
-			{
-				GetComponent<PartnerAnimator>().StartTalking();
-			}
 			audio.clip = clip;
 			audio.Play();
             setLastPlayedVoiceline(clip);
