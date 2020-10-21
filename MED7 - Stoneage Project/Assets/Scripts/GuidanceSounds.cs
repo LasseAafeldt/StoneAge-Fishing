@@ -81,7 +81,7 @@ public class GuidanceSounds : MonoBehaviour {
         AreaDataContainer Mtorsk = new AreaDataContainer("Torsk area", Torsk.gameObject, farDistanceGuideExclude, maxAnglethreshold,weightForDistance,weightForAngle);
         AreaDataContainer Mflatfish = new AreaDataContainer("Flatfish area", flatFish.gameObject, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
         AreaDataContainer Meel = new AreaDataContainer("Eel area", eel.gameObject, farDistanceGuideExclude, maxAnglethreshold, weightForDistance, weightForAngle);
-        AreaDataContainer MeelTrap = new AreaDataContainer("EelTrap Region", eelTrap.gameObject,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
+        AreaDataContainer MeelTrap = new AreaDataContainer("EelTrap Region (1)", eelTrap.gameObject,farDistanceGuideExclude,maxAnglethreshold, weightForDistance, weightForAngle);
 
         mlist.Add(Mtorsk);
         mlist.Add(Mflatfish);
@@ -125,7 +125,6 @@ public class GuidanceSounds : MonoBehaviour {
         ChooseBestAreaToGuideTowards();
         if(_currentBestAreaToGuideTowards == null)
         {
-            //Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
 
@@ -133,7 +132,6 @@ public class GuidanceSounds : MonoBehaviour {
         //don't play the first sound again if they are still closest to the same area.
         if (_currentBestAreaToGuideTowards.tag == SelectedArea)
         {
-            //Debug.Log("Closest area is unchanged");
             lvl1GuidanceSound = false;
             //change which guidance timer to use
             detailedGuidance = true;
@@ -159,7 +157,6 @@ public class GuidanceSounds : MonoBehaviour {
         }
         if (_currentBestAreaToGuideTowards.tag == "FlatfishArea" && lvl1GuidanceSound && !GameManager.singleton.flatFishCaught)
         {
-            //Debug.Log("the flatfish area is over there... Sound is suppose to play");
             partnerSpeech.PartnerSaysSomething(partnerSpeech.ClosestToFlatfish);
             SetLastGuidanceSound(partnerSpeech.ClosestToFlatfish);
         }
@@ -179,17 +176,10 @@ public class GuidanceSounds : MonoBehaviour {
         UpdateFishAreaData();
 
         _currentBestAreaToGuideTowards = GetAreaWithLowestScore();
-        //check if any unseen areas have not bee fished in.
-        //if(_currentBestAreaToGuideTowards == null)
-        //{
-        //    Debug.Log("This doesn't happen!!");
-        //    _currentBestAreaToGuideTowards = CheckUnseenAreas();
-        //}
     }
 
     private GameObject CheckUnseenAreas()
     {
-        Debug.Log("Checking unseen areas");
         float lowestScore = 99999999;
         GameObject lowestScoreArea = null;
         foreach (AreaDataContainer fishArea in fishAreaDatas)
@@ -213,8 +203,6 @@ public class GuidanceSounds : MonoBehaviour {
                 lowestScoreArea = fishArea.gObject;
             }
         }
-        Debug.Log("unseen area with lowest score = " + lowestScoreArea?.name);
-        //TODO: some more tests... detailed sounds are not said currently if the last area remaining can't be seen
 
         return lowestScoreArea;
     }
@@ -227,8 +215,6 @@ public class GuidanceSounds : MonoBehaviour {
             fishArea.distanceFromPlayer = GetDistanceFromPlayer(horizontalFishAreaPos);
 
             fishArea.horizontalAngleFromLookDirection = GetHorizontalAnglefromPlayer(fishArea.position);
-            //Debug.Log("<color=red> Area: " + fishArea.name + " guide score: " + fishArea.guidanceScore + "</color>" + 
-            //"dist score = " + fishArea.distScore + "  angle score = " + fishArea.angleScore);
             
 
             Vector3 dir = fishArea.position - transform.position;
@@ -242,7 +228,6 @@ public class GuidanceSounds : MonoBehaviour {
             {
                 fishArea.canAreaBeSeen = true;
             }
-            Debug.Log(fishArea.name + "can be seen = " + fishArea.canAreaBeSeen);
         }
     }
 
@@ -267,7 +252,7 @@ public class GuidanceSounds : MonoBehaviour {
                 lowestScoreArea = fishArea.gObject;
             }
         }
-        Debug.Log("Area with lowest score = " + lowestScoreArea?.name);
+
         if(lowestScoreArea == null)
         {
             return CheckUnseenAreas();
@@ -335,14 +320,12 @@ public class GuidanceSounds : MonoBehaviour {
         ChooseBestAreaToGuideTowards();
         if (_currentBestAreaToGuideTowards == null)
         {
-            Debug.Log("Closest distance was null, either all areas have been tried or something went wrong");
             return;
         }
 
         //reset which guidance timer to use
         if (_currentBestAreaToGuideTowards.tag != SelectedArea)
         {
-            Debug.Log("Closest area is new");
             //change which guidance timer to use
             detailedGuidance = false;
             standardGuidance = true;
@@ -418,15 +401,10 @@ public class GuidanceSounds : MonoBehaviour {
             numbersToChooseFrom.Add(i);
         }
 
-        //Debug.Log("number not to choose detailed = " + numberToExclude);
         numbersToChooseFrom.Remove(numberToExclude);
-        /*foreach (int number in numbersToChooseFrom)
-        {
-            Debug.Log("numbers to choose from contains: " + number);
-        }*/
+
         int randomIndex = Random.Range(0, numbersToChooseFrom.Count);
         int randomNumber = numbersToChooseFrom[randomIndex];
-        //Debug.Log("index that have been chosen for the audioclip array: " + randomNumber);
         SetLastGuidanceSound(clipArray[randomNumber]);
         //exclude number here for next time
         numberToExclude = randomNumber;
