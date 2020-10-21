@@ -2662,20 +2662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2696376047585626890, guid: 9cab657c8d274014abf8455284915929,
-        type: 3}
-      propertyPath: thresholdAnglePerSecond
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 7803912253260574458, guid: 9cab657c8d274014abf8455284915929,
         type: 3}
       propertyPath: defaultQueValue
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7803912253260574458, guid: 9cab657c8d274014abf8455284915929,
-        type: 3}
-      propertyPath: queSizeSeconds
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cab657c8d274014abf8455284915929, type: 3}

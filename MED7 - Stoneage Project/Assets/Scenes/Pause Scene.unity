@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16000429, g: 0.1556749, b: 0.14977047, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -669,7 +669,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TAG P<b>\xC5</b> FISKETUR I ERTEB<b>\xD8</b>LLEFOLKETS VERDEN"
+  m_text: "TAG P<size=111%><b>\xC5</b><size=100%> FISKETUR I ERTEB<size=111%><b>\xD8</b><size=100%>LLEFOLKETS
+    VERDEN"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2182854cfe085f54e86a807e2be1ab2f, type: 2}
   m_sharedMaterial: {fileID: 6853130934783265823, guid: 2182854cfe085f54e86a807e2be1ab2f,
@@ -1349,7 +1350,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TRYK P<b>\xC5</b> KNAPPEN P<b>\xC5</b> HEADSETTET"
+  m_text: "TRYK P<size=111%><b>\xC5</b><size=100%> KNAPPEN P<size=111%><b>\xC5</b><size=100%>
+    HEADSETTET"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2182854cfe085f54e86a807e2be1ab2f, type: 2}
   m_sharedMaterial: {fileID: 6853130934783265823, guid: 2182854cfe085f54e86a807e2be1ab2f,
