@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoadManager : MonoBehaviour
 {
     private bool _readyForNextScene = false;
-
+    
     [SerializeField] private VideoControls vidControls;
     private void Start()
     {

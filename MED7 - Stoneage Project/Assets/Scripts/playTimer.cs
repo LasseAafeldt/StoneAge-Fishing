@@ -105,16 +105,9 @@ public class playTimer : MonoBehaviour {
             StartCoroutine(waitForSoundToEnd(guide.clip));
             yield break;
         }
-        //wait till audio is done
         partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerEnd);
-        yield return new WaitForSeconds(clip.length);
-
-        FadeController fade = GameObject.FindObjectOfType<FadeController>();
-
-        fade.fadeOut();
-        yield return new WaitForSeconds(2f);
-
-        GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();    
+        Object.FindObjectOfType<SceneLoadManager>().ChangeScene(clip.length);
+        GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
     }
 
 	public float GetTimeSpent()
