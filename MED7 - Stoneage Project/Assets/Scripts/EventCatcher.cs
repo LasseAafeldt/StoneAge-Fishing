@@ -49,11 +49,11 @@ public class EventCatcher : MonoBehaviour {
             canFish = true;
             //play can fish sound
             if(other.tag == "TorskArea" && SelectTool.firstFishingTorsk)
-                partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere);
+                partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere, false);
             if(other.tag == "EelArea" && SelectTool.firstFishingEel)
-                partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere);
+                partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere, false);
             if(other.tag == "FlatfishArea" && SelectTool.firstFishingFlatfish)
-                partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere);
+                partnerSpeech.PartnerSaysSomething(partnerSpeech.canFishHere, false);
 
             guidanceSounds.AddTimeToGuidanceActiveTimer(5f);
 			fishingArea = other.tag;

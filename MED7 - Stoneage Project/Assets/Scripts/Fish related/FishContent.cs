@@ -26,7 +26,7 @@ public class FishContent : MonoBehaviour {
         else if(fish.Count <= 0)
         {
             areaOutOfFish = true;
-            ps.PartnerSaysSomething(ps.areaIsOutOfFish);
+            ps.PartnerSaysSomething(ps.areaIsOutOfFish, false);
         }
 
 	}

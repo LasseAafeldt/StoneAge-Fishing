@@ -137,12 +137,12 @@ public bool IsTribeBasket;
                 //wrong tool
                 if (wrongToolOneHook)
                 {
-                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron);
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron, false);
                     wrongToolOneHook = !wrongToolOneHook;
                 }
                 else
                 {
-                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron2);
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoHook4EelTryIron2,false);
                     wrongToolOneHook = !wrongToolOneHook;
                 }
 			}
@@ -228,12 +228,12 @@ public bool IsTribeBasket;
                 //wrong tool
                 if (wrongToolOneSpear == true)
                 {
-                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook);
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook,false);
                     wrongToolOneSpear = !wrongToolOneSpear;
                 }
                 else
                 {
-                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook2);
+                    partnerSpeech.PartnerSaysSomething(partnerSpeech.NoIron4CodTryHook2,false);
                     wrongToolOneSpear = !wrongToolOneSpear;
                 }
 			}			
@@ -271,7 +271,7 @@ public bool IsTribeBasket;
                 return;
             }
             //play voiceline "are you sure you want to end"
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.confirmEndPlz);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.confirmEndPlz, false);
             endGame = true;
             StartCoroutine(resetEnding());
         }
@@ -285,7 +285,7 @@ public bool IsTribeBasket;
         //functionallity
         if (timesFishedNoWhere < partnerSpeech.noFishHere.Length)
         {
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.noFishHere[timesFishedNoWhere]);
+            partnerSpeech.PartnerSaysSomething(partnerSpeech.noFishHere[timesFishedNoWhere],false);
             timesFishedNoWhere++;
         }
         if (timesFishedNoWhere >= partnerSpeech.noFishHere.Length)

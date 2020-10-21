@@ -159,7 +159,9 @@ public class PartnerSpeech : MonoBehaviour {
 	{
 		if(audio.isPlaying)
 		{
-			if(!queuedAudio.Contains(clip) && audio.clip.name != clip.name)
+			if(!queuedAudio.Contains(clip) && // if the voiceline is no in the queue already
+                audio.clip.name != clip.name && // and if it is not the clip being played
+                canBeQueued) // and if the voiceline is allowed to be queued
 			{
 				queuedAudio.Add(clip);
 			}
