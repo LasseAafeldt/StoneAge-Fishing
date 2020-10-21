@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//[RequireComponent(typeof(LogMaster))]
-//main scene needs to have a LogMaster component on this... doesn't need in other scenes
 public class GameManager : MonoBehaviour {
 
     // DISCLAIMER!!! catching fish is handled in PartnerAnimator  -keywords: fishcaught, fish caught, 
 
-    public static GameManager singleton = null;
     //Static instance of GameManager which allows it to be accessed by any other script.                            
-    //Current level number, expressed in game as "Day 1".
+    public static GameManager singleton = null;
 
     [HideInInspector]
     public bool canMove = true;
 
     public bool useGuidanceSounds = true;
-    public bool useMapGuidance = true;
-
-    public bool debugLogging = true;
 
     [SerializeField] private int _fishWinamount;
     public int FishWinAmount { get { return _fishWinamount; } }
@@ -28,8 +22,6 @@ public class GameManager : MonoBehaviour {
     [Header("Object references to be used by other scripts")]
     [HideInInspector]
     public GameObject CameraContainer;
-    [HideInInspector]
-    public LogMaster logMaster;
     [HideInInspector]
     public GameObject timer;
     [HideInInspector]
@@ -90,7 +82,6 @@ public class GameManager : MonoBehaviour {
     //Awake is always called before any Start functions
     void Awake()
     {
-        //resetFishInBasket();
         //Check if instance already exists
         if (singleton == null)
                 
@@ -112,14 +103,6 @@ public class GameManager : MonoBehaviour {
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
         CameraContainer = GameObject.FindGameObjectWithTag("Guidance");
-        if(GetComponent<LogMaster>() != null)
-        {
-            logMaster = GetComponent<LogMaster>();
-        }
-        else
-        {
-            //Debug.LogError("GameManager object have no logMaster component");
-        }
 
         timer = GameObject.FindGameObjectWithTag("timer");
         boat = GameObject.FindGameObjectWithTag("boat");        
@@ -140,28 +123,15 @@ public class GameManager : MonoBehaviour {
     }
     private void Start()
     {
-        
-        if (!useMapGuidance)
-        {
-            map.SetActive(false);
-            mapOnCam.SetActive(false);
-        }
         if(!useGuidanceSounds)
         {
             StartCoroutine(makeSureStartSoundPlays(guide.StartingSoundGoFishing));
-        }
-        if (debugLogging)
-        {
-            Debug.LogWarning("check if Debug loggin is enabled in GameManager, which means that if built to a phone it wont log correct");
         }
     }
 
     public void AddEel(int _amount)
     {
-        //caughtTotal.Add(eel);
-        //currentEelAmount++;
         caughtEel+= _amount;
-        //Debug.Log("I now have " + caughtEel + " eel in the basket");
     }
     public int getEelAmount()
     {
@@ -170,10 +140,7 @@ public class GameManager : MonoBehaviour {
 
     public void AddTorsk(int _amount)
     {
-        //caughtTotal.Add(torsk);
-        //currentTorskAmount++;
         caughtTorsk += _amount;
-        //Debug.Log("I now have " + caughtTorsk + " torsk in the basket");
     }
     public int getTorskAmount()
     {
@@ -182,10 +149,7 @@ public class GameManager : MonoBehaviour {
 
     public void AddFlatFish(int _amount)
     {
-        //caughtTotal.Add(flat);
-        //currentFlatfishAmount++;
         caughtFlatfish += _amount;
-        //Debug.Log("I now have " + caughtFlatfish + " flatfish in the basket");
     }
     public int getFlatfishAmount()
     {
@@ -204,14 +168,8 @@ public class GameManager : MonoBehaviour {
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Debug.Log("i am in end scene");
-        //Debug.Log("OnSceneLoaded: " + scene.name);
-        //audio.Play();
-        //Debug.Log("after loading i have these fish: Torsk = " + caughtTorsk + " Eel = " + caughtEel 
-        //    + " Flatfish = " + caughtFlatfish);
         for (int i = 1; i <= caughtFlatfish; i++)
         {
-            //Debug.Log("I have a flatfish");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
             foreach (Transform t in trans)
             {
@@ -223,7 +181,6 @@ public class GameManager : MonoBehaviour {
         }
         for (int i = 1; i <= caughtEel; i++)
         {
-            Debug.Log("I have an eel");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
             foreach (Transform t in trans) {
                 if (t.gameObject.name == "eel_Caught_0"+i) 
@@ -234,7 +191,6 @@ public class GameManager : MonoBehaviour {
         }
         for (int i = 1; i <= caughtTorsk; i++)
         {
-            //Debug.Log("I have a torsk");
             Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
             foreach (Transform t in trans) {
                 if (t.gameObject.name == "torsk_Caught_0"+i) 

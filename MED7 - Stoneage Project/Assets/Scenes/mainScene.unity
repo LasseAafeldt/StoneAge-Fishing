@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.09516869, g: 0.09356088, b: 0.09102201, a: 1}
+  m_IndirectSpecularColor: {r: 0.16206652, g: 0.15762419, b: 0.15158409, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12051,7 +12051,6 @@ GameObject:
   - component: {fileID: 424200596}
   - component: {fileID: 424200595}
   - component: {fileID: 424200594}
-  - component: {fileID: 424200593}
   m_Layer: 0
   m_Name: seal (11)
   m_TagString: Untagged
@@ -12059,19 +12058,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!114 &424200593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114010331499677132, guid: c42fb2146c515c04b94d671990f3327e,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424200592}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &424200594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21351,7 +21337,6 @@ GameObject:
   - component: {fileID: 1044151178}
   - component: {fileID: 1044151179}
   - component: {fileID: 1044151181}
-  - component: {fileID: 1044151180}
   m_Layer: 0
   m_Name: Game Manager (mainscene)
   m_TagString: Untagged
@@ -21387,11 +21372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   useGuidanceSounds: 1
-  useMapGuidance: 1
-  debugLogging: 1
   _fishWinamount: 3
   CameraContainer: {fileID: 0}
-  logMaster: {fileID: 0}
   timer: {fileID: 0}
   boat: {fileID: 0}
   partner: {fileID: 948130987}
@@ -21512,21 +21494,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1044151180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044151176}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3709d45cc447ecb4ba50aa9712e1197d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seperator: ','
-  player: {fileID: 1052138931}
-  mapOnCamera: 0
 --- !u!114 &1044151181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35875,7 +35842,6 @@ GameObject:
   - component: {fileID: 2132595576}
   - component: {fileID: 2132595575}
   - component: {fileID: 2132595574}
-  - component: {fileID: 2132595573}
   m_Layer: 0
   m_Name: seal (10)
   m_TagString: Untagged
@@ -35883,19 +35849,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!114 &2132595573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114010331499677132, guid: c42fb2146c515c04b94d671990f3327e,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132595572}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2132595574
 BoxCollider:
   m_ObjectHideFlags: 0

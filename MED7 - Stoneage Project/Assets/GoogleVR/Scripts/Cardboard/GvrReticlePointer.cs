@@ -159,7 +159,6 @@ public class GvrReticlePointer : GvrBasePointer {
 
       try{
       GameManager.singleton.pointingAtInteractable = true;
-                //Debug.Log("pointingAtInteractable is true");
       }catch{}
 
 
@@ -169,7 +168,6 @@ public class GvrReticlePointer : GvrBasePointer {
 
       try{
           GameManager.singleton.pointingAtInteractable = false;
-                Debug.Log("pointingAtInteractable is false");
             }
             catch{}
 

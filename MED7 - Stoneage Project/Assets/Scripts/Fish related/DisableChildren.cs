@@ -34,7 +34,6 @@ public class DisableChildren : MonoBehaviour
             AcitivateFish child = queChildren.Dequeue(); //removes and returns object
             child.gameObject.SetActive(false);
         }
-        Debug.Log("current fish: " + queChildren.Count);
     }
 
     private void OnFishCaught()

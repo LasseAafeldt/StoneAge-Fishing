@@ -27,8 +27,6 @@ public class GuidanceSounds : MonoBehaviour {
     [SerializeField] private float weightForDistance = 1f;
 
     [Header("other assignables")]
-    //[SerializeField] private BoxCollider boatForwardTrigger;
-
     [SerializeField] private List<AreaDataContainer> fishAreaDatas;
 
     public static string lastGuidanceSound;
@@ -38,7 +36,7 @@ public class GuidanceSounds : MonoBehaviour {
 
     string SelectedArea = "none";
     string previousArea = "different none";
-    //GameObject closestArea;
+ 
     private GameObject _currentBestAreaToGuideTowards;
 
     public static bool startHasPlayed = false;
@@ -51,7 +49,6 @@ public class GuidanceSounds : MonoBehaviour {
     private static int detailedIndex = 0;
 
     private Camera _cam;
-    public static bool isSailingTowardsFishArea = false;
 
      // if fish caught in area then disable that area sound for good.
 
@@ -391,24 +388,6 @@ public class GuidanceSounds : MonoBehaviour {
         Vector3 viewDir = cam.transform.forward;
         viewDir.y = cam.transform.position.y;
         return viewDir * 300;
-    }
-
-    AudioClip RandomDetailedSound(AudioClip[] clipArray)
-    {
-        List<int> numbersToChooseFrom = new List<int> { };
-        for (int i = 0; i < clipArray.Length; i++)
-        {
-            numbersToChooseFrom.Add(i);
-        }
-
-        numbersToChooseFrom.Remove(numberToExclude);
-
-        int randomIndex = Random.Range(0, numbersToChooseFrom.Count);
-        int randomNumber = numbersToChooseFrom[randomIndex];
-        SetLastGuidanceSound(clipArray[randomNumber]);
-        //exclude number here for next time
-        numberToExclude = randomNumber;
-        return clipArray[randomNumber];
     }
 
     AudioClip DetailedArrayInOrderSound(AudioClip[] clipArray)

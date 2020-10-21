@@ -20,29 +20,16 @@ public class FishContent : MonoBehaviour {
 	{
 		if(fish.Count >0)
 		{
-			//Debug.Break();
 			fish[0].gameObject.SetActive(false);
 			fish.RemoveAt(0);
-			//Debug.Log("number of fish in area " +fish.Count);
 		}
         else if(fish.Count <= 0)
         {
-            Debug.Log("number of fish in area " + fish.Count);
             areaOutOfFish = true;
             ps.PartnerSaysSomething(ps.areaIsOutOfFish);
         }
 
 	}
-	/*public void DestroyEmptyArea()
-	{
-		if(fish.Count == 0)
-		{
-			Debug.Log("destroying the area");
-            //Destroy(gameObject);
-            gameObject.SetActive(false);
-			GameManager.singleton.boat.GetComponent<EventCatcher>().ExitArea();
-		}
-	}*/
 
     public bool getAreaOutOfFish()
     {

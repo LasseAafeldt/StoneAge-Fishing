@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AcitivateFish : MonoBehaviour {
-    //public Collider cameraCollider;
     public GameObject childObj;
     [ColorUsageAttribute(false, true)]
     public Color startEmissionColor;
@@ -21,9 +20,7 @@ public class AcitivateFish : MonoBehaviour {
     {
         fishRendere = childObj.GetComponent<globalFlock>().getTorskRendere();
         fishMat = childObj.GetComponent<globalFlock>().getTorskRendere().sharedMaterial;
-        //emmisionColor = fishMat.GetColor("_EmissionColor") * amplitude;
         emmisionColor = startEmissionColor;
-        //Debug.Log(" nr = " + 1 * Time.deltaTime + "       nr = " + 2 * Time.deltaTime);
         fadeIn = false;
         fadeOut = false;
         activateChild();
@@ -31,7 +28,6 @@ public class AcitivateFish : MonoBehaviour {
 
     private void Update()
     {
-        //Debug.Log(Time.fixedDeltaTime);
         if(fadeIn && intensity <= 1)
         {
             intensity += Time.deltaTime * fadeSpeed;
@@ -66,13 +62,11 @@ public class AcitivateFish : MonoBehaviour {
 
     private void fishFadeIn()
     {
-        //fishMat.SetColor("_EmissionColor", emmisionColor * 1);
         fadeIn = true;
     }
 
     private void fishFadeOut()
     {
-        //fishMat.SetColor("_EmissionColor", emmisionColor * 0);
         fadeOut = true;
     }
 
@@ -84,7 +78,6 @@ public class AcitivateFish : MonoBehaviour {
     IEnumerator fishDeactivationDelay()
     {
         float waitTime = 1/fadeSpeed;
-        //Debug.Log("Fish fade WAIT Time = " + waitTime);
         yield return new WaitForSeconds(waitTime);
         childObj.SetActive(false);
     }

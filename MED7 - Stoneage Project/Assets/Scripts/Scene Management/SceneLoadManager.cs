@@ -49,15 +49,12 @@ public class SceneLoadManager : MonoBehaviour
     public void ChangeSceneAsync()
     {
         int currentScene = CurrentSceneIndex();
-        //Debug.Log("Scene index = " + currentScene);
         int sceneIndexToLoad = currentScene +1;
 
-        //Debug.Log("Scene count = " + SceneManager.sceneCountInBuildSettings);
         if(sceneIndexToLoad > SceneManager.sceneCountInBuildSettings-1)
         {
             sceneIndexToLoad = 0;
         }
-        //Debug.Log("Index to load = " + sceneIndexToLoad);
         StartCoroutine(AsyncLoadScene(sceneIndexToLoad));
     }
 
@@ -65,7 +62,6 @@ public class SceneLoadManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
-        Debug.Log("LoadScene calls fade out");
         fade.fadeOut();
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(index);
@@ -73,7 +69,6 @@ public class SceneLoadManager : MonoBehaviour
 
     IEnumerator AsyncLoadScene(int index)
     {
-        Debug.Log("AsyncLoadScene calls fade out");
         FadeController fade = GameObject.FindObjectOfType<FadeController>();
         fade.fadeOut();
         yield return new WaitForSeconds(2f);
@@ -82,16 +77,10 @@ public class SceneLoadManager : MonoBehaviour
         asyncLoad.allowSceneActivation = false;
         while (!asyncLoad.isDone)
         {
-            //if(!ReadyForNextScene)
-            //    Debug.Log("<color=red> Ready for next scene = " + ReadyForNextScene + "</color>");
-            //else
-            //    Debug.Log("<color=green> Ready for next scene = " + ReadyForNextScene + "</color>");
-
             //wait for ready signal
             if (ReadyForNextScene)
             {
                 asyncLoad.allowSceneActivation = true;
-                //Debug.Log("<color=blue> Should activate </color>");
             }
             yield return null;
         }
@@ -105,14 +94,12 @@ public class SceneLoadManager : MonoBehaviour
 
     private void OnVideoEnd()
     {
-        Debug.Log("<color=green> Vidoe has ended </color>");
         ReadyForNextScene = true;
     }
 
     private void OnDisable()
     {
         VideoControls vidControls = GameObject.FindObjectOfType<VideoControls>();
-        //Debug.Log("We have the vid controller:     " + vidControls.name);
         if (vidControls != null)
             vidControls.VideoHasEnded -= OnVideoEnd;
     }
