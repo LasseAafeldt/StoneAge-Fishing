@@ -526,7 +526,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.225e-42, y: 1.04e-43, z: 5.21e-43, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 13.517609, z: 8.06e-43, w: 4.19e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1164,7 +1164,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.1681475e-37}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 7.6676636}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 1044151180}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2271,11 +2271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   useGuidanceSounds: 1
-  useMapGuidance: 1
-  debugLogging: 1
   _fishWinamount: 0
   CameraContainer: {fileID: 0}
-  logMaster: {fileID: 0}
   timer: {fileID: 0}
   boat: {fileID: 0}
   partner: {fileID: 0}
@@ -3975,7 +3972,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.764e-42, y: 1.04e-43, z: 4.5905e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.4677e-41, z: 0, w: 3.9996986}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
