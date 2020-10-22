@@ -38,6 +38,7 @@ TagManager:
   - Guidance
   - map
   - EelTrapArea
+  - GameManager
   layers:
   - Default
   - TransparentFX
