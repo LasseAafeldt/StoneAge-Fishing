@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EventCatcher : MonoBehaviour {
     public PartnerSpeech partnerSpeech;
 
-	public static string fishingArea;
+	public static string fishingArea = "none";
 
     [Range(0,10)]
     public float OutOfBoundsSoundTimer = 7f;
@@ -35,7 +35,6 @@ public class EventCatcher : MonoBehaviour {
     {
         if (other.name == "Starting area")
         {
-
         }
         if (other.tag == "turnAround" && canPlayTurnAroundSound)
 		{
@@ -97,7 +96,7 @@ public class EventCatcher : MonoBehaviour {
 	public void ExitArea()
 	{
 		canFish = false;
-			fishingArea = "";
+			fishingArea = "none";
 	}
 
 	public void startFishing(string tool)

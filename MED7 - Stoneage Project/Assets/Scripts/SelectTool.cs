@@ -91,9 +91,10 @@ public bool IsTribeBasket;
 		if(tag == "hook")
 		{
 			tool = tag;
-			//play animation
 
-			if (EventCatcher.fishingArea == "TorskArea")
+            //play animation
+
+            if (EventCatcher.fishingArea == "TorskArea")
 			{
                 EC.startFishing(tool);
                 if (GameManager.singleton.boat.GetComponent<EventCatcher>()
@@ -127,7 +128,7 @@ public bool IsTribeBasket;
                 }
                 #endregion
             }
-            else if(EventCatcher.fishingArea == "")
+            else if(EventCatcher.fishingArea == "none")
 			{
                 //no fish here
                 notEnoughFishHere();
@@ -150,9 +151,8 @@ public bool IsTribeBasket;
 		else if (tag == "eeliron")
 		{
 			tool = tag;
-			//play animation
-
-			if (EventCatcher.fishingArea == "EelArea")
+            //play animation
+            if (EventCatcher.fishingArea == "EelArea")
 			{
                 EC.startFishing(tool);
                 if (GameManager.singleton.boat.GetComponent<EventCatcher>().fishingAreaObject.GetComponent<FishContent>().getAreaOutOfFish())
@@ -218,7 +218,7 @@ public bool IsTribeBasket;
                 }
                 #endregion
             }
-            else if(EventCatcher.fishingArea == "")
+            else if(EventCatcher.fishingArea == "none")
 			{
                 //no fish here
                 notEnoughFishHere();
@@ -279,6 +279,7 @@ public bool IsTribeBasket;
 
     public void notEnoughFishHere()
     {
+
         //for log
         timesFishedNowhereTotal++;
 

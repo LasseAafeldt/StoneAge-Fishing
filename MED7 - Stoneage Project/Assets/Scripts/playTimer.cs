@@ -79,7 +79,7 @@ public class playTimer : MonoBehaviour {
         if (timeSpent > 0)
         {
             skyboxAngle = (timeSpent) * 380 + (1 - timeSpent) * 345;
-            skyboxExposure = (timeSpent) * (float)1 + (1 - timeSpent) * (float)0.5;
+            skyboxExposure = (timeSpent) * (float)1 + (1 - timeSpent) * (float)0.9;
             currentAngle.x = (timeSpent) * startValue + (1 - timeSpent) * endValue;
             lightSource.intensity = (timeSpent) * (float)1.2;
         }

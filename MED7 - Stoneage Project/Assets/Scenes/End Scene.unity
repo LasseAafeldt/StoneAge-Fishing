@@ -526,7 +526,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 13.517609, z: 8.06e-43, w: 4.19e-43}
+  m_BoundingSphereOverride: {x: 6.07e-43, y: -4.995534e+10, z: 6.07e-43, w: 1.024e-42}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1164,7 +1164,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 7.6676636}
+  m_BoundingSphereOverride: {x: 0, y: -1.5227781e+10, z: 6.07e-43, w: 4.19e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2238,7 +2238,7 @@ GameObject:
   - component: {fileID: 1044151180}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: GameController
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3972,7 +3972,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.4677e-41, z: 0, w: 3.9996986}
+  m_BoundingSphereOverride: {x: NaN, y: 8.293585e+9, z: 4.5904e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
