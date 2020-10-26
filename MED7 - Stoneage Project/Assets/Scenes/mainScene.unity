@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14152455, g: 0.14001423, b: 0.13700241, a: 1}
+  m_IndirectSpecularColor: {r: 0.14152473, g: 0.14001268, b: 0.13700268, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19687,10 +19687,10 @@ MonoBehaviour:
   SealAppearsEmergent: {fileID: 8300000, guid: 6ad361f3290c82a429e259c951cc0291, type: 3}
   BadEnding: {fileID: 8300000, guid: 532ef673baaccbd4a9c36baf9096d62d, type: 3}
   GoodEnding: {fileID: 8300000, guid: 92bc1d88277b72f47a1a9b98a933cb17, type: 3}
-  GameTimerLow: {fileID: 8300000, guid: 3adb817d101116f4d9a1e270c305a822, type: 3}
+  GameTimerLow: {fileID: 8300000, guid: 1200498c2338d6446b8c7edd2d3485b2, type: 3}
   GameTimerEnd: {fileID: 8300000, guid: dca05d39414498740bf4d377bc845cf4, type: 3}
   HomeAgain: {fileID: 8300000, guid: 0dc09fc78e05a014086ecc4747a05723, type: 3}
-  confirmEndPlz: {fileID: 8300000, guid: 05533bcd25d301d46a64a37532516a50, type: 3}
+  confirmEndPlz: {fileID: 8300000, guid: a7b0d0b4142dba741955441247c4155b, type: 3}
   endIsConfirmed: {fileID: 8300000, guid: 7d31c7ca99e0c9941a56f6183f284161, type: 3}
   whileEelFishingFirst: {fileID: 8300000, guid: 77f5b28d67d5630408d4db54ca0a4849,
     type: 3}
@@ -19710,7 +19710,7 @@ MonoBehaviour:
     type: 3}
   whileFlatfishFihingThird: {fileID: 8300000, guid: 06740d460b191fd42a94cb517386c841,
     type: 3}
-  whileEmptyingEeltrap: {fileID: 8300000, guid: 568b04426f4baa941a5bd21545a8c0b4,
+  whileEmptyingEeltrap: {fileID: 8300000, guid: 0b64f15c30c2e634d9d50b02adf7c638,
     type: 3}
   afterEmptyingEeltrap: {fileID: 8300000, guid: 76fe8cdd84b7fd049ac01bc1e8268597,
     type: 3}
@@ -19736,7 +19736,7 @@ MonoBehaviour:
   DetailClosestToEel:
   - {fileID: 8300000, guid: 07a2b283b287d1247886aa689d443a4d, type: 3}
   - {fileID: 8300000, guid: c73dd8ee444681b42ab433fbba851c80, type: 3}
-  - {fileID: 8300000, guid: 7224bb73908e77b43a1ef1193b399b22, type: 3}
+  - {fileID: 8300000, guid: 4369f2a83745aff4a986bacce85feae9, type: 3}
   - {fileID: 8300000, guid: fa5ff364411d50f42ba3f3d42743ffa4, type: 3}
   ClosestToEeltrap: {fileID: 8300000, guid: b0f1b2db7ae7f8a4a992e32e809a4f45, type: 3}
   DetailClosestToEeltrap:
@@ -19745,8 +19745,8 @@ MonoBehaviour:
   ClosestToFlatfish: {fileID: 8300000, guid: 65697b4253baaf64991ccc78e0b5b3b4, type: 3}
   DetailClosestToFlatfish:
   - {fileID: 8300000, guid: cf93d035d9883a3418dbf538c94cb008, type: 3}
-  - {fileID: 8300000, guid: 66eeb7628ed7ee24182117120b6ed822, type: 3}
-  StartingSoundGoFishing: {fileID: 8300000, guid: 4c9ac29ba4bd35c44a1b07249474d4f4,
+  - {fileID: 8300000, guid: d2dbe3e66f7129f46bd7a6267bc351f5, type: 3}
+  StartingSoundGoFishing: {fileID: 8300000, guid: b4ee400027ac7af43ac1e8ed53e51675,
     type: 3}
   noFishHere:
   - {fileID: 8300000, guid: da88cb2a7a8c9e147a3ff206189c594f, type: 3}
