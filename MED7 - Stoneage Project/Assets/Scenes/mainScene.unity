@@ -6843,7 +6843,7 @@ TerrainCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100216439}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: eafe2fe12b5e0ef4cb6729f1722139c9, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &100216441
@@ -29737,7 +29737,7 @@ MonoBehaviour:
   partnerSpeech: {fileID: 948130991}
   startValue: -13
   endValue: 24
-  totalPlayTime: 30
+  totalPlayTime: 300
   skyBox: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
   skyboxAngle: 380
   skyboxExposure: 1
