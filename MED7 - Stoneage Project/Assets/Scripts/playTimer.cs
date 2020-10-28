@@ -8,22 +8,26 @@ public class playTimer : MonoBehaviour {
     public PartnerSpeech partnerSpeech;
 
 	public float startValue;
-	Vector3 startAngle;
 	public float endValue;
-	Vector3 endAngle;
 
-	Vector3 currentAngle = new Vector3(0,0,0);
-
-	public float totalPlayTime =300;
+	public float totalPlayTimeSec =300;
 	public static float timeLeft;
-	float timeSpent=0;
+	float timeRemainingNormalized=0;
 
 	public Material skyBox;
     [Range(345f,380f)]
 	public float skyboxAngle;
     [Range(0.5f,1f)]
-	public float skyboxExposure;
+	public float skyboxExposure, minSkyboxExposure, maxSkyboxExposure;
+    [SerializeField] private AnimationCurve skyboxExposureCurve;
+
     public Light lightSource;
+    //[SerializeField] private float intensityOffset = 0.2f;
+    [Tooltip("x=0 is corresponds to beginning of game while x=1 corresponds to end of game")]
+    [SerializeField] private AnimationCurve intensityControl;
+
+	Vector3 startAngle;
+	Vector3 endAngle;
 
     AudioSource guide;
 
@@ -49,7 +53,7 @@ public class playTimer : MonoBehaviour {
 
         endHasCome = false;
 
-        timeLeft = totalPlayTime;
+        timeLeft = totalPlayTimeSec;
 
 		Vector3 startAngle = new Vector3(startValue,23,3);	
 		Vector3 endAngle = new Vector3(endValue,0,0);
@@ -61,13 +65,13 @@ public class playTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeLeft -= Time.deltaTime;
-		timeSpent = timeLeft/totalPlayTime;
+		timeRemainingNormalized = timeLeft/totalPlayTimeSec;
 
         UpdateSkybox();
         RotateSkybox();
 
         IfNotLinear();
-        if(timeSpent <= 0 && !endHasCome)
+        if(timeRemainingNormalized <= 0 && !endHasCome)
         {
             StartCoroutine(RunOutOfTime(partnerSpeech.GameTimerEnd));
             endHasCome = true;
@@ -76,26 +80,23 @@ public class playTimer : MonoBehaviour {
 
     void UpdateSkybox()
     {
-        if (timeSpent > 0)
+        //lerping
+        if (timeRemainingNormalized > 0)
         {
-            skyboxAngle = (timeSpent) * 380 + (1 - timeSpent) * 345;
-            skyboxExposure = (timeSpent) * (float)1 + (1 - timeSpent) * (float)0.9;
-            currentAngle.x = (timeSpent) * startValue + (1 - timeSpent) * endValue;
-            lightSource.intensity = (timeSpent) * (float)1.2;
-        }
-        else
-        {
-            currentAngle.x = endValue;
-            lightSource.intensity = 0;
+            skyboxAngle = Mathf.Lerp(endValue, startValue, timeRemainingNormalized);
+            //skyboxExposure = Mathf.Lerp(minSkyboxExposure, maxSkyboxExposure, timeRemainingNormalized);
+            lightSource.intensity = intensityControl.Evaluate(1 - timeRemainingNormalized);
         }
     }
 
     void RotateSkybox()
     {
-        skyBox.SetFloat("_RotationZ", skyboxAngle);
-        skyBox.SetFloat("_Exposure", skyboxExposure);
+        skyBox.SetFloat("_RotationZ", -skyboxAngle);
+        //skyBox.SetFloat("_Exposure", skyboxExposure);
+        skyBox.SetFloat("_Exposure", skyboxExposureCurve.Evaluate(1 - timeRemainingNormalized));
 
-        transform.eulerAngles = new Vector3(currentAngle.x, 23, 3);
+
+        transform.eulerAngles = new Vector3(skyboxAngle, 23, 3);
     }
 
     IEnumerator RunOutOfTime(AudioClip clip)
@@ -110,24 +111,19 @@ public class playTimer : MonoBehaviour {
         GameManager.singleton.boat.GetComponent<EventCatcher>().CheckForEnding();
     }
 
-	public float GetTimeSpent()
-	{
-		return timeSpent;
-	}
-
     void IfNotLinear()
     {
-        if (timeSpent <= 0.5 && fourMinLeft)
+        if (timeRemainingNormalized <= 0.5 && fourMinLeft)
         {
             fourMinLeft = false;
         }
         //when there is two minutes left
-        if (timeSpent <= 0.4 && twoMinLeft)
+        if (timeRemainingNormalized <= 0.4 && twoMinLeft)
         {
             twoMinLeft = false;
         }
         //when there is one minutes left
-        if (timeSpent <= 0.2 && oneMinLeft)
+        if (timeRemainingNormalized <= 0.2 && oneMinLeft)
         {
             oneMinLeft = false;
             partnerSpeech.PartnerSaysSomething(partnerSpeech.GameTimerLow);

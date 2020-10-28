@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14152473, g: 0.14001268, b: 0.13700268, a: 1}
+  m_IndirectSpecularColor: {r: 0.043010004, g: 0.04255215, b: 0.04156793, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29735,13 +29735,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partnerSpeech: {fileID: 948130991}
-  startValue: -13
-  endValue: 24
-  totalPlayTime: 300
+  startValue: -15
+  endValue: 25
+  totalPlayTimeSec: 300
   skyBox: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
   skyboxAngle: 380
   skyboxExposure: 1
+  minSkyboxExposure: 0.5
+  maxSkyboxExposure: 1
+  skyboxExposureCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.04133386
+      outSlope: -0.04133386
+      tangentMode: 0
+      weightedMode: 2
+      inWeight: 0.33333334
+      outWeight: 0.27618775
+    - serializedVersion: 3
+      time: 0.90679324
+      value: 0.7944053
+      inSlope: -0.66787547
+      outSlope: -1.1055187
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.2965307
+      outWeight: 0.79021335
+    - serializedVersion: 3
+      time: 1.005127
+      value: 0.4020195
+      inSlope: -3.7850502
+      outSlope: -3.7850502
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 0.13295938
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   lightSource: {fileID: 375506472}
+  intensityControl:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.007816315
+      value: 1.2184143
+      inSlope: -0.5611949
+      outSlope: -0.19495092
+      tangentMode: 5
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.23722516
+    - serializedVersion: 3
+      time: 0.90834177
+      value: 0.65431947
+      inSlope: -1.3165818
+      outSlope: -1.9513124
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.073253535
+      outWeight: 0.43847686
+    - serializedVersion: 3
+      time: 1.0083618
+      value: 0.052479334
+      inSlope: -4.2882314
+      outSlope: 0
+      tangentMode: 65
+      weightedMode: 1
+      inWeight: 0.18018577
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1632423742
 PrefabInstance:
   m_ObjectHideFlags: 0
