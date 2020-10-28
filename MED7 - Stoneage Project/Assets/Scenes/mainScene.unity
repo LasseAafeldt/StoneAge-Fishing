@@ -19728,19 +19728,19 @@ MonoBehaviour:
   NoHook4EelTryIron2: {fileID: 8300000, guid: ed2c7a757ee6b284ca68f14bce5a8240, type: 3}
   ClosestToTorsk: {fileID: 8300000, guid: 93ecbb7abdd707b43b04ed18bfe2d15c, type: 3}
   DetailClosestToTorsk:
-  - {fileID: 8300000, guid: 0b4a08fe5adf65f43a6177f1b19c5361, type: 3}
-  - {fileID: 8300000, guid: df5c8be77b41af64fbeaf870baa6b48a, type: 3}
+  - {fileID: 8300000, guid: a25760196df1a33488506563e926fd78, type: 3}
+  - {fileID: 8300000, guid: 97184089f58f6d340b98de134f1ed81e, type: 3}
   - {fileID: 8300000, guid: 4a4f56aa8a46a3045bcfec2b75bb700d, type: 3}
   - {fileID: 8300000, guid: b5feab59baec2f04f951cc93a9a04d96, type: 3}
-  ClosestToEel: {fileID: 8300000, guid: acd2981c11852e940a6c7b57c46cb03d, type: 3}
+  ClosestToEel: {fileID: 8300000, guid: 034321508a2e8ac4b8be5c8904bdc714, type: 3}
   DetailClosestToEel:
-  - {fileID: 8300000, guid: 07a2b283b287d1247886aa689d443a4d, type: 3}
+  - {fileID: 8300000, guid: c260005503c831d4bbe1d1c62ae6f85e, type: 3}
   - {fileID: 8300000, guid: c73dd8ee444681b42ab433fbba851c80, type: 3}
   - {fileID: 8300000, guid: 4369f2a83745aff4a986bacce85feae9, type: 3}
   - {fileID: 8300000, guid: fa5ff364411d50f42ba3f3d42743ffa4, type: 3}
   ClosestToEeltrap: {fileID: 8300000, guid: b0f1b2db7ae7f8a4a992e32e809a4f45, type: 3}
   DetailClosestToEeltrap:
-  - {fileID: 8300000, guid: dd407d108b362a246844546f1a8fee9c, type: 3}
+  - {fileID: 8300000, guid: 8c58294f66bd8904f9aef6fb64842e1f, type: 3}
   - {fileID: 8300000, guid: 322e13466eccce9459f10f3606e16e9c, type: 3}
   ClosestToFlatfish: {fileID: 8300000, guid: 65697b4253baaf64991ccc78e0b5b3b4, type: 3}
   DetailClosestToFlatfish:
