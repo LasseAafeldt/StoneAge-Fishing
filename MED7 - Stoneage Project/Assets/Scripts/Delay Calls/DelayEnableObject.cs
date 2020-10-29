@@ -6,7 +6,6 @@ public class DelayEnableObject : MonoBehaviour, IDelay
 {
     [SerializeField] private GameObject disabledObject;
 
-
     private void Start()
     {
         disabledObject.SetActive(false);
