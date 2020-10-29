@@ -408,17 +408,6 @@ public class GuidanceSounds : MonoBehaviour {
         detailedIndex = 0;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-        if (other.gameObject.layer == LayerMask.NameToLayer("Regions"))
-            return;
-        if (other.name == start.name && !startHasPlayed)
-        {
-            startHasPlayed = true;
-            partnerSpeech.PartnerSaysSomething(partnerSpeech.StartingSoundGoFishing);
-        }
-    }
 
     
 

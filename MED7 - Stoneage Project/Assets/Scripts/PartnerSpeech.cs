@@ -71,8 +71,10 @@ public class PartnerSpeech : MonoBehaviour {
 	void Start ()
     {
         donePlaying = true;
-        audio = GetComponent<AudioSource>();        
-	}
+        audio = GetComponent<AudioSource>();
+
+        Invoke("PlayStartClip", 1f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -177,7 +179,10 @@ public class PartnerSpeech : MonoBehaviour {
         }
 
 	}
-
+    private void PlayStartClip()
+    {
+        PartnerSaysSomething(StartingSoundGoFishing);
+    }
     void setLastPlayedVoiceline(AudioClip clip)
     {
         lastVoiceline = clip.name;

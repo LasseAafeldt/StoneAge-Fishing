@@ -45,6 +45,7 @@ public class EventCatcher : MonoBehaviour {
 		}
 		if(other.tag == "TorskArea" || other.tag == "EelArea" || other.tag == "FlatfishArea")
 		{
+            Debug.Log(name +" entered with area called " + other.tag +" on object called " + other.name);
             canFish = true;
             //play can fish sound
             if(other.tag == "TorskArea" && SelectTool.firstFishingTorsk)

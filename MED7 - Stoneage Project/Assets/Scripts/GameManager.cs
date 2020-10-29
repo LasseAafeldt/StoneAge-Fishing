@@ -168,36 +168,41 @@ public class GameManager : MonoBehaviour {
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        for (int i = 1; i <= caughtFlatfish; i++)
+        if (SceneManager.GetActiveScene().name == "End Scene")
         {
-            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-            foreach (Transform t in trans)
+            for (int i = 1; i <= caughtFlatfish; i++)
             {
-                if (t.gameObject.name == "flatfish_Caught_0" + i)
+                Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+                foreach (Transform t in trans)
                 {
-                    t.gameObject.SetActive(true);
+                    if (t.gameObject.name == "flatfish_Caught_0" + i)
+                    {
+                        t.gameObject.SetActive(true);
+                    }
                 }
             }
-        }
-        for (int i = 1; i <= caughtEel; i++)
-        {
-            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-            foreach (Transform t in trans) {
-                if (t.gameObject.name == "eel_Caught_0"+i) 
+            for (int i = 1; i <= caughtEel; i++)
+            {
+                Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+                foreach (Transform t in trans)
                 {
-                    t.gameObject.SetActive(true);
+                    if (t.gameObject.name == "eel_Caught_0" + i)
+                    {
+                        t.gameObject.SetActive(true);
+                    }
                 }
-            }                
-        }
-        for (int i = 1; i <= caughtTorsk; i++)
-        {
-            Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
-            foreach (Transform t in trans) {
-                if (t.gameObject.name == "torsk_Caught_0"+i) 
+            }
+            for (int i = 1; i <= caughtTorsk; i++)
+            {
+                Transform[] trans = GameObject.FindGameObjectWithTag("basket").GetComponentsInChildren<Transform>(true);
+                foreach (Transform t in trans)
                 {
-                    t.gameObject.SetActive(true);
+                    if (t.gameObject.name == "torsk_Caught_0" + i)
+                    {
+                        t.gameObject.SetActive(true);
+                    }
                 }
-            }                
+            }
         }
     }
     private void OnDisable()
